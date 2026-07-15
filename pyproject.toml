@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-kepler"
+version = "3.2.2"
+description = "Isentropic information-topology scaling experiments for finite-field autoregressive processes"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.13",
+  "torch>=2.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "pytest-cov>=5"]
+
+[project.scripts]
+kepler = "kepler.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kepler"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

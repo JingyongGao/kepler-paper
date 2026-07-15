@@ -1,0 +1,41 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+dist/
+build/
+runs/
+
+# Model checkpoints, temporary/transactional writes, and logs
+*.pt
+*.pt.sha256
+*.ckpt
+*.tmp
+*.tmp-*
+*.log
+
+# Generated datasets and large numerical artifacts
+data/
+datasets/
+*.npy
+*.npz
+*.parquet
+*.arrow
+
+# SQLite transient state
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Keep only immutable/auditable manifests under the generated-artifact tree.
+artifacts/*
+!artifacts/manifest.json
+!artifacts/pilot_manifest.json
+!artifacts/learnability_audit_manifest.json

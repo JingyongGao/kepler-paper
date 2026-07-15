@@ -1,0 +1,2391 @@
+{
+  "config": {
+    "field": {
+      "d_max": 64,
+      "eta": 0.1,
+      "p": 257
+    },
+    "gates": {
+      "phase0_context_buckets": 4,
+      "phase0_delta": 0.04,
+      "phase0_samples": 1000000,
+      "phase1_gradient_relative_tolerance": 0.005,
+      "phase1_loss_relative_tolerance": 0.0005
+    },
+    "model": {
+      "bias": true,
+      "context_length": 128,
+      "dropout": 0.0,
+      "mlp_ratio": 4,
+      "n_heads": 8,
+      "n_layers": 6,
+      "position_encoding": "learned_absolute",
+      "target_core_parameters": [
+        2000000,
+        10000000,
+        20000000,
+        50000000
+      ],
+      "tie_embeddings": true,
+      "visible_prefix_length": 64
+    },
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "decay_tokens": 160000000,
+      "grad_clip_norm": 1.0,
+      "learning_rate": 0.0003,
+      "min_learning_rate": 3e-05,
+      "warmup_tokens": 5000000,
+      "weight_decay": 0.1
+    },
+    "training": {
+      "amp_dtype": "bfloat16",
+      "batch_size": 32,
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000,
+        80000000,
+        160000000
+      ],
+      "evaluation_stream_seed": 20000,
+      "probe_stream_seed": 30000,
+      "reproduction_rule_instance": 0,
+      "rule_instances": 3,
+      "rule_seed": 322,
+      "seed_primary": 0,
+      "seed_reproduction": 1,
+      "train_stream_seed": 10000
+    }
+  },
+  "exposure_definition": "number of fresh next-token targets included in NLL",
+  "log_base": "e",
+  "project": "Project Kepler",
+  "tracks": [
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d4_n2m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          253,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d4_n2m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          44,
+          71
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d4_n2m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d4_n2m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d4_n10m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          253,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d4_n10m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          44,
+          71
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d4_n10m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d4_n10m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d4_n20m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          253,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d4_n20m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          44,
+          71
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d4_n20m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d4_n20m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d4_n50m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          253,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d4_n50m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          44,
+          71
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d4_n50m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d4_n50m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d4_n2m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          237,
+          221,
+          99,
+          165
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d4_n2m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          213,
+          136,
+          9,
+          106
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d4_n2m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 4,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d4_n2m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d4_n10m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          237,
+          221,
+          99,
+          165
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d4_n10m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          213,
+          136,
+          9,
+          106
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d4_n10m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 4,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d4_n10m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d4_n20m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          237,
+          221,
+          99,
+          165
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d4_n20m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          213,
+          136,
+          9,
+          106
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d4_n20m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 4,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d4_n20m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d4_n50m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          237,
+          221,
+          99,
+          165
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d4_n50m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          213,
+          136,
+          9,
+          106
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d4_n50m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 4,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d4_n50m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d64_n2m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          176,
+          116
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d64_n2m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          215,
+          83
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d64_n2m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k2_d64_n2m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d64_n10m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          176,
+          116
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d64_n10m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          215,
+          83
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d64_n10m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k2_d64_n10m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d64_n20m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          176,
+          116
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d64_n20m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          215,
+          83
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d64_n20m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k2_d64_n20m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d64_n50m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          176,
+          116
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d64_n50m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 2,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          215,
+          83
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d64_n50m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 2,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k2_d64_n50m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d64_n2m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          242,
+          205,
+          227,
+          160
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d64_n2m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          4,
+          166,
+          138,
+          207
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d64_n2m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 64,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k4_d64_n2m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d64_n10m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          242,
+          205,
+          227,
+          160
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d64_n10m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          4,
+          166,
+          138,
+          207
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d64_n10m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 64,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k4_d64_n10m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d64_n20m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          242,
+          205,
+          227,
+          160
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d64_n20m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          4,
+          166,
+          138,
+          207
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d64_n20m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 64,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k4_d64_n20m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d64_n50m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          242,
+          205,
+          227,
+          160
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d64_n50m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 4,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          4,
+          166,
+          138,
+          207
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d64_n50m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 64,
+      "k": 4,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k4_d64_n50m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k3_d16_n2m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          32,
+          83,
+          211
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k3_d16_n2m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          139,
+          27,
+          108
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k3_d16_n2m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "d": 16,
+      "k": 3,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "track_id": "k3_d16_n2m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k3_d16_n10m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          32,
+          83,
+          211
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k3_d16_n10m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          139,
+          27,
+          108
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k3_d16_n10m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "d": 16,
+      "k": 3,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "track_id": "k3_d16_n10m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k3_d16_n20m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          32,
+          83,
+          211
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k3_d16_n20m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          139,
+          27,
+          108
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k3_d16_n20m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 20114688,
+      "d": 16,
+      "k": 3,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 20000000,
+      "total_parameters": 20317968,
+      "track_id": "k3_d16_n20m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 528
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k3_d16_n50m_r0_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          32,
+          83,
+          211
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k3_d16_n50m_r1_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 16,
+      "k": 3,
+      "reproduction": false,
+      "rule": {
+        "coefficients": [
+          139,
+          27,
+          108
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 2,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 2,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k3_d16_n50m_r2_s0_primary",
+      "training_seed": 0,
+      "width": 832
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "d": 16,
+      "k": 3,
+      "reproduction": true,
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "total_parameters": 50227008,
+      "track_id": "k3_d16_n50m_r0_s1_repro",
+      "training_seed": 1,
+      "width": 832
+    }
+  ],
+  "version": "3.2.2"
+}

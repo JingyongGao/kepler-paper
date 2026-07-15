@@ -1,0 +1,943 @@
+{
+  "analysis_role": "exploratory_engineering",
+  "evaluation": {
+    "bootstrap_replicates": 2000,
+    "confidence_interval": 0.95,
+    "episode_contributions_retained": true,
+    "fixed_independent_episodes": true
+  },
+  "include_primary_confirmatory_fit": false,
+  "production_manifest_hash": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+  "production_manifest_mutated": false,
+  "project": "Project Kepler",
+  "task_conditioning": {
+    "baseline_num_tasks": 0,
+    "mapping": {
+      "compatible_extension": {
+        "rule": "new_a_prime",
+        "task": "B"
+      },
+      "conflicting_rewrite": {
+        "rule": "new_a_prime",
+        "task": "A"
+      },
+      "fixed_table_memorization": {
+        "rule": "fixed_table",
+        "task": "A"
+      },
+      "iid_control": {
+        "rule": "old_a",
+        "task": "A"
+      },
+      "task_interface_null": {
+        "rule": "old_a",
+        "task": "B"
+      }
+    },
+    "phase4_num_tasks": 2
+  },
+  "tracks": [
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 4191839293,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1243466845,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          161,
+          38
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k2_d4_n2m_r0_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 2409561989,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3609471849,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          149,
+          130
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10001,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          253,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k2_d4_n2m_r1_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 3070519713,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3767264028,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          142,
+          84,
+          22,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k4_d4_n2m_r0_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 1315075501,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3432069126,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          30,
+          15,
+          94,
+          40
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10001,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          237,
+          221,
+          99,
+          165
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k4_d4_n2m_r1_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 1580496730,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3313060337,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          105,
+          3
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k2_d64_n2m_r0_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 19616073,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 2702166759,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          230,
+          204
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10001,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          176,
+          116
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k2_d64_n2m_r1_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 2817242120,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1382688141,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          78,
+          193,
+          5,
+          118
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k4_d64_n2m_r0_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 580386777,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3532794267,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          243,
+          201,
+          141,
+          110
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10001,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          242,
+          205,
+          227,
+          160
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k4_d64_n2m_r1_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 16,
+      "data_seed": 1922003267,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 2158509855,
+      "include_primary_confirmatory_fit": false,
+      "k": 3,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          16,
+          87,
+          217
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          101,
+          183,
+          146
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k3_d16_n2m_r0_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 16,
+      "data_seed": 3177044988,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3132800632,
+      "include_primary_confirmatory_fit": false,
+      "k": 3,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          22,
+          18,
+          255
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 10001,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "purpose": "learning-range and topology identifiability",
+      "rule": {
+        "coefficients": [
+          32,
+          83,
+          211
+        ],
+        "d": 16,
+        "eta": 0.1,
+        "instance": 1,
+        "k": 3,
+        "lags": [
+          1,
+          8,
+          16
+        ],
+        "p": 257
+      },
+      "rule_instance": 1,
+      "target_core_parameters": 2000000,
+      "tier": "2m_long",
+      "total_parameters": 2110248,
+      "track_id": "pilot_2m_long_k3_d16_n2m_r1_s0",
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 4191839293,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1243466845,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          161,
+          38
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "width transfer and corner coverage",
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "tier": "10m_long",
+      "total_parameters": 10353912,
+      "track_id": "pilot_10m_long_k2_d4_n10m_r0_s0",
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 3070519713,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3767264028,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          142,
+          84,
+          22,
+          207
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "purpose": "width transfer and corner coverage",
+      "rule": {
+        "coefficients": [
+          85,
+          252,
+          222,
+          143
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "tier": "10m_long",
+      "total_parameters": 10353912,
+      "track_id": "pilot_10m_long_k4_d4_n10m_r0_s0",
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 1580496730,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 3313060337,
+      "include_primary_confirmatory_fit": false,
+      "k": 2,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          105,
+          3
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "width transfer and corner coverage",
+      "rule": {
+        "coefficients": [
+          121,
+          173
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "tier": "10m_long",
+      "total_parameters": 10353912,
+      "track_id": "pilot_10m_long_k2_d64_n10m_r0_s0",
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 64,
+      "data_seed": 2817242120,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1382688141,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          78,
+          193,
+          5,
+          118
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "width transfer and corner coverage",
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 10000000,
+      "tier": "10m_long",
+      "total_parameters": 10353912,
+      "track_id": "pilot_10m_long_k4_d64_n10m_r0_s0",
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 49906688,
+      "analysis_role": "exploratory_engineering",
+      "checkpoints": [
+        1000000
+      ],
+      "d": 64,
+      "data_seed": 2817242120,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1382688141,
+      "include_primary_confirmatory_fit": false,
+      "k": 4,
+      "maximum_supervised_tokens": 1000000,
+      "model_initialization_seed": 0,
+      "num_tasks_during_baseline": 0,
+      "paired_new_rule": {
+        "coefficients": [
+          78,
+          193,
+          5,
+          118
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 10000,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "purpose": "memory/checkpoint/resume/throughput only",
+      "rule": {
+        "coefficients": [
+          47,
+          247,
+          180,
+          229
+        ],
+        "d": 64,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 4,
+        "lags": [
+          1,
+          22,
+          43,
+          64
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "target_core_parameters": 50000000,
+      "tier": "50m_soak",
+      "total_parameters": 50227008,
+      "track_id": "pilot_50m_soak_k4_d64_n50m_r0_s0",
+      "width": 832
+    }
+  ],
+  "version": "3.2.2-phase4-micro-pilot"
+}

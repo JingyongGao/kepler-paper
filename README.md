@@ -154,3 +154,24 @@ absolute-token scheduler, all available RNG states, online generator state, rule
 and seed identities, and config/Git hashes. Exact evaluation retains every
 Episode's KL contribution and reports a deterministic 2,000-resample Episode
 bootstrap interval for `R`.
+
+## Learnability audit
+
+The diagnostic-only audit is isolated from both existing manifests and the
+confirmatory fit:
+
+```bash
+uv run kepler learnability-manifest
+uv run kepler metric-audit --checkpoint CHECKPOINT.pt
+uv run kepler learnability-run --run-id learnability_A_single_parent
+uv run kepler learnability-run --run-id learnability_B_capacity_threshold
+uv run kepler learnability-run --run-id learnability_C_oracle_soft
+uv run kepler learnability-status
+```
+
+Run A is the non-production `(k=1,d=1)` positive control; Run B is the 10M
+capacity calibration; Run C uses exact conditional soft labels and must never be
+mixed with sampled-NLL scaling curves. Evaluation includes exact `R`, Episode
+bootstrap intervals, center-state accuracy/probability, entropy, training and
+fresh NLL, per-block gradient/update norms, and independent linear/Fourier/fixed-
+capacity-MLP probes. See `LEARNABILITY_AUDIT_REPORT.md` for the completed audit.

@@ -13,6 +13,7 @@ from .config import DEFAULT_CONFIG, ExperimentConfig
 from .data import OnlineEpisodeStream, split_seed
 from .durability import atomic_write_json, validate_checkpoint_checksum
 from .environment import environment_snapshot
+from .information import predictable_information, torch_exact_conditional_kl
 from .manifest import find_track, rule_from_track
 from .model import KeplerTransformer, masked_language_model_loss
 from .training import evaluate_checkpoint, learning_rate_at, train_track
@@ -224,6 +225,24 @@ def fixed_batch_overfit_audit(
         optimizer.step()
         if step in (0, 9, 49, 99, steps - 1):
             losses.append({"step": step + 1, "loss_nats": float(loss.detach().cpu())})
+    fresh_stream = OnlineEpisodeStream(rule, seed=919_192)
+    fresh = fresh_stream.batch(32)
+    fresh_inputs, fresh_targets, fresh_centers, fresh_mask = fresh.to_torch(
+        str(target_device)
+    )
+    model.eval()
+    with torch.no_grad():
+        fresh_logits = model(fresh_inputs).float()
+        fresh_log_probs = torch.log_softmax(fresh_logits, dim=-1)
+        fresh_nll = masked_language_model_loss(
+            fresh_logits, fresh_targets, fresh_mask
+        )
+        fresh_kl = torch_exact_conditional_kl(
+            fresh_log_probs, fresh_centers, cfg.field.p, cfg.field.eta
+        )[fresh_mask].mean()
+        fresh_r = float(
+            fresh_kl.cpu() / predictable_information(cfg.field.p, cfg.field.eta)
+        )
     result = {
         "scope": "isolated repeated-batch engineering diagnostic",
         "excluded_from_confirmatory_fit": True,
@@ -233,6 +252,11 @@ def fixed_batch_overfit_audit(
         "final_loss_nats": losses[-1]["loss_nats"],
         "loss_decreased": losses[-1]["loss_nats"] < losses[0]["loss_nats"],
         "finite": all(np.isfinite(row["loss_nats"]) for row in losses),
+        "independent_fresh_episodes": 32,
+        "fresh_episode_nll_nats": float(fresh_nll.cpu()),
+        "fresh_exact_conditional_kl_nats": float(fresh_kl.cpu()),
+        "fresh_R": fresh_r,
+        "memorization_does_not_imply_rule_generalization": fresh_r > 0.5,
     }
     atomic_write_json(output, result)
     return result

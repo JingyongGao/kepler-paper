@@ -105,6 +105,54 @@ def extract_probe_dataset(
     return ProbeDataset(torch.cat(representations), torch.cat(labels))
 
 
+@torch.no_grad()
+def extract_probe_layers(
+    model,
+    rule: FiniteFieldRule,
+    seed: int,
+    examples: int,
+    layers: tuple[int, ...],
+    device: str,
+    cfg: ExperimentConfig = DEFAULT_CONFIG,
+    batch_size: int = 32,
+) -> dict[int, ProbeDataset]:
+    """Extract several residual layers in one pass on one fixed split."""
+    if any(not 0 <= layer <= cfg.model.n_layers for layer in layers):
+        raise ValueError("probe layer is outside 0..L")
+    if len(set(layers)) != len(layers):
+        raise ValueError("probe layers must be unique")
+    scored = cfg.model.context_length - cfg.model.visible_prefix_length
+    stream = OnlineEpisodeStream(
+        rule,
+        seed,
+        cfg.model.visible_prefix_length,
+        scored,
+        cfg.field.d_max,
+    )
+    representations: dict[int, list[Tensor]] = {layer: [] for layer in layers}
+    labels: list[Tensor] = []
+    model.eval()
+    seen = 0
+    while seen < examples:
+        count = min(batch_size, math.ceil((examples - seen) / scored))
+        batch = stream.batch(count)
+        inputs, _, centers, mask = batch.to_torch(device)
+        _, residuals = model(inputs, return_residuals=True)
+        z = centers[mask]
+        keep = min(examples - seen, z.shape[0])
+        for layer in layers:
+            representations[layer].append(
+                residuals[layer][mask][:keep].detach().float().cpu()
+            )
+        labels.append(z[:keep].detach().cpu())
+        seen += keep
+    centers_out = torch.cat(labels)
+    return {
+        layer: ProbeDataset(torch.cat(values), centers_out)
+        for layer, values in representations.items()
+    }
+
+
 def _batches(dataset: ProbeDataset, batch_size: int, generator: torch.Generator):
     order = torch.randperm(dataset.centers.shape[0], generator=generator)
     for start in range(0, order.numel(), batch_size):

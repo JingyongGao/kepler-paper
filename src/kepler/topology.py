@@ -21,8 +21,12 @@ TOPOLOGIES: tuple[tuple[int, int], ...] = (
 
 def anchored_lags(k: int, d: int) -> tuple[int, ...]:
     """Endpoint-anchored relative-isometric integer lag layout."""
-    if k < 2:
-        raise ValueError("k must be at least 2")
+    if k == 1:
+        if d != 1:
+            raise ValueError("the diagnostic single-parent control requires k=d=1")
+        return (1,)
+    if k < 1:
+        raise ValueError("k must be positive")
     if d < k:
         raise ValueError("d must be at least k so lags remain distinct")
     lags = tuple(1 + ((j * (d - 1)) // (k - 1)) for j in range(k))

@@ -1,0 +1,201 @@
+{
+  "flags": {
+    "diagnostic_only": true,
+    "excluded_from_confirmatory_fit": true,
+    "exploratory": true
+  },
+  "kind": "learnability_audit",
+  "pilot_manifest_hash": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+  "pilot_manifest_mutated": false,
+  "production_manifest_hash": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+  "production_manifest_mutated": false,
+  "project": "Project Kepler v3.2.2",
+  "runs": [
+    {
+      "actual_core_parameters": 2045568,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000
+      ],
+      "d": 1,
+      "data_seed": 2675532208,
+      "description": "single-parent positive control",
+      "diagnostic_only": true,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1358957691,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "fixed_mlp_hidden": 256,
+      "k": 1,
+      "loss_type": "sampled_nll",
+      "maximum_supervised_tokens": 10000000,
+      "model_initialization_seed": 0,
+      "probe_checkpoints": [
+        500000,
+        2000000,
+        10000000
+      ],
+      "probe_examples": {
+        "test": 1024,
+        "train": 4096,
+        "validation": 1024
+      },
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "probe_seeds": {
+        "test": 2179844810,
+        "train": 1230429428,
+        "validation": 3776256607
+      },
+      "rule": {
+        "coefficients": [
+          94
+        ],
+        "d": 1,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 1,
+        "lags": [
+          1
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "run_id": "learnability_A_single_parent",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "d": 4,
+      "data_seed": 4018751743,
+      "description": "10M capacity-threshold calibration on preregistered (2,4) rule-0",
+      "diagnostic_only": true,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 1000470726,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "fixed_mlp_hidden": 256,
+      "k": 2,
+      "loss_type": "sampled_nll",
+      "maximum_supervised_tokens": 40000000,
+      "model_initialization_seed": 0,
+      "probe_checkpoints": [
+        5000000,
+        20000000,
+        40000000
+      ],
+      "probe_examples": {
+        "test": 1024,
+        "train": 4096,
+        "validation": 1024
+      },
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "probe_seeds": {
+        "test": 1283942143,
+        "train": 1255963684,
+        "validation": 553505960
+      },
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "run_id": "learnability_B_capacity_threshold",
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000
+      ],
+      "d": 4,
+      "data_seed": 328220033,
+      "description": "oracle-soft-label gradient-variance diagnostic",
+      "diagnostic_only": true,
+      "evaluation_episodes": 256,
+      "evaluation_seed": 4195121908,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "fixed_mlp_hidden": 256,
+      "k": 2,
+      "loss_type": "oracle_soft",
+      "maximum_supervised_tokens": 10000000,
+      "model_initialization_seed": 0,
+      "probe_checkpoints": [
+        500000,
+        2000000,
+        10000000
+      ],
+      "probe_examples": {
+        "test": 1024,
+        "train": 4096,
+        "validation": 1024
+      },
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "probe_seeds": {
+        "test": 914444102,
+        "train": 863495603,
+        "validation": 2429860915
+      },
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ],
+        "p": 257
+      },
+      "rule_instance": 0,
+      "run_id": "learnability_C_oracle_soft",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "width": 168
+    }
+  ]
+}

@@ -72,6 +72,71 @@ def _mps_memory() -> dict[str, int]:
     return result
 
 
+def _diagnostic_group(name: str) -> str:
+    if name.startswith("blocks."):
+        return "block_" + name.split(".", 2)[1]
+    if name.startswith(("token_embedding", "position_embedding", "task_emb")):
+        return "embedding_interface"
+    if name.startswith("final_norm"):
+        return "final_norm"
+    if name.startswith("lm_head"):
+        return "lm_head"
+    return "other"
+
+
+def _per_block_gradient_norms(model) -> dict[str, float]:
+    sums: dict[str, torch.Tensor] = {}
+    for name, parameter in model.named_parameters():
+        if parameter.grad is None:
+            continue
+        group = _diagnostic_group(name)
+        value = torch.sum(parameter.grad.detach().float() ** 2)
+        sums[group] = sums.get(group, torch.zeros((), device=value.device)) + value
+    return {group: float(torch.sqrt(value).cpu()) for group, value in sums.items()}
+
+
+def _parameter_snapshot(model) -> dict[str, torch.Tensor]:
+    return {
+        name: parameter.detach().clone()
+        for name, parameter in model.named_parameters()
+    }
+
+
+def _per_block_update_ratios(
+    model, before: dict[str, torch.Tensor]
+) -> dict[str, float]:
+    update_squares: dict[str, torch.Tensor] = {}
+    parameter_squares: dict[str, torch.Tensor] = {}
+    for name, parameter in model.named_parameters():
+        group = _diagnostic_group(name)
+        current = parameter.detach().float()
+        old = before[name].float()
+        update = torch.sum((current - old) ** 2)
+        magnitude = torch.sum(current**2)
+        update_squares[group] = update_squares.get(
+            group, torch.zeros((), device=update.device)
+        ) + update
+        parameter_squares[group] = parameter_squares.get(
+            group, torch.zeros((), device=magnitude.device)
+        ) + magnitude
+    return {
+        group: float(
+            (
+                torch.sqrt(update_squares[group])
+                / torch.sqrt(parameter_squares[group]).clamp_min(1e-30)
+            ).cpu()
+        )
+        for group in update_squares
+    }
+
+
+def _oracle_soft_loss(logits, centers, mask, p: int, eta: float):
+    log_probs = F.log_softmax(logits.float(), dim=-1)
+    q = torch.full_like(log_probs, eta / (p - 1))
+    q.scatter_(-1, centers.long().unsqueeze(-1), 1.0 - eta)
+    return (-torch.sum(q * log_probs, dim=-1))[mask].mean()
+
+
 def save_checkpoint(
     path: Path,
     model,
@@ -83,6 +148,10 @@ def save_checkpoint(
     last_learning_rate: float,
     stream_seed: int,
     provenance: dict[str, Any] | None = None,
+    loss_type: str = "sampled_nll",
+    optimization_loss_nats: float | None = None,
+    sampled_token_nll_nats: float | None = None,
+    checkpoint_diagnostics: dict[str, Any] | None = None,
 ) -> str:
     metadata = dict(provenance or {})
     metadata.setdefault("config_hash", canonical_hash(cfg.to_dict()))
@@ -120,6 +189,10 @@ def save_checkpoint(
             "model_initialization_seed": track.training_seed,
             "data_seed": stream_seed,
         },
+        "loss_type": loss_type,
+        "optimization_loss_nats": optimization_loss_nats,
+        "sampled_token_nll_nats": sampled_token_nll_nats,
+        "checkpoint_diagnostics": checkpoint_diagnostics or {},
     }
     if torch.cuda.is_available():
         payload["rng_states"]["torch_cuda"] = torch.cuda.get_rng_state_all()
@@ -153,11 +226,14 @@ def train_track(
     checkpoint_tokens: tuple[int, ...] | None = None,
     stream_seed_override: int | None = None,
     provenance: dict[str, Any] | None = None,
+    loss_type: str = "sampled_nll",
 ) -> Path:
     """Train a single preregistered trajectory on a never-replayed RNG stream."""
     track = track_override or find_track(track_id, cfg)
     if track.track_id != track_id:
         raise ValueError("track_override does not match track_id")
+    if loss_type not in {"sampled_nll", "oracle_soft"}:
+        raise ValueError("loss_type must be sampled_nll or oracle_soft")
     rule = rule_from_track(track)
     device = resolve_device(device_name)
     random.seed(track.training_seed)
@@ -191,6 +267,8 @@ def train_track(
         state = torch.load(resume, map_location=device, weights_only=False)
         if state["track"]["track_id"] != track.track_id:
             raise ValueError("resume checkpoint belongs to a different track")
+        if state.get("loss_type", "sampled_nll") != loss_type:
+            raise ValueError("resume checkpoint uses a different training objective")
         model.load_state_dict(state["model"])
         optimizer.load_state_dict(state["optimizer"])
         exposed = int(state.get("supervised_tokens_seen", state["exposed_tokens"]))
@@ -229,6 +307,7 @@ def train_track(
             "device": str(device),
             "amp": amp,
             "stream_seed": stream_seed,
+            "loss_type": loss_type,
             "provenance": provenance or {},
             "exposure_definition": "fresh targets selected by the NLL mask",
         },
@@ -242,7 +321,7 @@ def train_track(
             capacity = batch * scored_per_episode
             score_limit = min(capacity, next_boundary - exposed)
             episode_batch = stream.batch(batch, score_limit=score_limit)
-            inputs, targets, _, mask = episode_batch.to_torch(str(device))
+            inputs, targets, centers, mask = episode_batch.to_torch(str(device))
             lr = learning_rate_at(exposed, cfg)
             for group in optimizer.param_groups:
                 group["lr"] = lr
@@ -252,16 +331,33 @@ def train_track(
             step_started = time.perf_counter()
             with _autocast(device, amp, cfg.training.amp_dtype):
                 logits = model(inputs)
-                loss = masked_language_model_loss(logits, targets, mask)
+                sampled_nll = masked_language_model_loss(logits.float(), targets, mask)
+                loss = (
+                    sampled_nll
+                    if loss_type == "sampled_nll"
+                    else _oracle_soft_loss(
+                        logits, centers, mask, cfg.field.p, cfg.field.eta
+                    )
+                )
             if not bool(torch.isfinite(loss)):
                 raise FloatingPointError(f"non-finite loss at D={exposed}")
             loss.backward()
+            is_checkpoint_step = exposed + score_limit in save_points
+            per_block_gradients = (
+                _per_block_gradient_norms(model) if is_checkpoint_step else {}
+            )
             grad_norm = torch.nn.utils.clip_grad_norm_(
                 model.parameters(), cfg.optimizer.grad_clip_norm
             )
             if not bool(torch.isfinite(grad_norm)):
                 raise FloatingPointError(f"non-finite gradient norm at D={exposed}")
+            parameter_before = _parameter_snapshot(model) if is_checkpoint_step else None
             optimizer.step()
+            update_ratios = (
+                _per_block_update_ratios(model, parameter_before)
+                if parameter_before is not None
+                else {}
+            )
             if device.type == "mps":
                 torch.mps.synchronize()
             elapsed = time.perf_counter() - step_started
@@ -269,6 +365,8 @@ def train_track(
             metric = {
                 "exposed_tokens": exposed,
                 "loss_nats": float(loss.detach().cpu()),
+                "sampled_token_nll_nats": float(sampled_nll.detach().cpu()),
+                "loss_type": loss_type,
                 "learning_rate": lr,
                 "gradient_norm": float(grad_norm.detach().cpu()),
                 "step_seconds": elapsed,
@@ -296,6 +394,13 @@ def train_track(
                     lr,
                     stream_seed,
                     provenance,
+                    loss_type,
+                    float(loss.detach().cpu()),
+                    float(sampled_nll.detach().cpu()),
+                    {
+                        "per_block_gradient_norm": per_block_gradients,
+                        "per_block_parameter_update_over_parameter_norm": update_ratios,
+                    },
                 )
                 metric["checkpoint_sha256"] = checksum
     return run_dir
@@ -312,6 +417,7 @@ def evaluate_checkpoint(
     evaluation_seed_override: int | None = None,
     bootstrap_replicates: int = 2_000,
     task_id: int | None = None,
+    output_path: str | Path | None = None,
 ) -> dict[str, Any]:
     if contexts <= 0:
         raise ValueError("contexts must be positive")
@@ -341,6 +447,9 @@ def evaluate_checkpoint(
     )
     kl_sum = 0.0
     nll_sum = 0.0
+    center_correct = 0
+    center_probability_sum = 0.0
+    entropy_sum = 0.0
     seen = 0
     episode_target = episodes or math.ceil(contexts / scored_per_episode)
     episode_kl: list[float] = []
@@ -351,6 +460,7 @@ def evaluate_checkpoint(
         inputs, targets, centers, mask = b.to_torch(str(device))
         logits = model(inputs, task_id=task_id).float()
         log_probs = F.log_softmax(logits, dim=-1)
+        probabilities = log_probs.exp()
         kl = torch_exact_conditional_kl(log_probs, centers, cfg.field.p, cfg.field.eta)
         nll = F.cross_entropy(
             logits.reshape(-1, cfg.field.p), targets.reshape(-1), reduction="none"
@@ -361,6 +471,12 @@ def evaluate_checkpoint(
         episode_nll.extend(float(value) for value in per_episode_nll.cpu())
         kl_sum += float(kl[mask].sum().cpu())
         nll_sum += float(nll[mask].sum().cpu())
+        center_correct += int((logits.argmax(dim=-1)[mask] == centers[mask]).sum().cpu())
+        center_probability_sum += float(
+            probabilities.gather(-1, centers.long().unsqueeze(-1)).squeeze(-1)[mask].sum().cpu()
+        )
+        predictive_entropy = -torch.sum(probabilities * log_probs, dim=-1)
+        entropy_sum += float(predictive_entropy[mask].sum().cpu())
         selected = int(mask.sum())
         seen += selected
     information = predictable_information(cfg.field.p, cfg.field.eta)
@@ -377,7 +493,12 @@ def evaluate_checkpoint(
         "exposed_tokens": int(state["exposed_tokens"]),
         "evaluation_contexts": seen,
         "mean_sample_nll_nats": nll_sum / seen,
+        "sampled_token_nll_nats": state.get("sampled_token_nll_nats"),
+        "fresh_episode_nll_nats": nll_sum / seen,
         "mean_exact_conditional_kl_nats": kl_sum / seen,
+        "center_state_top1_accuracy": center_correct / seen,
+        "mean_probability_on_center_state": center_probability_sum / seen,
+        "mean_predictive_entropy_nats": entropy_sum / seen,
         "evaluation_episodes": episode_target,
         "per_episode_mean_exact_kl_nats": episode_kl,
         "per_episode_mean_sample_nll_nats": episode_nll,
@@ -386,7 +507,14 @@ def evaluate_checkpoint(
         "bootstrap_replicates": bootstrap_replicates,
         "evaluation_stream_seed": seed,
         "finite": bool(np.isfinite(episode_r).all()),
+        "loss_type": state.get("loss_type", "sampled_nll"),
+        "per_block_gradient_norm": state.get("checkpoint_diagnostics", {}).get(
+            "per_block_gradient_norm", {}
+        ),
+        "per_block_parameter_update_over_parameter_norm": state.get(
+            "checkpoint_diagnostics", {}
+        ).get("per_block_parameter_update_over_parameter_norm", {}),
     }
-    output = Path(checkpoint).with_suffix(".eval.json")
+    output = Path(output_path) if output_path is not None else Path(checkpoint).with_suffix(".eval.json")
     atomic_write_json(output, result)
     return result

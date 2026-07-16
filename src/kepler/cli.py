@@ -158,6 +158,46 @@ def _overfit_audit(args: argparse.Namespace) -> int:
     return 0 if result["loss_decreased"] and result["finite"] else 2
 
 
+def _learnability_manifest(args: argparse.Namespace) -> int:
+    from .learnability import write_learnability_manifest
+
+    output, checksum = write_learnability_manifest(args.output)
+    _json({"runs": 3, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _metric_audit(args: argparse.Namespace) -> int:
+    from .learnability import no_training_metric_audit
+
+    result = no_training_metric_audit(args.checkpoint, args.output)
+    _json(result)
+    return 0 if result["passed"] else 2
+
+
+def _learnability_run(args: argparse.Namespace) -> int:
+    from .learnability import run_learnability_audit
+
+    _json(
+        run_learnability_audit(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            device_name=args.device,
+            batch_size=args.batch_size,
+            resume=args.resume,
+            stop_after_tokens=args.stop_after_tokens,
+        )
+    )
+    return 0
+
+
+def _learnability_status(args: argparse.Namespace) -> int:
+    from .learnability import learnability_status
+
+    _json(learnability_status(args.run_root))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -350,6 +390,43 @@ def build_parser() -> argparse.ArgumentParser:
     overfit_audit.add_argument("--steps", type=int, default=500)
     overfit_audit.add_argument("--device", default="auto")
     overfit_audit.set_defaults(func=_overfit_audit)
+
+    learnability_manifest = sub.add_parser(
+        "learnability-manifest", help="write the three-run diagnostic audit manifest"
+    )
+    learnability_manifest.add_argument(
+        "--output", default="artifacts/learnability_audit_manifest.json"
+    )
+    learnability_manifest.set_defaults(func=_learnability_manifest)
+
+    metric_audit = sub.add_parser(
+        "metric-audit", help="verify uniform/oracle/indexing/batching controls"
+    )
+    metric_audit.add_argument("--checkpoint")
+    metric_audit.add_argument("--output", default="artifacts/no_training_metric_audit.json")
+    metric_audit.set_defaults(func=_metric_audit)
+
+    learnability_run = sub.add_parser(
+        "learnability-run", help="run one diagnostic-only learnability trajectory"
+    )
+    learnability_run.add_argument("--run-id", required=True)
+    learnability_run.add_argument("--run-root", default="artifacts/learnability_runs")
+    learnability_run.add_argument(
+        "--manifest", default="artifacts/learnability_audit_manifest.json"
+    )
+    learnability_run.add_argument("--device", default="auto")
+    learnability_run.add_argument("--batch-size", type=int)
+    learnability_run.add_argument("--resume")
+    learnability_run.add_argument("--stop-after-tokens", type=int)
+    learnability_run.set_defaults(func=_learnability_run)
+
+    learnability_status_parser = sub.add_parser(
+        "learnability-status", help="report Runs A, B, and C"
+    )
+    learnability_status_parser.add_argument(
+        "--run-root", default="artifacts/learnability_runs"
+    )
+    learnability_status_parser.set_defaults(func=_learnability_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

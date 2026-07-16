@@ -40,3 +40,7 @@ artifacts/*
 !artifacts/pilot_manifest.json
 !artifacts/learnability_audit_manifest.json
 !artifacts/mechanism_isolation_manifest.json
+!artifacts/production_suspension_status.json
+!artifacts/checkpoint_gradient_dynamics_audit.json
+!artifacts/parent_pair_split.json
+!artifacts/compositional_generalization_manifest.json

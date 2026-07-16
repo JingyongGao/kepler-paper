@@ -1,0 +1,8 @@
+{
+  "decision": "suspended_before_execution",
+  "production_manifest_modified": false,
+  "production_manifest_path": "artifacts/manifest.json",
+  "production_manifest_sha256": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+  "reason": "Every registered production topology has k >= 2, while the registered recurrent k=2 controls remained in the uniform-predictor regime.",
+  "status": "production_matrix_not_launched"
+}

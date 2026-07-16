@@ -1,0 +1,17 @@
+{
+  "kind": "kepler_v3_5_freeze_record",
+  "recorded_date": "2026-07-17",
+  "frozen_branch": "kepler-v3.4-symmetry-breaking",
+  "frozen_commit": "1a81d8ea7057729cfb4275f1867f03687e0651b5",
+  "frozen_tag": "kepler-v3.4-transfer1",
+  "new_branch": "kepler-v3.5-cue-dose",
+  "frozen_manifest_sha256": {
+    "artifacts/manifest.json": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+    "artifacts/pilot_manifest.json": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "artifacts/learnability_audit_manifest.json": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "artifacts/mechanism_isolation_manifest.json": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "artifacts/compositional_generalization_manifest.json": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "artifacts/full_support_transfer_manifest.json": "5e158ea537ad267da5bc8bb262552ba9e28502e876a7edb3cde2e0bc0b3e1cbe"
+  },
+  "prior_manifests_modified": false
+}

@@ -111,16 +111,24 @@ def _semantic_gradient_groups(
         output_derivative = (probabilities - q) * mask.unsqueeze(-1)
         output_derivative /= int(mask.sum())
         final_hidden = model.final_norm(residuals[-1].detach()).float()
-        direct_output_weight = torch.einsum(
-            "btv,btw->vw", output_derivative, final_hidden
-        )
+        if output_derivative.ndim == 3:
+            direct_output_weight = torch.einsum(
+                "btv,btw->vw", output_derivative, final_hidden
+            )
+        elif output_derivative.ndim == 2:
+            direct_output_weight = torch.einsum(
+                "bv,bw->vw", output_derivative, final_hidden
+            )
+        else:
+            raise ValueError("unsupported output derivative rank")
         tied_total = model.token_embedding.weight.grad.detach().float()
         input_token_weight = tied_total - direct_output_weight
 
+        embedding_values = [input_token_weight, model.position_embedding.weight.grad]
+        if hasattr(model, "query_embedding"):
+            embedding_values.append(model.query_embedding.grad)
         result: dict[str, Tensor] = {
-            "global.embedding_input": _flatten(
-                (input_token_weight, model.position_embedding.weight.grad)
-            ),
+            "global.embedding_input": _flatten(embedding_values),
             "global.output_head_direct": direct_output_weight.reshape(-1),
             "global.tied_embedding_total": tied_total.reshape(-1),
         }

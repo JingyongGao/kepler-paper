@@ -244,6 +244,56 @@ def _mechanism_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _checkpoint_gradient_audit(args: argparse.Namespace) -> int:
+    from .checkpoint_gradients import run_checkpoint_gradient_dynamics_audit
+
+    result = run_checkpoint_gradient_dynamics_audit(
+        args.output, device_name=args.device
+    )
+    _json({"output": str(Path(args.output).resolve()), "runs": list(result["runs"])})
+    return 0
+
+
+def _parent_pair_split(args: argparse.Namespace) -> int:
+    from .parent_pair_split import write_parent_pair_split
+
+    output, checksum = write_parent_pair_split(args.output)
+    _json({"output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _composition_manifest(args: argparse.Namespace) -> int:
+    from .compositional import write_compositional_manifest
+
+    output, checksum = write_compositional_manifest(args.output, args.split)
+    _json({"runs": 6, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _composition_run(args: argparse.Namespace) -> int:
+    from .compositional_runner import run_compositional_generalization
+
+    _json(
+        run_compositional_generalization(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            split_path=args.split,
+            device_name=args.device,
+            resume=args.resume,
+            stop_after_exposures=args.stop_after_exposures,
+        )
+    )
+    return 0
+
+
+def _composition_status(args: argparse.Namespace) -> int:
+    from .compositional_runner import compositional_status
+
+    _json(compositional_status(args.run_root))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -513,6 +563,51 @@ def build_parser() -> argparse.ArgumentParser:
         "--run-root", default="artifacts/mechanism_runs"
     )
     mechanism_status_parser.set_defaults(func=_mechanism_status)
+
+    checkpoint_gradient = sub.add_parser(
+        "checkpoint-gradient-audit",
+        help="audit exact-soft gradient dynamics at every M1-M4 checkpoint",
+    )
+    checkpoint_gradient.add_argument(
+        "--output", default="artifacts/checkpoint_gradient_dynamics_audit.json"
+    )
+    checkpoint_gradient.add_argument("--device", default="auto")
+    checkpoint_gradient.set_defaults(func=_checkpoint_gradient_audit)
+
+    parent_split = sub.add_parser(
+        "parent-pair-split", help="write the frozen deterministic 80/20 pair split"
+    )
+    parent_split.add_argument("--output", default="artifacts/parent_pair_split.json")
+    parent_split.set_defaults(func=_parent_pair_split)
+
+    composition_manifest = sub.add_parser(
+        "composition-manifest", help="write the six-run compositional gate manifest"
+    )
+    composition_manifest.add_argument(
+        "--output", default="artifacts/compositional_generalization_manifest.json"
+    )
+    composition_manifest.add_argument("--split", default="artifacts/parent_pair_split.json")
+    composition_manifest.set_defaults(func=_composition_manifest)
+
+    composition_run = sub.add_parser(
+        "composition-run", help="run one paired G1/G2 compositional trajectory"
+    )
+    composition_run.add_argument("--run-id", required=True)
+    composition_run.add_argument("--run-root", default="artifacts/compositional_runs")
+    composition_run.add_argument(
+        "--manifest", default="artifacts/compositional_generalization_manifest.json"
+    )
+    composition_run.add_argument("--split", default="artifacts/parent_pair_split.json")
+    composition_run.add_argument("--device", default="auto")
+    composition_run.add_argument("--resume")
+    composition_run.add_argument("--stop-after-exposures", type=int)
+    composition_run.set_defaults(func=_composition_run)
+
+    composition_status = sub.add_parser(
+        "composition-status", help="report all six compositional trajectories"
+    )
+    composition_status.add_argument("--run-root", default="artifacts/compositional_runs")
+    composition_status.set_defaults(func=_composition_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

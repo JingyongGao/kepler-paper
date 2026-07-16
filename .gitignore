@@ -49,3 +49,4 @@ artifacts/*
 !artifacts/support_gradient_dynamics_audit.json
 !artifacts/full_support_transfer_manifest.json
 !artifacts/v3_5_freeze_record.json
+!artifacts/cue_distribution_audit.json

@@ -348,6 +348,14 @@ def _transfer_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cue_distribution_audit(args: argparse.Namespace) -> int:
+    from .cue_distribution import write_cue_distribution_audit
+
+    output, checksum = write_cue_distribution_audit(args.output)
+    _json({"output": str(output.resolve()), "sha256": checksum, "conditions": 6})
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -733,6 +741,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--source-root", default="artifacts/compositional_runs"
     )
     transfer_status.set_defaults(func=_transfer_status)
+
+    cue_audit = sub.add_parser(
+        "cue-distribution-audit",
+        help="solve and exhaustively audit the six full-support cue conditions",
+    )
+    cue_audit.add_argument(
+        "--output", default="artifacts/cue_distribution_audit.json"
+    )
+    cue_audit.set_defaults(func=_cue_distribution_audit)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

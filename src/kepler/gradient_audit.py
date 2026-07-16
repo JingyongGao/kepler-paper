@@ -131,6 +131,11 @@ def _semantic_gradient_groups(
             "global.embedding_input": _flatten(embedding_values),
             "global.output_head_direct": direct_output_weight.reshape(-1),
             "global.tied_embedding_total": tied_total.reshape(-1),
+            "global.total": _flatten(
+                parameter.grad
+                for parameter in model.parameters()
+                if parameter.grad is not None
+            ),
         }
         global_q: list[Tensor] = []
         global_k: list[Tensor] = []

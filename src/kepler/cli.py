@@ -302,6 +302,19 @@ def _support_information_audit(args: argparse.Namespace) -> int:
     return 0
 
 
+def _support_gradient_audit(args: argparse.Namespace) -> int:
+    from .support_gradient_audit import run_support_gradient_dynamics_audit
+
+    result = run_support_gradient_dynamics_audit(
+        args.output,
+        run_root=args.run_root,
+        split_path=args.split,
+        device_name=args.device,
+    )
+    _json({"output": str(Path(args.output).resolve()), "seeds": list(result["seeds"])})
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -628,6 +641,22 @@ def build_parser() -> argparse.ArgumentParser:
         "--split", default="artifacts/parent_pair_split.json"
     )
     support_information.set_defaults(func=_support_information_audit)
+
+    support_gradient = sub.add_parser(
+        "support-gradient-audit",
+        help="compare paired G1/G2 gradients on support-specific and common batches",
+    )
+    support_gradient.add_argument(
+        "--output", default="artifacts/support_gradient_dynamics_audit.json"
+    )
+    support_gradient.add_argument(
+        "--run-root", default="artifacts/compositional_runs"
+    )
+    support_gradient.add_argument(
+        "--split", default="artifacts/parent_pair_split.json"
+    )
+    support_gradient.add_argument("--device", default="auto")
+    support_gradient.set_defaults(func=_support_gradient_audit)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

@@ -315,6 +315,39 @@ def _support_gradient_audit(args: argparse.Namespace) -> int:
     return 0
 
 
+def _transfer_manifest(args: argparse.Namespace) -> int:
+    from .full_support_transfer import write_full_support_transfer_manifest
+
+    output, checksum = write_full_support_transfer_manifest(args.output, args.source_root)
+    _json({"runs": 3, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _transfer_run(args: argparse.Namespace) -> int:
+    from .full_support_transfer import run_full_support_transfer
+
+    _json(
+        run_full_support_transfer(
+            args.run_id,
+            run_root=args.run_root,
+            source_root=args.source_root,
+            manifest_path=args.manifest,
+            split_path=args.split,
+            device_name=args.device,
+            resume=args.resume,
+            stop_after_exposures=args.stop_after_exposures,
+        )
+    )
+    return 0
+
+
+def _transfer_status(args: argparse.Namespace) -> int:
+    from .full_support_transfer import full_support_transfer_status
+
+    _json(full_support_transfer_status(args.run_root, args.source_root))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -657,6 +690,49 @@ def build_parser() -> argparse.ArgumentParser:
     )
     support_gradient.add_argument("--device", default="auto")
     support_gradient.set_defaults(func=_support_gradient_audit)
+
+    transfer_manifest = sub.add_parser(
+        "transfer-manifest", help="write the three-run full-support transfer manifest"
+    )
+    transfer_manifest.add_argument(
+        "--output", default="artifacts/full_support_transfer_manifest.json"
+    )
+    transfer_manifest.add_argument(
+        "--source-root", default="artifacts/compositional_runs"
+    )
+    transfer_manifest.set_defaults(func=_transfer_manifest)
+
+    transfer_run = sub.add_parser(
+        "transfer-run", help="continue one frozen G2 5M state on full support"
+    )
+    transfer_run.add_argument("--run-id", required=True)
+    transfer_run.add_argument(
+        "--run-root", default="artifacts/full_support_transfer_runs"
+    )
+    transfer_run.add_argument(
+        "--source-root", default="artifacts/compositional_runs"
+    )
+    transfer_run.add_argument(
+        "--manifest", default="artifacts/full_support_transfer_manifest.json"
+    )
+    transfer_run.add_argument(
+        "--split", default="artifacts/parent_pair_split.json"
+    )
+    transfer_run.add_argument("--device", default="auto")
+    transfer_run.add_argument("--resume")
+    transfer_run.add_argument("--stop-after-exposures", type=int)
+    transfer_run.set_defaults(func=_transfer_run)
+
+    transfer_status = sub.add_parser(
+        "transfer-status", help="report the three full-support transfer trajectories"
+    )
+    transfer_status.add_argument(
+        "--run-root", default="artifacts/full_support_transfer_runs"
+    )
+    transfer_status.add_argument(
+        "--source-root", default="artifacts/compositional_runs"
+    )
+    transfer_status.set_defaults(func=_transfer_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

@@ -47,3 +47,4 @@ artifacts/*
 !artifacts/v3_4_freeze_record.json
 !artifacts/support_information_audit.json
 !artifacts/support_gradient_dynamics_audit.json
+!artifacts/full_support_transfer_manifest.json

@@ -69,6 +69,23 @@ def _axis_metrics(
     }
 
 
+def _axis_tail_metrics(axis: dict[str, list[float] | list[int]]) -> dict[str, Any]:
+    values = np.asarray(axis["R"], dtype=np.float64)
+    order = np.argsort(values)[::-1]
+    return {
+        "R_quantiles": {
+            "q50": float(np.quantile(values, 0.50)),
+            "q90": float(np.quantile(values, 0.90)),
+            "q95": float(np.quantile(values, 0.95)),
+            "q99": float(np.quantile(values, 0.99)),
+            "maximum": float(values.max()),
+        },
+        "worst_10_values": [
+            {"value": int(index), "R": float(values[index])} for index in order[:10]
+        ],
+    }
+
+
 def _basic_partition_metrics(
     name: str,
     selected: np.ndarray,
@@ -246,6 +263,7 @@ def evaluate_compositional_checkpoint(
     *,
     split_path: str | Path = "artifacts/parent_pair_split.json",
     device_name: str = "auto",
+    output_label: str = "composition",
     cfg: ExperimentConfig = DEFAULT_CONFIG,
 ) -> dict[str, Any]:
     device = resolve_device(device_name)
@@ -299,6 +317,11 @@ def evaluate_compositional_checkpoint(
         metrics["by_target_z"] = _axis_metrics(
             centers, mask, r_values, correct, center_probability
         )
+        metrics["tail_summary"] = {
+            "by_x1": _axis_tail_metrics(metrics["by_x1"]),
+            "by_x2": _axis_tail_metrics(metrics["by_x2"]),
+            "by_target_z": _axis_tail_metrics(metrics["by_target_z"]),
+        }
         metrics["by_pair_frequency"] = _frequency_metrics(
             frequency, mask, r_values, correct
         )
@@ -339,9 +362,9 @@ def evaluate_compositional_checkpoint(
         "training_checkpoint_diagnostics": state.get("checkpoint_diagnostics", {}),
         "finite": bool(np.isfinite(kl).all()),
     }
-    output = Path(checkpoint).with_suffix(".composition.eval.json")
+    output = Path(checkpoint).with_suffix(f".{output_label}.eval.json")
     atomic_write_json(output, result)
-    atomic_write_json(Path(checkpoint).with_suffix(".composition.probes.json"), probes)
+    atomic_write_json(Path(checkpoint).with_suffix(f".{output_label}.probes.json"), probes)
     return result
 
 

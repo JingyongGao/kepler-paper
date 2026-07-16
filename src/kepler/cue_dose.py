@@ -179,6 +179,7 @@ def assert_c0_reuse_equivalence(
                 source.model_initialization_seed == seed
                 and source.data_seed == expected_data_seed
             ),
+            "required_checkpoint_schedule_replay": False,
         }
         results[str(seed)] = {
             "checks": checks,
@@ -192,6 +193,13 @@ def assert_c0_reuse_equivalence(
         }
     return {
         "all_passed": all(result["passed"] for result in results.values()),
+        "fallback_triggered": True,
+        "fallback_reason": (
+            "Required 3M/4M checkpoint boundaries change batch partitioning and "
+            "the interleaving of pair/noise RNG draws, so deterministic continuation "
+            "does not reproduce the frozen G1 5M state."
+        ),
+        "failure_record": "artifacts/cue_c0_reuse_failure.json",
         "seeds": results,
     }
 

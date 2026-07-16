@@ -51,3 +51,4 @@ artifacts/*
 !artifacts/v3_5_freeze_record.json
 !artifacts/cue_distribution_audit.json
 !artifacts/cue_dose_manifest.json
+!artifacts/cue_c0_reuse_failure.json

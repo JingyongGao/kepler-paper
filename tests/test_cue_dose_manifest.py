@@ -8,10 +8,14 @@ from kepler.cue_dose import (
 )
 
 
-def test_c0_reuse_assertions_pass_for_all_three_frozen_seeds():
+def test_c0_reuse_fallback_is_triggered_by_checkpoint_schedule():
     result = assert_c0_reuse_equivalence()
-    assert result["all_passed"]
-    assert all(item["passed"] for item in result["seeds"].values())
+    assert not result["all_passed"]
+    assert result["fallback_triggered"]
+    assert all(
+        not item["checks"]["required_checkpoint_schedule_replay"]
+        for item in result["seeds"].values()
+    )
 
 
 def test_manifest_has_exactly_30_excluded_paired_cells():
@@ -29,7 +33,10 @@ def test_manifest_has_exactly_30_excluded_paired_cells():
     )
 
 
-def test_only_frozen_C0_seeds_are_reused():
+def test_all_five_C0_seeds_are_new_after_fallback():
     runs = build_cue_dose_runs()
     reused = [run.run_id for run in runs if run.reused_source_run_id]
-    assert reused == ["cue_C0_s0", "cue_C0_s1", "cue_C0_s2"]
+    assert reused == []
+    controls = [run for run in runs if run.condition_id == "C0"]
+    assert len(controls) == 5
+    assert all(run.execution_mode == "new_training" for run in controls)

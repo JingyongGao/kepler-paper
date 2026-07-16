@@ -1,0 +1,21 @@
+{
+  "kind": "cue_C0_control_reuse_fallback_trigger",
+  "failed_run_id": "cue_C0_s0",
+  "failed_at_exposure": 5000000,
+  "previous_cue_dose_manifest_sha256": "7b8720fd21b730e0fec7aaf21f6e96287001cea69deaf3cce18c26af2586a594",
+  "source_run_id": "composition_G1_s0",
+  "source_resume_exposure": 2000000,
+  "failed_checks": {
+    "model_state_equal": false,
+    "optimizer_state_equal": false,
+    "numpy_rng_state_equal": false,
+    "pair_frequency_counts_equal": false,
+    "torch_cpu_rng_state_equal": true,
+    "absolute_exposure_equal": true
+  },
+  "cause": "Adding required 3M and 4M checkpoint boundaries changes batch partitioning and therefore interleaves pair and noise RNG draws differently from the frozen G1 continuation.",
+  "performance_results_consulted": false,
+  "fallback_rule": "Run all five lambda=0 controls again from initialization.",
+  "failed_partial_artifact_archive": "artifacts/cue_dose_failed_reuse/cue_C0_s0",
+  "failed_partial_run_excluded": true
+}

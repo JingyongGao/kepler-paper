@@ -1,0 +1,36 @@
+{
+  "kind": "kepler_v3_4_freeze_record",
+  "recorded_date": "2026-07-17",
+  "frozen_branch": "kepler-v3.3-compositional-generalization",
+  "frozen_commit": "a55daafb22372e4af6587d73c6c81d00785e0416",
+  "frozen_tag": "kepler-v3.3-composition1",
+  "new_branch": "kepler-v3.4-symmetry-breaking",
+  "existing_tags": {
+    "kepler-v3.2.2-rc1": "a5d98f98bdcd4ccf891d662c7630fc795aff4563",
+    "kepler-v3.2.2-audit1": "32edf3f8839bd3f828d2793411630c64f41a127c",
+    "kepler-v3.3-mechanism1": "2b641e09ed5cf0de9daf6585a690693dee5518a0",
+    "kepler-v3.3-composition1": "a55daafb22372e4af6587d73c6c81d00785e0416"
+  },
+  "top_level_artifact_sha256": {
+    "artifacts/checkpoint_gradient_dynamics_audit.json": "4a45b5cd539b25de966e814ef22d4287aed05af1f8ada1979a02c9d3f4183cfb",
+    "artifacts/compositional_generalization_manifest.json": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "artifacts/environment_audit.json": "d883f72bbc78733d56f9f0a03f749a9a025515806a8b0178d5b9a9edb4ffc995",
+    "artifacts/fixed_batch_generalization_audit.json": "08fde96bb90ef414bdee902c62ce6811f372958393b2979c0dd3321eb0768272",
+    "artifacts/fixed_batch_overfit_audit.json": "6d22ef29e6c9c7a10d8cbf3dde7bb4b3c0cecc20474fe89643f5b980cb40b46c",
+    "artifacts/initialization_gradient_signal_audit.json": "fd8fb468f7ba6ec9ca9b125d9c36e0392d9d2c2529fbc118ff8b259af7b0a282",
+    "artifacts/learnability_audit_manifest.json": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "artifacts/manifest.json": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+    "artifacts/mechanism_isolation_manifest.json": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "artifacts/no_training_metric_audit.checkpoint_batch1.json": "a5cc496bb6963125fef85cec9e2ade06dbd452d6a5806423c01a5f87a33d5d04",
+    "artifacts/no_training_metric_audit.checkpoint_batch16.json": "93c8d1fe2bc2f1292ae5f2af912cc94aa122c717b3fb1c52d044b96266a5c302",
+    "artifacts/no_training_metric_audit.checkpoint_reload.json": "93c8d1fe2bc2f1292ae5f2af912cc94aa122c717b3fb1c52d044b96266a5c302",
+    "artifacts/no_training_metric_audit.json": "f20b480d317482582d83d3ee6b9eb08511fabd2095154dbba1cf870a2eeef248",
+    "artifacts/parent_pair_split.json": "273fea214893ffd818737a1c9faa75b8d47a5bc3cafb184796868580d757cab2",
+    "artifacts/phase4_task_attachment.pt": "4519281fd183facfbc9ea6e52976d084d41a62bb70a8b1ac8a4b2734923f5140",
+    "artifacts/phase4_task_attachment.pt.sha256": "5b14bbf07130cb6a6cc8d9c2139e12e2db8ae10e64b589095654d2147ca12815",
+    "artifacts/pilot_manifest.json": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "artifacts/production_suspension_status.json": "dd301b92076294ef8387dc8c1a077ad204fc33e7fa70107bdcbd9dbc8b39e9fd",
+    "artifacts/pure_synergy_audit.json": "4404eba6e49c68e270c05bab2b206fd4766fc0098f4f99952116f119f744abee"
+  },
+  "prior_manifests_modified": false
+}

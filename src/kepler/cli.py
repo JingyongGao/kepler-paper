@@ -356,6 +356,37 @@ def _cue_distribution_audit(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cue_dose_manifest(args: argparse.Namespace) -> int:
+    from .cue_dose import write_cue_dose_manifest
+
+    output, checksum = write_cue_dose_manifest(args.output, args.audit)
+    _json({"runs": 30, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _cue_dose_run(args: argparse.Namespace) -> int:
+    from .cue_dose_runner import run_cue_dose
+
+    _json(
+        run_cue_dose(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            audit_path=args.audit,
+            device_name=args.device,
+            resume=args.resume,
+        )
+    )
+    return 0
+
+
+def _cue_dose_status(args: argparse.Namespace) -> int:
+    from .cue_dose_runner import cue_dose_status
+
+    _json(cue_dose_status(args.run_root, args.audit))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -750,6 +781,35 @@ def build_parser() -> argparse.ArgumentParser:
         "--output", default="artifacts/cue_distribution_audit.json"
     )
     cue_audit.set_defaults(func=_cue_distribution_audit)
+
+    cue_manifest = sub.add_parser(
+        "cue-dose-manifest", help="write the 30-cell full-support cue-dose manifest"
+    )
+    cue_manifest.add_argument(
+        "--output", default="artifacts/cue_dose_manifest.json"
+    )
+    cue_manifest.add_argument(
+        "--audit", default="artifacts/cue_distribution_audit.json"
+    )
+    cue_manifest.set_defaults(func=_cue_dose_manifest)
+
+    cue_run = sub.add_parser(
+        "cue-dose-run", help="run one preregistered cue-dose seed-condition cell"
+    )
+    cue_run.add_argument("--run-id", required=True)
+    cue_run.add_argument("--run-root", default="artifacts/cue_dose_runs")
+    cue_run.add_argument("--manifest", default="artifacts/cue_dose_manifest.json")
+    cue_run.add_argument("--audit", default="artifacts/cue_distribution_audit.json")
+    cue_run.add_argument("--device", default="auto")
+    cue_run.add_argument("--resume")
+    cue_run.set_defaults(func=_cue_dose_run)
+
+    cue_status = sub.add_parser(
+        "cue-dose-status", help="report all 30 cue-dose cells"
+    )
+    cue_status.add_argument("--run-root", default="artifacts/cue_dose_runs")
+    cue_status.add_argument("--audit", default="artifacts/cue_distribution_audit.json")
+    cue_status.set_defaults(func=_cue_dose_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

@@ -1,0 +1,153 @@
+{
+  "created_from_git_commit": "5488604abb4721914d97fc920d32b510f39f4149",
+  "flags": {
+    "diagnostic_only": true,
+    "excluded_from_confirmatory_scaling_fit": true,
+    "exploratory": true
+  },
+  "forbidden": [
+    "production trajectories",
+    "matched recurrent or objective experiments",
+    "new support masks",
+    "extension beyond 20M total exposure",
+    "optimizer reset or global optimizer change"
+  ],
+  "frozen_split_sha256": "273fea214893ffd818737a1c9faa75b8d47a5bc3cafb184796868580d757cab2",
+  "kind": "full_support_transfer_gate",
+  "prior_manifest_sha256": {
+    "composition": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "learnability": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "mechanism": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "pilot": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "production": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10"
+  },
+  "prior_manifests_modified": false,
+  "project": "Project Kepler v3.4",
+  "protocol": {
+    "checkpoints": [
+      5500000,
+      6000000,
+      7500000,
+      10000000,
+      20000000
+    ],
+    "control_comparison": "use existing G1/G2 5M and 10M checkpoints to bracket 5.5M/6M/7.5M; use exact existing 10M and 20M controls at matching endpoints; no controls retrained",
+    "model_state_preserved": true,
+    "numpy_torch_cpu_torch_mps_rng_states_preserved": true,
+    "objective": "exact_soft_label_cross_entropy",
+    "only_sampler_replaced": true,
+    "optimizer_state_preserved_without_reset": true,
+    "post_transfer_support": "uniform_full_66049_pair_support",
+    "python_rng_deterministically_reconstructed_because_unused_after_initialization": true,
+    "scheduler_state_and_absolute_exposure_preserved": true,
+    "source_support": "frozen_G2_training_support",
+    "source_total_exposure": 5000000
+  },
+  "runs": [
+    {
+      "arm": "T",
+      "batch_size": 4096,
+      "checkpoints": [
+        5500000,
+        6000000,
+        7500000,
+        10000000,
+        20000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 1454497354,
+      "description": "continue frozen G2 5M state after replacing only the pair sampler with uniform full support",
+      "diagnostic_only": true,
+      "evaluation_seed": 971147594,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 20000000,
+      "model_initialization_seed": 0,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "pre_transfer_sampling_support": "frozen_G2_training_support",
+      "probe_seed": 1057836015,
+      "run_id": "full_support_transfer_s0",
+      "sampling_support": "full",
+      "source_checkpoint": "artifacts/compositional_runs/composition_G2_s0/checkpoint_5000000.pt",
+      "source_checkpoint_sha256": "4027af783c9b9f4f4260527b8d9d0d3339653abb1b176af0faff409086bbd6fe",
+      "source_run_id": "composition_G2_s0",
+      "target_core_parameters": 2000000,
+      "transfer_start_exposure": 5000000
+    },
+    {
+      "arm": "T",
+      "batch_size": 4096,
+      "checkpoints": [
+        5500000,
+        6000000,
+        7500000,
+        10000000,
+        20000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4265698507,
+      "description": "continue frozen G2 5M state after replacing only the pair sampler with uniform full support",
+      "diagnostic_only": true,
+      "evaluation_seed": 2055353163,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 20000000,
+      "model_initialization_seed": 1,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "pre_transfer_sampling_support": "frozen_G2_training_support",
+      "probe_seed": 2657303479,
+      "run_id": "full_support_transfer_s1",
+      "sampling_support": "full",
+      "source_checkpoint": "artifacts/compositional_runs/composition_G2_s1/checkpoint_5000000.pt",
+      "source_checkpoint_sha256": "bec8667e4fbf95059538ba7fb76cbc221decca769dd9bb11b15faeb4ec7ce0a7",
+      "source_run_id": "composition_G2_s1",
+      "target_core_parameters": 2000000,
+      "transfer_start_exposure": 5000000
+    },
+    {
+      "arm": "T",
+      "batch_size": 4096,
+      "checkpoints": [
+        5500000,
+        6000000,
+        7500000,
+        10000000,
+        20000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4207843790,
+      "description": "continue frozen G2 5M state after replacing only the pair sampler with uniform full support",
+      "diagnostic_only": true,
+      "evaluation_seed": 254365978,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 20000000,
+      "model_initialization_seed": 2,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "pre_transfer_sampling_support": "frozen_G2_training_support",
+      "probe_seed": 1986986770,
+      "run_id": "full_support_transfer_s2",
+      "sampling_support": "full",
+      "source_checkpoint": "artifacts/compositional_runs/composition_G2_s2/checkpoint_5000000.pt",
+      "source_checkpoint_sha256": "f596f5123f1040453ca854d8ce08d1a356c1e801bef2642cc0ea9a9f6746b2d3",
+      "source_run_id": "composition_G2_s2",
+      "target_core_parameters": 2000000,
+      "transfer_start_exposure": 5000000
+    }
+  ]
+}

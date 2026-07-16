@@ -1,0 +1,277 @@
+{
+  "coefficients_reused_from_existing_k2_d4_rule0": [
+    45,
+    36
+  ],
+  "created_from_git_commit": "32edf3f8839bd3f828d2793411630c64f41a127c",
+  "flags": {
+    "diagnostic_only": true,
+    "excluded_from_confirmatory_fit": true,
+    "exploratory": true
+  },
+  "forbidden_automatic_extensions": [
+    "p=17",
+    "Fourier initialization",
+    "curriculum learning",
+    "global optimizer changes",
+    "remaining micro-pilot",
+    "production trajectories"
+  ],
+  "gradient_signal_audit": {
+    "independent_batches_per_initialization_and_task": 32,
+    "loss": "exact_soft_label_population_cross_entropy",
+    "model": "2M",
+    "model_initializations": 8,
+    "p": 257,
+    "tasks": [
+      {
+        "coefficients": [
+          45
+        ],
+        "d": 1,
+        "k": 1,
+        "lags": [
+          1
+        ]
+      },
+      {
+        "coefficients": [
+          45
+        ],
+        "d": 4,
+        "k": 1,
+        "lags": [
+          4
+        ]
+      },
+      {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 2,
+        "k": 2,
+        "lags": [
+          1,
+          2
+        ]
+      },
+      {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 4,
+        "k": 2,
+        "lags": [
+          1,
+          4
+        ]
+      }
+    ],
+    "trained": false
+  },
+  "kind": "mechanism_isolation_audit",
+  "prior_manifest_sha256": {
+    "learnability_audit": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "pilot": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "production": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10"
+  },
+  "prior_manifests_mutated": false,
+  "project": "Project Kepler",
+  "runs": [
+    {
+      "actual_core_parameters": 2045568,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000
+      ],
+      "data_seed": 904275845,
+      "description": "long-span single-parent retrieval control",
+      "diagnostic_only": true,
+      "evaluation_seed": 1716944834,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "exposure_unit": "fresh_supervised_tokens",
+      "loss_type": "sampled_nll",
+      "maximum_exposure": 10000000,
+      "model_initialization_seed": 0,
+      "model_kind": "recurrent_transformer",
+      "probe_checkpoints": [
+        500000,
+        2000000,
+        10000000
+      ],
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "purpose": "isolate lag-4 retrieval without a multi-parent interaction",
+      "rule": {
+        "coefficients": [
+          45
+        ],
+        "d": 4,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 1,
+        "lags": [
+          4
+        ],
+        "p": 257
+      },
+      "run_id": "mechanism_M1",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110248,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 10209152,
+      "checkpoints": [
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "data_seed": 1534351822,
+      "description": "short-span two-parent interaction control",
+      "diagnostic_only": true,
+      "evaluation_seed": 3073232850,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "exposure_unit": "fresh_supervised_tokens",
+      "loss_type": "sampled_nll",
+      "maximum_exposure": 40000000,
+      "model_initialization_seed": 0,
+      "model_kind": "recurrent_transformer",
+      "probe_checkpoints": [
+        5000000,
+        20000000,
+        40000000
+      ],
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "purpose": "remove long span while retaining the pure two-parent interaction",
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 2,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          2
+        ],
+        "p": 257
+      },
+      "run_id": "mechanism_M2",
+      "target_core_parameters": 10000000,
+      "total_parameters": 10353912,
+      "width": 376
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000
+      ],
+      "data_seed": 2317905570,
+      "description": "parent-exposed Transformer",
+      "diagnostic_only": true,
+      "evaluation_seed": 2518089452,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "exposure_unit": "independent_uniform_parent_pairs",
+      "loss_type": "oracle_soft",
+      "maximum_exposure": 10000000,
+      "model_initialization_seed": 0,
+      "model_kind": "parent_exposed_transformer",
+      "probe_checkpoints": [
+        500000,
+        2000000,
+        10000000
+      ],
+      "probe_layers": [
+        0,
+        3,
+        6
+      ],
+      "purpose": "test modular pair composition without recurrence, distractors, or support discovery",
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 2,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          2
+        ],
+        "p": 257
+      },
+      "run_id": "mechanism_M3",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045940,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000
+      ],
+      "data_seed": 4145866221,
+      "description": "concatenated-parent MLP",
+      "diagnostic_only": true,
+      "evaluation_seed": 417507292,
+      "excluded_from_confirmatory_fit": true,
+      "exploratory": true,
+      "exposure_unit": "independent_uniform_parent_pairs",
+      "loss_type": "oracle_soft",
+      "maximum_exposure": 10000000,
+      "model_initialization_seed": 0,
+      "model_kind": "concatenated_parent_mlp",
+      "probe_checkpoints": [],
+      "probe_layers": [],
+      "purpose": "remove attention while retaining the same modular pair target",
+      "rule": {
+        "coefficients": [
+          45,
+          36
+        ],
+        "d": 2,
+        "eta": 0.1,
+        "instance": 0,
+        "k": 2,
+        "lags": [
+          1,
+          2
+        ],
+        "p": 257
+      },
+      "run_id": "mechanism_M4",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2132292,
+      "width": 168
+    }
+  ]
+}

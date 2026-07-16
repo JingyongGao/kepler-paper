@@ -39,3 +39,4 @@ artifacts/*
 !artifacts/manifest.json
 !artifacts/pilot_manifest.json
 !artifacts/learnability_audit_manifest.json
+!artifacts/mechanism_isolation_manifest.json

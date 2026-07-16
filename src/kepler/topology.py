@@ -22,9 +22,11 @@ TOPOLOGIES: tuple[tuple[int, int], ...] = (
 def anchored_lags(k: int, d: int) -> tuple[int, ...]:
     """Endpoint-anchored relative-isometric integer lag layout."""
     if k == 1:
-        if d != 1:
-            raise ValueError("the diagnostic single-parent control requires k=d=1")
-        return (1,)
+        if d < 1:
+            raise ValueError("d must be positive")
+        # Single-parent controls use d as the parent's explicit lag.  They are
+        # diagnostic-only and do not alter the k>=2 production layout.
+        return (d,)
     if k < 1:
         raise ValueError("k must be positive")
     if d < k:

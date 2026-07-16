@@ -198,6 +198,52 @@ def _learnability_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _mechanism_manifest(args: argparse.Namespace) -> int:
+    from .mechanism import write_mechanism_manifest
+
+    output, checksum = write_mechanism_manifest(args.output)
+    _json({"runs": 4, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _gradient_signal_audit(args: argparse.Namespace) -> int:
+    from .gradient_audit import run_initialization_gradient_audit
+
+    result = run_initialization_gradient_audit(
+        args.output,
+        device_name=args.device,
+        initializations=8,
+        batches_per_initialization=32,
+        batch_size=args.batch_size,
+    )
+    _json({"output": str(Path(args.output).resolve()), "tasks": list(result["tasks"])})
+    return 0
+
+
+def _mechanism_run(args: argparse.Namespace) -> int:
+    from .mechanism_runner import run_mechanism_isolation
+
+    _json(
+        run_mechanism_isolation(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            device_name=args.device,
+            batch_size=args.batch_size,
+            resume=args.resume,
+            stop_after_exposure=args.stop_after_exposure,
+        )
+    )
+    return 0
+
+
+def _mechanism_status(args: argparse.Namespace) -> int:
+    from .mechanism_runner import mechanism_status
+
+    _json(mechanism_status(args.run_root))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -427,6 +473,46 @@ def build_parser() -> argparse.ArgumentParser:
         "--run-root", default="artifacts/learnability_runs"
     )
     learnability_status_parser.set_defaults(func=_learnability_status)
+
+    mechanism_manifest = sub.add_parser(
+        "mechanism-manifest", help="write the isolated M1-M4 diagnostic manifest"
+    )
+    mechanism_manifest.add_argument(
+        "--output", default="artifacts/mechanism_isolation_manifest.json"
+    )
+    mechanism_manifest.set_defaults(func=_mechanism_manifest)
+
+    gradient_signal = sub.add_parser(
+        "gradient-signal-audit", help="run the registered no-training 8x32 gradient audit"
+    )
+    gradient_signal.add_argument(
+        "--output", default="artifacts/initialization_gradient_signal_audit.json"
+    )
+    gradient_signal.add_argument("--device", default="auto")
+    gradient_signal.add_argument("--batch-size", type=int, default=8)
+    gradient_signal.set_defaults(func=_gradient_signal_audit)
+
+    mechanism_run = sub.add_parser(
+        "mechanism-run", help="run one isolated diagnostic M1-M4"
+    )
+    mechanism_run.add_argument("--run-id", required=True)
+    mechanism_run.add_argument("--run-root", default="artifacts/mechanism_runs")
+    mechanism_run.add_argument(
+        "--manifest", default="artifacts/mechanism_isolation_manifest.json"
+    )
+    mechanism_run.add_argument("--device", default="auto")
+    mechanism_run.add_argument("--batch-size", type=int)
+    mechanism_run.add_argument("--resume")
+    mechanism_run.add_argument("--stop-after-exposure", type=int)
+    mechanism_run.set_defaults(func=_mechanism_run)
+
+    mechanism_status_parser = sub.add_parser(
+        "mechanism-status", help="report M1-M4 completion"
+    )
+    mechanism_status_parser.add_argument(
+        "--run-root", default="artifacts/mechanism_runs"
+    )
+    mechanism_status_parser.set_defaults(func=_mechanism_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

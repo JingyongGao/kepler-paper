@@ -27,6 +27,13 @@ positive coordinates.
 - Evaluation uses the full exact conditional distribution to calculate KL and
   normalized excess error `R`; soft conditionals never enter the training loss.
 
+For uniform independent parents, `k` is not merely the generator's fan-in.  It
+is also the order of a pure synergistic interaction: every proper parent subset
+has exactly zero mutual information with the next token, while the complete
+`k`-parent tuple carries `log(p) - H(nu_eta)` nats.  Thus increasing `k` changes
+the order of the interaction without changing the registered per-token
+predictable information.
+
 ## Setup and first checks
 
 ```bash

@@ -15,6 +15,7 @@ from kepler.topology import anchored_lags
 
 def test_single_parent_lag_is_diagnostic_only_and_manifest_is_exact():
     assert anchored_lags(1, 1) == (1,)
+    assert anchored_lags(1, 4) == (4,)
     runs = build_learnability_manifest()
     assert len(runs) == 3
     assert all(

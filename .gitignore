@@ -45,3 +45,4 @@ artifacts/*
 !artifacts/parent_pair_split.json
 !artifacts/compositional_generalization_manifest.json
 !artifacts/v3_4_freeze_record.json
+!artifacts/support_information_audit.json

@@ -294,6 +294,14 @@ def _composition_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _support_information_audit(args: argparse.Namespace) -> int:
+    from .support_information import write_support_information_audit
+
+    output, checksum = write_support_information_audit(args.output, args.split)
+    _json({"output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -608,6 +616,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     composition_status.add_argument("--run-root", default="artifacts/compositional_runs")
     composition_status.set_defaults(func=_composition_status)
+
+    support_information = sub.add_parser(
+        "support-information-audit",
+        help="enumerate exact singleton information on the frozen pair supports",
+    )
+    support_information.add_argument(
+        "--output", default="artifacts/support_information_audit.json"
+    )
+    support_information.add_argument(
+        "--split", default="artifacts/parent_pair_split.json"
+    )
+    support_information.set_defaults(func=_support_information_audit)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

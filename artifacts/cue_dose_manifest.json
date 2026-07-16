@@ -1,7 +1,10 @@
 {
   "control_reuse": {
     "assertions": {
-      "all_passed": true,
+      "all_passed": false,
+      "failure_record": "artifacts/cue_c0_reuse_failure.json",
+      "fallback_reason": "Required 3M/4M checkpoint boundaries change batch partitioning and the interleaving of pair/noise RNG draws, so deterministic continuation does not reproduce the frozen G1 5M state.",
+      "fallback_triggered": true,
       "seeds": {
         "0": {
           "candidate_initial_weight_sha256": "63c29b04dea5079fb8fae6862fe58b7e9dc8d3784d041e36530de1b98c9c31fd",
@@ -13,10 +16,11 @@
             "optimizer_config": true,
             "pair_sampler": true,
             "registered_seeds": true,
+            "required_checkpoint_schedule_replay": false,
             "sampled_label_rng": true,
             "scheduler": true
           },
-          "passed": true,
+          "passed": false,
           "source_checkpoint_2M_sha256": "02292c954de5d510671ee9ddbc4f955114c39d14a13e6db758e6ded6c70bd981",
           "source_initial_weight_sha256": "63c29b04dea5079fb8fae6862fe58b7e9dc8d3784d041e36530de1b98c9c31fd",
           "source_run_id": "composition_G1_s0"
@@ -31,10 +35,11 @@
             "optimizer_config": true,
             "pair_sampler": true,
             "registered_seeds": true,
+            "required_checkpoint_schedule_replay": false,
             "sampled_label_rng": true,
             "scheduler": true
           },
-          "passed": true,
+          "passed": false,
           "source_checkpoint_2M_sha256": "b121597823706ff84539e46b744bfc26173a6755b3cf6bfe6af428a4dd4efa7e",
           "source_initial_weight_sha256": "a6e87477f87c7624e61ce8e10c11006aed2e7bfb3f9db0fa9cdc15e98b5a7540",
           "source_run_id": "composition_G1_s1"
@@ -49,19 +54,20 @@
             "optimizer_config": true,
             "pair_sampler": true,
             "registered_seeds": true,
+            "required_checkpoint_schedule_replay": false,
             "sampled_label_rng": true,
             "scheduler": true
           },
-          "passed": true,
+          "passed": false,
           "source_checkpoint_2M_sha256": "8b8053554a93b18e257fdec9f8175e2ec989da45c74c4b6612083cf085096776",
           "source_initial_weight_sha256": "e684e2220016d5755365942cf1ea1fb4c1b20055e4e34d980a6c2a3fea9c7183",
           "source_run_id": "composition_G1_s2"
         }
       }
     },
-    "policy": "reuse_seeds_0_to_2_with_replay_for_missing_checkpoints_and_run_3_to_4_new"
+    "policy": "run_all_five_C0_controls_new"
   },
-  "created_from_git_commit": "2f865a940649611ff4c6d8884f532a8a259a1d1b",
+  "created_from_git_commit": "8ee4c11902e57a9ae3bf6b3eedd2bade27c293d4",
   "cue_distribution_audit": {
     "path": "artifacts/cue_distribution_audit.json",
     "sha256": "e6ce056320307dddd21691e475e7c604f7d02f880f89821f8c89545803fddc0a"
@@ -202,7 +208,7 @@
       "diagnostic_only": true,
       "evaluation_seed": 3591743300,
       "excluded_from_confirmatory_scaling_fit": true,
-      "execution_mode": "frozen_G1_reuse_with_deterministic_replay_from_2M",
+      "execution_mode": "new_training",
       "exploratory": true,
       "gradient_audit_checkpoints": [
         0,
@@ -231,7 +237,7 @@
         10000000
       ],
       "probe_seed": 252955824,
-      "reused_source_run_id": "composition_G1_s0",
+      "reused_source_run_id": null,
       "run_id": "cue_C0_s0",
       "switch_exposure": 5000000,
       "target_core_parameters": 2000000,
@@ -331,7 +337,7 @@
       "diagnostic_only": true,
       "evaluation_seed": 4219147053,
       "excluded_from_confirmatory_scaling_fit": true,
-      "execution_mode": "frozen_G1_reuse_with_deterministic_replay_from_2M",
+      "execution_mode": "new_training",
       "exploratory": true,
       "gradient_audit_checkpoints": [
         0,
@@ -360,7 +366,7 @@
         10000000
       ],
       "probe_seed": 2243163775,
-      "reused_source_run_id": "composition_G1_s1",
+      "reused_source_run_id": null,
       "run_id": "cue_C0_s1",
       "switch_exposure": 5000000,
       "target_core_parameters": 2000000,
@@ -460,7 +466,7 @@
       "diagnostic_only": true,
       "evaluation_seed": 2634833603,
       "excluded_from_confirmatory_scaling_fit": true,
-      "execution_mode": "frozen_G1_reuse_with_deterministic_replay_from_2M",
+      "execution_mode": "new_training",
       "exploratory": true,
       "gradient_audit_checkpoints": [
         0,
@@ -489,7 +495,7 @@
         10000000
       ],
       "probe_seed": 3194591644,
-      "reused_source_run_id": "composition_G1_s2",
+      "reused_source_run_id": null,
       "run_id": "cue_C0_s2",
       "switch_exposure": 5000000,
       "target_core_parameters": 2000000,

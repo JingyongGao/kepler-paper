@@ -182,3 +182,26 @@ mixed with sampled-NLL scaling curves. Evaluation includes exact `R`, Episode
 bootstrap intervals, center-state accuracy/probability, entropy, training and
 fresh NLL, per-block gradient/update norms, and independent linear/Fourier/fixed-
 capacity-MLP probes. See `LEARNABILITY_AUDIT_REPORT.md` for the completed audit.
+
+## Mechanism isolation audit
+
+The post-audit branch keeps all four mechanism controls in a third, independent
+manifest.  Every row is exploratory, diagnostic-only, and excluded from the
+confirmatory scaling fit:
+
+```bash
+uv run kepler mechanism-manifest
+uv run kepler gradient-signal-audit --device mps
+uv run kepler mechanism-run --run-id mechanism_M1 --device mps
+uv run kepler mechanism-run --run-id mechanism_M2 --device mps
+uv run kepler mechanism-run --run-id mechanism_M3 --device mps
+uv run kepler mechanism-run --run-id mechanism_M4 --device mps
+uv run kepler mechanism-status
+```
+
+M1 isolates lag-4 retrieval, M2 retains two-parent synergy at lags 1 and 2,
+M3 exposes the two parents directly to the frozen-geometry Transformer, and M4
+removes attention with a parameter-matched concatenated-parent MLP.  M3/M4 train
+on exact conditionals and enumerate all 66,049 parent pairs at evaluation.  The
+secondary held-out-pair diagnostic uses only pairs whose empirical online
+training frequency is zero; it does not change the uniform training stream.

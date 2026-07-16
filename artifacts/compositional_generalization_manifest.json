@@ -1,0 +1,270 @@
+{
+  "created_from_git_commit": "e4168cda92c4f24bfe5644d11e4e25b1b0da7756",
+  "flags": {
+    "diagnostic_only": true,
+    "excluded_from_confirmatory_scaling_fit": true,
+    "exploratory": true
+  },
+  "forbidden_in_this_gate": [
+    "production trajectories",
+    "remaining micro-pilot",
+    "M2 extension",
+    "field-size sweep",
+    "Fourier initialization",
+    "curriculum learning",
+    "recurrent parent markers",
+    "bilinear or gated MLPs",
+    "global optimizer changes"
+  ],
+  "kind": "compositional_generalization_gate",
+  "paired_protocol": {
+    "batch_size": 4096,
+    "checkpoints": [
+      500000,
+      1000000,
+      2000000,
+      5000000,
+      10000000,
+      20000000,
+      40000000
+    ],
+    "model_initialization_seeds": [
+      0,
+      1,
+      2
+    ],
+    "objective": "exact_soft_label_cross_entropy",
+    "same_data_rng_seed_within_seed": true,
+    "same_initialization_within_seed": true,
+    "same_optimizer_schedule_and_evaluation_code": true
+  },
+  "parent_pair_split": {
+    "assignment_sha256": "f16c708e5b49f1aab8a0f8e4ccaadcc8da506ca22d8ac210a583a12d5a1371c9",
+    "file_sha256": "273fea214893ffd818737a1c9faa75b8d47a5bc3cafb184796868580d757cab2",
+    "heldout_pairs": 13210,
+    "path": "artifacts/parent_pair_split.json",
+    "preregistered_sha256_seed": "ba2f84572c3b0c5d3f27b0bf5d8c8e92505cc0a5b18c9274b0ef013c3d90c02f",
+    "train_pairs": 52839
+  },
+  "prior_manifest_sha256": {
+    "learnability": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "mechanism": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "pilot": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "production": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10"
+  },
+  "prior_manifests_modified": false,
+  "production_status": "suspended_before_execution",
+  "project": "Project Kepler v3.3",
+  "runs": [
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G1",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 1454497354,
+      "description": "full-support parent-pair reference",
+      "diagnostic_only": true,
+      "evaluation_seed": 971147594,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 0,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 1057836015,
+      "run_id": "composition_G1_s0",
+      "sampling_support": "full",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G2",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 1454497354,
+      "description": "frozen-80%-support compositional generalization test",
+      "diagnostic_only": true,
+      "evaluation_seed": 971147594,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 0,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 1057836015,
+      "run_id": "composition_G2_s0",
+      "sampling_support": "train",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G1",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4265698507,
+      "description": "full-support parent-pair reference",
+      "diagnostic_only": true,
+      "evaluation_seed": 2055353163,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 1,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 2657303479,
+      "run_id": "composition_G1_s1",
+      "sampling_support": "full",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G2",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4265698507,
+      "description": "frozen-80%-support compositional generalization test",
+      "diagnostic_only": true,
+      "evaluation_seed": 2055353163,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 1,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 2657303479,
+      "run_id": "composition_G2_s1",
+      "sampling_support": "train",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G1",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4207843790,
+      "description": "full-support parent-pair reference",
+      "diagnostic_only": true,
+      "evaluation_seed": 254365978,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 2,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 1986986770,
+      "run_id": "composition_G1_s2",
+      "sampling_support": "full",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "arm": "G2",
+      "batch_size": 4096,
+      "checkpoints": [
+        500000,
+        1000000,
+        2000000,
+        5000000,
+        10000000,
+        20000000,
+        40000000
+      ],
+      "coefficients": [
+        45,
+        36
+      ],
+      "data_seed": 4207843790,
+      "description": "frozen-80%-support compositional generalization test",
+      "diagnostic_only": true,
+      "evaluation_seed": 254365978,
+      "excluded_from_confirmatory_scaling_fit": true,
+      "exploratory": true,
+      "loss_type": "oracle_soft",
+      "maximum_pair_exposures": 40000000,
+      "model_initialization_seed": 2,
+      "model_kind": "parent_exposed_transformer",
+      "p": 257,
+      "probe_seed": 1986986770,
+      "run_id": "composition_G2_s2",
+      "sampling_support": "train",
+      "target_core_parameters": 2000000,
+      "total_parameters": 2110416,
+      "width": 168
+    }
+  ]
+}

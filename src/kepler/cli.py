@@ -401,6 +401,54 @@ def _cue_dose_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
+def _confirmatory_distribution_audit(args: argparse.Namespace) -> int:
+    from .confirmatory_distribution import (
+        write_confirmatory_distribution_audit,
+    )
+
+    output, checksum = write_confirmatory_distribution_audit(args.output)
+    _json(
+        {
+            "output": str(output.resolve()),
+            "sha256": checksum,
+            "rule_permutation_conditions": 12,
+            "trained": False,
+        }
+    )
+    return 0
+
+
+def _confirmatory_manifest(args: argparse.Namespace) -> int:
+    from .confirmatory import write_confirmatory_manifest
+
+    output, checksum = write_confirmatory_manifest(args.output, args.audit)
+    _json({"runs": 24, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
+def _confirmatory_run(args: argparse.Namespace) -> int:
+    from .confirmatory_runner import run_confirmatory
+
+    _json(
+        run_confirmatory(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            audit_path=args.audit,
+            device_name=args.device,
+            resume=args.resume,
+        )
+    )
+    return 0
+
+
+def _confirmatory_status(args: argparse.Namespace) -> int:
+    from .confirmatory_runner import confirmatory_status
+
+    _json(confirmatory_status(args.run_root, args.audit))
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -832,6 +880,55 @@ def build_parser() -> argparse.ArgumentParser:
     cue_analysis.add_argument("--manifest", default="artifacts/cue_dose_manifest.json")
     cue_analysis.add_argument("--output", default="artifacts/cue_dose_results.json")
     cue_analysis.set_defaults(func=_cue_dose_analyze)
+
+    confirmatory_audit = sub.add_parser(
+        "confirmatory-distribution-audit",
+        help="generate and exactly audit the independent v3.6 replication blocks",
+    )
+    confirmatory_audit.add_argument(
+        "--output", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    confirmatory_audit.set_defaults(func=_confirmatory_distribution_audit)
+
+    confirmatory_manifest = sub.add_parser(
+        "confirmatory-manifest",
+        help="write the 24-trajectory cross-rule cue-dose replication manifest",
+    )
+    confirmatory_manifest.add_argument(
+        "--output", default="artifacts/cue_dose_confirmatory_manifest.json"
+    )
+    confirmatory_manifest.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    confirmatory_manifest.set_defaults(func=_confirmatory_manifest)
+
+    confirmatory_run = sub.add_parser(
+        "confirmatory-run", help="run one frozen v3.6 confirmatory trajectory"
+    )
+    confirmatory_run.add_argument("--run-id", required=True)
+    confirmatory_run.add_argument(
+        "--run-root", default="artifacts/confirmatory_runs"
+    )
+    confirmatory_run.add_argument(
+        "--manifest", default="artifacts/cue_dose_confirmatory_manifest.json"
+    )
+    confirmatory_run.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    confirmatory_run.add_argument("--device", default="auto")
+    confirmatory_run.add_argument("--resume")
+    confirmatory_run.set_defaults(func=_confirmatory_run)
+
+    confirmatory_status = sub.add_parser(
+        "confirmatory-status", help="report all 24 v3.6 replication trajectories"
+    )
+    confirmatory_status.add_argument(
+        "--run-root", default="artifacts/confirmatory_runs"
+    )
+    confirmatory_status.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    confirmatory_status.set_defaults(func=_confirmatory_status)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

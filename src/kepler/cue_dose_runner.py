@@ -127,12 +127,17 @@ def _forward_full_support(
     device: torch.device,
     *,
     collect_residuals: bool,
+    coefficients: tuple[int, int] = (45, 36),
+    p: int = 257,
+    eta: float = 0.1,
     batch_size: int = 8192,
 ):
     grid = np.stack(
-        np.meshgrid(np.arange(257), np.arange(257), indexing="ij"), axis=-1
+        np.meshgrid(np.arange(p), np.arange(p), indexing="ij"), axis=-1
     ).reshape(-1, 2)
-    centers_np = (45 * grid[:, 0] + 36 * grid[:, 1]) % 257
+    centers_np = (
+        coefficients[0] * grid[:, 0] + coefficients[1] * grid[:, 1]
+    ) % p
     kl_parts, correct_parts, probability_parts, entropy_parts = [], [], [], []
     residual_parts: dict[int, list[torch.Tensor]] = (
         {0: [], 3: [], 6: []} if collect_residuals else {}
@@ -154,7 +159,7 @@ def _forward_full_support(
         log_probs = torch.log_softmax(logits, dim=-1)
         probabilities = log_probs.exp()
         kl_parts.append(
-            torch_exact_conditional_kl(log_probs, centers, 257, 0.1).cpu().numpy()
+            torch_exact_conditional_kl(log_probs, centers, p, eta).cpu().numpy()
         )
         correct_parts.append((logits.argmax(dim=-1) == centers).cpu().numpy())
         probability_parts.append(
@@ -245,9 +250,16 @@ def evaluate_cue_model(
         entropy,
         residuals,
         output_hash,
-    ) = _forward_full_support(model, device, collect_residuals=run_probes)
-    r_values = kl / predictable_information(257, 0.1)
-    full = np.ones(257 * 257, dtype=np.bool_)
+    ) = _forward_full_support(
+        model,
+        device,
+        collect_residuals=run_probes,
+        coefficients=tuple(run.coefficients),
+        p=run.p,
+        eta=DEFAULT_CONFIG.field.eta,
+    )
+    r_values = kl / predictable_information(run.p, DEFAULT_CONFIG.field.eta)
+    full = np.ones(run.p * run.p, dtype=np.bool_)
     metrics = _basic_partition_metrics(
         "full",
         full,

@@ -1,0 +1,10 @@
+name: kepler-paper-v1
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - poppler=26.05
+  - pip
+  - pip:
+      - -e ..
+      - reportlab==4.4.9

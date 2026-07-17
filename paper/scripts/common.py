@@ -119,19 +119,17 @@ def markdown_table(headers: Sequence[str], rows: Iterable[Sequence[Any]]) -> str
 
 def latex_escape(value: Any) -> str:
     text = str(value)
-    replacements = (
-        ("\\", r"\textbackslash{}"),
-        ("&", r"\&"),
-        ("%", r"\%"),
-        ("$", r"\$"),
-        ("#", r"\#"),
-        ("_", r"\_"),
-        ("{", r"\{"),
-        ("}", r"\}"),
-    )
-    for original, replacement in replacements:
-        text = text.replace(original, replacement)
-    return text
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+    }
+    return "".join(replacements.get(character, character) for character in text)
 
 
 def latex_table(
@@ -148,13 +146,22 @@ def latex_table(
         r"\centering",
         rf"\caption{{{latex_escape(caption)}}}",
         rf"\label{{{latex_escape(label)}}}",
+        r"\resizebox{\linewidth}{!}{%",
         rf"\begin{{tabular}}{{{columns}}}",
         r"\toprule",
         " & ".join(escaped_headers) + r" \\",
         r"\midrule",
     ]
     lines.extend(" & ".join(row) + r" \\" for row in escaped_rows)
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabular}%",
+            r"}",
+            r"\end{table}",
+            "",
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -171,14 +178,16 @@ def checkpoint_seed_provenance(
             if metric["checkpoint_sha256"] is not None
         }
     )
-    model_seeds = sorted(
-        {
-            int(cell.get("model_initialization_seed", cell.get("seed", -1)))
-            for cell in cells
-        }
-    )
-    if model_seeds == [-1]:
+    if all("model_initialization_seed" in cell for cell in cells):
+        model_seeds = sorted(
+            {int(cell["model_initialization_seed"]) for cell in cells}
+        )
+    elif all("seed" in cell for cell in cells):
         model_seeds = sorted({int(cell["seed"]) for cell in cells})
+    else:
+        model_seeds = sorted(
+            {int(run["model_initialization_seed"]) for run in manifest["runs"]}
+        )
     exposures = sorted(
         {
             int(metric["exposed_pairs"])
@@ -188,6 +197,11 @@ def checkpoint_seed_provenance(
     )
     return {
         "cell_count": len(cells),
+        "checkpoint_reference_count": sum(
+            metric["checkpoint_sha256"] is not None
+            for cell in cells
+            for metric in cell["checkpoint_metrics"]
+        ),
         "checkpoint_hash_count": len(checkpoint_hashes),
         "checkpoint_sha256": checkpoint_hashes,
         "evaluation_exposures": exposures,
@@ -196,4 +210,3 @@ def checkpoint_seed_provenance(
         "manifest_sha256": result["manifest"]["sha256"],
         "registered_runs": len(manifest["runs"]),
     }
-

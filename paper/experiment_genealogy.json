@@ -1,0 +1,113 @@
+{
+  "edges": [
+    {
+      "from": "v3.2.2-rc1",
+      "to": "v3.2.2-learnability"
+    },
+    {
+      "from": "v3.2.2-learnability",
+      "to": "v3.3-mechanism"
+    },
+    {
+      "from": "v3.3-mechanism",
+      "to": "v3.3-composition"
+    },
+    {
+      "from": "v3.3-composition",
+      "to": "v3.4-transfer"
+    },
+    {
+      "from": "v3.4-transfer",
+      "to": "v3.5-discovery"
+    },
+    {
+      "from": "v3.5-discovery",
+      "relationship": "independent replication; discovery data excluded from primary p-value",
+      "to": "v3.6-confirmation"
+    },
+    {
+      "from": "v3.6-confirmation",
+      "relationship": "frozen JSON derivation only",
+      "to": "paper-v1"
+    }
+  ],
+  "kind": "machine_readable_experiment_genealogy",
+  "nodes": [
+    {
+      "commit": "a5d98f98bdcd4ccf891d662c7630fc795aff4563",
+      "id": "v3.2.2-rc1",
+      "manifest": "artifacts/manifest.json",
+      "manifest_sha256": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+      "role": "frozen engineering baseline",
+      "status": "baseline",
+      "tag": "kepler-v3.2.2-rc1"
+    },
+    {
+      "commit": "32edf3f8839bd3f828d2793411630c64f41a127c",
+      "id": "v3.2.2-learnability",
+      "manifest": "artifacts/learnability_audit_manifest.json",
+      "manifest_sha256": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+      "role": "learnability audit",
+      "status": "diagnostic",
+      "tag": "kepler-v3.2.2-audit1"
+    },
+    {
+      "commit": "2b641e09ed5cf0de9daf6585a690693dee5518a0",
+      "id": "v3.3-mechanism",
+      "manifest": "artifacts/mechanism_isolation_manifest.json",
+      "manifest_sha256": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+      "role": "mechanism isolation",
+      "status": "diagnostic",
+      "tag": "kepler-v3.3-mechanism1"
+    },
+    {
+      "commit": "a55daafb22372e4af6587d73c6c81d00785e0416",
+      "id": "v3.3-composition",
+      "manifest": "artifacts/compositional_generalization_manifest.json",
+      "manifest_sha256": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+      "role": "parent-pair compositional generalization",
+      "status": "exploratory",
+      "tag": "kepler-v3.3-composition1"
+    },
+    {
+      "commit": "1a81d8ea7057729cfb4275f1867f03687e0651b5",
+      "id": "v3.4-transfer",
+      "manifest": "artifacts/full_support_transfer_manifest.json",
+      "manifest_sha256": "5e158ea537ad267da5bc8bb262552ba9e28502e876a7edb3cde2e0bc0b3e1cbe",
+      "role": "full-support transfer",
+      "status": "exploratory",
+      "tag": "kepler-v3.4-transfer1"
+    },
+    {
+      "commit": "8788de3ffedd8ce120691c48c0d863796edd17ca",
+      "id": "v3.5-discovery",
+      "manifest": "artifacts/cue_dose_manifest.json",
+      "manifest_sha256": "cfae2e4656c11cf37be387147e76b2f4f9585805320935893f6b27056d42957b",
+      "result": "artifacts/cue_dose_results.json",
+      "result_sha256": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1",
+      "role": "cue-dose discovery and geometry controls",
+      "status": "exploratory_discovery",
+      "tag": "kepler-v3.5-cuedose1"
+    },
+    {
+      "commit": "f9fc22d85cd52863087afbb3f924466a63b30ba2",
+      "id": "v3.6-confirmation",
+      "manifest": "artifacts/cue_dose_confirmatory_manifest.json",
+      "manifest_sha256": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39",
+      "result": "artifacts/cue_dose_confirmatory_results.json",
+      "result_sha256": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0",
+      "role": "independent cross-rule cue-dose replication",
+      "status": "confirmatory_replication",
+      "tag": "kepler-v3.6-confirm1"
+    },
+    {
+      "branch": "kepler-paper-v1",
+      "id": "paper-v1",
+      "optimizer_steps": 0,
+      "role": "read-only manuscript derivation",
+      "source_tag": "kepler-v3.6-confirm1",
+      "status": "derived_no_training"
+    }
+  ],
+  "project": "Project Kepler"
+}

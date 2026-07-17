@@ -1,0 +1,224 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\title{Transient Low-Order Cues Bootstrap High-Order Compositional Representations in Transformers}
+\author{Project Kepler Collaboration}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study whether training-distribution geometry can alter formation of a
+high-order predictive representation while the target conditional,
+irreducible noise, marginals, and total predictable information remain fixed.
+In a finite-field parent-exposed task, two uniform parents determine a modular
+center and a fixed additive-noise channel determines the target. Version 3.5
+provided exploratory evidence that transient full-support low-order cues
+advanced predictive-state formation. An independent v3.6 replication used two
+new rules, two new cue permutations, two initialization seeds, and three cue
+doses. Verified onset occurred in 1/8,
+6/8, and 8/8 blocks. The frozen
+one-sided exact blocked Page-style test enumerated
+1,679,616 assignments and gave
+$p=9.5259869e-06$. All 13 nonzero-cue cells
+positive at cue removal retained the representation threshold at 6M and 10M.
+Temporary cue-bearing distributions therefore causally changed onset timing or
+probability within the frozen task and model family. The experiment does not
+identify singleton mutual information alone as causal and does not establish a
+universal Transformer property.
+\end{abstract}
+
+\section{Introduction}
+Scaling curves do not specify when a model forms a task-sufficient internal
+state. We therefore manipulate training-distribution geometry while holding
+the target conditional and information budget fixed. Project Kepler uses a
+finite-field mechanism assay motivated by, but distinct from, its recurrent
+production task. The present paper does not claim that the recurrent task has
+been solved. Version 3.5 is exploratory discovery; version 3.6 is an independent
+confirmatory replication. The discovery data are excluded from the primary
+confirmatory $p$-value.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig01_task_cue_schematic.pdf}
+\caption{Controlled finite-field task and transient cue schedule. All values
+are generated from frozen JSON.}
+\label{fig:task}
+\end{figure}
+
+\section{Controlled finite-field task}
+The field size is $p=257$. The predictive center is
+$z=a_1x_1+a_2x_2 \bmod p$, and $y=z+\epsilon \bmod p$ with
+$P(\epsilon=0)=1-\eta$, $P(\epsilon=r)=\eta/(p-1)$ for $r\ne0$, and
+$\eta=0.1$. Thus $H(Y\mid X_1,X_2)=0.879601$ nats. Exact
+soft-label cross-entropy is used. Evaluation enumerates all 66,049 ordered
+pairs and reports
+\[
+R=\frac{\mathbb{E}_h D_{\rm KL}(q_h\Vert p_\theta)}
+{\log p-H(\nu_\eta)}.
+\]
+A uniform predictor has $R=1$ and the oracle has $R=0$.
+
+\section{Pure-synergy information structure}
+Under uniform full support, $X_1,X_2,Z,Y$ are uniform,
+$I(Y;X_1)=I(Y;X_2)=0$, and
+$I(Y;X_1,X_2)=4.66948$ nats. The scalar cue index orders
+selected constructed distributions; it is not a unique-information percentage.
+
+\section{Full-support cue-family construction}
+The cue family reweights ordered parent pairs through frozen permutations while
+retaining strictly positive support. Deterministic root solving targets each
+registered cue index. Exhaustive enumeration verifies uniform marginals,
+invariant $H(Y\mid X_1,X_2)$, invariant joint information, and exact uniform
+full support at zero cue. The intervention is the registered distribution, not
+singleton mutual information in isolation.
+
+\input{tables/table01_distribution_invariants.tex}
+
+\section{Exploratory discovery experiment}
+Version 3.5 used rule $(45,36)$, five paired seeds, four ordered $m=64$ doses,
+and two matched-index geometry controls. Verified onset occurred in
+0/5 C0, 5/5 C1, 5/5 C2, and
+5/5 C3 seeds. The exploratory exact test gave
+$p=1.6075103e-05$. These observations selected frozen
+confirmatory conditions and definitions; they are not confirmatory data.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig02_v35_dose_trajectories.pdf}
+\caption{Exploratory v3.5 R trajectories and onset outcomes. Bands are means
+of registered row-bootstrap endpoints, not new group-level intervals.}
+\end{figure}
+
+\input{tables/table02_v35_exploratory_outcomes.tex}
+
+\section{Independent confirmatory replication}
+Version 3.6 crossed two new rules with two new cue permutations and two new
+initialization seeds, yielding eight paired blocks and 24 trajectories. R0,
+R1, and R2 shared initial weights and all non-condition random fields within
+each block. Verified onset occurred in 1/8,
+6/8, and 8/8 blocks. The observed
+Page-style statistic was 110.0; exactly
+16 of 1,679,616
+assignments were as large, giving one-sided
+$p=9.5259869e-06$.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig03_v36_paired_onset.pdf}
+\caption{Paired terminal-coded onset ordinals for all eight confirmatory
+blocks.}
+\end{figure}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig04_v36_exact_null.pdf}
+\caption{Exact v3.6 permutation null. Version 3.5 is excluded.}
+\end{figure}
+
+\input{tables/table03_v36_confirmatory_outcomes.tex}
+\input{tables/table04_exact_tests.tex}
+\input{tables/table05_paired_R_differences.tex}
+
+\section{Representation persistence after cue removal}
+At 5M only the sampler changed for nonzero-cue runs. Zero-step checks verified
+unchanged outputs and model, optimizer, scheduler, exposure, and RNG state.
+All 13 threshold-positive R1/R2 cells remained positive at 6M
+and 10M, supporting learning-path preconditioning rather than a permanently
+required shortcut.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig05_v36_persistence.pdf}
+\caption{Persistence after return to uniform full support. Whiskers are
+registered first-parent-row bootstrap intervals.}
+\end{figure}
+
+\input{tables/table06_cue_removal_persistence.tex}
+
+\section{Rule and cue-geometry heterogeneity}
+R1 onset occurred in 4/4 rule-0 and 2/4 rule-1
+blocks, while R2 onset occurred in 4/4 and 4/4.
+The ordered effect spans both rules but the mid-dose response is
+rule-dependent. In exploratory matched-index controls, concentrated and
+diffuse geometries differed from $m=64$, so equal cue-index values are not
+interchangeable.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig06_v36_rule_heterogeneity.pdf}
+\caption{Rule-specific R1 heterogeneity and R2 robustness.}
+\end{figure}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{figures/fig07_v35_geometry_comparison.pdf}
+\caption{Exploratory matched-index geometry comparison.}
+\end{figure}
+
+\section{Discussion}
+Temporary cue-bearing full-support distributions changed whether or when the
+frozen Transformer formed the modular predictive center. The target
+conditional, marginals, irreducible noise, total pairwise predictable
+information, architecture, optimizer, and objective were held fixed.
+Persistence after cue removal indicates that the early distribution altered
+the learning path rather than supplying a permanently required feature.
+Heterogeneity across rules and geometries rejects an explanation based on the
+scalar cue index alone.
+
+\section{Limitations}
+The experiment uses one field size, one noise level, one approximately 2M
+parent-exposed architecture, exact soft labels, a finite checkpoint grid, and
+eight confirmatory blocks. It is not a universal Transformer claim, not a
+thermodynamic phase transition, and not evidence that the recurrent production
+task is solved. These results are excluded from the original scaling fit.
+
+\section{Reproducibility statement}
+The final result is tagged \texttt{kepler-v3.6-confirm1}. Frozen hashes,
+environment, test definitions, counts, and provenance are indexed in the
+package. The lightweight verifier recomputes distribution audits, transition
+coding, all 1,679,616 exact assignments, figures,
+and tables without optimizer steps.
+
+\input{tables/table07_protocol_integrity.tex}
+\input{tables/table08_claim_boundaries.tex}
+
+\section{Data and code availability}
+Code, manifests, result JSON, source data, and verification scripts are
+included in the repository. Checkpoints are referenced by SHA-256 sidecars and
+are unnecessary for lightweight verification.
+
+\section{Supplementary methods}
+\subsection{Model and optimization}
+The manifest records 2,045,568 core
+parameters, width 168, batch size
+4,096, exact soft-label cross-entropy, AdamW
+learning rate $3\times10^{-4}$,
+betas
+$(0.9,0.95)$, weight decay
+0.1, clipping at 1.0,
+5M warmup exposures, and an
+absolute-exposure cosine schedule.
+
+\subsection{Transition coding}
+Probe checkpoints were 2M, 3M, 4M, 5M, 6M, 7.5M, and 10M. Onset required
+$R<0.9$ and layer-6 linear accuracy above 0.5, retained at the next checkpoint.
+Establishment required $R<0.1$, center accuracy above 0.9, and layer-6 linear
+accuracy above 0.9.
+
+\subsection{Exact test}
+Within-block terminal onset ordinals were converted to doubled midranks, with
+earlier onset ranked higher. All six label assignments were combined across
+eight blocks, giving $6^8=1,679,616$ assignments.
+
+\subsection{Artifact integrity}
+The freeze records every tag, manifest and result hash, the environment lock,
+test definition and result, and artifact counts. Packaging changes only the
+\texttt{paper/} tree and the new freeze record; no prior scientific artifact
+changes.
+
+\end{document}

@@ -1,0 +1,35 @@
+{
+  "eta": 0.1,
+  "figure": 1,
+  "m": 64,
+  "p": 257,
+  "status": "task definition plus exploratory and confirmatory cue families",
+  "v3_5_coefficients": [
+    45,
+    36
+  ],
+  "v3_5_cue_coefficient": 1,
+  "v3_6_confirmatory_targets": {
+    "R0": 0.0,
+    "R1": 0.016,
+    "R2": 0.065092
+  },
+  "v3_6_rules": [
+    {
+      "coefficients": [
+        205,
+        5
+      ],
+      "cue_coefficient_c": 111,
+      "rule_id": "rule_0"
+    },
+    {
+      "coefficients": [
+        123,
+        209
+      ],
+      "cue_coefficient_c": 145,
+      "rule_id": "rule_1"
+    }
+  ]
+}

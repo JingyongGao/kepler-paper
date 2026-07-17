@@ -1,0 +1,2 @@
+# Paper-rendering overlay; scientific dependencies remain frozen in ../uv.lock.
+reportlab==4.4.9

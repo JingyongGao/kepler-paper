@@ -1,0 +1,12 @@
+# v3.5 exploratory onset and establishment
+
+Exploratory discovery outcomes decoded with the frozen onset and establishment rules.
+
+| Version | Status | Condition | n | Onset by 5M | Onset by 10M | Onset exposures (M) | Terminal ordinals | Established by 5M | Established by 10M | Mean R, 5M pre | Mean R, 10M |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| v3.5 | exploratory | C0 | 5 | 0 | 0 | —, —, —, —, — | 8, 8, 8, 8, 8 | 0 | 0 | 0.973341 | 0.628411 |
+| v3.5 | exploratory | C1 | 5 | 2 | 5 | 7.5, 5, 6, 6, 5 | 6, 4, 5, 5, 4 | 0 | 5 | 0.428643 | 0.025721 |
+| v3.5 | exploratory | C2 | 5 | 5 | 5 | 4, 3, 3, 4, 3 | 3, 2, 2, 3, 2 | 5 | 5 | 0.013564 | 0.003252 |
+| v3.5 | exploratory | C3 | 5 | 5 | 5 | 4, 3, 3, 4, 4 | 3, 2, 2, 3, 3 | 5 | 5 | 0.007108 | 0.00162 |
+| v3.5 | exploratory | geometry_concentrated | 5 | 5 | 5 | 4, 5, 4, 5, 4 | 3, 4, 3, 4, 3 | 5 | 5 | 0.014501 | 0.001528 |
+| v3.5 | exploratory | geometry_diffuse | 5 | 5 | 5 | 5, 3, 3, 3, 4 | 4, 2, 2, 2, 3 | 4 | 5 | 0.055923 | 0.007754 |

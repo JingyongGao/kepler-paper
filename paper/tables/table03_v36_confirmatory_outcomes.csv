@@ -1,0 +1,4 @@
+version,status,condition,n,onset_by_5M,onset_by_10M,onset_exposures,terminal_onset_ordinals,established_by_5M,established_by_10M,mean_R_5M_pre,mean_R_10M
+v3.6,confirmatory,R0,8,0,1,"[None, None, 7.5, None, None, None, None, None]","[8, 8, 6, 8, 8, 8, 8, 8]",0,2,1.0002388805150986,0.43274274724535644
+v3.6,confirmatory,R1,8,5,6,"[4.0, 4.0, 5.0, 4.0, 7.5, None, None, 4.0]","[3, 3, 4, 3, 6, 8, 8, 3]",4,6,0.3030764311552048,0.11076592473546043
+v3.6,confirmatory,R2,8,8,8,"[3.0, 3.0, 4.0, 4.0, 4.0, 3.0, 4.0, 4.0]","[2, 2, 3, 3, 3, 2, 3, 3]",6,8,0.0437104434822686,0.005180951047805138

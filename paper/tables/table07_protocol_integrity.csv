@@ -1,0 +1,3 @@
+version,status,registered_trajectories,completed_trajectories,checkpoints,valid_checkpoint_sidecars,exact_evaluations,probe_reports,gradient_audits,switch_checks,all_switch_checks_passed,maximum_exposure,objective,excluded_from_original_scaling_fit
+v3.5,exploratory,30,30,330,True,360,210,150,30,True,10000000,exact_soft_label_cross_entropy,True
+v3.6,confirmatory,24,24,264,True,288,168,0,24,True,10000000,exact_soft_label_cross_entropy,True

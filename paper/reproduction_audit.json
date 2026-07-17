@@ -1,0 +1,56 @@
+{
+  "frozen_artifact_verification": {
+    "allowed_packaging_paths_only": true,
+    "checkpoint_status": {
+      "v3.5": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 330
+      },
+      "v3.6": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 264
+      }
+    },
+    "frozen_tag": "kepler-v3.6-confirm1",
+    "optimizer_steps": 0,
+    "passed": true,
+    "tracked_scientific_artifacts_unchanged": true
+  },
+  "kind": "kepler_paper_reproduction_audit",
+  "mode": "lightweight_no_training",
+  "optimizer_steps": 0,
+  "paper_output_counts": {
+    "figure_source_data": 8,
+    "figures_pdf": 7,
+    "figures_png": 7,
+    "figures_svg": 7,
+    "tables_csv": 8,
+    "tables_latex": 8,
+    "tables_markdown": 8
+  },
+  "passed": true,
+  "scientific_result_verification": {
+    "distribution_invariants_recomputed": true,
+    "exact_assignment_count": 1679616,
+    "exact_one_sided_p": 9.525986892242037e-06,
+    "frozen_source_hashes": {
+      "artifacts/confirmatory_distribution_audit.json": "f67d261bc6e97fcb9fb7f25e12d7dfdae29fe0567acc930677507d5bf454c3c9",
+      "artifacts/cue_distribution_audit.json": "e6ce056320307dddd21691e475e7c604f7d02f880f89821f8c89545803fddc0a",
+      "artifacts/cue_dose_confirmatory_manifest.json": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39",
+      "artifacts/cue_dose_confirmatory_results.json": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0",
+      "artifacts/cue_dose_manifest.json": "cfae2e4656c11cf37be387147e76b2f4f9585805320935893f6b27056d42957b",
+      "artifacts/cue_dose_results.json": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1"
+    },
+    "mode": "read_only_no_training",
+    "optimizer_steps": 0,
+    "passed": true,
+    "transition_cells_recomputed": 54,
+    "upper_tail_count": 16
+  },
+  "tests": {
+    "passed": true,
+    "run": true,
+    "summary": "62 passed in 4.78s"
+  },
+  "verified_date": "2026-07-18"
+}

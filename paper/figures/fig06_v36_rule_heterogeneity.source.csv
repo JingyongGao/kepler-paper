@@ -1,0 +1,17 @@
+run_id,condition,rule_id,permutation_id,model_seed_index,onset_ordinal,verified_onset_by_10M,R_5M_pre,R_10M
+confirm_rule_0_permutation_0_init_0_R1,R1,rule_0,permutation_0,0,3,True,0.06303848326206207,0.002783744828775525
+confirm_rule_0_permutation_0_init_0_R2,R2,rule_0,permutation_0,0,2,True,0.004336042795330286,0.0017984529258683324
+confirm_rule_0_permutation_0_init_1_R1,R1,rule_0,permutation_0,1,3,True,0.013313744217157364,0.0014230463420972228
+confirm_rule_0_permutation_0_init_1_R2,R2,rule_0,permutation_0,1,2,True,0.12060078978538513,0.0017199990106746554
+confirm_rule_0_permutation_1_init_0_R1,R1,rule_0,permutation_1,0,4,True,0.3574693500995636,0.014331609010696411
+confirm_rule_0_permutation_1_init_0_R2,R2,rule_0,permutation_1,0,3,True,0.11356716603040695,0.014265056699514389
+confirm_rule_0_permutation_1_init_1_R1,R1,rule_0,permutation_1,1,3,True,0.05387364327907562,0.0030552097596228123
+confirm_rule_0_permutation_1_init_1_R2,R2,rule_0,permutation_1,1,3,True,0.01719202660024166,0.0014457516372203827
+confirm_rule_1_permutation_0_init_0_R1,R1,rule_1,permutation_0,0,6,True,0.5378064513206482,0.0151949068531394
+confirm_rule_1_permutation_0_init_0_R2,R2,rule_1,permutation_0,0,3,True,0.0552699975669384,0.0019187055295333266
+confirm_rule_1_permutation_0_init_1_R1,R1,rule_1,permutation_0,1,8,False,0.695811927318573,0.3136424720287323
+confirm_rule_1_permutation_0_init_1_R2,R2,rule_1,permutation_0,1,2,True,0.016386989504098892,0.017238477244973183
+confirm_rule_1_permutation_1_init_0_R1,R1,rule_1,permutation_1,0,8,False,0.6874245405197144,0.5344076752662659
+confirm_rule_1_permutation_1_init_0_R2,R2,rule_1,permutation_1,0,3,True,0.009486964903771877,0.001805717940442264
+confirm_rule_1_permutation_1_init_1_R1,R1,rule_1,permutation_1,1,3,True,0.01587330922484398,0.0012887337943539023
+confirm_rule_1_permutation_1_init_1_R2,R2,rule_1,permutation_1,1,3,True,0.012843570671975613,0.0012554473942145705

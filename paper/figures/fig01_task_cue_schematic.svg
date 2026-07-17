@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="432" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 432" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="432"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-432)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="28" y="404" style="font-family: Helvetica-Bold; font-size: 13px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,808) scale(1,-1)">Pure-synergy task and transient full-support cue family</text>
+			<rect x="609" y="395" width="83" height="18" rx="4" ry="4" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(0%,61%,45%); fill-rule: evenodd; fill-opacity: 0.14;"/>
+			<text x="621.919" y="400" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(0%,61%,45%); stroke:none;" transform="translate(0,800) scale(1,-1)">CONFIRMATORY</text>
+			<text x="34" y="370" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,740) scale(1,-1)">A</text>
+			<text x="51" y="370" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,740) scale(1,-1)">Controlled finite-field task</text>
+			<rect x="45" y="255" width="75" height="48" rx="5" ry="5" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd; fill-opacity: 0.1;"/>
+			<text x="76.9965" y="283.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,566) scale(1,-1)">X1</text>
+			<text x="59.935500000000005" y="270.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,540) scale(1,-1)">uniform parent</text>
+			<rect x="45" y="177" width="75" height="48" rx="5" ry="5" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,62%,0%); fill-rule: evenodd; fill-opacity: 0.1;"/>
+			<text x="76.9965" y="205.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,410) scale(1,-1)">X2</text>
+			<text x="59.935500000000005" y="192.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,384) scale(1,-1)">uniform parent</text>
+			<rect x="178" y="216" width="128" height="58" rx="5" ry="5" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd; fill-opacity: 0.1;"/>
+			<text x="205.4735" y="249.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,498) scale(1,-1)">Z = a1 X1 + a2 X2</text>
+			<text x="220.4995" y="236.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,472) scale(1,-1)">mod p, p=257</text>
+			<rect x="360" y="216" width="105" height="58" rx="5" ry="5" style="stroke: rgb(47%,31%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(47%,31%,58%); fill-rule: evenodd; fill-opacity: 0.1;"/>
+			<text x="380.7345" y="249.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,498) scale(1,-1)">Y = Z + epsilon</text>
+			<text x="400.726" y="236.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,472) scale(1,-1)">eta=0.1</text>
+			<path d="M 120,279 L 178,250 Z" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="178 250, 173.724 255.5422, 171.0007 250.0955" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<path d="M 120,201 L 178,238 Z" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="178 238, 171.0485 237.177, 174.3236 232.0432" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,62%,0%); fill-rule: evenodd;"/>
+			<path d="M 306,245 L 360,245 Z" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="360 245, 353.6969 248.0448, 353.6969 241.9552" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd;"/>
+			<text x="44" y="137" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">Pure synergy under uniform full support</text>
+			<text x="44" y="119" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,238) scale(1,-1)">I(Y; X1) = I(Y; X2) = 0</text>
+			<text x="44" y="103" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,206) scale(1,-1)">I(Y; X1,X2) = log(p) - H(nu_eta)</text>
+			<text x="44" y="82" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,164) scale(1,-1)">Every ordered pair remains possible.</text>
+			<text x="510" y="370" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,740) scale(1,-1)">B</text>
+			<text x="527" y="370" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,740) scale(1,-1)">Cue then removal</text>
+			<path d="M 514,270 L 686,270 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 1;"/>
+			<rect x="514" y="245" width="86.0" height="50" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd; fill-opacity: 0.12;"/>
+			<rect x="600.0" y="245" width="86.0" height="50" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd; fill-opacity: 0.1;"/>
+			<path d="M 514,240 L 514,300 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="511.776" y="227" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,454) scale(1,-1)">0</text>
+			<path d="M 600,240 L 600,300 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="594.444" y="227" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,454) scale(1,-1)">5M</text>
+			<path d="M 686,240 L 686,300 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="678.22" y="227" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,454) scale(1,-1)">10M</text>
+			<text x="534.328" y="307" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,614) scale(1,-1)">cue-bearing</text>
+			<text x="628.112" y="307" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,614) scale(1,-1)">uniform</text>
+			<text x="514" y="199" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,398) scale(1,-1)">Confirmatory targets</text>
+			<circle cx="523" cy="174" r="4" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd;"/>
+			<text x="536" y="172" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,344) scale(1,-1)">R0</text>
+			<text x="568" y="172" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,344) scale(1,-1)">C_single = 0</text>
+			<circle cx="523" cy="142" r="4" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
+			<text x="536" y="140" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,280) scale(1,-1)">R1</text>
+			<text x="568" y="140" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,280) scale(1,-1)">C_single = 0.016</text>
+			<circle cx="523" cy="110" r="4" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="536" y="108" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,216) scale(1,-1)">R2</text>
+			<text x="568" y="108" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,216) scale(1,-1)">C_single = 0.065092</text>
+			<text x="514" y="69" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,138) scale(1,-1)">m = 64; exact soft labels</text>
+			<text x="514" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,106) scale(1,-1)">Sampler changes at 5M; model state does not.</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,34 @@
+{
+  "determinism": {
+    "all_source_data_from_frozen_json": true,
+    "network_required_during_build": false,
+    "pdf_invariant_mode": true,
+    "png_source": "rasterized from invariant PDF at 180 dpi"
+  },
+  "name": "kepler-paper-v1",
+  "paper_rendering_overlay": {
+    "optional_manuscript_compiler": "tectonic",
+    "python_packages": [
+      "reportlab==4.4.9"
+    ],
+    "python_requirement": ">=3.12,<3.14",
+    "system_tools": [
+      "poppler pdftoppm 26.05.0"
+    ]
+  },
+  "scientific_environment": {
+    "authoritative_lock": "uv.lock",
+    "lock_sha256": "c228e2dedf4aa6754be20fd226b0592f2f46e14c6c3b2c641cdd9ed19b08aab8",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "pyproject": "pyproject.toml",
+    "pyproject_sha256": "61ee1cf16c00e6831d31cba68b1833965d7c802ae653fb9cf6db75a944b250cf",
+    "python": "3.13.13 (main, May 10 2026, 19:20:37) [Clang 22.1.3 ]",
+    "runtime": {
+      "mps_available": true,
+      "mps_built": true,
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "torch": "2.13.0"
+    }
+  }
+}

@@ -57,3 +57,4 @@ artifacts/*
 !artifacts/confirmatory_distribution_audit.json
 !artifacts/confirmatory_distribution_audit.json.sha256
 !artifacts/cue_dose_confirmatory_manifest.json
+!artifacts/cue_dose_confirmatory_results.json

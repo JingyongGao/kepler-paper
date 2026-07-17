@@ -449,6 +449,31 @@ def _confirmatory_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _confirmatory_analyze(args: argparse.Namespace) -> int:
+    from .confirmatory_analysis import analyze_confirmatory_replication
+
+    result = analyze_confirmatory_replication(
+        args.run_root, args.manifest, args.output
+    )
+    primary = result["primary_confirmatory_test"]
+    _json(
+        {
+            "output": str(Path(args.output).resolve()),
+            "completed_cells": result["integrity"]["completed_cells"],
+            "exact_assignment_count": primary["ordered_onset_test"][
+                "exact_permutation_count"
+            ],
+            "exact_one_sided_p": primary["ordered_onset_test"][
+                "exact_one_sided_p"
+            ],
+            "statistically_confirmatory": primary[
+                "statistically_confirmatory"
+            ],
+        }
+    )
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -929,6 +954,21 @@ def build_parser() -> argparse.ArgumentParser:
         "--audit", default="artifacts/confirmatory_distribution_audit.json"
     )
     confirmatory_status.set_defaults(func=_confirmatory_status)
+
+    confirmatory_analysis = sub.add_parser(
+        "confirmatory-analyze",
+        help="apply the frozen v3.5 onset coding to all 8 v3.6 blocks",
+    )
+    confirmatory_analysis.add_argument(
+        "--run-root", default="artifacts/confirmatory_runs"
+    )
+    confirmatory_analysis.add_argument(
+        "--manifest", default="artifacts/cue_dose_confirmatory_manifest.json"
+    )
+    confirmatory_analysis.add_argument(
+        "--output", default="artifacts/cue_dose_confirmatory_results.json"
+    )
+    confirmatory_analysis.set_defaults(func=_confirmatory_analyze)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

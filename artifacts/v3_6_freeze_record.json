@@ -1,0 +1,79 @@
+{
+  "kind": "kepler_v3_6_freeze_record",
+  "recorded_date": "2026-07-17",
+  "frozen_branch": "kepler-v3.5-cue-dose",
+  "frozen_commit": "8788de3ffedd8ce120691c48c0d863796edd17ca",
+  "frozen_tag": "kepler-v3.5-cuedose1",
+  "new_branch": "kepler-v3.6-confirmatory-replication",
+  "cue_dose_result": {
+    "path": "artifacts/cue_dose_results.json",
+    "sha256": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1"
+  },
+  "prior_manifest_sha256": {
+    "artifacts/manifest.json": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+    "artifacts/pilot_manifest.json": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "artifacts/learnability_audit_manifest.json": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "artifacts/mechanism_isolation_manifest.json": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "artifacts/compositional_generalization_manifest.json": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "artifacts/full_support_transfer_manifest.json": "5e158ea537ad267da5bc8bb262552ba9e28502e876a7edb3cde2e0bc0b3e1cbe",
+    "artifacts/cue_dose_manifest.json": "cfae2e4656c11cf37be387147e76b2f4f9585805320935893f6b27056d42957b"
+  },
+  "prior_files_modified": false,
+  "environment_lock": {
+    "lock_files": {
+      "pyproject.toml": "61ee1cf16c00e6831d31cba68b1833965d7c802ae653fb9cf6db75a944b250cf",
+      "uv.lock": "c228e2dedf4aa6754be20fd226b0592f2f46e14c6c3b2c641cdd9ed19b08aab8"
+    },
+    "default_config_hash": "d9db2cfa76d437c11c8383db6c5daaa71f4e79f8ce7d71743c588d0d3ed1dcbf",
+    "python_executable": "/Volumes/externaldata/projects/intellligence_test/.venv/bin/python3",
+    "python_version": "3.13.13 (main, May 10 2026, 19:20:37) [Clang 22.1.3 ]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "kernel": "Darwin 25.5.0 xnu-12377.121.10~1 RELEASE_ARM64_T8132",
+    "machine": "arm64",
+    "processor": "Apple M4",
+    "physical_memory_bytes": 34359738368,
+    "macos": {
+      "product": "macOS",
+      "version": "26.5.2",
+      "build": "25F84"
+    },
+    "tools": {
+      "uv": "0.11.16",
+      "git": "2.52.0",
+      "apple_clang": "21.0.0 (clang-2100.1.1.101)"
+    },
+    "runtime": {
+      "torch": "2.13.0",
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "mps_built": true,
+      "mps_available": true
+    },
+    "mps_environment": {
+      "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+      "PYTORCH_MPS_FAST_MATH": "0"
+    },
+    "installed_packages": [
+      "coverage==7.15.1",
+      "filelock==3.29.7",
+      "fsspec==2026.6.0",
+      "iniconfig==2.3.0",
+      "jinja2==3.1.6",
+      "markupsafe==3.0.3",
+      "mpmath==1.3.0",
+      "networkx==3.6.1",
+      "numpy==2.5.1",
+      "packaging==26.2",
+      "pluggy==1.6.0",
+      "project-kepler==3.2.2 (editable local source)",
+      "pygments==2.20.0",
+      "pytest==9.1.1",
+      "pytest-cov==7.1.0",
+      "scipy==1.18.0",
+      "setuptools==83.0.0",
+      "sympy==1.14.0",
+      "torch==2.13.0",
+      "typing-extensions==4.16.0"
+    ]
+  }
+}

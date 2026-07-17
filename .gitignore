@@ -52,3 +52,4 @@ artifacts/*
 !artifacts/cue_distribution_audit.json
 !artifacts/cue_dose_manifest.json
 !artifacts/cue_c0_reuse_failure.json
+!artifacts/cue_dose_results.json

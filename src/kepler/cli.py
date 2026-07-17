@@ -387,6 +387,20 @@ def _cue_dose_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cue_dose_analyze(args: argparse.Namespace) -> int:
+    from .cue_dose_analysis import analyze_cue_dose
+
+    result = analyze_cue_dose(args.run_root, args.manifest, args.output)
+    _json(
+        {
+            "output": str(Path(args.output).resolve()),
+            "completed_cells": result["integrity"]["completed_cells"],
+            "exact_trend_p": result["ordered_dose_trend"]["exact_one_sided_p"],
+        }
+    )
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -810,6 +824,14 @@ def build_parser() -> argparse.ArgumentParser:
     cue_status.add_argument("--run-root", default="artifacts/cue_dose_runs")
     cue_status.add_argument("--audit", default="artifacts/cue_distribution_audit.json")
     cue_status.set_defaults(func=_cue_dose_status)
+
+    cue_analysis = sub.add_parser(
+        "cue-dose-analyze", help="apply frozen transition rules to all 30 cue-dose cells"
+    )
+    cue_analysis.add_argument("--run-root", default="artifacts/cue_dose_runs")
+    cue_analysis.add_argument("--manifest", default="artifacts/cue_dose_manifest.json")
+    cue_analysis.add_argument("--output", default="artifacts/cue_dose_results.json")
+    cue_analysis.set_defaults(func=_cue_dose_analyze)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

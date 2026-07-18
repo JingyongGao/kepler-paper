@@ -31,7 +31,8 @@ change occurred.
 | Version | File | SHA-256 |
 | --- | --- | --- |
 | v1.2 baseline | `paper/output/pdf/kepler_paper_v1_2_submission.pdf` | `37e91cef9e9fc79b453083eaaeeda455dc9aef714e67857a4ecb9cfe74a4aa1c` |
-| v1.2.1 final | `paper/output/pdf/kepler_paper_v1_2_1_submission.pdf` | `1141e2ef441ca99fb23f455d16b717b8bb94f68b5ef97c315002ac43e4cbbb45` |
+| v1.2.1 pre-terminology patch | `paper/output/pdf/kepler_paper_v1_2_1_submission.pdf` | `1141e2ef441ca99fb23f455d16b717b8bb94f68b5ef97c315002ac43e4cbbb45` |
+| v1.2.1 submission | `paper/output/pdf/kepler_paper_v1_2_1_submission.pdf` | `3e70a70094f7e1b0a483b9c5e1633208fde314bc5f0a4e0f70f24a12906761dc` |
 
 The new PDF is anonymous, 12 pages, US letter, PDF 1.5.
 
@@ -54,6 +55,10 @@ The new PDF is anonymous, 12 pages, US letter, PDF 1.5.
    reduced repeated internal version/freeze labels, and added a plain-language
    scaffold-removal sentence without changing claims or numbers.
 7. Used compact BibTeX output while retaining the verified DOI/arXiv metadata.
+8. Replaced Figure 3's panel title “Eight preregistered paired blocks” with
+   “Eight confirmatory paired blocks” to match the manuscript's bounded
+   registration language. Figure data, geometry, values, and source-data
+   hashes are unchanged.
 
 ## Portability and layout checks
 

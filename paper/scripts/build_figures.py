@@ -738,7 +738,7 @@ def figure_03(v36: dict) -> None:
     write_csv(FIGURES / "fig03_v36_paired_onset.source.csv", rows)
     d = Drawing(WIDTH, HEIGHT)
     title(d, "v3.6 paired-block representation onset", "Confirmatory")
-    panel_label(d, 42, 370, "A", "Eight preregistered paired blocks")
+    panel_label(d, 42, 370, "A", "Eight confirmatory paired blocks")
     mx, my = axes(
         d,
         95,

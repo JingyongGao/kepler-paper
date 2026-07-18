@@ -4,7 +4,7 @@ all_fonts_embedded: yes
 audited_font_records: 45
 
 file: output/pdf/kepler_paper_v1_2_1_submission.pdf
-sha256: 1141e2ef441ca99fb23f455d16b717b8bb94f68b5ef97c315002ac43e4cbbb45
+sha256: 3e70a70094f7e1b0a483b9c5e1633208fde314bc5f0a4e0f70f24a12906761dc
 font_records: 31
 name                                 type              encoding         emb sub uni object ID
 ------------------------------------ ----------------- ---------------- --- --- --- ---------
@@ -57,7 +57,7 @@ AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes 
 AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
 
 file: figures/fig03_v36_paired_onset.pdf
-sha256: 7f28f178924828fc4a6aadfd39a2b24fb53ec7ac0a49230be0d7e30065763302
+sha256: d68edb3304bdbdb20ae88ee9d797a36dc42bfc14f9c15d8daa07cb61c7ab7fcd
 font_records: 2
 name                                 type              encoding         emb sub uni object ID
 ------------------------------------ ----------------- ---------------- --- --- --- ---------

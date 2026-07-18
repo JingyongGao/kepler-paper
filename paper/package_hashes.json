@@ -56,10 +56,10 @@
       "sha256": "51f3cb84de97c46bd87f5d1e8ad97270c0208e9a62d4d88393f979cdf15114ea"
     },
     {
-      "bytes": 43104,
+      "bytes": 43113,
       "path": "anonymized/figures/fig03_v36_paired_onset.pdf",
       "role": "reproducibility_or_index",
-      "sha256": "7f28f178924828fc4a6aadfd39a2b24fb53ec7ac0a49230be0d7e30065763302"
+      "sha256": "d68edb3304bdbdb20ae88ee9d797a36dc42bfc14f9c15d8daa07cb61c7ab7fcd"
     },
     {
       "bytes": 42972,
@@ -98,10 +98,10 @@
       "sha256": "355f77a243eddc842d14dfef363209305a97e5c993ec14240cc36cf7ca05fb19"
     },
     {
-      "bytes": 388699,
+      "bytes": 388707,
       "path": "anonymized/submission.pdf",
       "role": "reproducibility_or_index",
-      "sha256": "1141e2ef441ca99fb23f455d16b717b8bb94f68b5ef97c315002ac43e4cbbb45"
+      "sha256": "3e70a70094f7e1b0a483b9c5e1633208fde314bc5f0a4e0f70f24a12906761dc"
     },
     {
       "bytes": 2909,
@@ -212,10 +212,10 @@
       "sha256": "51f3cb84de97c46bd87f5d1e8ad97270c0208e9a62d4d88393f979cdf15114ea"
     },
     {
-      "bytes": 43104,
+      "bytes": 43113,
       "path": "arxiv/figures/fig03_v36_paired_onset.pdf",
       "role": "reproducibility_or_index",
-      "sha256": "7f28f178924828fc4a6aadfd39a2b24fb53ec7ac0a49230be0d7e30065763302"
+      "sha256": "d68edb3304bdbdb20ae88ee9d797a36dc42bfc14f9c15d8daa07cb61c7ab7fcd"
     },
     {
       "bytes": 42972,
@@ -416,16 +416,16 @@
       "sha256": "96d155967036459cc5e494aa370a58919e823413604887069f71ce342db10b83"
     },
     {
-      "bytes": 43104,
+      "bytes": 43113,
       "path": "figures/fig03_v36_paired_onset.pdf",
       "role": "publication_figure_or_source_data",
-      "sha256": "7f28f178924828fc4a6aadfd39a2b24fb53ec7ac0a49230be0d7e30065763302"
+      "sha256": "d68edb3304bdbdb20ae88ee9d797a36dc42bfc14f9c15d8daa07cb61c7ab7fcd"
     },
     {
-      "bytes": 107474,
+      "bytes": 107035,
       "path": "figures/fig03_v36_paired_onset.png",
       "role": "publication_figure_or_source_data",
-      "sha256": "9aa6ef4d3e96a2b6125bcec380ffc903e7f487d817fab4795748b761997cbb6d"
+      "sha256": "b43699661e052bb792a2f01a6e8133d797454f2dd865366fbbcbda702b3dc840"
     },
     {
       "bytes": 1417,
@@ -434,10 +434,10 @@
       "sha256": "095c075d8e1c996fb517eb0472a71d21c40cc998eb2f77637a148395ece48d5e"
     },
     {
-      "bytes": 12472,
+      "bytes": 12471,
       "path": "figures/fig03_v36_paired_onset.svg",
       "role": "publication_figure_or_source_data",
-      "sha256": "34c189a9b204da77145dfb1a1a95677dabe75a93fb51a24d2c1183b0caf67dfd"
+      "sha256": "2371b273cf7678eb5ebe4aa510f8f7b2fb72ef9a507406f4b892a82e1ab6e2ac"
     },
     {
       "bytes": 42972,
@@ -548,16 +548,16 @@
       "sha256": "a284f3ea7871fd1bb26f0c5777887fd32881bff9a12ed0528d166db4ddcc758f"
     },
     {
-      "bytes": 4487,
+      "bytes": 4904,
       "path": "final_preflight_report.md",
       "role": "reproducibility_or_index",
-      "sha256": "99db32d4926cf26e5176a6800ea3a98c566a2ad35727e1f58589314dc32d7a58"
+      "sha256": "3185ba5b2a8eb61ffbe7a3d4825662b8dea27c16f1379cc1d43b55384d0e495d"
     },
     {
       "bytes": 6948,
       "path": "font_embedding_audit.txt",
       "role": "reproducibility_or_index",
-      "sha256": "e0a10d9cb9b6750429c313903c0a4ece0289371005b6f6bb807799d15ef82e33"
+      "sha256": "7ef2660443357c93ab4cdba2386a8e5710b0561376bddbd10308e1c7da4b85a8"
     },
     {
       "bytes": 28544,
@@ -578,10 +578,10 @@
       "sha256": "3f64d07bb157bbc37db2799b82f82164fa99a0a6a36088a41b352f29afb7f186"
     },
     {
-      "bytes": 388699,
+      "bytes": 388707,
       "path": "output/pdf/kepler_paper_v1_2_1_submission.pdf",
       "role": "reproducibility_or_index",
-      "sha256": "1141e2ef441ca99fb23f455d16b717b8bb94f68b5ef97c315002ac43e4cbbb45"
+      "sha256": "3e70a70094f7e1b0a483b9c5e1633208fde314bc5f0a4e0f70f24a12906761dc"
     },
     {
       "bytes": 120902,
@@ -650,10 +650,10 @@
       "sha256": "4b585791716bb55dbb2124e6c3f7e9b5715b640a927bb4c1bd53bf624ca0be32"
     },
     {
-      "bytes": 38855,
+      "bytes": 38854,
       "path": "scripts/build_figures.py",
       "role": "deterministic_builder_or_verifier",
-      "sha256": "121a2e3ddc87351214123a21ecb2f8673a504294c0658338649cee1705d8c057"
+      "sha256": "ff90aa61e4207ef7432c4f1a07f418960ac7d617940b3da6f45dbfc7d48679d0"
     },
     {
       "bytes": 1985,

@@ -2,11 +2,20 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
+\usepackage[font=footnotesize,skip=2pt]{caption}
 \usepackage{graphicx}
+\usepackage{multicol}
 \usepackage[round]{natbib}
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 \usepackage{microtype}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
 \title{Transient Low-Order Cues Bootstrap Higher-Order Compositional Representations in Transformers}
 \author{Anonymous Authors}
 \date{}
@@ -18,24 +27,25 @@ We study whether training-distribution geometry can alter formation of a
 higher-order predictive representation while the target conditional,
 irreducible noise, marginals, and total predictable information remain fixed.
 In a finite-field parent-exposed task, two uniform parents determine a modular
-center and a fixed additive-noise channel determines the target. Version 3.5
-provided exploratory evidence that transient full-support low-order cues
-advanced predictive-state formation. We prospectively froze the architecture,
+center and a fixed additive-noise channel determines the target. The
+exploratory study found that transient full-support low-order cues advanced
+predictive-state formation. We prospectively froze the architecture,
 optimizer configuration, objective, evaluation protocol, onset definition,
-and statistical test before confirmatory training. The v3.6 study was a
-prospectively frozen confirmatory replication using held-out rules, cue
-permutations, and initializations, with three cue doses. Verified onset
-occurred in 1/8,
+and statistical test before confirmatory training. The confirmatory study used
+held-out rules, cue permutations, and initializations with three cue doses.
+Verified onset occurred in 1/8,
 6/8, and 8/8 blocks. The
-prospectively frozen one-sided exact blocked Page-style test enumerated
+one-sided exact blocked Page-style test enumerated
 1,679,616 assignments and gave
 $p=9.5259869e-06$. All 13 nonzero-cue cells
 positive at cue removal retained the representation threshold at 6M and 10M.
 Temporary cue-bearing distributions therefore causally changed onset timing or
-probability within the task and model family under the prospectively frozen
+probability within the task and model family under the fixed confirmatory
 protocol. The experiment does not
 identify singleton mutual information alone as causal and does not establish a
-universal Transformer property.
+universal Transformer property. In plain terms, a temporary statistical
+scaffold helped the model discover a rule representation that remained useful
+after the scaffold was removed.
 \end{abstract}
 
 \section{Introduction}
@@ -170,11 +180,12 @@ $C_{\mathrm{single}}$ is an operational cue index, not a PID
 unique-information fraction, and it does not isolate singleton mutual
 information from other distributional geometry. Figure~\ref{fig:task}
 compares R0 with one cue-bearing distribution.
-Table~\ref{tab:table01-distribution-invariants} reports the frozen audits;
-the derivation and deterministic root-solving protocol appear in
-Supplementary Methods.
+Table~\ref{tab:table01-distribution-invariants-main} gives a representative
+R0/R1/R2 summary. The complete registered audit appears in
+Table~\ref{tab:table01-distribution-invariants} in the Supplement, together
+with the derivation and deterministic root-solving protocol.
 
-\input{tables/table01_distribution_invariants.tex}
+\input{tables/table01_distribution_invariants_main.tex}
 
 \section{Exploratory discovery experiment}
 Version 3.5 used rule $(45,36)$, five paired seeds, four ordered $m=64$ doses,
@@ -192,10 +203,11 @@ of registered row-bootstrap endpoints, not new group-level intervals.}
 \label{fig:v35-trajectories}
 \end{figure}
 
-\input{tables/table02_v35_exploratory_outcomes.tex}
+\input{tables/table02_v35_exploratory_outcomes_main.tex}
 Figure~\ref{fig:v35-trajectories} and
-Table~\ref{tab:table02-v35-exploratory-outcomes} report the discovery
-trajectories and frozen outcomes.
+Table~\ref{tab:table02-v35-exploratory-outcomes-main} report the discovery
+trajectories and compact frozen outcomes. Complete coding appears in
+Table~\ref{tab:table02-v35-exploratory-outcomes} in the Supplement.
 
 \section{Prospectively frozen confirmatory replication}
 Version 3.6 was a prospectively frozen confirmatory replication using held-out
@@ -231,16 +243,18 @@ blocks.}
 \label{fig:exact-null}
 \end{figure}
 
-\input{tables/table03_v36_confirmatory_outcomes.tex}
-\input{tables/table04_exact_tests.tex}
-\input{tables/table05_paired_R_differences.tex}
+\input{tables/table03_v36_confirmatory_outcomes_main.tex}
+\input{tables/table04_exact_tests_main.tex}
+\input{tables/table05_paired_R_differences_main.tex}
 Figures~\ref{fig:v36-onset} and \ref{fig:exact-null} show the paired
-onset ordinals and exact null. Tables~\ref{tab:table03-v36-confirmatory-outcomes},
-\ref{tab:table04-exact-tests}, and
-\ref{tab:table05-paired-R-differences} report confirmatory outcomes, exact
-tests, and paired differences. The transition-coding rule is specified in
-Supplementary Methods. Rule- and permutation-stratified tests are secondary,
-nominal, and not multiplicity-adjusted.
+onset ordinals and exact null.
+Tables~\ref{tab:table03-v36-confirmatory-outcomes-main},
+\ref{tab:table04-exact-tests-main}, and
+\ref{tab:table05-paired-R-differences-main} report compact confirmatory
+outcomes, the primary exact test, and mean paired differences. Complete fields
+appear in Tables~\ref{tab:table03-v36-confirmatory-outcomes}--\ref{tab:table05-paired-R-differences}
+in the Supplement. The transition-coding rule is specified there. Rule- and
+permutation-stratified tests are secondary, nominal, and not multiplicity-adjusted.
 
 \section{Representation persistence after cue removal}
 At 5M only the sampler changed for nonzero-cue runs. Zero-step checks verified
@@ -257,10 +271,11 @@ registered first-parent-row bootstrap intervals.}
 \label{fig:persistence}
 \end{figure}
 
-\input{tables/table06_cue_removal_persistence.tex}
+\input{tables/table06_cue_removal_persistence_main.tex}
 Figure~\ref{fig:persistence} and
-Table~\ref{tab:table06-cue-removal-persistence} report the persistence
-result and zero-step switch audit.
+Table~\ref{tab:table06-cue-removal-persistence-main} report the persistence
+result. The complete exploratory and confirmatory switch audit appears in
+Table~\ref{tab:table06-cue-removal-persistence} in the Supplement.
 
 \section{Rule and cue-geometry heterogeneity}
 R1 onset occurred in 4/4 rule-0 and 2/4 rule-1
@@ -354,11 +369,9 @@ package. The lightweight verifier recomputes distribution audits, transition
 coding, all 1,679,616 exact assignments, figures,
 and tables without optimizer steps.
 
-\input{tables/table07_protocol_integrity.tex}
-\input{tables/table08_claim_boundaries.tex}
 Tables~\ref{tab:table07-protocol-integrity} and
 \ref{tab:table08-claim-boundaries} summarize protocol integrity and claim
-boundaries.
+boundaries in the Supplement.
 
 \section{Data and code availability}
 Code, manifests, result JSON, source data, and verification scripts are
@@ -413,7 +426,29 @@ The freeze records every tag, manifest and result hash, the environment lock,
 test definition and result, and artifact counts. This manuscript revision
 changes only the \texttt{paper/} tree; no prior scientific artifact changes.
 
-\bibliographystyle{plainnat}
+\subsection{Complete tabular audits}
+The following tables retain every registered audit and provenance field.
+Compact main-text tables are presentation-only views of these same frozen
+values.
+
+\input{tables/table01_distribution_invariants.tex}
+\input{tables/table02_v35_exploratory_outcomes.tex}
+\input{tables/table03_v36_confirmatory_outcomes.tex}
+\input{tables/table04_exact_tests.tex}
+\input{tables/table05_paired_R_differences.tex}
+\input{tables/table06_cue_removal_persistence.tex}
+\input{tables/table07_protocol_integrity.tex}
+\input{tables/table08_claim_boundaries.tex}
+
+\section*{References}
+\renewcommand{\bibsection}{}
+\begingroup
+\footnotesize
+\setlength{\bibsep}{0pt plus 0.3ex}
+\begin{multicols}{2}
+\bibliographystyle{abbrvnat}
 \bibliography{references}
+\end{multicols}
+\endgroup
 
 \end{document}

@@ -85,7 +85,7 @@ def main() -> None:
         "figure_source_data": 8,
         "tables_markdown": 8,
         "tables_csv": 8,
-        "tables_latex": 8,
+        "tables_latex": 14,
     }
     if counts != expected:
         raise AssertionError((counts, expected))

@@ -14,6 +14,7 @@ from common import (
     atomic_write_text,
     format_float,
     latex_table,
+    latex_escape,
     load_json,
     markdown_table,
     require_frozen_source_hashes,
@@ -50,6 +51,43 @@ def write_table(
         TABLES / f"{stem}.tex",
         latex_table(caption, f"tab:{stem.replace('_', '-')}", labels, matrix),
     )
+
+
+def write_compact_latex_table(
+    stem: str,
+    caption: str,
+    headers: Sequence[tuple[str, str]],
+    rows: list[dict[str, Any]],
+) -> None:
+    keys = [key for key, _label in headers]
+    labels = [latex_escape(label) for _key, label in headers]
+    matrix = [
+        [latex_escape(display(row[key])) for key in keys]
+        for row in rows
+    ]
+    columns = "l" + "r" * (len(headers) - 1)
+    lines = [
+        r"\begin{table}[!htbp]",
+        r"\centering",
+        rf"\caption{{{latex_escape(caption)}}}",
+        rf"\label{{tab:{stem.replace('_', '-')}}}",
+        r"\small",
+        r"\setlength{\tabcolsep}{4pt}",
+        rf"\begin{{tabular}}{{{columns}}}",
+        r"\toprule",
+        " & ".join(labels) + r" \\",
+        r"\midrule",
+    ]
+    lines.extend(" & ".join(row) + r" \\" for row in matrix)
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabular}",
+            r"\end{table}",
+            "",
+        ]
+    )
+    atomic_write_text(TABLES / f"{stem}.tex", "\n".join(lines))
 
 
 def distribution_rows(v35_audit: dict, v36_audit: dict) -> list[dict[str, Any]]:
@@ -292,6 +330,22 @@ def main() -> None:
     v35 = load_json(V35_RESULTS)
     v36 = load_json(V36_RESULTS)
     freeze = load_json(FREEZE_RECORD)
+    distributions = distribution_rows(v35_audit, v36_audit)
+    v35_outcomes = outcome_rows(
+        v35["condition_summaries"],
+        version="v3.5",
+        status="exploratory",
+        unit="seed",
+    )
+    v36_outcomes = outcome_rows(
+        v36["primary_confirmatory_test"]["condition_summaries"],
+        version="v3.6",
+        status="confirmatory",
+        unit="block",
+    )
+    exact_tests = exact_test_rows(v36)
+    paired_differences = paired_rows(v36)
+    persistence = persistence_rows(v35, v36)
 
     write_table(
         "table01_distribution_invariants",
@@ -313,7 +367,28 @@ def main() -> None:
             ("joint_information_absolute_error", "Joint-I abs. error"),
             ("strict_full_support", "Strict support"),
         ),
-        distribution_rows(v35_audit, v36_audit),
+        distributions,
+    )
+    representative_distributions = [
+        row
+        for row in distributions
+        if row["version"] == "v3.6"
+        and row["rule"] == "205,5"
+        and row["permutation"] == "permutation_0"
+    ]
+    write_compact_latex_table(
+        "table01_distribution_invariants_main",
+        "Representative confirmatory R0/R1/R2 distributions. H cond. is H(Y|X1,X2); complete registered audits appear in the Supplement.",
+        (
+            ("condition", "Condition"),
+            ("achieved_C_single", "C single"),
+            ("minimum_pair_probability", "Min pair P"),
+            ("maximum_uniformity_error", "Max marg. err."),
+            ("H_Y_given_X1_X2_nats", "H cond. (nats)"),
+            ("joint_information_absolute_error", "Joint-I err."),
+            ("strict_full_support", "Full support"),
+        ),
+        representative_distributions,
     )
 
     outcome_headers = (
@@ -335,24 +410,44 @@ def main() -> None:
         "v3.5 exploratory onset and establishment",
         "Exploratory discovery outcomes decoded with the frozen onset and establishment rules.",
         outcome_headers,
-        outcome_rows(
-            v35["condition_summaries"],
-            version="v3.5",
-            status="exploratory",
-            unit="seed",
+        v35_outcomes,
+    )
+    write_compact_latex_table(
+        "table02_v35_exploratory_outcomes_main",
+        "Exploratory onset and establishment summary; complete checkpoint coding appears in the Supplement.",
+        (
+            ("condition", "Condition"),
+            ("onset_by_5M", "Onset by 5M"),
+            ("onset_by_10M", "Onset by 10M"),
+            ("established_by_10M", "Established by 10M"),
+            ("mean_R_5M_pre", "Mean R, 5M"),
+            ("mean_R_10M", "Mean R, 10M"),
         ),
+        [
+            row
+            for row in v35_outcomes
+            if row["condition"] in {"C0", "C1", "C2", "C3"}
+        ],
     )
     write_table(
         "table03_v36_confirmatory_outcomes",
         "v3.6 confirmatory onset outcomes",
         "Prospectively frozen outcomes across eight paired blocks. Each block crosses one held-out rule, cue permutation, and initialization; trajectories are paired observations, not independent inference units.",
         outcome_headers,
-        outcome_rows(
-            v36["primary_confirmatory_test"]["condition_summaries"],
-            version="v3.6",
-            status="confirmatory",
-            unit="block",
+        v36_outcomes,
+    )
+    write_compact_latex_table(
+        "table03_v36_confirmatory_outcomes_main",
+        "Confirmatory outcomes across eight paired inference blocks; complete coding appears in the Supplement.",
+        (
+            ("condition", "Condition"),
+            ("onset_by_5M", "Onset by 5M"),
+            ("onset_by_10M", "Onset by 10M"),
+            ("established_by_10M", "Established by 10M"),
+            ("mean_R_5M_pre", "Mean R, 5M"),
+            ("mean_R_10M", "Mean R, 10M"),
         ),
+        v36_outcomes,
     )
     write_table(
         "table04_exact_tests",
@@ -369,7 +464,20 @@ def main() -> None:
             ("confirmatory_at_0_05", "p<0.05"),
             ("v3_5_included", "v3.5 included"),
         ),
-        exact_test_rows(v36),
+        exact_tests,
+    )
+    write_compact_latex_table(
+        "table04_exact_tests_main",
+        "Primary confirmatory exact test. Stratified tests are secondary, nominal, and not multiplicity-adjusted; full results appear in the Supplement.",
+        (
+            ("analysis", "Analysis"),
+            ("blocks", "Blocks"),
+            ("exact_assignments", "Assignments"),
+            ("observed_statistic", "Statistic"),
+            ("upper_tail_count", "Upper tail"),
+            ("one_sided_p", "One-sided p"),
+        ),
+        exact_tests[:1],
     )
     write_table(
         "table05_paired_R_differences",
@@ -385,7 +493,19 @@ def main() -> None:
             ("mean_onset_ordinal_delta", "Mean onset-ordinal delta"),
             ("median_onset_ordinal_delta", "Median onset-ordinal delta"),
         ),
-        paired_rows(v36),
+        paired_differences,
+    )
+    write_compact_latex_table(
+        "table05_paired_R_differences_main",
+        "Mean paired differences, higher registered dose minus lower registered dose; medians and audit fields appear in the Supplement.",
+        (
+            ("comparison", "Comparison"),
+            ("blocks", "Blocks"),
+            ("mean_R_delta_5M_pre", "Mean delta R, 5M"),
+            ("mean_R_delta_10M", "Mean delta R, 10M"),
+            ("mean_onset_ordinal_delta", "Mean onset delta"),
+        ),
+        paired_differences,
     )
     write_table(
         "table06_cue_removal_persistence",
@@ -402,7 +522,22 @@ def main() -> None:
             ("fraction_retained_at_10M", "Fraction at 10M"),
             ("sampler_after_5M", "Sampler after 5M"),
         ),
-        persistence_rows(v35, v36),
+        persistence,
+    )
+    write_compact_latex_table(
+        "table06_cue_removal_persistence_main",
+        "Confirmatory retention after return to uniform full support; complete exploratory and confirmatory records appear in the Supplement.",
+        (
+            ("condition", "Condition"),
+            ("pre_switch_positive", "Positive at 5M"),
+            ("retained_at_6M", "Retained at 6M"),
+            ("retained_at_10M", "Retained at 10M"),
+        ),
+        [
+            row
+            for row in persistence
+            if row["version"] == "v3.6" and row["condition"] in {"R1", "R2"}
+        ],
     )
     write_table(
         "table07_protocol_integrity",

@@ -9,6 +9,7 @@ from pathlib import Path
 from statistics import mean
 from typing import Any, Callable, Iterable, Sequence
 
+import reportlab
 from reportlab.graphics import renderPDF, renderSVG
 from reportlab.graphics.shapes import (
     Circle,
@@ -20,6 +21,8 @@ from reportlab.graphics.shapes import (
     String,
 )
 from reportlab.lib import colors
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 from common import (
     FIGURES,
@@ -37,8 +40,11 @@ from common import (
 
 WIDTH = 720
 HEIGHT = 432
-FONT = "Helvetica"
-FONT_BOLD = "Helvetica-Bold"
+REPORTLAB_FONTS = Path(reportlab.__file__).resolve().parent / "fonts"
+FONT = "KeplerVera"
+FONT_BOLD = "KeplerVera-Bold"
+pdfmetrics.registerFont(TTFont(FONT, str(REPORTLAB_FONTS / "Vera.ttf")))
+pdfmetrics.registerFont(TTFont(FONT_BOLD, str(REPORTLAB_FONTS / "VeraBd.ttf")))
 INK = colors.HexColor("#20252B")
 MUTED = colors.HexColor("#65717E")
 GRID = colors.HexColor("#D9DEE3")
@@ -271,7 +277,13 @@ def export(drawing: Drawing, stem: str) -> None:
     pdf = FIGURES / f"{stem}.pdf"
     svg = FIGURES / f"{stem}.svg"
     png = FIGURES / f"{stem}.png"
-    renderPDF.drawToFile(drawing, str(pdf), invariant=1)
+    drawing.initialFontName = FONT
+    renderPDF.drawToFile(
+        drawing,
+        str(pdf),
+        invariant=1,
+        initialFontName=FONT,
+    )
     renderSVG.drawToFile(drawing, str(svg))
     pdftoppm = shutil.which("pdftoppm")
     if pdftoppm is None:

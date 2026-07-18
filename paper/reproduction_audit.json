@@ -25,7 +25,7 @@
     "figures_png": 7,
     "figures_svg": 7,
     "tables_csv": 8,
-    "tables_latex": 8,
+    "tables_latex": 14,
     "tables_markdown": 8
   },
   "passed": true,

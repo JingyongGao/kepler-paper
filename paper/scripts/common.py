@@ -147,7 +147,7 @@ def latex_table(
     escaped_rows = [[latex_escape(item) for item in row] for row in rows]
     columns = "l" + "r" * (len(headers) - 1)
     lines = [
-        r"\begin{table}[tb]",
+        r"\begin{table}[!htbp]",
         r"\centering",
         rf"\caption{{{latex_escape(caption)}}}",
         rf"\label{{{latex_escape(label)}}}",

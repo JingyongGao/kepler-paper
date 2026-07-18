@@ -133,7 +133,7 @@ def verify_manuscript() -> dict[str, int | bool]:
     figures = re.findall(r"\\includegraphics[^{}]*\{([^}]+)\}", latex)
     table_refs = set(re.findall(r"\\ref\{(tab:[^}]+)\}", latex))
     figure_refs = set(re.findall(r"\\ref\{(fig:[^}]+)\}", latex))
-    if len(figures) != 7 or len(table_refs) != 8 or len(figure_refs) != 7:
+    if len(figures) != 7 or len(table_refs) != 13 or len(figure_refs) != 7:
         raise AssertionError((len(figures), len(table_refs), len(figure_refs)))
     return {
         "embedded_figures": len(figures),
@@ -186,6 +186,47 @@ def verify_anonymity(pdf: Path | None) -> dict[str, object]:
     }
 
 
+def verify_internal_pdf_links(pdf: Path | None) -> dict[str, object]:
+    if pdf is None:
+        return {
+            "checked": False,
+            "internal_links": 0,
+            "external_links": 0,
+            "invalid_destinations": 0,
+            "passed": True,
+        }
+    reader = PdfReader(str(pdf))
+    named_destinations = set(reader.named_destinations)
+    internal_links = 0
+    external_links = 0
+    invalid = []
+    for page_number, page in enumerate(reader.pages, start=1):
+        for annotation_reference in page.get("/Annots", []):
+            annotation = annotation_reference.get_object()
+            if str(annotation.get("/Subtype")) != "/Link":
+                continue
+            action = annotation.get("/A")
+            if action is None:
+                continue
+            action_type = str(action.get("/S"))
+            if action_type == "/GoTo":
+                internal_links += 1
+                destination = str(action.get("/D"))
+                if destination not in named_destinations:
+                    invalid.append({"page": page_number, "destination": destination})
+            elif action_type == "/URI":
+                external_links += 1
+    if invalid:
+        raise AssertionError(f"invalid internal PDF destinations: {invalid}")
+    return {
+        "checked": True,
+        "internal_links": internal_links,
+        "external_links": external_links,
+        "invalid_destinations": 0,
+        "passed": True,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--anonymous-pdf", type=Path)
@@ -201,6 +242,7 @@ def main() -> None:
         "manuscript": verify_manuscript(),
         "figures": verify_figure_resolution(),
         "anonymity": verify_anonymity(args.anonymous_pdf),
+        "pdf_links": verify_internal_pdf_links(args.anonymous_pdf),
         "passed": True,
     }
     print(json.dumps(output, indent=2, sort_keys=True))

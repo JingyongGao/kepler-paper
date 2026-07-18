@@ -10,38 +10,38 @@
 	</clipPath>
 	<g id="group" transform="scale(1,-1) translate(0,-432)" style="clip-path: url(#clip)">
 		<g transform="">
-			<text x="28" y="404" style="font-family: Helvetica-Bold; font-size: 13px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,808) scale(1,-1)">Pure-synergy task and transient full-support cue family</text>
+			<text x="28" y="404" style="font-family: KeplerVera-Bold; font-size: 13px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,808) scale(1,-1)">Pure-synergy task and transient full-support cue family</text>
 			<rect x="609" y="395" width="83" height="18" rx="4" ry="4" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(0%,61%,45%); fill-rule: evenodd; fill-opacity: 0.14;"/>
-			<text x="621.919" y="400" style="font-family: Helvetica-Bold; font-size: 7px;fill: rgb(0%,61%,45%); stroke:none;" transform="translate(0,800) scale(1,-1)">CONFIRMATORY</text>
-			<text x="28" y="372" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">A</text>
-			<text x="45" y="372" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">Parent-to-center-to-target graph</text>
+			<text x="618.854736328125" y="400" style="font-family: KeplerVera-Bold; font-size: 7px;fill: rgb(0%,61%,45%); stroke:none;" transform="translate(0,800) scale(1,-1)">CONFIRMATORY</text>
+			<text x="28" y="372" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">A</text>
+			<text x="45" y="372" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">Parent-to-center-to-target graph</text>
 			<rect x="36" y="287" width="63" height="42" rx="5" ry="5" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd; fill-opacity: 0.1;"/>
-			<text x="61.9965" y="312.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,624) scale(1,-1)">X1</text>
-			<text x="57.5775" y="299.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,598) scale(1,-1)">parent</text>
+			<text x="60.8994140625" y="312.0" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,624) scale(1,-1)">X1</text>
+			<text x="55.95068359375" y="299.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,598) scale(1,-1)">parent</text>
 			<rect x="36" y="225" width="63" height="42" rx="5" ry="5" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,62%,0%); fill-rule: evenodd; fill-opacity: 0.1;"/>
-			<text x="61.9965" y="250.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,500) scale(1,-1)">X2</text>
-			<text x="57.5775" y="237.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,474) scale(1,-1)">parent</text>
+			<text x="60.8994140625" y="250.0" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,500) scale(1,-1)">X2</text>
+			<text x="55.95068359375" y="237.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,474) scale(1,-1)">parent</text>
 			<rect x="137" y="246" width="119" height="52" rx="5" ry="5" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd; fill-opacity: 0.1;"/>
-			<text x="159.9735" y="276.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,552) scale(1,-1)">Z = a1 X1 + a2 X2</text>
-			<text x="174.9995" y="263.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,526) scale(1,-1)">mod p, p=257</text>
+			<text x="150.759521484375" y="276.0" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,552) scale(1,-1)">Z = a1 X1 + a2 X2</text>
+			<text x="171.33349609375" y="263.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,526) scale(1,-1)">mod p, p=257</text>
 			<rect x="287" y="246" width="92" height="52" rx="5" ry="5" style="stroke: rgb(47%,31%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(47%,31%,58%); fill-rule: evenodd; fill-opacity: 0.1;"/>
-			<text x="301.2345" y="276.0" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,552) scale(1,-1)">Y = Z + epsilon</text>
-			<text x="321.226" y="263.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,526) scale(1,-1)">eta=0.1</text>
+			<text x="294.339111328125" y="276.0" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,552) scale(1,-1)">Y = Z + epsilon</text>
+			<text x="318.830810546875" y="263.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,526) scale(1,-1)">eta=0.1</text>
 			<path d="M 99,308 L 137,282 Z" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1.2;"/>
 			<polygon points="137 282, 133.5173 288.0721, 130.0787 283.0464" style="stroke: rgb(0%,44%,69%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
 			<path d="M 99,246 L 137,264 Z" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1.2;"/>
 			<polygon points="137 264, 130.0002 264.0534, 132.607 258.5501" style="stroke: rgb(90%,62%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,62%,0%); fill-rule: evenodd;"/>
 			<path d="M 256,272 L 287,272 Z" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1.2;"/>
 			<polygon points="287 272, 280.6969 275.0448, 280.6969 268.9552" style="stroke: rgb(0%,61%,45%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,61%,45%); fill-rule: evenodd;"/>
-			<text x="28" y="190" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,380) scale(1,-1)">B</text>
-			<text x="45" y="190" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,380) scale(1,-1)">Pure-synergy identities at R0</text>
-			<text x="37" y="157" style="font-family: Helvetica-Bold; font-size: 8.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,314) scale(1,-1)">I(Y; X1) = I(Y; X2) = 0</text>
-			<text x="37" y="137" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">I(Y; X1,X2) = log(p) - H(nu_eta)</text>
-			<text x="37" y="117" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,234) scale(1,-1)">X1, X2, Z, and Y are marginally uniform</text>
-			<text x="37" y="97" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,194) scale(1,-1)">All p^2 ordered parent pairs have positive support</text>
-			<text x="37" y="72" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,144) scale(1,-1)">Cue conditions preserve marginals, not parent independence.</text>
-			<text x="410" y="372" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">C</text>
-			<text x="427" y="372" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">Pair-distribution geometry</text>
+			<text x="28" y="190" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,380) scale(1,-1)">B</text>
+			<text x="45" y="190" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,380) scale(1,-1)">Pure-synergy identities at R0</text>
+			<text x="37" y="157" style="font-family: KeplerVera-Bold; font-size: 8.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,314) scale(1,-1)">I(Y; X1) = I(Y; X2) = 0</text>
+			<text x="37" y="137" style="font-family: KeplerVera; font-size: 8.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">I(Y; X1,X2) = log(p) - H(nu_eta)</text>
+			<text x="37" y="117" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,234) scale(1,-1)">X1, X2, Z, and Y are marginally uniform</text>
+			<text x="37" y="97" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,194) scale(1,-1)">All p^2 ordered parent pairs have positive support</text>
+			<text x="37" y="72" style="font-family: KeplerVera; font-size: 7.5px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,144) scale(1,-1)">Cue conditions preserve marginals, not parent independence.</text>
+			<text x="410" y="372" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">C</text>
+			<text x="427" y="372" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,744) scale(1,-1)">Pair-distribution geometry</text>
 			<rect x="424.0" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
 			<rect x="431.42857142857144" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
 			<rect x="438.85714285714283" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
@@ -239,9 +239,9 @@
 			<rect x="513.1428571428571" y="225.0" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
 			<rect x="520.5714285714286" y="225.0" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
 			<rect x="424" y="225" width="104" height="104" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6; fill: none; fill-rule: evenodd;"/>
-			<text x="449.4275" y="340" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,680) scale(1,-1)">R0: lambda = 0</text>
-			<text x="472.304" y="212" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,424) scale(1,-1)">x2</text>
-			<text x="410.304" y="277.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,554) scale(1,-1)">x1</text>
+			<text x="443.7130126953125" y="340" style="font-family: KeplerVera-Bold; font-size: 7.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,680) scale(1,-1)">R0: lambda = 0</text>
+			<text x="471.701904296875" y="212" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,424) scale(1,-1)">x2</text>
+			<text x="409.701904296875" y="277.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,554) scale(1,-1)">x1</text>
 			<rect x="571.0" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(66%,77%,84%); fill-rule: evenodd;"/>
 			<rect x="578.4285714285714" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(87%,73%,40%); fill-rule: evenodd;"/>
 			<rect x="585.8571428571429" y="321.57142857142856" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(87%,77%,53%); fill-rule: evenodd;"/>
@@ -439,30 +439,30 @@
 			<rect x="660.1428571428571" y="225.0" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(88%,70%,29%); fill-rule: evenodd;"/>
 			<rect x="667.5714285714286" y="225.0" width="7.578571428571422" height="7.578571428571422" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,80%,64%); fill-rule: evenodd;"/>
 			<rect x="571" y="225" width="104" height="104" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6; fill: none; fill-rule: evenodd;"/>
-			<text x="580.37375" y="340" style="font-family: Helvetica-Bold; font-size: 7.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,680) scale(1,-1)">R2: C_single = 0.065092</text>
-			<text x="619.304" y="212" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,424) scale(1,-1)">x2</text>
-			<text x="557.304" y="277.0" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,554) scale(1,-1)">x1</text>
-			<text x="496.1175" y="199" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,398) scale(1,-1)">binned pair-density ratio to uniform</text>
+			<text x="571.92822265625" y="340" style="font-family: KeplerVera-Bold; font-size: 7.5px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,680) scale(1,-1)">R2: C_single = 0.065092</text>
+			<text x="618.701904296875" y="212" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,424) scale(1,-1)">x2</text>
+			<text x="556.701904296875" y="277.0" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,554) scale(1,-1)">x1</text>
+			<text x="487.456298828125" y="199" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,398) scale(1,-1)">binned pair-density ratio to uniform</text>
 			<rect x="453" y="181" width="12" height="8" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,62%,0%); fill-rule: evenodd;"/>
-			<text x="470" y="183" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">&lt; 1</text>
+			<text x="470" y="183" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">&lt; 1</text>
 			<rect x="533" y="181" width="12" height="8" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,87%,89%); fill-rule: evenodd;"/>
-			<text x="550" y="183" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">= 1</text>
+			<text x="550" y="183" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">= 1</text>
 			<rect x="613" y="181" width="12" height="8" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd;"/>
-			<text x="630" y="183" style="font-family: Helvetica; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">&gt; 1</text>
-			<text x="410" y="151" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,302) scale(1,-1)">D</text>
-			<text x="427" y="151" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,302) scale(1,-1)">Cue window and return to full support</text>
+			<text x="630" y="183" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,366) scale(1,-1)">&gt; 1</text>
+			<text x="410" y="151" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,302) scale(1,-1)">D</text>
+			<text x="427" y="151" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,302) scale(1,-1)">Cue window and return to full support</text>
 			<path d="M 424,99 L 681,99 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 1;"/>
 			<rect x="424" y="81" width="128.5" height="36" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,44%,69%); fill-rule: evenodd; fill-opacity: 0.12;"/>
 			<rect x="552.5" y="81" width="128.5" height="36" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd; fill-opacity: 0.1;"/>
 			<path d="M 424,77 L 424,121 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
-			<text x="421.776" y="65" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">0</text>
+			<text x="421.455078125" y="65" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">0</text>
 			<path d="M 552.5,77 L 552.5,121 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
-			<text x="546.944" y="65" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">5M</text>
+			<text x="546.50390625" y="65" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">5M</text>
 			<path d="M 681,77 L 681,121 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
-			<text x="673.22" y="65" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">10M</text>
-			<text x="453.13" y="126" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,252) scale(1,-1)">R1/R2 cue-bearing</text>
-			<text x="578.75" y="126" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,252) scale(1,-1)">uniform full support</text>
-			<text x="424" y="48" style="font-family: Helvetica; font-size: 7.5px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,96) scale(1,-1)">Only the sampler switches at 5M; training continues to 10M.</text>
+			<text x="672.458984375" y="65" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,130) scale(1,-1)">10M</text>
+			<text x="446.748046875" y="126" style="font-family: KeplerVera-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,252) scale(1,-1)">R1/R2 cue-bearing</text>
+			<text x="571.3515625" y="126" style="font-family: KeplerVera-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,252) scale(1,-1)">uniform full support</text>
+			<text x="424" y="48" style="font-family: KeplerVera; font-size: 7.5px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,96) scale(1,-1)">Only the sampler switches at 5M; training continues to 10M.</text>
 		</g>
 	</g>
 </svg>

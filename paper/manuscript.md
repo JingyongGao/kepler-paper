@@ -11,26 +11,27 @@ determines the target. Under uniform full support, neither parent alone carries
 predictive information, although the pair jointly carries
 4.66948 nats. We constructed strictly positive full-support
 training distributions containing transient low-order cues while preserving
-uniform marginals and the exact target conditional. An exploratory v3.5
-experiment identified earlier predictive-state formation with increasing
-registered cue dose. We prospectively froze the architecture, optimizer
+uniform marginals and the exact target conditional. The exploratory study
+identified earlier predictive-state formation with increasing registered cue
+dose. We prospectively froze the architecture, optimizer
 configuration, objective, evaluation protocol, onset definition, and
-statistical test before confirmatory training. The v3.6 study was a
-prospectively frozen confirmatory replication using held-out rules, cue
-permutations, and initializations, with three cue doses. Across eight paired
-blocks, verified onset occurred in
+statistical test before confirmatory training. The confirmatory study used
+held-out rules, cue permutations, and initializations with three cue doses.
+Across eight paired blocks, verified onset occurred in
 1/8,
 6/8, and
 8/8 blocks for R0, R1, and R2.
-The prospectively frozen one-sided exact blocked Page-style test enumerated all
+The one-sided exact blocked Page-style test enumerated all
 1,679,616 assignments and gave
 `p = 9.525986892242037e-06`. All 13 nonzero-cue
 cells positive at cue removal retained the representation threshold at 6M and
 10M exposures. These results show that temporary cue-bearing full-support
 distributions causally changed representation-onset timing or probability
-within the parent-exposed task and model family under the prospectively frozen
+within the parent-exposed task and model family under the fixed confirmatory
 protocol. They do not identify singleton mutual information alone as the
-causal variable and do not establish a universal Transformer property.
+causal variable and do not establish a universal Transformer property. In
+plain terms, a temporary statistical scaffold helped the model discover a rule
+representation that remained useful after the scaffold was removed.
 
 ## Introduction
 
@@ -234,7 +235,8 @@ and were not reused as confirmatory observations.
 lines show seeds. Bands show the mean of registered row-bootstrap interval
 endpoints and are not a new group-level confidence interval.
 
-Table 2 reports the exploratory onset and establishment outcomes.
+The compact main-text table reports the exploratory onset and establishment
+outcomes; the complete checkpoint coding is retained in the Supplement.
 
 ## Prospectively frozen confirmatory replication
 
@@ -276,8 +278,9 @@ Lines preserve rule, permutation, and initialization pairing.
 *Figure 4.* Exact null distribution reconstructed from the frozen v3.6 block
 ranks. The primary test contains v3.6 only.
 
-Tables 3 and 4 report the confirmatory outcomes and exact tests. Rule- and
-permutation-stratified tests are secondary, nominal, and not
+Compact main-text tables report the confirmatory outcomes and exact tests.
+Complete checkpoint and stratified-test fields are retained in the Supplement.
+Rule- and permutation-stratified tests are secondary, nominal, and not
 multiplicity-adjusted. The transition and terminal-coding rules are specified
 in Supplementary Methods.
 
@@ -434,7 +437,8 @@ recomputes distribution invariants, onset and establishment coding, the exact
 1,679,616-assignment primary test, and all paper
 outputs without loading a training loop or taking an optimizer step.
 
-Tables 7 and 8 summarize the protocol-integrity audit and claim boundaries.
+The protocol-integrity and claim-boundary tables are retained in the
+Supplement.
 
 ## Data and code availability
 
@@ -507,6 +511,14 @@ and raw artifact counts. The audit validated 330 v3.5 and 264 v3.6 checkpoint
 sidecars. The manuscript revision changes only files under `paper/`; prior
 manifests, results, checkpoints, the confirmatory freeze record, and statistical
 definitions remain unchanged.
+
+### Complete tabular audits
+
+The Supplement retains the complete registered distribution audit, exploratory
+and confirmatory checkpoint codings, primary and stratified exact-test fields,
+paired-difference provenance, cue-removal records, protocol-integrity audit,
+and claim-boundary table. The main text uses compact narrative-facing views of
+the same frozen values.
 
 ## References
 

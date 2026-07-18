@@ -1,0 +1,65 @@
+{
+  "all_manifest_sha256": {
+    "artifacts/compositional_generalization_manifest.json": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "artifacts/cue_dose_confirmatory_manifest.json": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39",
+    "artifacts/cue_dose_manifest.json": "cfae2e4656c11cf37be387147e76b2f4f9585805320935893f6b27056d42957b",
+    "artifacts/full_support_transfer_manifest.json": "5e158ea537ad267da5bc8bb262552ba9e28502e876a7edb3cde2e0bc0b3e1cbe",
+    "artifacts/learnability_audit_manifest.json": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "artifacts/manifest.json": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+    "artifacts/mechanism_isolation_manifest.json": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "artifacts/pilot_manifest.json": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0"
+  },
+  "figure_source_data_sha256_before": {
+    "fig01_task_cue_schematic.source.json": "0afe99eeacd8edc33b3f2fd7623828a00ae54732290468256924ac7b2ddf876e",
+    "fig02_v35_dose_trajectories.source.csv": "25f948618557f091a9f6aef3e18ef9d3b6264726e5e6fec19c0535557532aa02",
+    "fig03_v36_paired_onset.source.csv": "095c075d8e1c996fb517eb0472a71d21c40cc998eb2f77637a148395ece48d5e",
+    "fig04_v36_exact_null.source.csv": "fb41fd8fd8ce55bddb58bf6ea3571c6d29eaa9adbe6b7c4c3bda8b62e4db3186",
+    "fig04_v36_exact_null.source.json": "021ffe93e864f74fc59329939ea176ce19fcb7319c83b04775807ef1906566ff",
+    "fig05_v36_persistence.source.csv": "e1c1cc758be3cc4d4d9fe438c0ca80d372f11fbdb5a9a80d77bfc7e51164b50a",
+    "fig06_v36_rule_heterogeneity.source.csv": "f09de3ecb686dbbbf1a4733805a42b254a6c3a2b9f44f55ceac1cbc3f0acccc4",
+    "fig07_v35_geometry_comparison.source.csv": "15ae7283dc0bf6d5e609c209c35b34078abf6c06ec7fcd473a030ee6af2d5bcf"
+  },
+  "frozen_scientific_commit": "f9fc22d85cd52863087afbb3f924466a63b30ba2",
+  "frozen_scientific_tag": "kepler-v3.6-confirm1",
+  "kind": "kepler_paper_v1_2_1_final_preflight_baseline",
+  "old_submission_pdf": "output/pdf/kepler_paper_v1_2_submission.pdf",
+  "old_submission_pdf_sha256": "37e91cef9e9fc79b453083eaaeeda455dc9aef714e67857a4ecb9cfe74a4aa1c",
+  "optimizer_steps": 0,
+  "result_sha256": {
+    "v3.5_exploratory": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1",
+    "v3.6_confirmatory": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0"
+  },
+  "source_paper_commit": "d1377ee1a67c37da09aef89ca6ab0c68c9a4ee61",
+  "table_csv_sha256_before": {
+    "table01_distribution_invariants.csv": "39b11fb41a3a66dab4c224e1e0d684b131ff838a5cdef734303d871d2fa5f3db",
+    "table02_v35_exploratory_outcomes.csv": "35bee01bb7e9c28da7a30368bf576b1999b82d7a67c73ed7a9a178ca015938f4",
+    "table03_v36_confirmatory_outcomes.csv": "032a8bf21aac425275a0d7d78f20e3d33063ce1304a118af4e09b08a7a655bc3",
+    "table04_exact_tests.csv": "73c367b77bdd968e9927e7ea5e9bbb0501ce8cc112f25f29227ad36f0ad26b2e",
+    "table05_paired_R_differences.csv": "54fcf44ecfd501d11485c9ca8955d9103bb08ada8615f5183b205e7f241360ea",
+    "table06_cue_removal_persistence.csv": "9323ae6704e391f9647e779ca2b9a80810799444bf4e5f3cb8d3d62039252f1c",
+    "table07_protocol_integrity.csv": "3464354df6b40f00c2058fe67bd94f3da15f4d1509b897b3451b93e67374872d",
+    "table08_claim_boundaries.csv": "2f8390fc273ce4f216f40b43b1dd546a0fcc460bbf440b231f8766a9cd80d836"
+  },
+  "tracked_scientific_artifact_count": 18,
+  "tracked_scientific_artifact_sha256": {
+    "artifacts/compositional_generalization_manifest.json": "ed4409d18c74d35614e731e90742f586620230b2bfd64b2e7e2fe5294c8d7d72",
+    "artifacts/confirmatory_distribution_audit.json": "f67d261bc6e97fcb9fb7f25e12d7dfdae29fe0567acc930677507d5bf454c3c9",
+    "artifacts/cue_distribution_audit.json": "e6ce056320307dddd21691e475e7c604f7d02f880f89821f8c89545803fddc0a",
+    "artifacts/cue_dose_confirmatory_manifest.json": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39",
+    "artifacts/cue_dose_confirmatory_results.json": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0",
+    "artifacts/cue_dose_manifest.json": "cfae2e4656c11cf37be387147e76b2f4f9585805320935893f6b27056d42957b",
+    "artifacts/cue_dose_results.json": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1",
+    "artifacts/full_support_transfer_manifest.json": "5e158ea537ad267da5bc8bb262552ba9e28502e876a7edb3cde2e0bc0b3e1cbe",
+    "artifacts/learnability_audit_manifest.json": "95a21c5a89af958ae986b3d3284c9e610bd37c16a0d3e68dc2d01bd83c9f5af4",
+    "artifacts/manifest.json": "4331a9198ee43a374e908d3b2b0e95d34173fe94220e3cc3505f9deee7611f10",
+    "artifacts/mechanism_isolation_manifest.json": "d854fa799a361287111c2f3ad996558992f72741a6560883517caf0979070b5a",
+    "artifacts/pilot_manifest.json": "3df30d340a80395b5185b5f38f6780c6a288d715e4d3eeb04cf527c9f8f097b0",
+    "src/kepler/confirmatory_analysis.py": "98a1d9ec58a154fc88398cdae237298d72c7e8ffb7265ca4b5abb67fc4517c65",
+    "src/kepler/confirmatory_distribution.py": "6ce5c61e63553abbde08393b9513b48f74b362be03938ee3696a30572650ff16",
+    "src/kepler/confirmatory_runner.py": "580ff7c5f4ad0562ab84db4b63c87969e8d3c236382bb7653b1331e869ebc5aa",
+    "src/kepler/cue_distribution.py": "7f3b97a1ee42b95c6462dd34496310da461fa042f270ad3c45fac06b4237de07",
+    "src/kepler/cue_dose_analysis.py": "a65db1a5303cd03bfe4be4d7077881774ed47e40ec1f88544e1d457fb47c794f",
+    "src/kepler/cue_dose_runner.py": "e6b70d15c0bb66a85907b04c305d99e36a41eab023746882f3bb0e0a3ae002f7"
+  },
+  "verified_before_final_preflight": true
+}

@@ -1,0 +1,15 @@
+\begin{table}[!htbp]
+\centering
+\caption{Counts and integrity flags are read from the frozen result and confirmatory freeze records.}
+\label{tab:table07-protocol-integrity}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+Version & Status & Registered runs & Completed runs & Checkpoints & Sidecars valid & Evaluations & Probe reports & Gradient audits & Switch checks & Switches passed & Max exposure & Objective & Excluded from scaling fit \\
+\midrule
+v3.5 & exploratory & 30 & 30 & 330 & yes & 360 & 210 & 150 & 30 & yes & 10000000 & exact\_soft\_label\_cross\_entropy & yes \\
+v3.6 & confirmatory & 24 & 24 & 264 & yes & 288 & 168 & 0 & 24 & yes & 10000000 & exact\_soft\_label\_cross\_entropy & yes \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

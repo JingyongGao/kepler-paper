@@ -1,0 +1,14 @@
+{
+  "allowed_layout_warnings": [
+    "manuscript.tex:127: Underfull \\vbox (badness 4582) has occurred while \\output is active",
+    "manuscript.tex:228: Underfull \\vbox (badness 10000) has occurred while \\output is active"
+  ],
+  "byte_identical": true,
+  "consecutive_builds": 2,
+  "kind": "deterministic_tmlr_pdf_build_record",
+  "optimizer_steps": 0,
+  "pdf_bytes": 375562,
+  "pdf_sha256": "8f7b7d73fd2a02f039e66e05cc68d8ded4efdade49f39c2d09b463d44954bfb8",
+  "source_date_epoch": 0,
+  "warnings_requiring_intervention": 0
+}

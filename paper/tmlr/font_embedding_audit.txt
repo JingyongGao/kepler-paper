@@ -1,0 +1,96 @@
+Project Kepler v1.2.1 font embedding audit
+pdffonts: Poppler pdffonts (bundled runtime)
+all_fonts_embedded: yes
+audited_font_records: 44
+
+file: output/pdf/kepler_paper_tmlr_v1_submission.pdf
+sha256: 8f7b7d73fd2a02f039e66e05cc68d8ded4efdade49f39c2d09b463d44954bfb8
+font_records: 30
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+IHAIZV+LMRoman10-Regular             Type 1C           Custom           yes yes yes      4  0
+BZIVMZ+LMSans10-Bold                 Type 1C           Custom           yes yes yes      5  0
+IXFAWU+LMMathSymbols10-Regular       Type 1C           Custom           yes yes yes      6  0
+TQTHRL+LMRoman10-Bold                Type 1C           Custom           yes yes yes      7  0
+YEUUOC+LMMathItalic10-Regular        Type 1C           Custom           yes yes yes      8  0
+AKHCZK+LMRoman10-Regular             Type 1C           WinAnsi          yes yes yes      9  0
+VDVGTR+LMRoman10-Italic              Type 1C           Custom           yes yes yes     10  0
+CAFSZL+LMMathSymbols6-Regular        Type 1C           Custom           yes yes yes     13  0
+DDIEWW+LMRoman8-Regular              Type 1C           Custom           yes yes yes     14  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes     19  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     23  0
+FKPJSN+LMRoman7-Regular              Type 1C           WinAnsi          yes yes yes     58  0
+PVTTLK+MSBM10                        Type 1C           Builtin          yes yes yes     59  0
+JAGKKY+LMMathItalic7-Regular         Type 1C           Custom           yes yes yes     60  0
+NOMARO+LMRoman10-Bold                Type 1C           WinAnsi          yes yes yes     61  0
+KPXLOM+LMRoman9-Regular              Type 1C           Custom           yes yes yes     68  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes     70  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     74  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes     86  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     90  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes     99  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes    103  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes    119  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes    123  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes    137  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes    141  0
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes    150  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes    154  0
+UTACNV+LMMathSymbols7-Regular        Type 1C           Custom           yes yes yes    167  0
+FZDNHS+LMMono10-Regular              Type 1C           Custom           yes yes yes    168  0
+
+file: figures/fig01_task_cue_schematic.pdf
+sha256: a5ac2beca7bfe19ebfe119495c8b6c757226b88c5e443699022a0d3c5db0d601
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig02_v35_dose_trajectories.pdf
+sha256: 51f3cb84de97c46bd87f5d1e8ad97270c0208e9a62d4d88393f979cdf15114ea
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig03_v36_paired_onset.pdf
+sha256: d68edb3304bdbdb20ae88ee9d797a36dc42bfc14f9c15d8daa07cb61c7ab7fcd
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig04_v36_exact_null.pdf
+sha256: 4d19ece58bab750fec382ab62eece529f157a7c436fb1b3253aeaae206aa0494
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig05_v36_persistence.pdf
+sha256: e8032f70f69e77535c913952776ba4d9a97cf9315ab6ef1f4569fa6d11b633a1
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig06_v36_rule_heterogeneity.pdf
+sha256: e12bf106a3c0666ebe74d2edbc5db2e05118317ce8f51d04e9d89e1fa20ba0ab
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0
+
+file: figures/fig07_v35_geometry_comparison.pdf
+sha256: a2a1459659259bf618e93fb235173bfefe3bd1404910e0f8cb97b18202529e57
+font_records: 2
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+BitstreamVeraSans-Bold        TrueType          WinAnsi          yes yes yes      6  0
+AAAAAA+BitstreamVeraSans-Roman       TrueType          WinAnsi          yes yes yes     10  0

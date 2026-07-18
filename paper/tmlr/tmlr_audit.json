@@ -1,0 +1,43 @@
+{
+  "frozen_submission_pdf_unchanged": true,
+  "mode": "tmlr_submission_preparation_no_training",
+  "new_experiments": 0,
+  "optimizer_steps": 0,
+  "passed": true,
+  "pdf": {
+    "appendix_start_page": 10,
+    "forbidden_identity_matches": 0,
+    "llm_disclosure_present": true,
+    "main_content_pages_at_most": 9,
+    "page_size_points": [
+      612.0,
+      792.0
+    ],
+    "pages": 12,
+    "passed": true,
+    "reference_start_page": 9
+  },
+  "source": {
+    "anonymous_author_placeholder": true,
+    "double_blind_style_mode": true,
+    "llm_disclosure_on_title_footnote": true,
+    "passed": true,
+    "references_before_appendix": true
+  },
+  "style": {
+    "official_style_files_modified": false,
+    "official_template_commit": "7bf90efe3a0debbba703c05c43f3ff7e4d4a2992",
+    "passed": true,
+    "style_files_verified": 8
+  },
+  "supplement": {
+    "bytes": 1271244,
+    "checkpoint_files": 0,
+    "files": 89,
+    "identity_matches": 0,
+    "passed": true,
+    "sha256": "ec21b36e4d9b2185b070d6fe2b5039b14300688d4ccb5b4b4ea004cb93a55118",
+    "text_files_scanned": 89,
+    "within_100_mb_limit": true
+  }
+}

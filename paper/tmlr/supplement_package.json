@@ -1,0 +1,17 @@
+{
+  "byte_identical": true,
+  "bytes": 1271244,
+  "consecutive_builds": 2,
+  "file_count": 89,
+  "identity_audit": {
+    "forbidden_identity_matches": 0,
+    "passed": true,
+    "text_files_scanned": 88
+  },
+  "kind": "anonymous_tmlr_supplement_package_record",
+  "maximum_bytes": 104857600,
+  "optimizer_steps": 0,
+  "path": "output/tmlr/kepler_tmlr_supplement_v1.zip",
+  "sha256": "ec21b36e4d9b2185b070d6fe2b5039b14300688d4ccb5b4b4ea004cb93a55118",
+  "within_tmlr_size_limit": true
+}

@@ -60,7 +60,12 @@ def write_csv(
         fieldnames = list(rows[0]) if rows else []
     temporary = path.with_suffix(path.suffix + ".tmp")
     with temporary.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="raise")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            extrasaction="raise",
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
     os.replace(temporary, path)

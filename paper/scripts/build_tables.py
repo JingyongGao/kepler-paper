@@ -162,6 +162,11 @@ def exact_test_rows(v36: dict) -> list[dict[str, Any]]:
         rows.append(
             {
                 "analysis": name,
+                "inference_status": (
+                    "primary"
+                    if name == "primary"
+                    else "secondary_nominal_not_multiplicity_adjusted"
+                ),
                 "blocks": test["seed_blocks"],
                 "exact_assignments": test["exact_permutation_count"],
                 "observed_statistic": test["observed_statistic"],
@@ -340,7 +345,7 @@ def main() -> None:
     write_table(
         "table03_v36_confirmatory_outcomes",
         "v3.6 confirmatory onset outcomes",
-        "Independent confirmatory outcomes across eight paired rule/permutation/initialization blocks.",
+        "Prospectively frozen outcomes across eight paired blocks. Each block crosses one held-out rule, cue permutation, and initialization; trajectories are paired observations, not independent inference units.",
         outcome_headers,
         outcome_rows(
             v36["primary_confirmatory_test"]["condition_summaries"],
@@ -352,9 +357,10 @@ def main() -> None:
     write_table(
         "table04_exact_tests",
         "Primary and stratified exact tests",
-        "One-sided exact blocked Page-style tests; v3.5 is excluded from every row.",
+        "The primary row is confirmatory. Rule- and permutation-stratified rows are secondary, nominal, and not multiplicity-adjusted; v3.5 is excluded throughout.",
         (
             ("analysis", "Analysis"),
+            ("inference_status", "Inference status"),
             ("blocks", "Blocks"),
             ("exact_assignments", "Exact assignments"),
             ("observed_statistic", "Observed statistic"),

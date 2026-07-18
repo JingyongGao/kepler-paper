@@ -1,6 +1,6 @@
 # v3.6 confirmatory onset outcomes
 
-Independent confirmatory outcomes across eight paired rule/permutation/initialization blocks.
+Prospectively frozen outcomes across eight paired blocks. Each block crosses one held-out rule, cue permutation, and initialization; trajectories are paired observations, not independent inference units.
 
 | Version | Status | Condition | n | Onset by 5M | Onset by 10M | Onset exposures (M) | Terminal ordinals | Established by 5M | Established by 10M | Mean R, 5M pre | Mean R, 10M |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

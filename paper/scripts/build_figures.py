@@ -303,7 +303,128 @@ def checkpoint(cell: dict[str, Any], exposure: int, phase: str = "standard") -> 
     return matches[0]
 
 
+def blend(
+    start: colors.Color,
+    end: colors.Color,
+    amount: float,
+) -> colors.Color:
+    weight = min(1.0, max(0.0, amount))
+    return colors.Color(
+        start.red + (end.red - start.red) * weight,
+        start.green + (end.green - start.green) * weight,
+        start.blue + (end.blue - start.blue) * weight,
+    )
+
+
+def binned_pair_density_ratio(
+    condition: dict[str, Any],
+    *,
+    p: int,
+    bins: int = 14,
+) -> dict[str, Any]:
+    coefficient_1, coefficient_2 = (
+        int(value) for value in condition["coefficients"]
+    )
+    cue_coefficient = int(condition["cue_coefficient_c"])
+    selected_residues = {int(value) for value in condition["B_m"]}
+    m = int(condition["m"])
+    lam = float(condition["lambda"])
+    mass = [[0.0 for _ in range(bins)] for _ in range(bins)]
+    counts = [[0 for _ in range(bins)] for _ in range(bins)]
+    minimum = math.inf
+    maximum = -math.inf
+    for x1 in range(p):
+        row = min(bins - 1, x1 * bins // p)
+        for x2 in range(p):
+            column = min(bins - 1, x2 * bins // p)
+            z = (coefficient_1 * x1 + coefficient_2 * x2) % p
+            selected = ((z - cue_coefficient * x1) % p) in selected_residues
+            probability = (1.0 - lam) / (p * p)
+            if selected:
+                probability += lam / (m * p)
+            mass[row][column] += probability
+            counts[row][column] += 1
+            minimum = min(minimum, probability)
+            maximum = max(maximum, probability)
+    tolerance = 5e-18
+    if abs(minimum - float(condition["minimum_pair_probability"])) > tolerance:
+        raise AssertionError("minimum pair probability does not match frozen audit")
+    if abs(maximum - float(condition["maximum_pair_probability"])) > tolerance:
+        raise AssertionError("maximum pair probability does not match frozen audit")
+    ratios = [
+        [
+            mass[row][column] / (counts[row][column] / (p * p))
+            for column in range(bins)
+        ]
+        for row in range(bins)
+    ]
+    return {
+        "bins": bins,
+        "density_ratio_to_uniform": ratios,
+        "minimum_pair_probability": minimum,
+        "maximum_pair_probability": maximum,
+    }
+
+
+def density_heatmap(
+    drawing: Drawing,
+    x: float,
+    y: float,
+    size: float,
+    ratios: Sequence[Sequence[float]],
+    label: str,
+    *,
+    deviation_scale: float,
+) -> None:
+    bins = len(ratios)
+    cell = size / bins
+    scale = deviation_scale if deviation_scale > 0 else 1.0
+    for row_index, row in enumerate(ratios):
+        for column_index, value in enumerate(row):
+            deviation = (value - 1.0) / scale
+            color = (
+                blend(GRID, BLUE, 0.82 * deviation)
+                if deviation >= 0
+                else blend(GRID, ORANGE, 0.82 * -deviation)
+            )
+            drawing.add(
+                Rect(
+                    x + column_index * cell,
+                    y + (bins - 1 - row_index) * cell,
+                    cell + 0.15,
+                    cell + 0.15,
+                    fillColor=color,
+                    strokeColor=None,
+                )
+            )
+    drawing.add(
+        Rect(
+            x,
+            y,
+            size,
+            size,
+            fillColor=None,
+            strokeColor=INK,
+            strokeWidth=0.6,
+        )
+    )
+    text(drawing, x + size / 2, y + size + 11, label, size=7.5, anchor="middle", bold=True)
+    text(drawing, x + size / 2, y - 13, "x2", size=7, anchor="middle", color=MUTED)
+    text(drawing, x - 10, y + size / 2, "x1", size=7, anchor="middle", color=MUTED, angle=90)
+
+
 def figure_01(v35_audit: dict, v36_audit: dict) -> None:
+    comparison_conditions = {
+        item["condition_id"]: item
+        for item in v36_audit["conditions"]
+        if item["rule_id"] == "rule_0"
+        and item["permutation_id"] == "permutation_0"
+        and item["condition_id"] in {"R0", "R2"}
+    }
+    density_comparison = {
+        condition: binned_pair_density_ratio(item, p=int(v36_audit["p"]))
+        for condition, item in comparison_conditions.items()
+    }
     conditions = {
         item["condition_id"]: item["target_singleton_cue_index"]
         for item in v36_audit["conditions"]
@@ -319,52 +440,108 @@ def figure_01(v35_audit: dict, v36_audit: dict) -> None:
         "v3_6_rules": v36_audit["rules"],
         "v3_6_confirmatory_targets": conditions,
         "m": v36_audit["m"],
+        "pair_distribution_comparison": {
+            condition: {
+                "distribution_id": comparison_conditions[condition][
+                    "distribution_id"
+                ],
+                "coefficients": comparison_conditions[condition]["coefficients"],
+                "cue_coefficient_c": comparison_conditions[condition][
+                    "cue_coefficient_c"
+                ],
+                "B_m": comparison_conditions[condition]["B_m"],
+                "lambda": comparison_conditions[condition]["lambda"],
+                "target_singleton_cue_index": comparison_conditions[condition][
+                    "target_singleton_cue_index"
+                ],
+                **density_comparison[condition],
+            }
+            for condition in ("R0", "R2")
+        },
+        "data_source": "artifacts/confirmatory_distribution_audit.json",
     }
     atomic_write_json(FIGURES / "fig01_task_cue_schematic.source.json", source)
     d = Drawing(WIDTH, HEIGHT)
     title(d, "Pure-synergy task and transient full-support cue family", "Confirmatory")
-    panel_label(d, 34, 370, "A", "Controlled finite-field task")
-    box(d, 45, 255, 75, 48, "X1", "uniform parent", BLUE)
-    box(d, 45, 177, 75, 48, "X2", "uniform parent", ORANGE)
+    panel_label(d, 28, 372, "A", "Parent-to-center-to-target graph")
+    box(d, 36, 287, 63, 42, "X1", "parent", BLUE)
+    box(d, 36, 225, 63, 42, "X2", "parent", ORANGE)
     box(
         d,
-        178,
-        216,
-        128,
-        58,
+        137,
+        246,
+        119,
+        52,
         "Z = a1 X1 + a2 X2",
         f"mod p, p={source['p']}",
         GREEN,
     )
     box(
         d,
-        360,
-        216,
-        105,
-        58,
+        287,
+        246,
+        92,
+        52,
         "Y = Z + epsilon",
         f"eta={source['eta']}",
         PURPLE,
     )
-    arrow(d, 120, 279, 178, 250, BLUE)
-    arrow(d, 120, 201, 178, 238, ORANGE)
-    arrow(d, 306, 245, 360, 245, GREEN)
-    text(d, 44, 137, "Pure synergy under uniform full support", size=9, bold=True)
-    text(d, 44, 119, "I(Y; X1) = I(Y; X2) = 0", size=8, color=MUTED)
-    text(d, 44, 103, "I(Y; X1,X2) = log(p) - H(nu_eta)", size=8, color=MUTED)
-    text(d, 44, 82, "Every ordered pair remains possible.", size=8, color=MUTED)
+    arrow(d, 99, 308, 137, 282, BLUE)
+    arrow(d, 99, 246, 137, 264, ORANGE)
+    arrow(d, 256, 272, 287, 272, GREEN)
 
-    panel_label(d, 510, 370, "B", "Cue then removal")
-    x0, x1 = 514, 686
-    y = 270
+    panel_label(d, 28, 190, "B", "Pure-synergy identities at R0")
+    text(d, 37, 157, "I(Y; X1) = I(Y; X2) = 0", size=8.5, bold=True)
+    text(d, 37, 137, "I(Y; X1,X2) = log(p) - H(nu_eta)", size=8.5)
+    text(d, 37, 117, "X1, X2, Z, and Y are marginally uniform", size=8)
+    text(d, 37, 97, "All p^2 ordered parent pairs have positive support", size=8)
+    text(d, 37, 72, "Cue conditions preserve marginals, not parent independence.", size=7.5, color=MUTED)
+
+    panel_label(d, 410, 372, "C", "Pair-distribution geometry")
+    comparison_scale = max(
+        abs(value - 1.0)
+        for row in density_comparison["R2"]["density_ratio_to_uniform"]
+        for value in row
+    )
+    density_heatmap(
+        d,
+        424,
+        225,
+        104,
+        density_comparison["R0"]["density_ratio_to_uniform"],
+        "R0: lambda = 0",
+        deviation_scale=comparison_scale,
+    )
+    density_heatmap(
+        d,
+        571,
+        225,
+        104,
+        density_comparison["R2"]["density_ratio_to_uniform"],
+        f"R2: C_single = {conditions['R2']:g}",
+        deviation_scale=comparison_scale,
+    )
+    text(d, 550, 199, "binned pair-density ratio to uniform", size=7, anchor="middle", color=MUTED)
+    drawing_legend_y = 183
+    for legend_x, legend_color, legend_label in (
+        (470, ORANGE, "< 1"),
+        (550, GRID, "= 1"),
+        (630, BLUE, "> 1"),
+    ):
+        d.add(Rect(legend_x - 17, drawing_legend_y - 2, 12, 8, fillColor=legend_color, strokeColor=None))
+        text(d, legend_x, drawing_legend_y, legend_label, size=7, color=MUTED)
+
+    panel_label(d, 410, 151, "D", "Cue window and return to full support")
+    x0, x1 = 424, 681
+    y = 99
     d.add(Line(x0, y, x1, y, strokeColor=INK, strokeWidth=1.0))
     cue_end = x0 + (x1 - x0) / 2
     d.add(
         Rect(
             x0,
-            y - 25,
+            y - 18,
             cue_end - x0,
-            50,
+            36,
             fillColor=colors.Color(BLUE.red, BLUE.green, BLUE.blue, alpha=0.12),
             strokeColor=None,
         )
@@ -372,34 +549,19 @@ def figure_01(v35_audit: dict, v36_audit: dict) -> None:
     d.add(
         Rect(
             cue_end,
-            y - 25,
+            y - 18,
             x1 - cue_end,
-            50,
+            36,
             fillColor=colors.Color(MUTED.red, MUTED.green, MUTED.blue, alpha=0.10),
             strokeColor=None,
         )
     )
     for xpos, label in ((x0, "0"), (cue_end, "5M"), (x1, "10M")):
-        d.add(Line(xpos, y - 30, xpos, y + 30, strokeColor=INK, strokeWidth=0.8))
-        text(d, xpos, y - 43, label, anchor="middle", size=8)
-    text(d, (x0 + cue_end) / 2, y + 37, "cue-bearing", anchor="middle", size=8, bold=True)
-    text(d, (cue_end + x1) / 2, y + 37, "uniform", anchor="middle", size=8, bold=True)
-    text(d, 514, 199, "Confirmatory targets", size=9, bold=True)
-    for index, condition in enumerate(("R0", "R1", "R2")):
-        color = CONDITION_COLORS[condition]
-        cy = 172 - index * 32
-        marker(d, 523, cy + 2, color, radius=4)
-        text(d, 536, cy, condition, size=8, bold=True)
-        text(
-            d,
-            568,
-            cy,
-            f"C_single = {conditions[condition]:g}",
-            size=8,
-            color=MUTED,
-        )
-    text(d, 514, 69, f"m = {source['m']}; exact soft labels", size=8, color=MUTED)
-    text(d, 514, 53, "Sampler changes at 5M; model state does not.", size=8, color=MUTED)
+        d.add(Line(xpos, y - 22, xpos, y + 22, strokeColor=INK, strokeWidth=0.8))
+        text(d, xpos, y - 34, label, anchor="middle", size=8)
+    text(d, (x0 + cue_end) / 2, y + 27, "R1/R2 cue-bearing", anchor="middle", size=8, bold=True)
+    text(d, (cue_end + x1) / 2, y + 27, "uniform full support", anchor="middle", size=8, bold=True)
+    text(d, 424, 48, "Only the sampler switches at 5M; training continues to 10M.", size=7.5, color=MUTED)
     export(d, "fig01_task_cue_schematic")
 
 

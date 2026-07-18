@@ -1,6 +1,6 @@
-analysis,blocks,exact_assignments,observed_statistic,upper_tail_count,one_sided_p,confirmatory_at_0_05,v3_5_included
-primary,8,1679616,110.0,16,9.525986892242037e-06,True,False
-rule_0,4,1296,55.5,2,0.0015432098765432098,True,False
-rule_1,4,1296,54.5,8,0.006172839506172839,True,False
-permutation_0,4,1296,55.5,2,0.0015432098765432098,True,False
-permutation_1,4,1296,54.5,8,0.006172839506172839,True,False
+analysis,inference_status,blocks,exact_assignments,observed_statistic,upper_tail_count,one_sided_p,confirmatory_at_0_05,v3_5_included
+primary,primary,8,1679616,110.0,16,9.525986892242037e-06,True,False
+rule_0,secondary_nominal_not_multiplicity_adjusted,4,1296,55.5,2,0.0015432098765432098,True,False
+rule_1,secondary_nominal_not_multiplicity_adjusted,4,1296,54.5,8,0.006172839506172839,True,False
+permutation_0,secondary_nominal_not_multiplicity_adjusted,4,1296,55.5,2,0.0015432098765432098,True,False
+permutation_1,secondary_nominal_not_multiplicity_adjusted,4,1296,54.5,8,0.006172839506172839,True,False

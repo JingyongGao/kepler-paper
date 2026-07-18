@@ -48,9 +48,9 @@
     "upper_tail_count": 16
   },
   "tests": {
-    "passed": true,
-    "run": true,
-    "summary": "62 passed in 4.78s"
+    "passed": null,
+    "run": false,
+    "summary": null
   },
   "verified_date": "2026-07-18"
 }

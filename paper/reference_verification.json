@@ -1,0 +1,147 @@
+{
+  "kind": "kepler_submission_reference_verification",
+  "verified_date": "2026-07-18",
+  "policy": "Every cited entry requires manually checked authors, title, venue or repository, year, and DOI or arXiv identifier.",
+  "bibliography_file": "paper/references.bib",
+  "entries": [
+    {
+      "key": "power2022grokking",
+      "authors": ["Alethea Power", "Yuri Burda", "Harri Edwards", "Igor Babuschkin", "Vedant Misra"],
+      "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
+      "venue": "arXiv",
+      "year": 2022,
+      "identifier": {"type": "arXiv", "value": "2201.02177"},
+      "verification_url": "https://arxiv.org/abs/2201.02177",
+      "status": "verified"
+    },
+    {
+      "key": "liu2022understanding",
+      "authors": ["Ziming Liu", "Ouail Kitouni", "Niklas S. Nolte", "Eric J. Michaud", "Max Tegmark", "Mike Williams"],
+      "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
+      "venue": "Advances in Neural Information Processing Systems 35",
+      "year": 2022,
+      "identifier": {"type": "arXiv", "value": "2205.10343"},
+      "verification_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/dfc310e81992d2e4cedc09ac47eff13e-Abstract-Conference.html",
+      "status": "verified"
+    },
+    {
+      "key": "nanda2023progress",
+      "authors": ["Neel Nanda", "Lawrence Chan", "Tom Lieberum", "Jess Smith", "Jacob Steinhardt"],
+      "title": "Progress Measures for Grokking via Mechanistic Interpretability",
+      "venue": "arXiv",
+      "year": 2023,
+      "identifier": {"type": "arXiv", "value": "2301.05217"},
+      "verification_url": "https://arxiv.org/abs/2301.05217",
+      "status": "verified"
+    },
+    {
+      "key": "zhong2023clock",
+      "authors": ["Ziqian Zhong", "Ziming Liu", "Max Tegmark", "Jacob Andreas"],
+      "title": "The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks",
+      "venue": "Advances in Neural Information Processing Systems 36",
+      "year": 2023,
+      "identifier": {"type": "arXiv", "value": "2306.17844"},
+      "verification_url": "https://openreview.net/forum?id=S5wmbQc1We",
+      "status": "verified"
+    },
+    {
+      "key": "bengio2009curriculum",
+      "authors": ["Yoshua Bengio", "Jérôme Louradour", "Ronan Collobert", "Jason Weston"],
+      "title": "Curriculum Learning",
+      "venue": "Proceedings of the 26th Annual International Conference on Machine Learning",
+      "year": 2009,
+      "identifier": {"type": "DOI", "value": "10.1145/1553374.1553380"},
+      "verification_url": "https://doi.org/10.1145/1553374.1553380",
+      "status": "verified"
+    },
+    {
+      "key": "hacohen2019curriculum",
+      "authors": ["Guy Hacohen", "Daphna Weinshall"],
+      "title": "On the Power of Curriculum Learning in Training Deep Networks",
+      "venue": "Proceedings of the 36th International Conference on Machine Learning",
+      "year": 2019,
+      "identifier": {"type": "arXiv", "value": "1904.03626"},
+      "verification_url": "https://proceedings.mlr.press/v97/hacohen19a.html",
+      "status": "verified"
+    },
+    {
+      "key": "jiang2015selfpaced",
+      "authors": ["Lu Jiang", "Deyu Meng", "Qian Zhao", "Shiguang Shan", "Alexander G. Hauptmann"],
+      "title": "Self-Paced Curriculum Learning",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 29(1)",
+      "year": 2015,
+      "identifier": {"type": "DOI", "value": "10.1609/aaai.v29i1.9608"},
+      "verification_url": "https://ojs.aaai.org/index.php/AAAI/article/view/9608",
+      "status": "verified"
+    },
+    {
+      "key": "mobahi2016diffusion",
+      "authors": ["Hossein Mobahi"],
+      "title": "Training Recurrent Neural Networks by Diffusion",
+      "venue": "arXiv",
+      "year": 2016,
+      "identifier": {"type": "arXiv", "value": "1601.04114"},
+      "verification_url": "https://arxiv.org/abs/1601.04114",
+      "status": "verified"
+    },
+    {
+      "key": "hewitt2019probes",
+      "authors": ["John Hewitt", "Percy Liang"],
+      "title": "Designing and Interpreting Probes with Control Tasks",
+      "venue": "Proceedings of EMNLP-IJCNLP",
+      "year": 2019,
+      "identifier": {"type": "DOI", "value": "10.18653/v1/D19-1275"},
+      "verification_url": "https://aclanthology.org/D19-1275/",
+      "status": "verified"
+    },
+    {
+      "key": "belinkov2022probes",
+      "authors": ["Yonatan Belinkov"],
+      "title": "Probing Classifiers: Promises, Shortcomings, and Advances",
+      "venue": "Computational Linguistics 48(1)",
+      "year": 2022,
+      "identifier": {"type": "DOI", "value": "10.1162/coli_a_00422"},
+      "verification_url": "https://direct.mit.edu/coli/article/48/1/207/107571/Probing-Classifiers-Promises-Shortcomings-and",
+      "status": "verified"
+    },
+    {
+      "key": "saxe2014exact",
+      "authors": ["Andrew M. Saxe", "James L. McClelland", "Surya Ganguli"],
+      "title": "Exact Solutions to the Nonlinear Dynamics of Learning in Deep Linear Neural Networks",
+      "venue": "International Conference on Learning Representations",
+      "year": 2014,
+      "identifier": {"type": "arXiv", "value": "1312.6120"},
+      "verification_url": "https://arxiv.org/abs/1312.6120",
+      "status": "verified"
+    },
+    {
+      "key": "williams2010pid",
+      "authors": ["Paul L. Williams", "Randall D. Beer"],
+      "title": "Nonnegative Decomposition of Multivariate Information",
+      "venue": "arXiv",
+      "year": 2010,
+      "identifier": {"type": "arXiv", "value": "1004.2515"},
+      "verification_url": "https://arxiv.org/abs/1004.2515",
+      "status": "verified"
+    },
+    {
+      "key": "bertschinger2014unique",
+      "authors": ["Nils Bertschinger", "Johannes Rauh", "Eckehard Olbrich", "Jürgen Jost", "Nihat Ay"],
+      "title": "Quantifying Unique Information",
+      "venue": "Entropy 16(4)",
+      "year": 2014,
+      "identifier": {"type": "DOI", "value": "10.3390/e16042161"},
+      "verification_url": "https://www.mdpi.com/1099-4300/16/4/2161",
+      "status": "verified"
+    }
+  ],
+  "summary": {
+    "cited_entries": 13,
+    "verified_entries": 13,
+    "unverified_citations": 0,
+    "duplicate_keys": 0,
+    "missing_identifiers": 0,
+    "passed": true
+  },
+  "human_review_todo_file": "paper/reference_human_review_todo.md"
+}

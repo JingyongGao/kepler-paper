@@ -1,6 +1,6 @@
 {
-  "artifact": "Project Kepler Paper Revision v1.1 claim-boundary check",
-  "revision_scope": "manuscript_refinement_only",
+  "artifact": "Project Kepler Paper v1.2 claim-boundary check",
+  "revision_scope": "submission_hardening_only",
   "frozen_scientific_source": {
     "commit": "f9fc22d85cd52863087afbb3f924466a63b30ba2",
     "tag": "kepler-v3.6-confirm1",
@@ -14,20 +14,25 @@
     "transition_cells_recomputed": 54,
     "primary_test": {
       "definition_unchanged": true,
-      "name": "exact_blocked_Page_style_within_seed_label_permutation",
+      "name": "exact_blocked_Page_style_within_block_label_permutation",
       "conditions_in_registered_order": [
         "R0",
         "R1",
         "R2"
       ],
-      "blocks": 8,
+      "primary_inference_units": 8,
+      "paired_condition_observations": 24,
       "exact_assignment_count": 1679616,
       "observed_statistic": 110.0,
-      "upper_tail_count": 16,
+      "upper_tail_count_including_observed_assignment": 16,
       "exact_one_sided_p": 0.000009525986892242037,
-      "v3_5_combined_in_primary": false
+      "v3_5_combined_in_primary": false,
+      "stratified_tests": "secondary_nominal_not_multiplicity_adjusted"
     },
+    "headline_numerical_claims_verified": 39,
     "numerical_results_changed": false,
+    "new_statistical_tests": 0,
+    "new_experiments": 0,
     "optimizer_steps": 0,
     "status": "pass"
   },
@@ -35,106 +40,86 @@
     {
       "id": "bounded_core_claim",
       "status": "pass",
-      "allowed_claim": "Temporary cue-bearing full-support training distributions causally changed representation-onset timing or probability within the frozen parent-exposed task and model family.",
+      "allowed_claim": "Temporary cue-bearing full-support training distributions changed representation-onset timing or probability within the prospectively frozen parent-exposed task and model family.",
       "location": [
         "Abstract",
         "Discussion"
+      ]
+    },
+    {
+      "id": "prospective_freeze_wording",
+      "status": "pass",
+      "required_boundary_present": "Architecture, optimizer configuration, objective, evaluation protocol, onset definition, and statistical test were prospectively frozen before confirmatory training.",
+      "public_preregistration_claim_absent": true
+    },
+    {
+      "id": "cue_intervention_scope",
+      "status": "pass",
+      "required_boundary_present": "The intervention preserves marginal uniformity, full pair support, target conditional, Bayes entropy, and joint predictable information, but changes the joint parent distribution.",
+      "location": [
+        "Full-support cue-family construction",
+        "Limitations"
       ]
     },
     {
       "id": "singleton_mi_not_isolated",
       "status": "pass",
-      "prohibited_claim_absent": "Singleton mutual information alone is the causal variable.",
-      "location": [
-        "Abstract",
-        "Full-support cue-family construction",
-        "Discussion"
-      ]
-    },
-    {
-      "id": "not_universal_transformer_property",
-      "status": "pass",
-      "prohibited_claim_absent": "The result is a universal Transformer capability or impossibility.",
-      "location": [
-        "Introduction",
-        "Limitations"
-      ]
-    },
-    {
-      "id": "not_universal_grokking_explanation",
-      "status": "pass",
-      "prohibited_claim_absent": "The paper universally explains grokking.",
-      "location": [
-        "Related Work / Grokking and delayed generalization"
-      ]
-    },
-    {
-      "id": "fourier_probe_diagnostic_only",
-      "status": "pass",
-      "prohibited_claim_absent": "A specific Fourier circuit is assumed or uniquely identified.",
-      "location": [
-        "Related Work / Mechanistic interpretability of modular arithmetic"
-      ]
+      "prohibited_claim_absent": "Singleton mutual information alone is the causal variable."
     },
     {
       "id": "pid_scope",
       "status": "pass",
-      "prohibited_claim_absent": "The paper provides a full PID decomposition or treats C_single as a unique-information percentage.",
-      "location": [
-        "Related Work / Partial Information Decomposition",
-        "Pure-synergy information structure"
-      ]
+      "prohibited_claim_absent": "C_single is a PID unique-information fraction or percentage."
     },
     {
-      "id": "gradient_mediation_boundary",
+      "id": "gradient_theorem_and_mediation_boundary",
       "status": "pass",
-      "required_sentence_present": "Gradient statistics are correlates of transition dynamics, not identified causal mediators.",
-      "location": [
-        "Discussion / Possible mechanism: symmetry breaking and optimization accessibility"
-      ]
+      "required_boundary_present": "Weak and poorly aligned early gradients are specific to the tested parameterization.",
+      "required_sentence_present": "Gradient statistics are correlates of transition dynamics, not identified causal mediators."
     },
     {
-      "id": "practical_implication_boundary",
+      "id": "inferential_unit_boundary",
       "status": "pass",
-      "prohibited_claim_absent": "All AI training should use low-order cues.",
-      "location": [
-        "Discussion / Practical implication: distributional bootstrapping"
-      ]
+      "required_boundary_present": "Eight paired blocks, rather than 24 trajectories, are the primary inference units."
+    },
+    {
+      "id": "not_universal_transformer_property",
+      "status": "pass",
+      "prohibited_claim_absent": "The result is a universal Transformer capability or impossibility."
+    },
+    {
+      "id": "not_universal_grokking_explanation",
+      "status": "pass",
+      "prohibited_claim_absent": "The paper universally explains grokking."
     },
     {
       "id": "recurrent_task_unsolved",
       "status": "pass",
-      "prohibited_claim_absent": "The recurrent production task has been solved.",
-      "location": [
-        "Introduction",
-        "Limitations"
-      ]
+      "prohibited_claim_absent": "The recurrent production task has been solved."
     },
     {
-      "id": "no_phase_transition_language",
+      "id": "no_thermodynamic_phase_transition_claim",
       "status": "pass",
-      "prohibited_claim_absent": "The result is a thermodynamic phase transition.",
-      "location": [
-        "Limitations"
-      ]
+      "prohibited_claim_absent": "The result is a thermodynamic phase transition."
     },
     {
       "id": "excluded_from_scaling_fit",
       "status": "pass",
-      "required_boundary_present": "The mechanism results are excluded from the original scaling fit.",
-      "location": [
-        "Limitations"
-      ]
+      "required_boundary_present": "The mechanism results are excluded from the original scaling fit."
     }
   ],
-  "document_checks": {
-    "markdown_table_file_placeholders": 0,
-    "latex_markdown_file_references": 0,
+  "document_and_submission_checks": {
     "latex_embedded_figures": 7,
-    "latex_labeled_figures": 7,
+    "latex_unique_figure_references": 7,
     "latex_unique_table_references": 8,
+    "bibtex_entries_verified_and_cited": 13,
     "latex_compile": "pass",
-    "latex_undefined_reference_warnings": 0
+    "latex_undefined_reference_warnings": 0,
+    "latex_overfull_or_underfull_box_warnings": 0,
+    "anonymous_forbidden_metadata_matches": 0,
+    "submission_pdf_pages": 12,
+    "submission_pdf_sha256": "37e91cef9e9fc79b453083eaaeeda455dc9aef714e67857a4ecb9cfe74a4aa1c",
+    "all_pages_visually_inspected": true
   },
   "passed": true
 }

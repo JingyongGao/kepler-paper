@@ -1,83 +1,77 @@
-# Project Kepler Paper Revision v1.1 — Revision Summary
+# Project Kepler Paper v1.2 — Revision Summary
 
 ## Scope
 
-This revision is limited to manuscript positioning, interpretation, narrative
-structure, and consistency checks. It introduces no experiment, training run,
-optimizer step, statistical redefinition, or numerical-result change. All
-scientific artifacts remain anchored to `kepler-v3.6-confirm1`
+This submission-hardening revision changes only the manuscript, bibliography,
+publication figures, deterministic paper builders, and submission packages. It
+adds no experiment, training run, optimizer step, transition redefinition,
+post-hoc statistical test, or numerical-result change.
+
+The pre-task paper commit was
+`cd25e702358f74121b7942c0354f8d3d257bd0b5`. The scientific source remains
+`kepler-v3.6-confirm1`
 (`f9fc22d85cd52863087afbb3f924466a63b30ba2`).
 
-## Reviewer-driven changes
+## Manuscript hardening
 
-1. **Introduction and positioning.** The Introduction now centers the question:
-   “How does training-distribution geometry affect the accessibility of
-   task-sufficient representations when the final task information is fixed?”
-   It explicitly distinguishes variable identification from variable
-   composition in the parent-exposed interface and rejects scaling-law or
-   universal-intelligence framing.
+1. Corrected the title and consistently used “higher-order compositional
+   representations.”
+2. Replaced ambiguous “independent” and “preregistered” language with
+   prospectively frozen protocol wording. The Abstract now names exactly what
+   was frozen before confirmatory training.
+3. Put the registered full-support cue distribution and the operational
+   `C_single` definition in the main paper. The text states which quantities
+   remain invariant and that cue-bearing parents need not remain jointly
+   independent.
+4. Recast the mechanism discussion as an experiment-bounded optimization
+   interpretation. Gradient coherence is explicitly correlational and is not
+   treated as an identified mediator.
+5. Clarified that eight paired blocks are the primary inference units, while
+   the 24 trajectories are paired condition observations. The within-block
+   exchangeability null and inclusion of the observed assignment in the upper
+   tail are explicit. Stratified tests are labeled secondary, nominal, and not
+   multiplicity-adjusted.
+6. Expanded related work across delayed generalization, curriculum and
+   self-paced learning, continuation methods, modular-arithmetic mechanisms,
+   probe limitations, optimization path dependence, and PID caveats.
+7. Added the requested limitations concerning warmup timing, joint-parent
+   dependence, scale, field size, noise, input interface, and exact-soft-label
+   dependence.
+8. Corrected provenance language: the v3.6 confirmatory manifest instantiated
+   architecture and optimization settings frozen from v3.5.
 
-2. **Related Work.** A dedicated section now distinguishes the contribution
-   from fixed-distribution grokking, connects diagnostic Fourier probes to
-   mechanistic studies of modular arithmetic without assuming a specific
-   circuit, contrasts the intervention with standard curriculum learning, and
-   gives a bounded PID connection. The contribution is described as
-   “distributional bootstrapping of representation formation.”
+## Figures, references, and packages
 
-3. **Mechanistic interpretation.** The Discussion now contains “Possible
-   mechanism: symmetry breaking and optimization accessibility.” It connects
-   cue-dose ordering, persistence after cue removal, and gradient-coherence
-   correlates while explicitly declining causal-mediation and universal
-   loss-landscape claims.
+- Figure 1 now combines the parent-to-center-to-target graph, pure-synergy
+  identities, R0/R2 pair-distribution geometry, and the 0–5M cue window. Every
+  plotted value is derived from frozen distribution JSON.
+- All seven figure families retain machine-readable source data. PNG outputs
+  are 1800×1080, and vector PDF/SVG versions are present.
+- The manuscript now uses BibTeX with 13 cited entries. Every cited entry has
+  verified authors, title, venue, year, and DOI or arXiv identifier. One
+  unverified candidate was kept in the human-review TODO and is not cited.
+- Separate blinded and arXiv source packages were produced. The blinded source
+  and PDF contain no detected local path, machine name, Git username,
+  identifying repository URL, collaboration name, or frozen Git tag.
+- The formal submission PDF is the blinded 12-page letter-size build:
+  `paper/output/pdf/kepler_paper_v1_2_submission.pdf`.
 
-4. **Practical implication.** A new subsection states a possible design
-   principle for temporary training distributions in high-order compositional
-   tasks. It explicitly does not recommend low-order cues for all AI training.
-
-5. **Limitations.** The revised section separately addresses model scale,
-   parent-exposed input control, exact soft-label training, finite-field task
-   scope, and the absence of a universal mechanism claim. Existing boundaries
-   concerning the recurrent task, thermodynamic language, and the original
-   scaling fit remain intact.
-
-6. **Narrative density.** Objective details, exhaustive evaluation, probe and
-   bootstrap definitions, cue-family root solving, and construction audits
-   moved to Supplementary Methods. The main text retains the scientific
-   question, controlled construction, exploratory/confirmatory separation,
-   exact confirmatory test, persistence result, heterogeneity, and implications.
-
-7. **References and embedding.** The LaTeX manuscript now uses normal
-   `\cite`, `\ref`, and labeled figure/table references. All seven frozen
-   figures remain embedded in the source; all eight frozen tables are
-   cross-referenced. Markdown table-file placeholders were removed from the
-   narrative.
-
-## Related-work sources added
-
-- Power et al. (2022), “Grokking: Generalization Beyond Overfitting on Small
-  Algorithmic Datasets,” [arXiv:2201.02177](https://arxiv.org/abs/2201.02177).
-- Nanda et al. (2023), “Progress Measures for Grokking via Mechanistic
-  Interpretability,” [arXiv:2301.05217](https://arxiv.org/abs/2301.05217).
-- Bengio et al. (2009), “Curriculum Learning,”
-  [ICML paper](https://icml.cc/2009/papers/119.pdf).
-- Williams and Beer (2010), “Nonnegative Decomposition of Multivariate
-  Information,” [arXiv:1004.2515](https://arxiv.org/abs/1004.2515).
-
-## Consistency audit
+## Verification outcome
 
 - Frozen v3.5 result SHA-256:
   `74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1`.
 - Frozen v3.6 result SHA-256:
   `5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0`.
+- All 18 tracked scientific artifacts are byte-identical to the freeze record.
+- All 330 v3.5 and 264 v3.6 checkpoint sidecar hashes pass.
 - Read-only result verification recomputed the distribution invariants, 54
-  transition codings, and the exact 1,679,616-assignment test. It recovered
-  observed statistic 110, upper-tail count 16, and one-sided
+  transition cells, and the exact 1,679,616-assignment test. It recovered
+  statistic 110, upper-tail count 16, and one-sided
   `p = 9.525986892242037e-06`.
-- Frozen-artifact verification reported all 18 tracked scientific artifacts
-  unchanged and no changes outside the paper-packaging scope.
-- LaTeX compiled successfully with seven embedded figures, seven figure labels,
-  eight unique table references, and no undefined-reference warnings.
-- Optimizer steps during revision: **0**.
-
-The machine-readable result of this audit is
-`paper/claim_boundary_check.json`.
+- All 39 headline numerical claims rebuild exactly from frozen JSON.
+- LaTeX, BibTeX, cross-reference, overfull-box, figure-resolution, anonymous
+  metadata, and all-page visual checks pass.
+- Submission PDF SHA-256:
+  `37e91cef9e9fc79b453083eaaeeda455dc9aef714e67857a4ecb9cfe74a4aa1c`.
+- Optimizer steps: **0**. New experiments: **0**. New statistical tests:
+  **0**.

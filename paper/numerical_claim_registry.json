@@ -1,0 +1,454 @@
+{
+  "claims": [
+    {
+      "claim_id": "field_size",
+      "description": "Finite-field size p",
+      "manuscript_locations": [
+        "Controlled finite-field task",
+        "Limitations"
+      ],
+      "source_field": "p",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 257
+    },
+    {
+      "claim_id": "ordered_parent_pairs",
+      "derivation": "p^2",
+      "description": "Complete ordered parent-pair space",
+      "manuscript_locations": [
+        "Supplementary methods / Task objective, evaluation, and probes"
+      ],
+      "source_field": "p",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 66049
+    },
+    {
+      "claim_id": "noise_eta",
+      "description": "Additive-noise rate eta",
+      "manuscript_locations": [
+        "Controlled finite-field task",
+        "Limitations"
+      ],
+      "source_field": "eta",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 0.1
+    },
+    {
+      "claim_id": "conditional_entropy_nats",
+      "description": "Bayes conditional entropy H(Y|X1,X2), nats",
+      "manuscript_locations": [
+        "Controlled finite-field task"
+      ],
+      "source_field": "conditions[0].entropies_nats.H_Y_given_X1_X2",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 0.8796007178394043
+    },
+    {
+      "claim_id": "joint_predictable_information_nats",
+      "description": "Joint predictable information I(Y;X1,X2), nats",
+      "manuscript_locations": [
+        "Abstract",
+        "Pure-synergy information structure"
+      ],
+      "source_field": "conditions[0].mutual_information_nats.I_Y_X1_X2",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 4.669475367055826
+    },
+    {
+      "claim_id": "confirmatory_cue_targets",
+      "description": "Prospectively frozen confirmatory C_single targets",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "conditions[*].target_singleton_cue_index",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": [
+        0.0,
+        0.016,
+        0.065092
+      ]
+    },
+    {
+      "claim_id": "v36_max_uniformity_error",
+      "derivation": "maximum over all conditions and X1/X2/Z/Y marginals",
+      "description": "Maximum marginal-uniformity absolute error across v3.6 conditions",
+      "manuscript_locations": [
+        "Full-support cue-family construction"
+      ],
+      "source_field": "conditions[*].uniformity_max_absolute_error",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 9.107298248878237e-18
+    },
+    {
+      "claim_id": "v36_min_pair_probability",
+      "derivation": "minimum over all confirmatory conditions",
+      "description": "Minimum pair probability across v3.6 conditions",
+      "manuscript_locations": [
+        "Full-support cue-family construction"
+      ],
+      "source_field": "conditions[*].minimum_pair_probability",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": 9.378638271060546e-06
+    },
+    {
+      "claim_id": "v35_rule",
+      "description": "Exploratory v3.5 coefficient rule",
+      "manuscript_locations": [
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "coefficients",
+      "source_json": "artifacts/cue_distribution_audit.json",
+      "value": [
+        45,
+        36
+      ]
+    },
+    {
+      "claim_id": "v35_seed_count",
+      "derivation": "number of unique model-initialization seeds",
+      "description": "Exploratory paired initialization seeds",
+      "manuscript_locations": [
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "runs[*].model_initialization_seed",
+      "source_json": "artifacts/cue_dose_manifest.json",
+      "value": 5
+    },
+    {
+      "claim_id": "v35_onset_C0",
+      "derivation": "fraction multiplied by five paired seeds",
+      "description": "Exploratory verified-onset count for C0",
+      "manuscript_locations": [
+        "Abstract",
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "condition_summaries.C0.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 0
+    },
+    {
+      "claim_id": "v35_onset_C1",
+      "derivation": "fraction multiplied by five paired seeds",
+      "description": "Exploratory verified-onset count for C1",
+      "manuscript_locations": [
+        "Abstract",
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "condition_summaries.C1.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 5
+    },
+    {
+      "claim_id": "v35_onset_C2",
+      "derivation": "fraction multiplied by five paired seeds",
+      "description": "Exploratory verified-onset count for C2",
+      "manuscript_locations": [
+        "Abstract",
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "condition_summaries.C2.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 5
+    },
+    {
+      "claim_id": "v35_onset_C3",
+      "derivation": "fraction multiplied by five paired seeds",
+      "description": "Exploratory verified-onset count for C3",
+      "manuscript_locations": [
+        "Abstract",
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "condition_summaries.C3.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 5
+    },
+    {
+      "claim_id": "v35_exact_assignments",
+      "description": "Exploratory exact assignments",
+      "manuscript_locations": [
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "ordered_dose_trend.exact_permutation_count",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 7962624
+    },
+    {
+      "claim_id": "v35_upper_tail",
+      "description": "Exploratory exact upper-tail count",
+      "manuscript_locations": [
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "ordered_dose_trend.upper_tail_count",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 128
+    },
+    {
+      "claim_id": "v35_exact_p",
+      "description": "Exploratory one-sided exact p-value",
+      "manuscript_locations": [
+        "Exploratory discovery experiment"
+      ],
+      "source_field": "ordered_dose_trend.exact_one_sided_p",
+      "source_json": "artifacts/cue_dose_results.json",
+      "value": 1.6075102880658438e-05
+    },
+    {
+      "claim_id": "v36_rules",
+      "description": "Held-out confirmatory coefficient rules",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "rules[*].coefficients",
+      "source_json": "artifacts/confirmatory_distribution_audit.json",
+      "value": [
+        [
+          205,
+          5
+        ],
+        [
+          123,
+          209
+        ]
+      ]
+    },
+    {
+      "claim_id": "v36_blocks",
+      "description": "Primary rule x permutation x initialization inference blocks",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.ordered_onset_test.seed_blocks",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 8
+    },
+    {
+      "claim_id": "v36_trajectories",
+      "description": "Paired confirmatory condition trajectories",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "integrity.completed_cells",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 24
+    },
+    {
+      "claim_id": "v36_onset_R0",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory verified-onset blocks for R0",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R0.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 1
+    },
+    {
+      "claim_id": "v36_establishment_R0",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory establishment blocks for R0",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R0.fraction_established_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 2
+    },
+    {
+      "claim_id": "v36_onset_R1",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory verified-onset blocks for R1",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R1.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 6
+    },
+    {
+      "claim_id": "v36_establishment_R1",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory establishment blocks for R1",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R1.fraction_established_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 6
+    },
+    {
+      "claim_id": "v36_onset_R2",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory verified-onset blocks for R2",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R2.fraction_onset_verified_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 8
+    },
+    {
+      "claim_id": "v36_establishment_R2",
+      "derivation": "fraction multiplied by eight paired blocks",
+      "description": "Confirmatory establishment blocks for R2",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.R2.fraction_established_by_10M",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 8
+    },
+    {
+      "claim_id": "v36_observed_statistic",
+      "description": "Primary Page-style observed statistic",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.ordered_onset_test.observed_statistic",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 110.0
+    },
+    {
+      "claim_id": "v36_exact_assignments",
+      "description": "Primary exact assignments",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.ordered_onset_test.exact_permutation_count",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 1679616
+    },
+    {
+      "claim_id": "v36_upper_tail",
+      "description": "Primary exact upper-tail count",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.ordered_onset_test.upper_tail_count",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 16
+    },
+    {
+      "claim_id": "v36_exact_p",
+      "description": "Primary one-sided exact p-value",
+      "manuscript_locations": [
+        "Abstract",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.ordered_onset_test.exact_one_sided_p",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 9.525986892242037e-06
+    },
+    {
+      "claim_id": "v36_persistence_cells",
+      "derivation": "R1 plus R2 pre-switch-positive blocks; both retention fractions equal 1",
+      "description": "Nonzero-cue cells positive at 5M and retained at 6M and 10M",
+      "manuscript_locations": [
+        "Abstract",
+        "Representation persistence after cue removal"
+      ],
+      "source_field": "primary_confirmatory_test.condition_summaries.{R1,R2}.post_switch_threshold_retention",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": 13
+    },
+    {
+      "claim_id": "R1_vs_R0_R_5M_pre_delta_mean",
+      "description": "Mean paired R1_vs_R0 R_5M_pre_delta",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.paired_differences.R1_vs_R0.R_5M_pre_delta.mean",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": -0.6971624493598938
+    },
+    {
+      "claim_id": "R1_vs_R0_R_10M_delta_mean",
+      "description": "Mean paired R1_vs_R0 R_10M_delta",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.paired_differences.R1_vs_R0.R_10M_delta.mean",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": -0.321976822509896
+    },
+    {
+      "claim_id": "R2_vs_R1_R_5M_pre_delta_mean",
+      "description": "Mean paired R2_vs_R1 R_5M_pre_delta",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.paired_differences.R2_vs_R1.R_5M_pre_delta.mean",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": -0.25936598767293617
+    },
+    {
+      "claim_id": "R2_vs_R1_R_10M_delta_mean",
+      "description": "Mean paired R2_vs_R1 R_10M_delta",
+      "manuscript_locations": [
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "primary_confirmatory_test.paired_differences.R2_vs_R1.R_10M_delta.mean",
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "value": -0.10558497368765529
+    },
+    {
+      "claim_id": "core_parameters",
+      "description": "Core model parameters",
+      "manuscript_locations": [
+        "Supplementary methods / Model and optimization"
+      ],
+      "source_field": "runs[0].actual_core_parameters",
+      "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+      "value": 2045568
+    },
+    {
+      "claim_id": "warmup_exposures",
+      "description": "Learning-rate warmup exposures",
+      "manuscript_locations": [
+        "Limitations",
+        "Supplementary methods / Model and optimization"
+      ],
+      "source_field": "frozen_protocol.optimizer.warmup_tokens",
+      "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+      "value": 5000000
+    },
+    {
+      "claim_id": "cue_switch_exposure",
+      "description": "Cue removal exposure",
+      "manuscript_locations": [
+        "Figure 1",
+        "Representation persistence after cue removal",
+        "Limitations"
+      ],
+      "source_field": "frozen_protocol.switch_exposure",
+      "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+      "value": 5000000
+    },
+    {
+      "claim_id": "maximum_exposure",
+      "description": "Maximum confirmatory exposure",
+      "manuscript_locations": [
+        "Figure 1",
+        "Prospectively frozen confirmatory replication"
+      ],
+      "source_field": "frozen_protocol.maximum_exposure",
+      "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+      "value": 10000000
+    }
+  ],
+  "headline_claim_count": 39,
+  "kind": "kepler_submission_numerical_claim_registry",
+  "source_policy": "frozen_json_only",
+  "verification": {
+    "builder_reads_frozen_json": true,
+    "manual_numeric_entry_in_registry": false,
+    "new_statistical_tests": 0,
+    "optimizer_steps": 0
+  }
+}

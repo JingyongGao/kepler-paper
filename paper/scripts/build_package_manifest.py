@@ -26,6 +26,8 @@ def main() -> None:
         if path.name in EXCLUDED_NAMES or "__pycache__" in path.parts:
             continue
         relative = str(path.relative_to(PAPER))
+        if relative.startswith("tmp/"):
+            continue
         files.append(
             {
                 "path": relative,
@@ -47,4 +49,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

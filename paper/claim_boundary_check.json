@@ -1,0 +1,140 @@
+{
+  "artifact": "Project Kepler Paper Revision v1.1 claim-boundary check",
+  "revision_scope": "manuscript_refinement_only",
+  "frozen_scientific_source": {
+    "commit": "f9fc22d85cd52863087afbb3f924466a63b30ba2",
+    "tag": "kepler-v3.6-confirm1",
+    "tracked_scientific_artifact_count": 18,
+    "tracked_scientific_artifacts_unchanged": true,
+    "v3_5_result_sha256": "74de64c64ae0ebf97be98611048b6a512fbbbcccbc60e37e1e72fafd8c146cf1",
+    "v3_6_result_sha256": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0"
+  },
+  "scientific_consistency": {
+    "distribution_invariants_recomputed": true,
+    "transition_cells_recomputed": 54,
+    "primary_test": {
+      "definition_unchanged": true,
+      "name": "exact_blocked_Page_style_within_seed_label_permutation",
+      "conditions_in_registered_order": [
+        "R0",
+        "R1",
+        "R2"
+      ],
+      "blocks": 8,
+      "exact_assignment_count": 1679616,
+      "observed_statistic": 110.0,
+      "upper_tail_count": 16,
+      "exact_one_sided_p": 0.000009525986892242037,
+      "v3_5_combined_in_primary": false
+    },
+    "numerical_results_changed": false,
+    "optimizer_steps": 0,
+    "status": "pass"
+  },
+  "claim_checks": [
+    {
+      "id": "bounded_core_claim",
+      "status": "pass",
+      "allowed_claim": "Temporary cue-bearing full-support training distributions causally changed representation-onset timing or probability within the frozen parent-exposed task and model family.",
+      "location": [
+        "Abstract",
+        "Discussion"
+      ]
+    },
+    {
+      "id": "singleton_mi_not_isolated",
+      "status": "pass",
+      "prohibited_claim_absent": "Singleton mutual information alone is the causal variable.",
+      "location": [
+        "Abstract",
+        "Full-support cue-family construction",
+        "Discussion"
+      ]
+    },
+    {
+      "id": "not_universal_transformer_property",
+      "status": "pass",
+      "prohibited_claim_absent": "The result is a universal Transformer capability or impossibility.",
+      "location": [
+        "Introduction",
+        "Limitations"
+      ]
+    },
+    {
+      "id": "not_universal_grokking_explanation",
+      "status": "pass",
+      "prohibited_claim_absent": "The paper universally explains grokking.",
+      "location": [
+        "Related Work / Grokking and delayed generalization"
+      ]
+    },
+    {
+      "id": "fourier_probe_diagnostic_only",
+      "status": "pass",
+      "prohibited_claim_absent": "A specific Fourier circuit is assumed or uniquely identified.",
+      "location": [
+        "Related Work / Mechanistic interpretability of modular arithmetic"
+      ]
+    },
+    {
+      "id": "pid_scope",
+      "status": "pass",
+      "prohibited_claim_absent": "The paper provides a full PID decomposition or treats C_single as a unique-information percentage.",
+      "location": [
+        "Related Work / Partial Information Decomposition",
+        "Pure-synergy information structure"
+      ]
+    },
+    {
+      "id": "gradient_mediation_boundary",
+      "status": "pass",
+      "required_sentence_present": "Gradient statistics are correlates of transition dynamics, not identified causal mediators.",
+      "location": [
+        "Discussion / Possible mechanism: symmetry breaking and optimization accessibility"
+      ]
+    },
+    {
+      "id": "practical_implication_boundary",
+      "status": "pass",
+      "prohibited_claim_absent": "All AI training should use low-order cues.",
+      "location": [
+        "Discussion / Practical implication: distributional bootstrapping"
+      ]
+    },
+    {
+      "id": "recurrent_task_unsolved",
+      "status": "pass",
+      "prohibited_claim_absent": "The recurrent production task has been solved.",
+      "location": [
+        "Introduction",
+        "Limitations"
+      ]
+    },
+    {
+      "id": "no_phase_transition_language",
+      "status": "pass",
+      "prohibited_claim_absent": "The result is a thermodynamic phase transition.",
+      "location": [
+        "Limitations"
+      ]
+    },
+    {
+      "id": "excluded_from_scaling_fit",
+      "status": "pass",
+      "required_boundary_present": "The mechanism results are excluded from the original scaling fit.",
+      "location": [
+        "Limitations"
+      ]
+    }
+  ],
+  "document_checks": {
+    "markdown_table_file_placeholders": 0,
+    "latex_markdown_file_references": 0,
+    "latex_embedded_figures": 7,
+    "latex_labeled_figures": 7,
+    "latex_unique_table_references": 8,
+    "latex_compile": "pass",
+    "latex_undefined_reference_warnings": 0
+  },
+  "passed": true
+}

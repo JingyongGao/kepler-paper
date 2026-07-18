@@ -1,5 +1,5 @@
 {
-  "file_count": 78,
+  "file_count": 80,
   "files": [
     {
       "bytes": 5763,
@@ -36,6 +36,12 @@
       "path": "artifact_index.json",
       "role": "reproducibility_or_index",
       "sha256": "14e26a570b606702df685aac839c7ec367f7da52c9d064159d0dee6db491fe38"
+    },
+    {
+      "bytes": 4563,
+      "path": "claim_boundary_check.json",
+      "role": "reproducibility_or_index",
+      "sha256": "68b6007ebfcde0697af45d70b379fcd1649765c546c1f233527309495212d694"
     },
     {
       "bytes": 152,
@@ -230,16 +236,16 @@
       "sha256": "504ecb9c4db58c9becef2b6be85a3ea50efdb98d8f66998917c9891834d12e69"
     },
     {
-      "bytes": 16781,
+      "bytes": 22378,
       "path": "manuscript.md",
       "role": "manuscript",
-      "sha256": "9c7e113b4cc44cc898365082997605217e0e7e0299d4dd4b854e5c4d7e386996"
+      "sha256": "b346fbd5ca1384aaf4f050ec4b5dd3036837dc521df3639a75bd88a984afdaac"
     },
     {
-      "bytes": 9513,
+      "bytes": 17935,
       "path": "manuscript.tex",
       "role": "manuscript",
-      "sha256": "f689dc3b0068ab365d6994dd7a52d1a7902a8bccadcd97828909d88262df1e5a"
+      "sha256": "6034e6807951ffeaeae5fa527f7bb342811199a3fea21c7cbb90db0b653241de"
     },
     {
       "bytes": 1954,
@@ -252,6 +258,12 @@
       "path": "requirements.txt",
       "role": "reproducibility_or_index",
       "sha256": "566c62041c611dac771de388a8320b72b1fbe9a4f2a5856e0a68c2f7f992736a"
+    },
+    {
+      "bytes": 4335,
+      "path": "revision_summary.md",
+      "role": "reproducibility_or_index",
+      "sha256": "560129320283595092f39ab940d92a5c7410c8cf85a73d4e1a921c9422f8064a"
     },
     {
       "bytes": 642,
@@ -278,10 +290,10 @@
       "sha256": "f8b0b7de200ae11a0c3c492b4686f32d315f1c3c7a151913de92274b4ed140b4"
     },
     {
-      "bytes": 32233,
+      "bytes": 46358,
       "path": "scripts/build_manuscript.py",
       "role": "deterministic_builder_or_verifier",
-      "sha256": "e42fe7ce24336db0f19eed989eda5471b734e13bc00955b708ff77b5dd1f5664"
+      "sha256": "32024da452c172bdd567f5ce8e36179c4e9d3f69271328067e7788d5ce31c0bb"
     },
     {
       "bytes": 1409,

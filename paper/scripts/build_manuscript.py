@@ -115,27 +115,33 @@ a universal Transformer property.
 
 ## Introduction
 
-Scaling laws summarize average changes in loss with model and data size, but
-they do not by themselves explain when a model forms a task-sufficient internal
-state. A representation may be statistically available yet difficult to
-discover because useful gradient directions are weak, cancel across examples,
-or emerge only after other features have organized. This motivates controlled
-experiments in which the target conditional distribution and its information
-budget are held fixed while the geometry of the training distribution is
-changed.
+The central question is: **How does training-distribution geometry affect the
+accessibility of task-sufficient representations when the final task
+information is fixed?** A representation may be statistically available yet
+difficult to discover because useful optimization directions are weak, cancel
+across examples, or become accessible only after other features organize.
+This motivates a controlled intervention that holds the target conditional
+and its information budget fixed while changing the geometry of the early
+training distribution.
 
 Project Kepler isolates this question in a finite field. Earlier recurrent
 experiments motivated a parent-exposed mechanism assay, but the present paper
 does not claim that the recurrent production task has been solved. Instead, it
 asks a narrower causal question: can a temporary low-order cue in a
 full-support sampling distribution alter when a Transformer forms the
-high-order predictive center state?
+high-order predictive center state? The parent-exposed design intentionally
+separates two problems: (1) identifying the relevant variables, which the
+interface controls by presenting both parents directly, and (2) composing
+those discovered variables into a predictive representation, which remains
+the learning problem.
 
 The experimental sequence was explicitly separated into discovery and
 confirmation. Version 3.5 was exploratory and selected the cue doses and
 frozen outcome definitions. Version 3.6 used new rules, new cue permutations,
 new initialization seeds, and no v3.5 checkpoints. The v3.5 data are not
-included in the v3.6 primary p-value.
+included in the v3.6 primary p-value. The aim is neither a new scaling law nor
+a universal intelligence principle; it is a bounded causal test within one
+controlled task and model family.
 
 ![Figure 1. Controlled task and cue schedule.](figures/fig01_task_cue_schematic.png)
 
@@ -143,6 +149,48 @@ included in the v3.6 primary p-value.
 determines the target. Cue-bearing sampling is used only from 0--5M exposures,
 after which training returns to uniform full support. All figure values are
 read from frozen JSON.
+
+## Related Work
+
+### Grokking and delayed generalization
+
+Modular-arithmetic grokking studies established that small neural networks can
+generalize long after achieving near-perfect training performance under a
+fixed training distribution ([Power et al., 2022](https://arxiv.org/abs/2201.02177)).
+This paper does not offer a universal explanation of grokking. It asks a
+different question: whether the geometry of the *early* training distribution,
+with the final conditional and information budget held fixed, changes the
+accessibility or timing of a delayed representational transition.
+
+### Mechanistic interpretability of modular arithmetic
+
+Mechanistic analyses of modular addition have recovered Fourier-like internal
+representations and circuits implementing trigonometric structure
+([Nanda et al., 2023](https://arxiv.org/abs/2301.05217)). Here, fixed-Fourier
+probes are diagnostics alongside linear and fixed-capacity MLP probes. We do
+not assume that a specific Fourier circuit must be learned, and the causal
+result concerns the timing or probability of task-sufficient representation
+formation rather than identification of a unique circuit.
+
+### Curriculum learning
+
+Classic curriculum learning changes example order or introduces examples and
+concepts by increasing difficulty
+([Bengio et al., 2009](https://icml.cc/2009/papers/119.pdf)). The present
+intervention instead keeps the target conditional and Bayes information budget
+fixed and changes only the geometry of the full-support training distribution
+during an early window. We describe this narrower intervention as
+**distributional bootstrapping of representation formation**.
+
+### Partial Information Decomposition
+
+Partial Information Decomposition separates redundant, unique, and synergistic
+contributions in multivariate information
+([Williams and Beer, 2010](https://arxiv.org/abs/1004.2515)). The full-support
+base task is a pure-synergy construction in the limited operational sense
+needed here: singleton information is zero while joint information is
+nonzero. We do not attempt a full PID decomposition of the cue distributions
+or learned representations.
 
 ## Controlled finite-field task
 
@@ -154,22 +202,14 @@ center was
 The target followed `y = z + epsilon mod p`, with
 `P(epsilon=0)=1-eta`, `P(epsilon=r)=eta/(p-1)` for nonzero `r`, and
 `eta = {eta:g}`. Consequently,
-`H(Y|X1,X2) = H(nu_eta) = {ff(noise_entropy)} nats` and the target conditional
-was unchanged across cue conditions. Exact soft-label cross-entropy was used
-throughout the parent-exposed experiments, so the objective at each observed
-pair was the cross-entropy against the analytic noisy conditional rather than a
-single sampled label.
-
-Evaluation enumerated all `{p**2:,}` ordered parent pairs. The primary error
-metric was
+`H(Y|X1,X2) = H(nu_eta) = {ff(noise_entropy)} nats`, and the target
+conditional was unchanged across cue conditions. The primary error metric was
 
 `R = E_h[KL(q_h || p_theta)] / (log(p) - H(nu_eta))`.
 
-A uniform predictor has `R=1` and the analytic oracle has `R=0`. Every
-checkpoint also recorded center accuracy, probability assigned to the center,
-predictive entropy, and a 2,000-replicate first-parent-row bootstrap interval.
-Selected checkpoints included layer-wise linear, fixed-Fourier, and
-fixed-capacity MLP probes.
+A uniform predictor has `R=1` and the analytic oracle has `R=0`. Exact
+soft-label training, exhaustive evaluation, probe definitions, and bootstrap
+details are given in Supplementary Methods.
 
 ## Pure-synergy information structure
 
@@ -179,7 +219,7 @@ the target: `I(Y;X1)=I(Y;X2)=0`. Jointly, however, the pair determines the
 noisy center and carries
 `I(Y;X1,X2)=log(p)-H(nu_eta)={ff(joint_information)} nats`.
 
-This pure-synergy baseline makes the discovery problem unusually clean. The
+This pure-synergy baseline makes the construction unusually clean. The
 model must compose both parents to predict the center, and no marginal
 frequency cue points to the answer. It also makes clear why the registered
 cue index must not be described as a unique-information percentage: it is a
@@ -188,12 +228,11 @@ all predictive information.
 
 ## Full-support cue-family construction
 
-The cue family reweighted ordered parent pairs through a frozen permutation and
-cue coefficient while keeping every pair probability strictly positive.
-Lambda was solved by deterministic root finding for each registered target.
-Exhaustive audits confirmed uniform `X1`, `X2`, `Z`, and `Y`, invariant
-`H(Y|X1,X2)`, invariant `I(Y;X1,X2)`, and exact uniform full support at zero
-cue. In v3.6 the maximum marginal-uniformity error was
+The cue family reweighted ordered parent pairs through a frozen permutation
+while keeping every pair probability strictly positive. Exhaustive audits
+confirmed uniform `X1`, `X2`, `Z`, and `Y`, invariant `H(Y|X1,X2)`, invariant
+`I(Y;X1,X2)`, and exact uniform full support at zero cue. In v3.6 the maximum
+marginal-uniformity error was
 `{max(max(item['uniformity_max_absolute_error'].values()) for item in v36_audit['conditions']):.3e}`
 and the minimum pair probability was
 `{min(item['minimum_pair_probability'] for item in v36_audit['conditions']):.3e}`.
@@ -201,10 +240,10 @@ and the minimum pair probability was
 The cue manipulation therefore changed the training distribution without
 changing the target conditional or removing held-out pair support. It did not
 isolate singleton mutual information from all other distributional geometry,
-so the causal object is the registered cue-bearing distribution, not the scalar
-index alone.
-
-[Table 1: Distribution invariants](tables/table01_distribution_invariants.md)
+so the causal object is the registered cue-bearing distribution, not the
+scalar index alone. Table 1 reports the frozen distribution audits; the
+construction and deterministic root-solving protocol are specified in
+Supplementary Methods.
 
 ## Exploratory discovery experiment
 
@@ -228,7 +267,7 @@ and were not reused as confirmatory observations.
 lines show seeds. Bands show the mean of registered row-bootstrap interval
 endpoints and are not a new group-level confidence interval.
 
-[Table 2: v3.5 exploratory outcomes](tables/table02_v35_exploratory_outcomes.md)
+Table 2 reports the exploratory onset and establishment outcomes.
 
 ## Independent confirmatory replication
 
@@ -241,13 +280,6 @@ and two new initialization seeds. Within each of the eight blocks, R0, R1, and
 R2 shared initial weights and every non-condition RNG/configuration field.
 The targets were `C_single = 0`, `0.016`, and `0.065092`. All 24 trajectories
 were stopped at 10M.
-
-Onset was frozen as the first probe checkpoint with `R<0.9` and layer-6
-linear-probe accuracy above 0.5, with both retained at the next registered
-probe checkpoint. No onset received terminal ordinal 8; a first pass at 10M
-could not initiate onset because no later checkpoint existed. Establishment
-required `R<0.1`, center accuracy above 0.9, and layer-6 linear accuracy above
-0.9 at one checkpoint.
 
 The onset counts were {onset_counts['R0'][0]}/{onset_counts['R0'][1]},
 {onset_counts['R1'][0]}/{onset_counts['R1'][1]}, and
@@ -272,9 +304,9 @@ Lines preserve rule, permutation, and initialization pairing.
 *Figure 4.* Exact null distribution reconstructed from the frozen v3.6 block
 ranks. The primary test contains v3.6 only.
 
-[Table 3: v3.6 confirmatory outcomes](tables/table03_v36_confirmatory_outcomes.md)
-
-[Table 4: Primary and stratified exact tests](tables/table04_exact_tests.md)
+Tables 3 and 4 report the confirmatory outcomes and the primary and stratified
+exact tests. The transition and terminal-coding rules are specified in
+Supplementary Methods.
 
 Mean paired R differences at 5M pre-switch and 10M were
 `{ff(paired['R1_vs_R0']['R_5M_pre_delta']['mean'])}` and
@@ -284,7 +316,7 @@ Mean paired R differences at 5M pre-switch and 10M were
 ordering was not strict in every block; the inference rests on the frozen
 blocked test rather than visual curve separation.
 
-[Table 5: Paired R differences](tables/table05_paired_R_differences.md)
+Table 5 reports all frozen paired R differences.
 
 ## Representation persistence after cue removal
 
@@ -304,7 +336,7 @@ than a permanently required shortcut.
 *Figure 5.* Individual v3.6 threshold-positive cells at 5M, 6M, and 10M.
 Whiskers are the registered first-parent-row bootstrap intervals.
 
-[Table 6: Cue-removal persistence](tables/table06_cue_removal_persistence.md)
+Table 6 reports the cue-removal persistence audit.
 
 ## Rule and cue-geometry heterogeneity
 
@@ -360,21 +392,57 @@ model state may all contribute. The present experiments identify the
 registered distribution intervention as causal; they do not identify a unique
 information-theoretic mediator.
 
+### Possible mechanism: symmetry breaking and optimization accessibility
+
+The evidence suggests a possible optimization-accessibility account:
+pure synergy creates a symmetry under which singleton-aligned gradients vanish
+in expectation. The parents are individually uninformative, and the symmetric
+full-support average cancels their singleton-aligned gradient directions.
+Transient cue distributions introduce lower-order statistical asymmetries
+while preserving the target conditional and Bayes information budget. Those
+asymmetries may redirect early optimization toward a state in which the two
+parents can be composed; once that task-sufficient representation forms, the
+cue is no longer required.
+
+Three observations are consistent with this account: onset was ordered by
+registered cue dose, threshold-positive representations persisted after cue
+removal, and the frozen gradient audits showed changes in gradient coherence
+around observed transitions. This is mechanistic interpretation, not a causal
+mediation result. **Gradient statistics are correlates of transition dynamics,
+not identified causal mediators.** The data do not establish a universal
+loss-landscape mechanism or a unique circuit.
+
+### Practical implication: distributional bootstrapping
+
+The result suggests a possible design principle: temporary training
+distributions can be used to improve access to otherwise hard-to-reach
+compositional representations when the final task distribution contains
+high-order dependencies. This is a hypothesis for bounded, auditable
+interventions—not a claim that all AI training should use low-order cues.
+
 ## Limitations
 
-The experiments use one field size (`p={p}`), one noise level
-(`eta={eta:g}`), one approximately 2M-parameter parent-exposed Transformer
-family, exact soft-label training, and a finite set of cue constructions. The
-checkpoint grid limits onset timing resolution, and terminal coding cannot
-verify a first pass at 10M. Row-bootstrap intervals quantify evaluation
-variation over parent rows, not between-rule population uncertainty.
+First, model scale is limited to one approximately 2M-parameter Transformer
+family; whether the effect strengthens, weakens, or changes form with scale
+remains open. Second, the parent-exposed interface intentionally controls
+variable identification, so recurrent context discovery and variable
+selection remain future work. Third, exact soft-label training isolates
+representation formation from sampled-label variance; extension to
+sampled-token training remains future work. Fourth, finite-field modular
+arithmetic is a controlled model organism rather than a proxy for the full
+range of natural-data learning. Fifth, the experiments identify a distribution
+intervention but do not establish a universal loss-landscape mechanism.
 
-The confirmatory sample consists of eight paired blocks. The exact test is
-valid for the frozen randomization structure but does not turn the tested rules
-into a population sample of all modular tasks. The result is not a universal
-Transformer property, is not a thermodynamic phase transition, and does not
-show that the recurrent production task is solved. These mechanism experiments
-are excluded from the original scaling fit.
+Additional design limits remain. The study uses one field size (`p={p}`), one
+noise level (`eta={eta:g}`), a finite set of cue constructions, and eight
+confirmatory blocks. The checkpoint grid limits onset timing resolution, and
+terminal coding cannot verify a first pass at 10M. Row-bootstrap intervals
+quantify evaluation variation over parent rows, not between-rule population
+uncertainty. The exact test is valid for the frozen randomization structure but
+does not turn the tested rules into a population sample of all modular tasks.
+The result is not a universal Transformer property, is not a thermodynamic
+phase transition, does not show that the recurrent production task is solved,
+and is excluded from the original scaling fit.
 
 ## Reproducibility statement
 
@@ -386,9 +454,7 @@ recomputes distribution invariants, onset and establishment coding, the exact
 {primary['exact_permutation_count']:,}-assignment primary test, and all paper
 outputs without loading a training loop or taking an optimizer step.
 
-[Table 7: Protocol and integrity audit](tables/table07_protocol_integrity.md)
-
-[Table 8: Claim boundaries](tables/table08_claim_boundaries.md)
+Tables 7 and 8 summarize the protocol-integrity audit and claim boundaries.
 
 ## Data and code availability
 
@@ -399,6 +465,24 @@ lightweight result-verification path. Public archival identifiers can be added
 without changing the frozen scientific artifacts.
 
 ## Supplementary methods
+
+### Task objective, evaluation, and probes
+
+Exact soft-label cross-entropy was used throughout the parent-exposed
+experiments: at each observed pair, the target was the analytic noisy
+conditional rather than one sampled label. Evaluation enumerated all
+`{p**2:,}` ordered parent pairs. Every checkpoint recorded exact conditional
+KL, normalized R, center accuracy, center probability, predictive entropy, and
+a 2,000-replicate first-parent-row bootstrap interval. Selected checkpoints
+included layer-wise linear, fixed-Fourier, and fixed-capacity MLP probes.
+
+### Cue-family construction and audit
+
+The frozen cue permutations and coefficients reweighted the complete pair
+space while preserving strictly positive probability for every pair. Lambda
+was solved by deterministic root finding for each preregistered target, not
+selected from model outcomes. Exhaustive enumeration verified marginal
+uniformity, conditional invariance, joint information, and full support.
 
 ### Model and optimization
 
@@ -437,9 +521,23 @@ was the fraction with statistic at least as large as observed.
 The confirmatory freeze contains every Git tag, every manifest hash, v3.5 and
 v3.6 result hashes, the complete environment lock, test definition and result,
 and raw artifact counts. The audit validated 330 v3.5 and 264 v3.6 checkpoint
-sidecars. Paper packaging changes only files under `paper/` plus the new
-confirmatory freeze record; prior manifests, results, checkpoints, and
-statistical definitions remain unchanged.
+sidecars. The manuscript revision changes only files under `paper/`; prior
+manifests, results, checkpoints, the confirmatory freeze record, and statistical
+definitions remain unchanged.
+
+## References
+
+1. Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. (2022).
+   “Grokking: Generalization Beyond Overfitting on Small Algorithmic
+   Datasets.” [arXiv:2201.02177](https://arxiv.org/abs/2201.02177).
+2. Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. (2023).
+   “Progress Measures for Grokking via Mechanistic Interpretability.”
+   [arXiv:2301.05217](https://arxiv.org/abs/2301.05217).
+3. Bengio, Y., Louradour, J., Collobert, R., and Weston, J. (2009).
+   “Curriculum Learning.” *Proceedings of ICML 2009*.
+   [Primary paper](https://icml.cc/2009/papers/119.pdf).
+4. Williams, P. L., and Beer, R. D. (2010). “Nonnegative Decomposition of
+   Multivariate Information.” [arXiv:1004.2515](https://arxiv.org/abs/1004.2515).
 """
 
     tex = rf"""\documentclass[11pt]{{article}}
@@ -477,14 +575,27 @@ universal Transformer property.
 \end{{abstract}}
 
 \section{{Introduction}}
-Scaling curves do not specify when a model forms a task-sufficient internal
-state. We therefore manipulate training-distribution geometry while holding
-the target conditional and information budget fixed. Project Kepler uses a
-finite-field mechanism assay motivated by, but distinct from, its recurrent
-production task. The present paper does not claim that the recurrent task has
-been solved. Version 3.5 is exploratory discovery; version 3.6 is an independent
+The central question is: \emph{{How does training-distribution geometry affect
+the accessibility of task-sufficient representations when the final task
+information is fixed?}} A representation may be statistically available yet
+difficult to discover because useful optimization directions are weak, cancel
+across examples, or become accessible only after other features organize. We
+therefore intervene on early training-distribution geometry while holding the
+target conditional and information budget fixed.
+
+Project Kepler uses a finite-field mechanism assay motivated by, but distinct
+from, its recurrent production task. The parent-exposed design intentionally
+separates (1) identifying relevant variables, which the interface controls by
+presenting both parents directly, from (2) composing discovered variables into
+a predictive representation, which remains the learning problem. The present
+paper does not claim that the recurrent task has been solved.
+
+Version 3.5 is exploratory discovery; version 3.6 is an independent
 confirmatory replication. The discovery data are excluded from the primary
-confirmatory $p$-value.
+confirmatory $p$-value. The aim is neither a new scaling law nor a universal
+intelligence principle; it is a bounded causal test within one controlled task
+and model family. Figure~\ref{{fig:task}} summarizes the construction and cue
+schedule.
 
 \begin{{figure}}[tb]
 \centering
@@ -494,18 +605,53 @@ are generated from frozen JSON.}}
 \label{{fig:task}}
 \end{{figure}}
 
+\section{{Related Work}}
+\paragraph{{Grokking and delayed generalization.}}
+Modular-arithmetic grokking studies established that small neural networks can
+generalize long after achieving near-perfect training performance under a
+fixed training distribution \cite{{power2022grokking}}. This paper does not
+offer a universal explanation of grokking. It instead asks whether the
+geometry of the \emph{{early}} training distribution, with the final
+conditional and information budget held fixed, changes the accessibility or
+timing of a delayed representational transition.
+
+\paragraph{{Mechanistic interpretability of modular arithmetic.}}
+Mechanistic analyses of modular addition have recovered Fourier-like internal
+representations and circuits implementing trigonometric structure
+\cite{{nanda2023progress}}. Here, fixed-Fourier probes are diagnostics
+alongside linear and fixed-capacity MLP probes. We do not assume that a
+specific Fourier circuit must be learned, and the causal result concerns the
+timing or probability of task-sufficient representation formation rather than
+identification of a unique circuit.
+
+\paragraph{{Curriculum learning.}}
+Classic curriculum learning changes example order or introduces examples and
+concepts by increasing difficulty \cite{{bengio2009curriculum}}. The present
+intervention instead keeps the target conditional and Bayes information
+budget fixed and changes only the geometry of the full-support training
+distribution during an early window. We call this narrower intervention
+\emph{{distributional bootstrapping of representation formation}}.
+
+\paragraph{{Partial Information Decomposition.}}
+Partial Information Decomposition separates redundant, unique, and
+synergistic contributions in multivariate information
+\cite{{williams2010pid}}. The full-support base task is a pure-synergy
+construction in the limited operational sense needed here: singleton
+information is zero while joint information is nonzero. We do not attempt a
+full PID decomposition of the cue distributions or learned representations.
+
 \section{{Controlled finite-field task}}
 The field size is $p={p}$. The predictive center is
 $z=a_1x_1+a_2x_2 \bmod p$, and $y=z+\epsilon \bmod p$ with
 $P(\epsilon=0)=1-\eta$, $P(\epsilon=r)=\eta/(p-1)$ for $r\ne0$, and
-$\eta={eta:g}$. Thus $H(Y\mid X_1,X_2)={ff(noise_entropy)}$ nats. Exact
-soft-label cross-entropy is used. Evaluation enumerates all {p**2:,} ordered
-pairs and reports
+$\eta={eta:g}$. Thus $H(Y\mid X_1,X_2)={ff(noise_entropy)}$ nats, and the
+target conditional is unchanged across conditions. The primary metric is
 \[
 R=\frac{{\mathbb{{E}}_h D_{{\rm KL}}(q_h\Vert p_\theta)}}
 {{\log p-H(\nu_\eta)}}.
 \]
-A uniform predictor has $R=1$ and the oracle has $R=0$.
+A uniform predictor has $R=1$ and the oracle has $R=0$. Objective,
+evaluation, bootstrap, and probe details appear in Supplementary Methods.
 
 \section{{Pure-synergy information structure}}
 Under uniform full support, $X_1,X_2,Z,Y$ are uniform,
@@ -515,11 +661,12 @@ selected constructed distributions; it is not a unique-information percentage.
 
 \section{{Full-support cue-family construction}}
 The cue family reweights ordered parent pairs through frozen permutations while
-retaining strictly positive support. Deterministic root solving targets each
-registered cue index. Exhaustive enumeration verifies uniform marginals,
-invariant $H(Y\mid X_1,X_2)$, invariant joint information, and exact uniform
-full support at zero cue. The intervention is the registered distribution, not
-singleton mutual information in isolation.
+retaining strictly positive support. Exhaustive enumeration verifies uniform
+marginals, invariant $H(Y\mid X_1,X_2)$, invariant joint information, and exact
+uniform full support at zero cue. The intervention is the registered
+distribution, not singleton mutual information in isolation.
+Table~\ref{{tab:table01-distribution-invariants}} reports the frozen audits;
+construction details appear in Supplementary Methods.
 
 \input{{tables/table01_distribution_invariants.tex}}
 
@@ -536,9 +683,13 @@ confirmatory conditions and definitions; they are not confirmatory data.
 \includegraphics[width=\linewidth]{{figures/fig02_v35_dose_trajectories.pdf}}
 \caption{{Exploratory v3.5 R trajectories and onset outcomes. Bands are means
 of registered row-bootstrap endpoints, not new group-level intervals.}}
+\label{{fig:v35-trajectories}}
 \end{{figure}}
 
 \input{{tables/table02_v35_exploratory_outcomes.tex}}
+Figure~\ref{{fig:v35-trajectories}} and
+Table~\ref{{tab:table02-v35-exploratory-outcomes}} report the discovery
+trajectories and frozen outcomes.
 
 \section{{Independent confirmatory replication}}
 Version 3.6 crossed two new rules with two new cue permutations and two new
@@ -556,17 +707,25 @@ $p={primary['exact_one_sided_p']:.8g}$.
 \includegraphics[width=\linewidth]{{figures/fig03_v36_paired_onset.pdf}}
 \caption{{Paired terminal-coded onset ordinals for all eight confirmatory
 blocks.}}
+\label{{fig:v36-onset}}
 \end{{figure}}
 
 \begin{{figure}}[tb]
 \centering
 \includegraphics[width=\linewidth]{{figures/fig04_v36_exact_null.pdf}}
 \caption{{Exact v3.6 permutation null. Version 3.5 is excluded.}}
+\label{{fig:exact-null}}
 \end{{figure}}
 
 \input{{tables/table03_v36_confirmatory_outcomes.tex}}
 \input{{tables/table04_exact_tests.tex}}
 \input{{tables/table05_paired_R_differences.tex}}
+Figures~\ref{{fig:v36-onset}} and \ref{{fig:exact-null}} show the paired
+onset ordinals and exact null. Tables~\ref{{tab:table03-v36-confirmatory-outcomes}},
+\ref{{tab:table04-exact-tests}}, and
+\ref{{tab:table05-paired-R-differences}} report confirmatory outcomes, exact
+tests, and paired differences. The transition-coding rule is specified in
+Supplementary Methods.
 
 \section{{Representation persistence after cue removal}}
 At 5M only the sampler changed for nonzero-cue runs. Zero-step checks verified
@@ -580,9 +739,13 @@ required shortcut.
 \includegraphics[width=\linewidth]{{figures/fig05_v36_persistence.pdf}}
 \caption{{Persistence after return to uniform full support. Whiskers are
 registered first-parent-row bootstrap intervals.}}
+\label{{fig:persistence}}
 \end{{figure}}
 
 \input{{tables/table06_cue_removal_persistence.tex}}
+Figure~\ref{{fig:persistence}} and
+Table~\ref{{tab:table06-cue-removal-persistence}} report the persistence
+result and zero-step switch audit.
 
 \section{{Rule and cue-geometry heterogeneity}}
 R1 onset occurred in {r1_rule0[0]}/4 rule-0 and {r1_rule1[0]}/4 rule-1
@@ -596,13 +759,17 @@ interchangeable.
 \centering
 \includegraphics[width=\linewidth]{{figures/fig06_v36_rule_heterogeneity.pdf}}
 \caption{{Rule-specific R1 heterogeneity and R2 robustness.}}
+\label{{fig:rule-heterogeneity}}
 \end{{figure}}
 
 \begin{{figure}}[tb]
 \centering
 \includegraphics[width=\linewidth]{{figures/fig07_v35_geometry_comparison.pdf}}
 \caption{{Exploratory matched-index geometry comparison.}}
+\label{{fig:geometry}}
 \end{{figure}}
+Figures~\ref{{fig:rule-heterogeneity}} and \ref{{fig:geometry}} separate the
+confirmatory rule comparison from the exploratory geometry comparison.
 
 \section{{Discussion}}
 Temporary cue-bearing full-support distributions changed whether or when the
@@ -614,10 +781,47 @@ the learning path rather than supplying a permanently required feature.
 Heterogeneity across rules and geometries rejects an explanation based on the
 scalar cue index alone.
 
+\subsection{{Possible mechanism: symmetry breaking and optimization accessibility}}
+The evidence suggests a possible optimization-accessibility account: pure
+synergy creates a symmetry under which singleton-aligned gradients vanish in
+expectation. The parents are individually uninformative, and the symmetric
+full-support average cancels their singleton-aligned gradient directions.
+Transient cue distributions introduce lower-order statistical
+asymmetries while preserving the target conditional and Bayes information
+budget. These asymmetries may redirect early optimization toward a state in
+which the two parents can be composed; after the task-sufficient
+representation forms, the cue is no longer required.
+
+Three observations are consistent with this account: onset was ordered by
+registered cue dose, threshold-positive representations persisted after cue
+removal, and the frozen gradient audits showed changes in gradient coherence
+around observed transitions. This is mechanistic interpretation, not a causal
+mediation result. \emph{{Gradient statistics are correlates of transition
+dynamics, not identified causal mediators.}} The data do not establish a
+universal loss-landscape mechanism or a unique circuit.
+
+\subsection{{Practical implication: distributional bootstrapping}}
+The result suggests a possible design principle: temporary training
+distributions can be used to improve access to otherwise hard-to-reach
+compositional representations when the final task distribution contains
+high-order dependencies. This is a hypothesis for bounded, auditable
+interventions, not a claim that all AI training should use low-order cues.
+
 \section{{Limitations}}
-The experiment uses one field size, one noise level, one approximately 2M
-parent-exposed architecture, exact soft labels, a finite checkpoint grid, and
-eight confirmatory blocks. It is not a universal Transformer claim, not a
+First, model scale is limited to one approximately 2M-parameter Transformer
+family; scale dependence remains open. Second, the parent-exposed interface
+intentionally controls variable identification; recurrent context discovery
+and variable selection remain future work. Third, exact soft-label training
+isolates representation formation from sampled-label variance; sampled-token
+training remains future work. Fourth, finite-field modular arithmetic is a
+controlled model organism rather than a proxy for the full range of
+natural-data learning. Fifth, the experiments identify a distribution
+intervention but do not establish a universal loss-landscape mechanism.
+
+The study also uses one field size, one noise level, a finite checkpoint grid,
+and eight confirmatory blocks. The exact test is valid for the frozen
+randomization structure but does not make the tested rules a population sample
+of all modular tasks. The result is not a universal Transformer claim, not a
 thermodynamic phase transition, and not evidence that the recurrent production
 task is solved. These results are excluded from the original scaling fit.
 
@@ -630,6 +834,9 @@ and tables without optimizer steps.
 
 \input{{tables/table07_protocol_integrity.tex}}
 \input{{tables/table08_claim_boundaries.tex}}
+Tables~\ref{{tab:table07-protocol-integrity}} and
+\ref{{tab:table08-claim-boundaries}} summarize protocol integrity and claim
+boundaries.
 
 \section{{Data and code availability}}
 Code, manifests, result JSON, source data, and verification scripts are
@@ -637,6 +844,22 @@ included in the repository. Checkpoints are referenced by SHA-256 sidecars and
 are unnecessary for lightweight verification.
 
 \section{{Supplementary methods}}
+\subsection{{Task objective, evaluation, and probes}}
+Exact soft-label cross-entropy was used throughout the parent-exposed
+experiments: at each observed pair, the target was the analytic noisy
+conditional rather than one sampled label. Evaluation enumerated all
+{p**2:,} ordered parent pairs. Every checkpoint recorded exact conditional KL,
+normalized $R$, center accuracy, center probability, predictive entropy, and a
+2,000-replicate first-parent-row bootstrap interval. Selected checkpoints
+included layer-wise linear, fixed-Fourier, and fixed-capacity MLP probes.
+
+\subsection{{Cue-family construction and audit}}
+Frozen cue permutations and coefficients reweighted the complete pair space
+while preserving strictly positive probability for every pair. Lambda was
+solved by deterministic root finding for each preregistered target, not
+selected from model outcomes. Exhaustive enumeration verified marginal
+uniformity, conditional invariance, joint information, and full support.
+
 \subsection{{Model and optimization}}
 The manifest records {registered_run['actual_core_parameters']:,} core
 parameters, width {registered_run['width']}, batch size
@@ -661,9 +884,36 @@ eight blocks, giving $6^8={primary['exact_permutation_count']:,}$ assignments.
 
 \subsection{{Artifact integrity}}
 The freeze records every tag, manifest and result hash, the environment lock,
-test definition and result, and artifact counts. Packaging changes only the
-\texttt{{paper/}} tree and the new freeze record; no prior scientific artifact
-changes.
+test definition and result, and artifact counts. This manuscript revision
+changes only the \texttt{{paper/}} tree; no prior scientific artifact changes.
+
+\begin{{thebibliography}}{{9}}
+\bibitem{{power2022grokking}}
+A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra.
+\newblock Grokking: Generalization beyond overfitting on small algorithmic
+datasets.
+\newblock \emph{{arXiv:2201.02177}}, 2022.
+\newblock \url{{https://arxiv.org/abs/2201.02177}}.
+
+\bibitem{{nanda2023progress}}
+N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt.
+\newblock Progress measures for grokking via mechanistic interpretability.
+\newblock \emph{{arXiv:2301.05217}}, 2023.
+\newblock \url{{https://arxiv.org/abs/2301.05217}}.
+
+\bibitem{{bengio2009curriculum}}
+Y. Bengio, J. Louradour, R. Collobert, and J. Weston.
+\newblock Curriculum learning.
+\newblock In \emph{{Proceedings of the 26th International Conference on
+Machine Learning}}, 2009.
+\newblock \url{{https://icml.cc/2009/papers/119.pdf}}.
+
+\bibitem{{williams2010pid}}
+P. L. Williams and R. D. Beer.
+\newblock Nonnegative decomposition of multivariate information.
+\newblock \emph{{arXiv:1004.2515}}, 2010.
+\newblock \url{{https://arxiv.org/abs/1004.2515}}.
+\end{{thebibliography}}
 
 \end{{document}}
 """

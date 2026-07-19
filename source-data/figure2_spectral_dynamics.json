@@ -1,0 +1,55 @@
+{
+  "checkpoints": [
+    {
+      "condition": "R0",
+      "effective_spectral_dimension_top10": 6.414429560678851,
+      "exposure": 6000000,
+      "lambda_max": 143.05761922498021,
+      "role": "pre_transition",
+      "trace_estimate": 1418.7712707519531
+    },
+    {
+      "condition": "R0",
+      "effective_spectral_dimension_top10": 5.828417510526947,
+      "exposure": 7500000,
+      "lambda_max": 6337.520159854173,
+      "role": "transition",
+      "trace_estimate": 64422.74365234375
+    },
+    {
+      "condition": "R0",
+      "effective_spectral_dimension_top10": 6.353905730941136,
+      "exposure": 10000000,
+      "lambda_max": 2596.6889172739475,
+      "role": "late",
+      "trace_estimate": 22164.06591796875
+    },
+    {
+      "condition": "R2",
+      "effective_spectral_dimension_top10": 8.485785429197499,
+      "exposure": 3000000,
+      "lambda_max": 3155.6783912007318,
+      "role": "pre_transition",
+      "trace_estimate": 75057.08056640625
+    },
+    {
+      "condition": "R2",
+      "effective_spectral_dimension_top10": 8.187349170915665,
+      "exposure": 4000000,
+      "lambda_max": 9993.67415033754,
+      "role": "transition",
+      "trace_estimate": 194198.9375
+    },
+    {
+      "condition": "R2",
+      "effective_spectral_dimension_top10": 8.145737500948911,
+      "exposure": 5000000,
+      "lambda_max": 10634.203334266786,
+      "role": "post_transition",
+      "trace_estimate": 194972.51171875
+    }
+  ],
+  "kind": "figure_2_spectral_dynamics_source",
+  "representative_block": "rule_0_permutation_1_init_0",
+  "source_artifact": "artifacts/spectral_transition_dynamics.json"
+}

@@ -1,0 +1,10 @@
+{
+  "existing_suite": {
+    "command": "PYTHONPATH=src .venv/bin/python -m pytest -q --ignore=tests/test_transition_dynamics.py",
+    "status": "passed (62 tests)"
+  },
+  "new_analysis_tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_transition_dynamics.py",
+    "status": "passed (5 tests)"
+  }
+}

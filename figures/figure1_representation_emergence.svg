@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="432" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 432" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="432"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-432)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="28" y="404" style="font-family: KeplerVera-Bold; font-size: 13px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,808) scale(1,-1)">Representation emergence across frozen trajectories</text>
+			<rect x="609" y="395" width="83" height="18" rx="4" ry="4" style="stroke: rgb(47%,31%,58%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(47%,31%,58%); fill-rule: evenodd; fill-opacity: 0.14;"/>
+			<text x="621.643798828125" y="400" style="font-family: KeplerVera-Bold; font-size: 7px;fill: rgb(47%,31%,58%); stroke:none;" transform="translate(0,800) scale(1,-1)">EXPLORATORY</text>
+			<text x="26" y="367" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">A</text>
+			<text x="43" y="367" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">Full-support R</text>
+			<path d="M 48,88 L 223,88 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="20.96044921875" y="85.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,171) scale(1,-1)">0.001</text>
+			<path d="M 48,168.645161 L 223,168.645161 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="25.4140625" y="166.14516129032256" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,332) scale(1,-1)">0.01</text>
+			<path d="M 48,249.290323 L 223,249.290323 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="29.86767578125" y="246.79032258064515" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,493) scale(1,-1)">0.1</text>
+			<path d="M 48,329.935484 L 223,329.935484 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="36.54638671875" y="327.4354838709677" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,654) scale(1,-1)">1</text>
+			<path d="M 54.104651,88 L 54.104651,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="51.877844522165695" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">2</text>
+			<path d="M 94.802326,88 L 94.802326,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="92.57551894077034" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">4</text>
+			<path d="M 135.5,88 L 135.5,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="133.273193359375" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">6</text>
+			<path d="M 176.197674,88 L 176.197674,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="173.97086777797963" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">8</text>
+			<path d="M 216.895349,88 L 216.895349,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="212.4417355559593" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">10</text>
+			<path d="M 48,88 L 223,88 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 48,88 L 48,338 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="86.185546875" y="59" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,118) scale(1,-1)">Pair exposures (millions)</text>
+			<text x="48" y="346" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,692) scale(1,-1)">log10 R</text>
+			<path d="M 54.104651 329.948206 L 74.453488 329.949146 L 94.802326 329.944672 L 115.151163 329.943849 L 135.5 328.533861 L 166.023256 319.719344 L 216.895349 300.599177 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<path d="M 54.104651 329.409706 L 74.453488 314.822085 L 94.802326 275.476705 L 115.151163 220.305259 L 135.5 180.965955 L 166.023256 156.531842 L 216.895349 145.613668 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<text x="256" y="367" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">B</text>
+			<text x="273" y="367" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">Layer-6 probe accuracy</text>
+			<path d="M 278,88 L 453,88 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="266.54638671875" y="85.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,171) scale(1,-1)">0</text>
+			<path d="M 278,210.54902 L 453,210.54902 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="259.86767578125" y="208.04901960784315" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,416) scale(1,-1)">0.5</text>
+			<path d="M 278,333.098039 L 453,333.098039 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="266.54638671875" y="330.5980392156863" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,661) scale(1,-1)">1</text>
+			<path d="M 284.104651,88 L 284.104651,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="281.8778445221657" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">2</text>
+			<path d="M 324.802326,88 L 324.802326,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="322.57551894077034" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">4</text>
+			<path d="M 365.5,88 L 365.5,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="363.273193359375" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">6</text>
+			<path d="M 406.197674,88 L 406.197674,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="403.9708677779796" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">8</text>
+			<path d="M 446.895349,88 L 446.895349,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="442.4417355559593" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">10</text>
+			<path d="M 278,88 L 453,88 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 278,88 L 278,338 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="316.185546875" y="59" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,118) scale(1,-1)">Pair exposures (millions)</text>
+			<text x="278" y="346" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,692) scale(1,-1)">accuracy</text>
+			<path d="M 284.104651 88.94302 L 304.453488 88.958327 L 324.802326 88.956472 L 345.151163 88.95508 L 365.5 90.848542 L 396.023256 130.463276 L 446.895349 191.970642 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<path d="M 284.104651 88.950906 L 304.453488 88.952297 L 324.802326 88.958327 L 345.151163 88.967141 L 365.5 90.913482 L 396.023256 131.950863 L 446.895349 197.759569 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.2; fill: none; fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<path d="M 284.104651 89.813679 L 304.453488 185.68214 L 324.802326 305.614544 L 345.151163 326.104009 L 365.5 331.398469 L 396.023256 332.769629 L 446.895349 332.709791 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<path d="M 284.104651 89.573401 L 304.453488 208.861971 L 324.802326 321.826792 L 345.151163 329.44285 L 365.5 332.052507 L 396.023256 332.903683 L 446.895349 332.851732 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.2; fill: none; fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="486" y="367" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">C</text>
+			<text x="503" y="367" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">Layer-6 Fourier R2</text>
+			<path d="M 508,110.727273 L 683,110.727273 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="496.54638671875" y="108.22727272727272" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,216) scale(1,-1)">0</text>
+			<path d="M 508,224.363636 L 683,224.363636 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="485.4140625" y="221.86363636363635" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,443) scale(1,-1)">0.25</text>
+			<path d="M 508,338 L 683,338 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="489.86767578125" y="335.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,671) scale(1,-1)">0.5</text>
+			<path d="M 514.104651,88 L 514.104651,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="511.8778445221657" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">2</text>
+			<path d="M 554.802326,88 L 554.802326,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="552.5755189407703" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">4</text>
+			<path d="M 595.5,88 L 595.5,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="593.273193359375" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">6</text>
+			<path d="M 636.197674,88 L 636.197674,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="633.9708677779796" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">8</text>
+			<path d="M 676.895349,88 L 676.895349,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="672.4417355559593" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">10</text>
+			<path d="M 508,88 L 683,88 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 508,88 L 508,338 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="546.185546875" y="59" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,118) scale(1,-1)">Pair exposures (millions)</text>
+			<text x="508" y="346" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,692) scale(1,-1)">variance-normalized R2</text>
+			<path d="M 514.104651 109.78537 L 534.453488 109.392643 L 554.802326 107.661948 L 575.151163 107.168632 L 595.5 107.475054 L 626.023256 125.616564 L 676.895349 170.561548 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<path d="M 514.104651 107.750129 L 534.453488 134.902317 L 554.802326 204.685424 L 575.151163 256.981933 L 595.5 282.951229 L 626.023256 308.871752 L 676.895349 329.529686 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<path d="M 205,45 L 223,45 Z" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<text x="229" y="42.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,85) scale(1,-1)">R0</text>
+			<path d="M 310,45 L 328,45 Z" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<text x="334" y="42.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,85) scale(1,-1)">R2</text>
+			<path d="M 415,45 L 433,45 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 1.8; stroke-dasharray: 4, 2;"/>
+			<text x="439" y="42.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,85) scale(1,-1)">MLP (panel B)</text>
+			<text x="48" y="21" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,42) scale(1,-1)">Means across eight paired confirmatory blocks; Fourier is continuous because no registered R2 threshold exists.</text>
+		</g>
+	</g>
+</svg>

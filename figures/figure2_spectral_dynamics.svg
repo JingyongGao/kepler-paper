@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="432" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 432" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="432"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-432)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="28" y="404" style="font-family: KeplerVera-Bold; font-size: 13px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,808) scale(1,-1)">Spectral signatures at representative transition checkpoints</text>
+			<rect x="609" y="395" width="83" height="18" rx="4" ry="4" style="stroke: rgb(47%,31%,58%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(47%,31%,58%); fill-rule: evenodd; fill-opacity: 0.14;"/>
+			<text x="621.643798828125" y="400" style="font-family: KeplerVera-Bold; font-size: 7px;fill: rgb(47%,31%,58%); stroke:none;" transform="translate(0,800) scale(1,-1)">EXPLORATORY</text>
+			<text x="58" y="367" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">A</text>
+			<text x="75" y="367" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">Maximum Hessian eigenvalue</text>
+			<path d="M 88,116.846154 L 323,116.846154 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="67.63916015625" y="114.34615384615384" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,228) scale(1,-1)">143</text>
+			<path d="M 88,213 L 323,213 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="46.3349609375" y="210.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,421) scale(1,-1)">5.39e+03</text>
+			<path d="M 88,309.153846 L 323,309.153846 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="46.3349609375" y="306.65384615384613" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,613) scale(1,-1)">1.06e+04</text>
+			<path d="M 102.873418,88 L 102.873418,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="100.64661108089399" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">3</text>
+			<path d="M 132.620253,88 L 132.620253,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="130.39344652393197" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">4</text>
+			<path d="M 162.367089,88 L 162.367089,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="160.14028196696992" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">5</text>
+			<path d="M 192.113924,88 L 192.113924,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="189.8871174100079" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">6</text>
+			<path d="M 251.607595,88 L 251.607595,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="249.38078829608384" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">8</text>
+			<path d="M 311.101266,88 L 311.101266,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="306.6476525415348" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">10</text>
+			<path d="M 88,88 L 323,88 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 88,88 L 88,338 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="156.185546875" y="59" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,118) scale(1,-1)">Pair exposures (millions)</text>
+			<text x="88" y="346" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,692) scale(1,-1)">Ritz estimate</text>
+			<path d="M 192.113924 116.846154 L 236.734177 230.393599 L 311.101266 161.822383 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<circle cx="192.1139240506329" cy="116.84615384615384" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="187.1305256131329" y="125.84615384615384" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,251) scale(1,-1)">pre</text>
+			<circle cx="236.73417721518985" cy="230.39359934268202" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd;"/>
+			<text x="222.44169674643985" y="239.39359934268202" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,478) scale(1,-1)">transition</text>
+			<circle cx="311.1012658227848" cy="161.82238289854428" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd;"/>
+			<text x="305.4074181665348" y="170.82238289854428" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,341) scale(1,-1)">late</text>
+			<path d="M 102.873418 172.068926 L 132.620253 297.412641 L 162.367089 309.153846 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<circle cx="102.87341772151899" cy="172.0689259049029" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="97.89001928401899" y="181.0689259049029" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,362) scale(1,-1)">pre</text>
+			<circle cx="132.62025316455697" cy="297.41264146916103" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="118.32777269580697" y="306.41264146916103" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,612) scale(1,-1)">transition</text>
+			<circle cx="162.36708860759492" cy="309.15384615384613" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="155.88808470134492" y="318.15384615384613" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,636) scale(1,-1)">post</text>
+			<text x="382" y="367" style="font-family: KeplerVera-Bold; font-size: 10px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">B</text>
+			<text x="399" y="367" style="font-family: KeplerVera-Bold; font-size: 9px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,734) scale(1,-1)">Effective spectral dimension</text>
+			<path d="M 412,118.254974 L 647,118.254974 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="389.4140625" y="115.75497366461614" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,231) scale(1,-1)">5.83</text>
+			<path d="M 412,213 L 647,213 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="389.4140625" y="210.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,421) scale(1,-1)">7.16</text>
+			<path d="M 412,307.745026 L 647,307.745026 Z" style="stroke: rgb(85%,87%,89%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="389.4140625" y="305.24502633538384" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,610) scale(1,-1)">8.49</text>
+			<path d="M 426.873418,88 L 426.873418,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="424.646611080894" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">3</text>
+			<path d="M 456.620253,88 L 456.620253,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="454.39344652393197" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">4</text>
+			<path d="M 486.367089,88 L 486.367089,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="484.14028196696995" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">5</text>
+			<path d="M 516.113924,88 L 516.113924,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="513.8871174100079" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">6</text>
+			<path d="M 575.607595,88 L 575.607595,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="573.3807882960839" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">8</text>
+			<path d="M 635.101266,88 L 635.101266,85 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7;"/>
+			<text x="630.6476525415349" y="75" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,150) scale(1,-1)">10</text>
+			<path d="M 412,88 L 647,88 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 412,88 L 412,338 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="480.185546875" y="59" style="font-family: KeplerVera; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,118) scale(1,-1)">Pair exposures (millions)</text>
+			<text x="412" y="346" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,692) scale(1,-1)">d_eff (top 10)</text>
+			<path d="M 516.113924 160.041982 L 560.734177 118.254974 L 635.101266 155.726183 " style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<circle cx="516.1139240506329" cy="160.04198157902738" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="511.13052561313293" y="169.04198157902738" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,338) scale(1,-1)">pre</text>
+			<circle cx="560.7341772151899" cy="118.25497366461614" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd;"/>
+			<text x="546.4416967464399" y="127.25497366461614" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,254) scale(1,-1)">transition</text>
+			<circle cx="635.1012658227849" cy="155.7261833772587" r="3.2" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,44%,49%); fill-rule: evenodd;"/>
+			<text x="629.4074181665349" y="164.7261833772587" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,329) scale(1,-1)">late</text>
+			<path d="M 426.873418 307.745026 L 456.620253 286.464306 L 486.367089 283.497086 " style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8; fill: none; fill-rule: evenodd;"/>
+			<circle cx="426.873417721519" cy="307.74502633538384" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="421.890019284019" y="316.74502633538384" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,633) scale(1,-1)">pre</text>
+			<circle cx="456.62025316455697" cy="286.464306453365" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="442.32777269580697" y="295.464306453365" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,590) scale(1,-1)">transition</text>
+			<circle cx="486.36708860759495" cy="283.497085588569" r="3.2" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,36%,0%); fill-rule: evenodd;"/>
+			<text x="479.88808470134495" y="292.497085588569" style="font-family: KeplerVera; font-size: 6px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,584) scale(1,-1)">post</text>
+			<path d="M 265,45 L 283,45 Z" style="stroke: rgb(39%,44%,49%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<text x="289" y="42.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,85) scale(1,-1)">R0</text>
+			<path d="M 370,45 L 388,45 Z" style="stroke: rgb(83%,36%,0%); stroke-linecap: butt; stroke-width: 1.8;"/>
+			<text x="394" y="42.5" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,85) scale(1,-1)">R2</text>
+			<text x="88" y="21" style="font-family: KeplerVera; font-size: 7px;fill: rgb(39%,44%,49%); stroke:none;" transform="translate(0,42) scale(1,-1)">CPU exact HVPs on the same fixed evaluation batches; associations only, not causal mechanism claims.</text>
+		</g>
+	</g>
+</svg>

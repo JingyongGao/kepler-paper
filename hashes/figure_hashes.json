@@ -1,0 +1,14 @@
+{
+  "figures/figure1_representation_emergence.pdf": "148bf9983a9a6047a110ba686a2e39bafc660f3c97e7cc3fffb5790e8da97a3d",
+  "figures/figure1_representation_emergence.png": "7e9fc3f241a3b06811c5ff8dd6692570358d6ebd1b9d5bd3d9bf9596372d2833",
+  "figures/figure1_representation_emergence.svg": "d80cd798c533204d2cf6b293301069012c9c6cd8ee130a0fa513fc806864456e",
+  "figures/figure2_spectral_dynamics.pdf": "510230cb778c791c63b79dce76260203b9e42c6b302a5f6fad93c5e682833e8a",
+  "figures/figure2_spectral_dynamics.png": "bffb6c06de53895f16284ac3395413704641a53b8c90ccb56a4e39557954a737",
+  "figures/figure2_spectral_dynamics.svg": "39cf3edac770b32b838848f9ece09215f4c7788b3d34b0724007dbd6319fde4d",
+  "figures/figure3_cue_removal_timing.pdf": "966cc8f56c09753a40ff3adcf1858cb62a26b134e288f7985f415787e6afef6f",
+  "figures/figure3_cue_removal_timing.png": "2ce6357ae80cf492dc507ff2a0ce57dab59f39602b0c10997b08ebb742a61763",
+  "figures/figure3_cue_removal_timing.svg": "1a7fa3cfd730f1386055e101d957fc8587bc85afc0381eeb45deb5ff27d66d22",
+  "source-data/figure1_representation_emergence.json": "867d02d73254674f9335d22e02ef2b08c4823473ed30cec0f9277933c2dfd887",
+  "source-data/figure2_spectral_dynamics.json": "7ed41cb9e06ed3ca40ac9b0b0b4d6365aa864246f86eb5e6e216144f4f4e9ff5",
+  "source-data/figure3_cue_removal_timing.json": "0916cf592c16416194306e1fb2adf7a1024ae494edb5b46a1e5c8aa246799468"
+}

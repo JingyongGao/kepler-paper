@@ -58,3 +58,7 @@ artifacts/*
 !artifacts/confirmatory_distribution_audit.json.sha256
 !artifacts/cue_dose_confirmatory_manifest.json
 !artifacts/cue_dose_confirmatory_results.json
+!artifacts/v1_3_transition_freeze_record.json
+!artifacts/representation_transition_dynamics.json
+!artifacts/spectral_transition_dynamics.json
+!artifacts/early_cue_removal_analysis.json

@@ -1,0 +1,651 @@
+{
+  "kind": "figure_3_cue_removal_timing_source",
+  "runs": [
+    {
+      "block_id": "rule_0_permutation_0_init_0",
+      "run_id": "confirm_rule_0_permutation_0_init_0_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_0_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "8c4242ea2497343b15177a39c0db73a2d7adf1bd69006aabe011b329a7379878",
+          "checkpoint_sha256_before": "8c4242ea2497343b15177a39c0db73a2d7adf1bd69006aabe011b329a7379878",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.14487534761428833,
+          "immediate_full_support_R": 0.41896742582321167,
+          "linear_layer6_accuracy": 0.9996063709259033,
+          "mlp_layer6_accuracy": 1.0,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_0_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "6dbcf314d817ab39351adaed7146bec48941c2bac252ad4889decf79e33f39c8",
+          "checkpoint_sha256_before": "6dbcf314d817ab39351adaed7146bec48941c2bac252ad4889decf79e33f39c8",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.329032838344574,
+          "immediate_full_support_R": 0.021708006039261818,
+          "linear_layer6_accuracy": 0.999984860420227,
+          "mlp_layer6_accuracy": 1.0,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.004336042795330286,
+          "R_pre": 0.004336042795330286,
+          "continuation": [
+            {
+              "R": 0.002614688128232956,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.4586288332939148,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.001538808224722743,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.5017552375793457,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.0017984529258683324,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.5078282356262207,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_0_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "ec8f128c672ec817d009f92905c5bb06956a3d5cd70fa7b4be69966392d6f829",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_0_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "ec8f128c672ec817d009f92905c5bb06956a3d5cd70fa7b4be69966392d6f829",
+          "registered_establishment": 4000000,
+          "registered_onset": 3000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_0_permutation_0_init_1",
+      "run_id": "confirm_rule_0_permutation_0_init_1_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_1_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "50e357c2d01ff42e9d5fd0304fae9a09031800085992c93c83ace8b0961a41a7",
+          "checkpoint_sha256_before": "50e357c2d01ff42e9d5fd0304fae9a09031800085992c93c83ace8b0961a41a7",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.07337570190429688,
+          "immediate_full_support_R": 0.5286834836006165,
+          "linear_layer6_accuracy": 0.5886538624763489,
+          "mlp_layer6_accuracy": 0.8486426472663879,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_1_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "01d23b57b3b99a19947a25406184157870a6660daf4e0d3516c602d55d30d349",
+          "checkpoint_sha256_before": "01d23b57b3b99a19947a25406184157870a6660daf4e0d3516c602d55d30d349",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.1882595419883728,
+          "immediate_full_support_R": 0.25404229760169983,
+          "linear_layer6_accuracy": 0.8065375685691833,
+          "mlp_layer6_accuracy": 0.9377583265304565,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.12060078978538513,
+          "R_pre": 0.12060078978538513,
+          "continuation": [
+            {
+              "R": 0.02204464189708233,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.34898024797439575,
+              "linear_layer6_accuracy": 0.9993489384651184,
+              "mlp_layer6_accuracy": 0.9998031854629517
+            },
+            {
+              "R": 0.0046828743070364,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.4308326244354248,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.0017199990106746554,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.5103158950805664,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_1_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "a9e05c6b6e6ada14dc4120aa585d03b26c79088d28b420ef358fccdc629f8b47",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_0_init_1_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "a9e05c6b6e6ada14dc4120aa585d03b26c79088d28b420ef358fccdc629f8b47",
+          "registered_establishment": 6000000,
+          "registered_onset": 3000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_0_permutation_1_init_0",
+      "run_id": "confirm_rule_0_permutation_1_init_0_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_0_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "9569d564d41a3727ab453ec2f7c1dd68ebdd9b7ded102852c5a41c40bd9a3a73",
+          "checkpoint_sha256_before": "9569d564d41a3727ab453ec2f7c1dd68ebdd9b7ded102852c5a41c40bd9a3a73",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.040698468685150146,
+          "immediate_full_support_R": 0.6457887887954712,
+          "linear_layer6_accuracy": 0.39201200008392334,
+          "mlp_layer6_accuracy": 0.5898802280426025,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_0_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "89fd14f7e5d9ef8b6f7c9cb4e9892a4c6234bc323d1519d62fa27836018fd60d",
+          "checkpoint_sha256_before": "89fd14f7e5d9ef8b6f7c9cb4e9892a4c6234bc323d1519d62fa27836018fd60d",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.16113883256912231,
+          "immediate_full_support_R": 0.30807918310165405,
+          "linear_layer6_accuracy": 0.7154991030693054,
+          "mlp_layer6_accuracy": 0.8324577212333679,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.11356716603040695,
+          "R_pre": 0.11356716603040695,
+          "continuation": [
+            {
+              "R": 0.05038978159427643,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.2904733419418335,
+              "linear_layer6_accuracy": 0.9488561749458313,
+              "mlp_layer6_accuracy": 0.9686293601989746
+            },
+            {
+              "R": 0.026369020342826843,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.3362787961959839,
+              "linear_layer6_accuracy": 0.9904162287712097,
+              "mlp_layer6_accuracy": 0.9944586753845215
+            },
+            {
+              "R": 0.014265056699514389,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.39097100496292114,
+              "linear_layer6_accuracy": 0.9936107993125916,
+              "mlp_layer6_accuracy": 0.9955639243125916
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_0_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "660b63dbdd596a8e5f0beb783a3591b89456510caeee0bda9f89f3cdbaab8ae6",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_0_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "660b63dbdd596a8e5f0beb783a3591b89456510caeee0bda9f89f3cdbaab8ae6",
+          "registered_establishment": 6000000,
+          "registered_onset": 4000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_0_permutation_1_init_1",
+      "run_id": "confirm_rule_0_permutation_1_init_1_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_1_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "d5260fac66b490b620d55f6c45132bc89b8bfad2e302f564bda1eae0a5d46364",
+          "checkpoint_sha256_before": "d5260fac66b490b620d55f6c45132bc89b8bfad2e302f564bda1eae0a5d46364",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.020897269248962402,
+          "immediate_full_support_R": 0.7632707953453064,
+          "linear_layer6_accuracy": 0.2765219807624817,
+          "mlp_layer6_accuracy": 0.3450922667980194,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_1_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "592274d589d02771314f4fccd65be6ca00dd62d16478731f0f2c8ee9052e3855",
+          "checkpoint_sha256_before": "592274d589d02771314f4fccd65be6ca00dd62d16478731f0f2c8ee9052e3855",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.21005070209503174,
+          "immediate_full_support_R": 0.15792223811149597,
+          "linear_layer6_accuracy": 0.9993337988853455,
+          "mlp_layer6_accuracy": 0.9999394416809082,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.01719202660024166,
+          "R_pre": 0.01719202660024166,
+          "continuation": [
+            {
+              "R": 0.008007385767996311,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.37644922733306885,
+              "linear_layer6_accuracy": 0.9992126822471619,
+              "mlp_layer6_accuracy": 0.9993337988853455
+            },
+            {
+              "R": 0.006953683216124773,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.434057354927063,
+              "linear_layer6_accuracy": 0.9999545812606812,
+              "mlp_layer6_accuracy": 0.9999697208404541
+            },
+            {
+              "R": 0.0014457516372203827,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.5065853595733643,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_1_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "4a0788c1b30a01cb99dab8aa6c666e6c79991a5fc21c82f38549d0fcab7aaa88",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_0_permutation_1_init_1_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "4a0788c1b30a01cb99dab8aa6c666e6c79991a5fc21c82f38549d0fcab7aaa88",
+          "registered_establishment": 5000000,
+          "registered_onset": 4000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_1_permutation_0_init_0",
+      "run_id": "confirm_rule_1_permutation_0_init_0_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_0_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "a503f56f71bb5b5a20debe3b9aa82afb9ac7b4031a6d9802e71812976daf3802",
+          "checkpoint_sha256_before": "a503f56f71bb5b5a20debe3b9aa82afb9ac7b4031a6d9802e71812976daf3802",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.054283201694488525,
+          "immediate_full_support_R": 0.5835579037666321,
+          "linear_layer6_accuracy": 0.2006843388080597,
+          "mlp_layer6_accuracy": 0.2775515019893646,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_0_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "ffb3dda176a59858ec58fb6a75526c1e394f60b78feb2e5f5c7bdfeb3cab3ae4",
+          "checkpoint_sha256_before": "ffb3dda176a59858ec58fb6a75526c1e394f60b78feb2e5f5c7bdfeb3cab3ae4",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.17398327589035034,
+          "immediate_full_support_R": 0.30390653014183044,
+          "linear_layer6_accuracy": 0.8458568453788757,
+          "mlp_layer6_accuracy": 0.9709761142730713,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.0552699975669384,
+          "R_pre": 0.0552699975669384,
+          "continuation": [
+            {
+              "R": 0.0117964381352067,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.323198139667511,
+              "linear_layer6_accuracy": 0.9994246959686279,
+              "mlp_layer6_accuracy": 0.999984860420227
+            },
+            {
+              "R": 0.005303954239934683,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.3849058747291565,
+              "linear_layer6_accuracy": 0.9999394416809082,
+              "mlp_layer6_accuracy": 0.9999697208404541
+            },
+            {
+              "R": 0.0019187055295333266,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.46056103706359863,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_0_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "7cc65839bc26342edf9c1c5d02ecf0a57ea229b39acc59cf406c4ca39d3333f4",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_0_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "7cc65839bc26342edf9c1c5d02ecf0a57ea229b39acc59cf406c4ca39d3333f4",
+          "registered_establishment": 5000000,
+          "registered_onset": 4000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_1_permutation_0_init_1",
+      "run_id": "confirm_rule_1_permutation_0_init_1_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_1_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "ef9c0a6d98cac147f2f2e3f0c2439338ba18465bea95342957ef6ad92da1b5c0",
+          "checkpoint_sha256_before": "ef9c0a6d98cac147f2f2e3f0c2439338ba18465bea95342957ef6ad92da1b5c0",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.07712966203689575,
+          "immediate_full_support_R": 0.6023852825164795,
+          "linear_layer6_accuracy": 0.5748156905174255,
+          "mlp_layer6_accuracy": 0.7081711888313293,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_1_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "0f986254661cf82279ea677390e99abd5186c39469c53835497d61a43fdda3d6",
+          "checkpoint_sha256_before": "0f986254661cf82279ea677390e99abd5186c39469c53835497d61a43fdda3d6",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.28879791498184204,
+          "immediate_full_support_R": 0.11569761484861374,
+          "linear_layer6_accuracy": 0.9896440505981445,
+          "mlp_layer6_accuracy": 0.9986676573753357,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.016386989504098892,
+          "R_pre": 0.016386989504098892,
+          "continuation": [
+            {
+              "R": 0.009764584712684155,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.39354705810546875,
+              "linear_layer6_accuracy": 0.9976835250854492,
+              "mlp_layer6_accuracy": 0.9981226325035095
+            },
+            {
+              "R": 0.008030152879655361,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.4379437565803528,
+              "linear_layer6_accuracy": 0.9989704489707947,
+              "mlp_layer6_accuracy": 0.9992581009864807
+            },
+            {
+              "R": 0.017238477244973183,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.4690127372741699,
+              "linear_layer6_accuracy": 0.9937167763710022,
+              "mlp_layer6_accuracy": 0.9963966012001038
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_1_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "1f22db75cbe09d5547c2f2475f3dcb73a324886b6994e29f51fa00a48617c347",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_0_init_1_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "1f22db75cbe09d5547c2f2475f3dcb73a324886b6994e29f51fa00a48617c347",
+          "registered_establishment": 5000000,
+          "registered_onset": 3000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_1_permutation_1_init_0",
+      "run_id": "confirm_rule_1_permutation_1_init_0_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_0_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "51e8bc01afe9e34daf3147d269a86ad88e5b82c7eddd6441046347d97142bae4",
+          "checkpoint_sha256_before": "51e8bc01afe9e34daf3147d269a86ad88e5b82c7eddd6441046347d97142bae4",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.004082202911376953,
+          "immediate_full_support_R": 0.8609643578529358,
+          "linear_layer6_accuracy": 0.06287755817174911,
+          "mlp_layer6_accuracy": 0.0653151422739029,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_0_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "254316d1f3f1016b71e40ad1d49e1b96cac0c102938c4520c1e7da633f01f583",
+          "checkpoint_sha256_before": "254316d1f3f1016b71e40ad1d49e1b96cac0c102938c4520c1e7da633f01f583",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.17492151260375977,
+          "immediate_full_support_R": 0.21637792885303497,
+          "linear_layer6_accuracy": 0.9998788833618164,
+          "mlp_layer6_accuracy": 1.0,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.009486964903771877,
+          "R_pre": 0.009486964903771877,
+          "continuation": [
+            {
+              "R": 0.006169785745441914,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.38863831758499146,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.0019956640899181366,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.4636395573616028,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.001805717940442264,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.48597270250320435,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_0_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "fc75e8ba679c614d40c8ab845facd2e7a3db880d0fa8e985e7c2dca27a7078ac",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_0_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "fc75e8ba679c614d40c8ab845facd2e7a3db880d0fa8e985e7c2dca27a7078ac",
+          "registered_establishment": 5000000,
+          "registered_onset": 4000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    },
+    {
+      "block_id": "rule_1_permutation_1_init_1",
+      "run_id": "confirm_rule_1_permutation_1_init_1_R2",
+      "switches": {
+        "3000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_1_R2/checkpoint_3000000.pt",
+          "checkpoint_sha256_after": "5d7b82ab6ca0a63427c6b72531a0f9188ea1848e9146a72e68b128a14ca2e321",
+          "checkpoint_sha256_before": "5d7b82ab6ca0a63427c6b72531a0f9188ea1848e9146a72e68b128a14ca2e321",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.010138928890228271,
+          "immediate_full_support_R": 0.7925578951835632,
+          "linear_layer6_accuracy": 0.09317325055599213,
+          "mlp_layer6_accuracy": 0.11028175801038742,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "4000000": {
+          "checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_1_R2/checkpoint_4000000.pt",
+          "checkpoint_sha256_after": "70d60b5a9570f0117dfe8866a862d1e9959680177126aa6b2d652818f8893e33",
+          "checkpoint_sha256_before": "70d60b5a9570f0117dfe8866a862d1e9959680177126aa6b2d652818f8893e33",
+          "continuation_reason": "Later frozen checkpoints were trained with the original cue until 5M, not with an early sampler switch.",
+          "continuation_status": "unavailable",
+          "establishment_after_switch": null,
+          "fourier_layer6_r2": 0.12747883796691895,
+          "immediate_full_support_R": 0.3119332492351532,
+          "linear_layer6_accuracy": 0.746203601360321,
+          "mlp_layer6_accuracy": 0.8923072218894958,
+          "model_state_preserved": true,
+          "optimizer_steps_at_switch": 0,
+          "probe_retention_after_switch": null,
+          "representation_onset_after_switch": null,
+          "switch_boundary_status": "observed_frozen_checkpoint"
+        },
+        "5000000": {
+          "R_post": 0.012843570671975613,
+          "R_pre": 0.012843570671975613,
+          "continuation": [
+            {
+              "R": 0.002940806560218334,
+              "exposed_pairs": 6000000,
+              "fourier_layer6_r2": 0.45122647285461426,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.0017347579123452306,
+              "exposed_pairs": 7500000,
+              "fourier_layer6_r2": 0.4979296326637268,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            },
+            {
+              "R": 0.0012554473942145705,
+              "exposed_pairs": 10000000,
+              "fourier_layer6_r2": 0.5196754932403564,
+              "linear_layer6_accuracy": 1.0,
+              "mlp_layer6_accuracy": 1.0
+            }
+          ],
+          "continuation_status": "observed",
+          "model_output_preserved": true,
+          "model_state_preserved": true,
+          "optimizer_steps_between_boundary_evaluations": 0,
+          "post_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_1_R2/checkpoint_5000000_post_switch.pt",
+          "post_switch_checkpoint_sha256": "90ce5329f7620bc1eae243d8bd3ecaa0e351aedb5f8a623bd4c76b635fb34516",
+          "pre_switch_checkpoint": "artifacts/confirmatory_runs/confirm_rule_1_permutation_1_init_1_R2/checkpoint_5000000_pre_switch.pt",
+          "pre_switch_checkpoint_sha256": "90ce5329f7620bc1eae243d8bd3ecaa0e351aedb5f8a623bd4c76b635fb34516",
+          "registered_establishment": 5000000,
+          "registered_onset": 4000000,
+          "switch_boundary_status": "observed_pre_and_post_switch",
+          "threshold_retained_at_10M": true,
+          "threshold_retained_at_6M": true
+        }
+      }
+    }
+  ],
+  "source_artifact": "artifacts/early_cue_removal_analysis.json",
+  "switch_exposures": [
+    3000000,
+    4000000,
+    5000000
+  ]
+}

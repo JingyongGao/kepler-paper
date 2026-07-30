@@ -10,6 +10,12 @@ The local venue branch is `kepler-paper-tmlr-v1`, derived from the immutable
 byte-identical with SHA-256
 `3e70a70094f7e1b0a483b9c5e1633208fde314bc5f0a4e0f70f24a12906761dc`.
 
+On 2026-07-30, the package was rebuilt and revalidated after the author's
+OpenReview profile became active. The live TMLR Submission form is accessible.
+The official template upstream remains at the recorded commit, all 12 PDF
+pages passed a new rendered visual inspection, and all 62 repository tests
+passed. Details are recorded in `OPENREVIEW_PREFLIGHT_RECORD.md`.
+
 ## Official template
 
 - Source: official TMLR style repository.
@@ -98,12 +104,12 @@ The unpacked lightweight verifier reproduced:
 
 ## Remaining external actions
 
-1. Complete and activate every author OpenReview profile.
+1. Confirm that the single profile currently selected in the OpenReview form
+   is the complete and correctly ordered author list.
 2. Confirm author quota, affiliations, publication records, conflicts,
    funding, competing interests, and human-subjects/IRB response.
 3. Select candidate Action Editors.
 4. Confirm there is no overlapping archival submission.
-5. Resolve private-remote SSH permissions and push the branch and tags.
-6. Conduct the planned non-author review.
-7. Upload the anonymous PDF and supplemental ZIP only after the author
+5. Conduct the planned non-author review.
+6. Upload the anonymous PDF and supplemental ZIP only after the author
    completes the final OpenReview form review.

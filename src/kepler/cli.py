@@ -482,6 +482,54 @@ def _scale_robustness_manifest(args: argparse.Namespace) -> int:
     return 0
 
 
+def _scale_robustness_run(args: argparse.Namespace) -> int:
+    from .scale_robustness_runner import run_scale_robustness
+
+    _json(
+        run_scale_robustness(
+            args.run_id,
+            run_root=args.run_root,
+            manifest_path=args.manifest,
+            audit_path=args.audit,
+            device_name=args.device,
+            resume=args.resume,
+            stop_after_exposure=args.stop_after_exposure,
+        )
+    )
+    return 0
+
+
+def _scale_robustness_status(args: argparse.Namespace) -> int:
+    from .scale_robustness_runner import scale_robustness_status
+
+    _json(scale_robustness_status(args.run_root, args.audit))
+    return 0
+
+
+def _scale_robustness_pilot_gate(args: argparse.Namespace) -> int:
+    from .scale_robustness_analysis import evaluate_scale_robustness_pilot_gate
+
+    result = evaluate_scale_robustness_pilot_gate(
+        args.run_root, args.manifest, args.output, args.report
+    )
+    _json({"decision": result["decision"], "scales": result["scales"]})
+    return 0 if result["all_scales_passed"] else 2
+
+
+def _scale_robustness_analyze(args: argparse.Namespace) -> int:
+    from .scale_robustness_analysis import analyze_scale_robustness
+
+    result = analyze_scale_robustness(
+        args.run_root,
+        args.manifest,
+        args.pilot_gate,
+        args.output,
+        args.report,
+    )
+    _json({"completed_cells": result["integrity"]["completed_cells"], "by_scale": result["by_scale"]})
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -989,6 +1037,74 @@ def build_parser() -> argparse.ArgumentParser:
         "--audit", default="artifacts/confirmatory_distribution_audit.json"
     )
     scale_robustness_manifest.set_defaults(func=_scale_robustness_manifest)
+
+    scale_robustness_run = sub.add_parser(
+        "scale-robustness-run", help="run one frozen ICLR 2027 robustness trajectory"
+    )
+    scale_robustness_run.add_argument("--run-id", required=True)
+    scale_robustness_run.add_argument(
+        "--run-root", default="artifacts/iclr2027_scale_robustness_runs"
+    )
+    scale_robustness_run.add_argument(
+        "--manifest", default="artifacts/iclr2027_scale_robustness_manifest.json"
+    )
+    scale_robustness_run.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    scale_robustness_run.add_argument("--device", default="auto")
+    scale_robustness_run.add_argument("--resume")
+    scale_robustness_run.add_argument("--stop-after-exposure", type=int)
+    scale_robustness_run.set_defaults(func=_scale_robustness_run)
+
+    scale_robustness_status = sub.add_parser(
+        "scale-robustness-status", help="report all 16 ICLR 2027 robustness trajectories"
+    )
+    scale_robustness_status.add_argument(
+        "--run-root", default="artifacts/iclr2027_scale_robustness_runs"
+    )
+    scale_robustness_status.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    scale_robustness_status.set_defaults(func=_scale_robustness_status)
+
+    scale_robustness_pilot_gate = sub.add_parser(
+        "scale-robustness-pilot-gate",
+        help="apply the frozen engineering and identifiability pilot gate",
+    )
+    scale_robustness_pilot_gate.add_argument(
+        "--run-root", default="artifacts/iclr2027_scale_robustness_runs"
+    )
+    scale_robustness_pilot_gate.add_argument(
+        "--manifest", default="artifacts/iclr2027_scale_robustness_manifest.json"
+    )
+    scale_robustness_pilot_gate.add_argument(
+        "--output", default="artifacts/iclr2027_scale_robustness_pilot_gate.json"
+    )
+    scale_robustness_pilot_gate.add_argument(
+        "--report", default="ICLR2027_SCALE_ROBUSTNESS_PILOT_REPORT.md"
+    )
+    scale_robustness_pilot_gate.set_defaults(func=_scale_robustness_pilot_gate)
+
+    scale_robustness_analysis = sub.add_parser(
+        "scale-robustness-analyze",
+        help="analyze all 16 robustness cells without a combined p-value",
+    )
+    scale_robustness_analysis.add_argument(
+        "--run-root", default="artifacts/iclr2027_scale_robustness_runs"
+    )
+    scale_robustness_analysis.add_argument(
+        "--manifest", default="artifacts/iclr2027_scale_robustness_manifest.json"
+    )
+    scale_robustness_analysis.add_argument(
+        "--pilot-gate", default="artifacts/iclr2027_scale_robustness_pilot_gate.json"
+    )
+    scale_robustness_analysis.add_argument(
+        "--output", default="artifacts/iclr2027_scale_robustness_results.json"
+    )
+    scale_robustness_analysis.add_argument(
+        "--report", default="ICLR2027_SCALE_ROBUSTNESS_REPORT.md"
+    )
+    scale_robustness_analysis.set_defaults(func=_scale_robustness_analyze)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

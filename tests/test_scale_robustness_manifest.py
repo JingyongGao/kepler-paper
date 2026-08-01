@@ -9,6 +9,7 @@ from kepler.scale_robustness import (
     build_scale_robustness_runs,
     scale_robustness_manifest_payload,
 )
+from kepler.scale_robustness_runner import make_scale_robustness_model
 
 
 def test_scale_robustness_has_exact_registered_factorial_design():
@@ -90,3 +91,15 @@ def test_all_prior_manifests_are_hash_locked_and_unmodified():
     manifest = scale_robustness_manifest_payload()
     assert manifest["prior_manifests_modified"] is False
     assert len(manifest["prior_manifest_and_result_sha256"]) == 9
+
+
+def test_runtime_models_match_each_registered_scale_without_architecture_changes():
+    runs = build_scale_robustness_runs()
+    for target in SCALE_TARGETS:
+        run = next(run for run in runs if run.target_core_parameters == target)
+        model = make_scale_robustness_model(run)
+        assert model.width == run.width
+        assert model.core_parameter_count() == run.actual_core_parameters
+        assert model.total_parameter_count() == run.total_parameters
+        assert model.cfg.n_layers == DEFAULT_CONFIG.model.n_layers
+        assert model.cfg.n_heads == DEFAULT_CONFIG.model.n_heads

@@ -311,8 +311,8 @@ def _write_resume_verification(
         "optimizer_state_equal_after_load": (
             _tree_sha256(optimizer.state_dict()) == _tree_sha256(state["optimizer"])
         ),
-        "optimizer_reset": False,
-        "scheduler_reset": False,
+        "optimizer_not_reset": True,
+        "scheduler_not_reset": True,
         "numpy_stream_state_present": "numpy_stream_state" in state,
         "pair_frequency_counts_present": "pair_frequency_counts" in state,
         "torch_rng_state_present": "torch_cpu_rng_state" in state,

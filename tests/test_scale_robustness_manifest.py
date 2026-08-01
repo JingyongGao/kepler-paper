@@ -1,15 +1,22 @@
 from collections import Counter
+from dataclasses import asdict
 import json
 from pathlib import Path
 
+import torch
+
 from kepler.config import DEFAULT_CONFIG
+from kepler.environment import canonical_hash
 from kepler.scale_robustness import (
     CONDITION_ORDER,
     SCALE_TARGETS,
     build_scale_robustness_runs,
     scale_robustness_manifest_payload,
 )
-from kepler.scale_robustness_runner import make_scale_robustness_model
+from kepler.scale_robustness_runner import (
+    _write_resume_verification,
+    make_scale_robustness_model,
+)
 
 
 def test_scale_robustness_has_exact_registered_factorial_design():
@@ -103,3 +110,30 @@ def test_runtime_models_match_each_registered_scale_without_architecture_changes
         assert model.total_parameter_count() == run.total_parameters
         assert model.cfg.n_layers == DEFAULT_CONFIG.model.n_layers
         assert model.cfg.n_heads == DEFAULT_CONFIG.model.n_heads
+
+
+def test_valid_unreset_checkpoint_passes_resume_verification(tmp_path):
+    run = build_scale_robustness_runs()[0]
+    model = make_scale_robustness_model(run)
+    optimizer = torch.optim.AdamW(model.parameters())
+    state = {
+        "run": asdict(run),
+        "config_hash": canonical_hash(DEFAULT_CONFIG.to_dict()),
+        "model": model.state_dict(),
+        "optimizer": optimizer.state_dict(),
+        "exposed_examples": 2_000_000,
+        "numpy_stream_state": {},
+        "pair_frequency_counts": [],
+        "torch_cpu_rng_state": torch.get_rng_state(),
+    }
+    checkpoint = tmp_path / "checkpoint_2000000.pt"
+    torch.save(state, checkpoint)
+    _write_resume_verification(
+        tmp_path, checkpoint, state, model, optimizer, run, DEFAULT_CONFIG
+    )
+    result = json.loads(
+        (tmp_path / "resume_verification.json").read_text(encoding="utf-8")
+    )
+    assert result["passed"] is True
+    assert result["checks"]["optimizer_not_reset"] is True
+    assert result["checks"]["scheduler_not_reset"] is True

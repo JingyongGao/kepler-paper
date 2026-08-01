@@ -16,8 +16,8 @@ ICLR = PAPER / "iclr2027"
 SUBMISSION = ICLR / "submission"
 SOURCE_PDF = SUBMISSION / "manuscript.pdf"
 SUBMISSION_PDF = SUBMISSION / "submission.pdf"
-OUTPUT_PDF = PAPER / "output" / "pdf" / "kepler_paper_iclr2027_anonymous_draft.pdf"
-OUTPUT_ZIP = PAPER / "output" / "iclr2027" / "kepler_iclr2027_anonymous_code.zip"
+OUTPUT_PDF = PAPER / "output" / "pdf" / "iclr2027_final_anonymous_submission.pdf"
+OUTPUT_ZIP = PAPER / "output" / "iclr2027" / "iclr2027_final_anonymous_supplement.zip"
 BUILD_RECORD = ICLR / "build_record.json"
 
 FORBIDDEN_IDENTITY_TOKENS = (
@@ -25,7 +25,12 @@ FORBIDDEN_IDENTITY_TOKENS = (
     "gao yongjing",
     "yongjing",
     "github.com/jingyonggao",
-    "openreview.net/forum?id=mhaj51wviy",
+    "jingyonggao",
+    "kepler-paper",
+    "mhaj51wviy",
+    "paper10943",
+    "/users/",
+    "/volumes/",
 )
 
 
@@ -174,44 +179,69 @@ def archive_inputs() -> list[Path]:
     for pattern in ("artifacts/*.json", "artifacts/*.sha256"):
         paths.update(path for path in ROOT.glob(pattern) if path.is_file())
     for name in (
-        "ICLR2027_SCALE_ROBUSTNESS_FREEZE_RECORD.md",
         "ICLR2027_SCALE_ROBUSTNESS_PILOT_REPORT.md",
         "ICLR2027_SCALE_ROBUSTNESS_REPORT.md",
-        "CONFIRMATORY_EXPERIMENT_PREREGISTRATION.md",
-        "CUE_DOSE_PREREGISTRATION.md",
+        "ICLR2027_NUMERICAL_CLAIM_REGISTRY.json",
     ):
         path = ROOT / name
         if path.exists():
             paths.add(path)
-    for name in (
-        "README.md",
-        "REPRODUCE.md",
-        "ENVIRONMENT.md",
-        "FULL_COMPUTE_DISCLOSURE.md",
-        "environment.yml",
-        "environment_spec.json",
-        "requirements.txt",
-    ):
-        path = PAPER / name
-        if path.exists():
-            paths.add(path)
     for pattern in ("tables/*.csv", "tables/*.md"):
         paths.update(path for path in PAPER.glob(pattern) if path.is_file())
+    for name in (
+        "submission/manuscript.tex",
+        "submission/references.bib",
+        "submission/iclr2027_conference.sty",
+        "submission/iclr2027_conference.bst",
+        "submission/fancyhdr.sty",
+        "submission/natbib.sty",
+        "frozen_sources/v1_3_spectral_transition_dynamics.json",
+    ):
+        path = ICLR / name
+        if path.exists():
+            paths.add(path)
+    for pattern in ("submission/tables/*.tex", "submission/figures/*.pdf"):
+        paths.update(path for path in ICLR.glob(pattern) if path.is_file())
     return sorted(paths, key=lambda path: str(path.relative_to(ROOT)))
+
+
+def anonymize_archive_bytes(data: bytes) -> bytes:
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data
+    text = text.replace(str(ROOT) + "/", "")
+    text = text.replace(str(ROOT), ".")
+    text = text.replace("kepler-paper", "anonymous-repository")
+    return text.encode("utf-8")
 
 
 def write_deterministic_zip(output: Path) -> dict:
     output.parent.mkdir(parents=True, exist_ok=True)
     files = archive_inputs()
-    root_name = "kepler_iclr2027_anonymous_code"
+    root_name = "iclr2027_anonymous_supplement"
     readme = (ICLR / "ANONYMOUS_CODE_README.txt").read_bytes()
-    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        entries = [(f"{root_name}/README.txt", readme)]
-        entries.extend(
-            (f"{root_name}/{path.relative_to(ROOT).as_posix()}", path.read_bytes())
-            for path in files
+    entries = [(f"{root_name}/README.txt", readme)]
+    entries.extend(
+        (
+            f"{root_name}/{path.relative_to(ROOT).as_posix()}",
+            anonymize_archive_bytes(path.read_bytes()),
         )
-        for name, data in sorted(entries):
+        for path in files
+    )
+    by_name = dict(entries)
+    for name, sidecar_data in list(by_name.items()):
+        if not name.endswith(".sha256"):
+            continue
+        fields = sidecar_data.decode("utf-8", errors="strict").strip().split()
+        if len(fields) != 2:
+            continue
+        target_name = f"{name.rsplit('/', 1)[0]}/{fields[1]}"
+        if target_name in by_name:
+            digest = hashlib.sha256(by_name[target_name]).hexdigest()
+            by_name[name] = f"{digest}  {fields[1]}\n".encode("utf-8")
+    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for name, data in sorted(by_name.items()):
             lowered = data.decode("utf-8", errors="ignore").casefold()
             leaks = [token for token in FORBIDDEN_IDENTITY_TOKENS if token in lowered]
             if leaks:
@@ -242,7 +272,7 @@ def main() -> None:
     shutil.copy2(SOURCE_PDF, OUTPUT_PDF)
     archive = write_deterministic_zip(OUTPUT_ZIP)
     record = {
-        "kind": "iclr2027_anonymous_draft_build_record",
+        "kind": "iclr2027_final_anonymous_submission_build_record",
         "official_template_provenance": "paper/iclr2027/template_provenance.json",
         "source_date_epoch": 0,
         "consecutive_pdf_builds": 2,
@@ -260,6 +290,7 @@ def main() -> None:
             "checkpoint_binaries_included": False,
             "git_history_included": False,
             "identity_audit_passed": True,
+            "archive_paths_anonymized": True,
         },
         "allowed_layout_warnings": warnings,
         "warnings_requiring_intervention": 0,

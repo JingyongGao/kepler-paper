@@ -1,4 +1,4 @@
-PROJECT KEPLER: ANONYMOUS ICLR 2027 CODE SUPPLEMENT
+ANONYMOUS ICLR 2027 CODE AND RESULTS SUPPLEMENT
 
 This archive contains source code, tests, frozen manifests, machine-readable
 results, and audit reports. It intentionally omits checkpoint binaries, Git
@@ -10,7 +10,7 @@ v3.6 p-value, and is not a scaling-law fit. No combined p-value is reported.
 
 Run the checkpoint-free lightweight test suite with:
 
-    uv run pytest -q \
+    uv run --extra dev pytest -q \
         --deselect=tests/test_cue_dose_manifest.py::test_c0_reuse_fallback_is_triggered_by_checkpoint_schedule \
         --deselect=tests/test_cue_dose_manifest.py::test_manifest_has_exactly_30_excluded_paired_cells \
         --deselect=tests/test_cue_dose_manifest.py::test_all_five_C0_seeds_are_new_after_fallback \
@@ -22,11 +22,9 @@ continuation logic by opening excluded legacy checkpoint binaries; they pass in
 the full audited repository (69/69 total) but are intentionally unavailable in
 this checkpoint-free archive. No test is silently skipped.
 
-Scale-result commands:
-
-    uv run kepler scale-robustness-status
-    uv run kepler scale-robustness-analyze
-
 Checkpoint files are not needed to inspect the frozen result JSON or reproduce
-the paper tables. Their SHA-256 verification records are embedded in
-artifacts/iclr2027_scale_robustness_results.json.
+the paper tables. Their SHA-256 verification records are embedded in the
+results JSON and repeated in
+artifacts/iclr2027_scale_robustness_checkpoint_hashes.sha256. Paths stored in
+the frozen repository JSON are made archive-relative in this anonymous copy;
+all numerical and hash fields are left unchanged.

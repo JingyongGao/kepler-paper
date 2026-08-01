@@ -1,38 +1,37 @@
 {
   "allowed_layout_warnings": [
-    "manuscript.bbl:78: Underfull \\hbox (badness 1314) in paragraph at lines 74--78",
+    "manuscript.bbl:78: Underfull \\hbox (badness 1292) in paragraph at lines 74--78",
     "manuscript.tex:261: Underfull \\vbox (badness 3690) has occurred while \\output is active",
     "manuscript.tex:267: Underfull \\vbox (badness 6625) has occurred while \\output is active",
-    "manuscript.tex:333: Underfull \\vbox (badness 3199) has occurred while \\output is active",
-    "manuscript.tex:346: Underfull \\vbox (badness 10000) has occurred while \\output is active",
-    "manuscript.tex:510: Underfull \\vbox (badness 3735) has occurred while \\output is active",
+    "manuscript.tex:351: Underfull \\vbox (badness 10000) has occurred while \\output is active",
     "warnings were issued by the TeX engine; use --print and/or --keep-logs for details."
   ],
   "anonymous_code_archive": {
-    "bytes": 1977996,
+    "archive_paths_anonymized": true,
+    "bytes": 2332985,
     "checkpoint_binaries_included": false,
-    "files": 133,
+    "files": 151,
     "git_history_included": false,
     "identity_audit_passed": true,
-    "path": "paper/output/iclr2027/kepler_iclr2027_anonymous_code.zip",
-    "sha256": "96cb2d5465ef5a70244912951585c7bb0088b6f7899675f761a7e8fb4f68c752"
+    "path": "paper/output/iclr2027/iclr2027_final_anonymous_supplement.zip",
+    "sha256": "66f3c2cfe6e537b05b57f3874de60095f94adf599eb32c18d6fdf4bb1a449638"
   },
   "consecutive_pdf_builds": 2,
-  "kind": "iclr2027_anonymous_draft_build_record",
+  "kind": "iclr2027_final_anonymous_submission_build_record",
   "official_template_provenance": "paper/iclr2027/template_provenance.json",
   "pdf": {
     "ai_use_statement_page": 10,
     "all_fonts_embedded": true,
     "anonymous_text_audit_passed": true,
     "appendix_start_page": 11,
-    "bytes": 380294,
-    "font_records": 31,
+    "bytes": 381642,
+    "font_records": 32,
     "letter_page_size": true,
     "main_text_pages": 9,
     "pages": 13,
-    "path": "paper/output/pdf/kepler_paper_iclr2027_anonymous_draft.pdf",
+    "path": "paper/output/pdf/iclr2027_final_anonymous_submission.pdf",
     "references_start_page": 10,
-    "sha256": "e21ce75cfb36d28674ab9ed31a17ac51cdc42f5f9b658fa2425b1d2c2a684eee"
+    "sha256": "42af0eec0c557332ee2f1acb9481eee01d01da99a30d626bb52bb76dc285304c"
   },
   "pdf_builds_byte_identical": true,
   "scientific_boundaries": {

@@ -279,9 +279,10 @@ Table~\ref{tab:table06-cue-removal-persistence-main} report the persistence
 result. The complete exploratory and confirmatory switch audit is included in
 the machine-readable supplement.
 
-\section{Post-confirmatory cross-scale robustness}
-After completing v3.6, we preregistered a minimal extension at approximately
-1M and 5M core parameters. Width was the only scaled architectural quantity;
+\section{Cross-scale context and post-confirmatory robustness}
+The original v3.6 confirmatory experiment used approximately 2M core
+parameters. After completing it, we preregistered a minimal extension at
+approximately 1M and 5M core parameters. Width was the only scaled architectural quantity;
 depth, heads, input interface, $p=257$, $\eta=0.1$, optimizer
 parameterization, exact soft-label objective, and absolute-exposure schedule
 were unchanged. Two frozen rules and two paired initialization seeds were
@@ -294,15 +295,19 @@ identifiability gates; a favorable cue effect was not required. All 16 runs
 then used cue-bearing sampling through 5M and uniform full support from 5M to
 10M. All zero-step switch checks and all 176 checkpoint sidecar checks passed.
 
-R2 advanced the registered terminal-coded onset ordinal in 4/4 blocks at each
-scale (Table~\ref{tab:scale-robustness-main}). At 1M, verified onset occurred
-in 0/4 R0 and 4/4 R2 trajectories; at 5M it occurred in 3/4 and 4/4. All R2
-trajectories retained the onset threshold at 6M and 10M after cue removal.
+Table~\ref{tab:scale-robustness-main} places the R0/R2 subset of the original
+2M confirmatory result beside the new robustness scales. R2 advanced the
+registered terminal-coded onset ordinal in 8/8 confirmatory 2M blocks and in
+4/4 post-confirmatory blocks at each of 1M and 5M. Verified onset occurred in
+1/8 R0 versus 8/8 R2 trajectories at 2M, 0/4 versus 4/4 at 1M, and 3/4 versus
+4/4 at 5M. All new R2 trajectories retained the onset threshold at 6M and 10M
+after cue removal.
 Every paired block and its frozen metrics appear in
 Tables~\ref{tab:scale-robustness-blocks}--\ref{tab:scale-robustness-metrics}.
-This extension is post-confirmatory descriptive evidence: it is excluded from
-the original v3.6 $p$-value, no new combined $p$-value is computed, and two
-scales do not constitute a scaling-law fit.
+The 1M/5M extension is post-confirmatory descriptive evidence: it is excluded
+from the original v3.6 $p$-value. The three display rows are not pooled, no new
+combined $p$-value is computed or implied, and three selected widths do not
+constitute a scaling-law fit.
 
 \input{tables/table09_scale_robustness_main.tex}
 
@@ -494,12 +499,14 @@ loss-landscape change nor establishes Hessian or gradient quantities as causal
 mediators. It is included only as exploratory appendix material and does not
 enter the v3.6 or scale-robustness conclusions.
 
+\clearpage
 \input{tables/table11_v13_hessian_exploratory.tex}
 
 \subsection{Artifact integrity}
 The freeze records every tag, manifest and result hash, the environment lock,
-test definition and result, and artifact counts. This manuscript revision
-changes only the \texttt{paper/} tree; no prior scientific artifact changes.
+test definition and result, and artifact counts. Final packaging adds only the
+manuscript, audit records, and hash registries; no prior scientific artifact is
+modified.
 
 \subsection{Machine-readable audit material}
 The anonymous code supplement retains every registered audit and provenance

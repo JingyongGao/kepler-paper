@@ -1,0 +1,44 @@
+{
+  "created_at_utc": "2026-08-01T10:32:12Z",
+  "freeze": {
+    "annotated_tag": "kepler-iclr2027-scale-robustness1",
+    "tag_object": "ee30213f71bc80bf57010db8fdb70323b66b74ce",
+    "tagged_commit": "3f3d296b65c04f4f3c5597450ebe3cf7480315b3",
+    "tagged_commit_parent": "098cf1e1222d8df4c2e3277859e2fc802b1d9ff0"
+  },
+  "frozen_confirmatory_sources": {
+    "artifacts/cue_dose_confirmatory_manifest.json": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39",
+    "artifacts/cue_dose_confirmatory_results.json": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0"
+  },
+  "new_scale_robustness_artifacts": {
+    "ICLR2027_SCALE_ROBUSTNESS_FREEZE_RECORD.md": "80158a350416e7d96a52693cdd28256c33eaa20d403a906f08f62e40af0e64bb",
+    "ICLR2027_SCALE_ROBUSTNESS_PILOT_REPORT.md": "6adb644c9f07616ee19a0dbdad7a3bda4ef4ba9f2f2eedc5a3a36a2e0d6b43d9",
+    "ICLR2027_SCALE_ROBUSTNESS_REPORT.md": "be2f0dc5ca742b08a268549cbb371c6cea6e3c9e752f1448c6228f4eb5108e17",
+    "artifacts/iclr2027_scale_robustness_manifest.json": "f6b873e342a8efa7f0a1b1ae09f0b455cc591ae06a31b0c9bb156726e5d23183",
+    "artifacts/iclr2027_scale_robustness_manifest.json.sha256": "0b5248fb8cd26e910d8ce560b20e1353b75012d0e53132745bc94ab88d5192ca",
+    "artifacts/iclr2027_scale_robustness_pilot_gate.json": "525d2b72b958c3d2d64a0ad89df3c01413c3a101c55bd537f1b3905f877e9e83",
+    "artifacts/iclr2027_scale_robustness_results.json": "155a3f6eb4fd9b5890ee6968d9075e0fc90b427afa95c8472757ddfad38325fe",
+    "artifacts/iclr2027_scale_robustness_results.sha256": "242ea90eabe3c19a7fb37348d65cb34a62391536d55df5ecb53aba1646b05039"
+  },
+  "checkpoint_hashes": {
+    "all_176_files_reverified": true,
+    "inventory_path": "artifacts/iclr2027_scale_robustness_checkpoint_hashes.sha256",
+    "inventory_records": 176,
+    "inventory_sha256": "2eb3773b792c50c2591963cfddeac452f4eb84100513c8d6e9281ad3f56c649e"
+  },
+  "final_submission_artifacts": {
+    "ICLR2027_NUMERICAL_CLAIM_REGISTRY.json": "4322a311cc6f949150bcb85a3999d79b0663be1ba5e35fb419cf2a2940b6a0b9",
+    "paper/iclr2027/build_record.json": "71221e9bc6f4207cfd6f87efff41f9dcffe57639824d1be436f2b6853407d082",
+    "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json": "a38246e51e1b851b7672072a50f03befee514b05c23b3387bfb31d4f663e6af3",
+    "paper/iclr2027/submission/manuscript.tex": "7147b4fa9d9a89de07491f60e61db46e0a9a641abbc5ead572f6267e50114504",
+    "paper/output/iclr2027/iclr2027_final_anonymous_supplement.zip": {
+      "bytes": 2332985,
+      "sha256": "66f3c2cfe6e537b05b57f3874de60095f94adf599eb32c18d6fdf4bb1a449638"
+    },
+    "paper/output/pdf/iclr2027_final_anonymous_submission.pdf": {
+      "bytes": 381642,
+      "sha256": "42af0eec0c557332ee2f1acb9481eee01d01da99a30d626bb52bb76dc285304c"
+    },
+    "paper/iclr2027/submission/submission.pdf": "42af0eec0c557332ee2f1acb9481eee01d01da99a30d626bb52bb76dc285304c"
+  }
+}

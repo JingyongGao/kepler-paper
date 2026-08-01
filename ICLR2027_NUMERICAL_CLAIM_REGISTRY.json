@@ -1,0 +1,851 @@
+{
+  "base_registry": {
+    "claim_count": 39,
+    "claims": [
+      {
+        "claim_id": "field_size",
+        "description": "Finite-field size p",
+        "manuscript_locations": [
+          "Controlled finite-field task",
+          "Limitations"
+        ],
+        "source_field": "p",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 257
+      },
+      {
+        "claim_id": "ordered_parent_pairs",
+        "derivation": "p^2",
+        "description": "Complete ordered parent-pair space",
+        "manuscript_locations": [
+          "Supplementary methods / Task objective, evaluation, and probes"
+        ],
+        "source_field": "p",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 66049
+      },
+      {
+        "claim_id": "noise_eta",
+        "description": "Additive-noise rate eta",
+        "manuscript_locations": [
+          "Controlled finite-field task",
+          "Limitations"
+        ],
+        "source_field": "eta",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 0.1
+      },
+      {
+        "claim_id": "conditional_entropy_nats",
+        "description": "Bayes conditional entropy H(Y|X1,X2), nats",
+        "manuscript_locations": [
+          "Controlled finite-field task"
+        ],
+        "source_field": "conditions[0].entropies_nats.H_Y_given_X1_X2",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 0.8796007178394043
+      },
+      {
+        "claim_id": "joint_predictable_information_nats",
+        "description": "Joint predictable information I(Y;X1,X2), nats",
+        "manuscript_locations": [
+          "Abstract",
+          "Pure-synergy information structure"
+        ],
+        "source_field": "conditions[0].mutual_information_nats.I_Y_X1_X2",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 4.669475367055826
+      },
+      {
+        "claim_id": "confirmatory_cue_targets",
+        "description": "Prospectively frozen confirmatory C_single targets",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "conditions[*].target_singleton_cue_index",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": [
+          0.0,
+          0.016,
+          0.065092
+        ]
+      },
+      {
+        "claim_id": "v36_max_uniformity_error",
+        "derivation": "maximum over all conditions and X1/X2/Z/Y marginals",
+        "description": "Maximum marginal-uniformity absolute error across v3.6 conditions",
+        "manuscript_locations": [
+          "Full-support cue-family construction"
+        ],
+        "source_field": "conditions[*].uniformity_max_absolute_error",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 9.107298248878237e-18
+      },
+      {
+        "claim_id": "v36_min_pair_probability",
+        "derivation": "minimum over all confirmatory conditions",
+        "description": "Minimum pair probability across v3.6 conditions",
+        "manuscript_locations": [
+          "Full-support cue-family construction"
+        ],
+        "source_field": "conditions[*].minimum_pair_probability",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": 9.378638271060546e-06
+      },
+      {
+        "claim_id": "v35_rule",
+        "description": "Exploratory v3.5 coefficient rule",
+        "manuscript_locations": [
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "coefficients",
+        "source_json": "artifacts/cue_distribution_audit.json",
+        "value": [
+          45,
+          36
+        ]
+      },
+      {
+        "claim_id": "v35_seed_count",
+        "derivation": "number of unique model-initialization seeds",
+        "description": "Exploratory paired initialization seeds",
+        "manuscript_locations": [
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "runs[*].model_initialization_seed",
+        "source_json": "artifacts/cue_dose_manifest.json",
+        "value": 5
+      },
+      {
+        "claim_id": "v35_onset_C0",
+        "derivation": "fraction multiplied by five paired seeds",
+        "description": "Exploratory verified-onset count for C0",
+        "manuscript_locations": [
+          "Abstract",
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "condition_summaries.C0.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 0
+      },
+      {
+        "claim_id": "v35_onset_C1",
+        "derivation": "fraction multiplied by five paired seeds",
+        "description": "Exploratory verified-onset count for C1",
+        "manuscript_locations": [
+          "Abstract",
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "condition_summaries.C1.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 5
+      },
+      {
+        "claim_id": "v35_onset_C2",
+        "derivation": "fraction multiplied by five paired seeds",
+        "description": "Exploratory verified-onset count for C2",
+        "manuscript_locations": [
+          "Abstract",
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "condition_summaries.C2.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 5
+      },
+      {
+        "claim_id": "v35_onset_C3",
+        "derivation": "fraction multiplied by five paired seeds",
+        "description": "Exploratory verified-onset count for C3",
+        "manuscript_locations": [
+          "Abstract",
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "condition_summaries.C3.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 5
+      },
+      {
+        "claim_id": "v35_exact_assignments",
+        "description": "Exploratory exact assignments",
+        "manuscript_locations": [
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "ordered_dose_trend.exact_permutation_count",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 7962624
+      },
+      {
+        "claim_id": "v35_upper_tail",
+        "description": "Exploratory exact upper-tail count",
+        "manuscript_locations": [
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "ordered_dose_trend.upper_tail_count",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 128
+      },
+      {
+        "claim_id": "v35_exact_p",
+        "description": "Exploratory one-sided exact p-value",
+        "manuscript_locations": [
+          "Exploratory discovery experiment"
+        ],
+        "source_field": "ordered_dose_trend.exact_one_sided_p",
+        "source_json": "artifacts/cue_dose_results.json",
+        "value": 1.6075102880658438e-05
+      },
+      {
+        "claim_id": "v36_rules",
+        "description": "Held-out confirmatory coefficient rules",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "rules[*].coefficients",
+        "source_json": "artifacts/confirmatory_distribution_audit.json",
+        "value": [
+          [
+            205,
+            5
+          ],
+          [
+            123,
+            209
+          ]
+        ]
+      },
+      {
+        "claim_id": "v36_blocks",
+        "description": "Primary rule x permutation x initialization inference blocks",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.ordered_onset_test.seed_blocks",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 8
+      },
+      {
+        "claim_id": "v36_trajectories",
+        "description": "Paired confirmatory condition trajectories",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "integrity.completed_cells",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 24
+      },
+      {
+        "claim_id": "v36_onset_R0",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory verified-onset blocks for R0",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R0.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 1
+      },
+      {
+        "claim_id": "v36_establishment_R0",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory establishment blocks for R0",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R0.fraction_established_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 2
+      },
+      {
+        "claim_id": "v36_onset_R1",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory verified-onset blocks for R1",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R1.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 6
+      },
+      {
+        "claim_id": "v36_establishment_R1",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory establishment blocks for R1",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R1.fraction_established_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 6
+      },
+      {
+        "claim_id": "v36_onset_R2",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory verified-onset blocks for R2",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R2.fraction_onset_verified_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 8
+      },
+      {
+        "claim_id": "v36_establishment_R2",
+        "derivation": "fraction multiplied by eight paired blocks",
+        "description": "Confirmatory establishment blocks for R2",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.R2.fraction_established_by_10M",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 8
+      },
+      {
+        "claim_id": "v36_observed_statistic",
+        "description": "Primary Page-style observed statistic",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.ordered_onset_test.observed_statistic",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 110.0
+      },
+      {
+        "claim_id": "v36_exact_assignments",
+        "description": "Primary exact assignments",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.ordered_onset_test.exact_permutation_count",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 1679616
+      },
+      {
+        "claim_id": "v36_upper_tail",
+        "description": "Primary exact upper-tail count",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.ordered_onset_test.upper_tail_count",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 16
+      },
+      {
+        "claim_id": "v36_exact_p",
+        "description": "Primary one-sided exact p-value",
+        "manuscript_locations": [
+          "Abstract",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.ordered_onset_test.exact_one_sided_p",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 9.525986892242037e-06
+      },
+      {
+        "claim_id": "v36_persistence_cells",
+        "derivation": "R1 plus R2 pre-switch-positive blocks; both retention fractions equal 1",
+        "description": "Nonzero-cue cells positive at 5M and retained at 6M and 10M",
+        "manuscript_locations": [
+          "Abstract",
+          "Representation persistence after cue removal"
+        ],
+        "source_field": "primary_confirmatory_test.condition_summaries.{R1,R2}.post_switch_threshold_retention",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": 13
+      },
+      {
+        "claim_id": "R1_vs_R0_R_5M_pre_delta_mean",
+        "description": "Mean paired R1_vs_R0 R_5M_pre_delta",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.paired_differences.R1_vs_R0.R_5M_pre_delta.mean",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": -0.6971624493598938
+      },
+      {
+        "claim_id": "R1_vs_R0_R_10M_delta_mean",
+        "description": "Mean paired R1_vs_R0 R_10M_delta",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.paired_differences.R1_vs_R0.R_10M_delta.mean",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": -0.321976822509896
+      },
+      {
+        "claim_id": "R2_vs_R1_R_5M_pre_delta_mean",
+        "description": "Mean paired R2_vs_R1 R_5M_pre_delta",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.paired_differences.R2_vs_R1.R_5M_pre_delta.mean",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": -0.25936598767293617
+      },
+      {
+        "claim_id": "R2_vs_R1_R_10M_delta_mean",
+        "description": "Mean paired R2_vs_R1 R_10M_delta",
+        "manuscript_locations": [
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "primary_confirmatory_test.paired_differences.R2_vs_R1.R_10M_delta.mean",
+        "source_json": "artifacts/cue_dose_confirmatory_results.json",
+        "value": -0.10558497368765529
+      },
+      {
+        "claim_id": "core_parameters",
+        "description": "Core model parameters",
+        "manuscript_locations": [
+          "Supplementary methods / Model and optimization"
+        ],
+        "source_field": "runs[0].actual_core_parameters",
+        "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+        "value": 2045568
+      },
+      {
+        "claim_id": "warmup_exposures",
+        "description": "Learning-rate warmup exposures",
+        "manuscript_locations": [
+          "Limitations",
+          "Supplementary methods / Model and optimization"
+        ],
+        "source_field": "frozen_protocol.optimizer.warmup_tokens",
+        "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+        "value": 5000000
+      },
+      {
+        "claim_id": "cue_switch_exposure",
+        "description": "Cue removal exposure",
+        "manuscript_locations": [
+          "Figure 1",
+          "Representation persistence after cue removal",
+          "Limitations"
+        ],
+        "source_field": "frozen_protocol.switch_exposure",
+        "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+        "value": 5000000
+      },
+      {
+        "claim_id": "maximum_exposure",
+        "description": "Maximum confirmatory exposure",
+        "manuscript_locations": [
+          "Figure 1",
+          "Prospectively frozen confirmatory replication"
+        ],
+        "source_field": "frozen_protocol.maximum_exposure",
+        "source_json": "artifacts/cue_dose_confirmatory_manifest.json",
+        "value": 10000000
+      }
+    ],
+    "path": "paper/numerical_claim_registry.json",
+    "sha256": "3f64d07bb157bbc37db2799b82f82164fa99a0a6a36088a41b352f29afb7f186"
+  },
+  "checkpoint_hash_inventory": {
+    "all_sidecars_verified_in_frozen_result": true,
+    "path": "artifacts/iclr2027_scale_robustness_checkpoint_hashes.sha256",
+    "records": 176
+  },
+  "cross_scale_main_text_rows": [
+    {
+      "actual_core_parameters": 1046400,
+      "mean_R2_minus_R0_R_10M": -0.6069865407771431,
+      "mean_R2_minus_R0_R_5M_pre": -0.744017081335187,
+      "mean_R2_minus_R0_onset_ordinal": -5.25,
+      "paired_blocks": 4,
+      "paired_direction_counts": {
+        "advance": 4,
+        "delay": 0,
+        "tie": 0
+      },
+      "scale_label": "approximately_1m",
+      "source_field": "by_scale.1m",
+      "source_json": "artifacts/iclr2027_scale_robustness_results.json",
+      "status": "post_confirmatory_robustness",
+      "total_parameters": 1092720,
+      "verified_onset_counts_out_of_4": {
+        "R0": 0,
+        "R2": 4
+      },
+      "verified_onset_probability_difference_R2_minus_R0": 1.0,
+      "width": 120
+    },
+    {
+      "actual_core_parameters": 2045568,
+      "mean_R2_minus_R0_onset_ordinal": -5.125,
+      "paired_blocks": 8,
+      "paired_direction_counts": {
+        "advance": 8,
+        "delay": 0,
+        "tie": 0
+      },
+      "scale_label": "approximately_2m",
+      "source_fields": [
+        "primary_confirmatory_test.condition_summaries.R0.onset_exposure_by_block",
+        "primary_confirmatory_test.condition_summaries.R2.onset_exposure_by_block",
+        "primary_confirmatory_test.paired_differences.R2_vs_R0.onset_terminal_ordinal_delta"
+      ],
+      "source_json": "artifacts/cue_dose_confirmatory_results.json",
+      "status": "confirmatory_v3_6",
+      "total_parameters": 2110416,
+      "verified_onset_counts": {
+        "R0": 1,
+        "R2": 8
+      },
+      "width": 168
+    },
+    {
+      "actual_core_parameters": 5039232,
+      "mean_R2_minus_R0_R_10M": -0.14309689802394132,
+      "mean_R2_minus_R0_R_5M_pre": -0.7149416845350061,
+      "mean_R2_minus_R0_onset_ordinal": -3.75,
+      "paired_blocks": 4,
+      "paired_direction_counts": {
+        "advance": 4,
+        "delay": 0,
+        "tie": 0
+      },
+      "scale_label": "approximately_5m",
+      "source_field": "by_scale.5m",
+      "source_json": "artifacts/iclr2027_scale_robustness_results.json",
+      "status": "post_confirmatory_robustness",
+      "total_parameters": 5141136,
+      "verified_onset_counts_out_of_4": {
+        "R0": 3,
+        "R2": 4
+      },
+      "verified_onset_probability_difference_R2_minus_R0": 0.25,
+      "width": 264
+    }
+  ],
+  "cross_scale_paired_blocks": [
+    {
+      "R0_R_10M": 0.5982134342193604,
+      "R0_R_5M_pre": 0.7906867861747742,
+      "R0_center_accuracy_10M": 0.04920589259489167,
+      "R0_establishment_exposure": null,
+      "R0_layer_6_linear_accuracy_10M": 0.1332949846982956,
+      "R0_onset_exposure": null,
+      "R0_onset_ordinal": 8,
+      "R2_R_10M": 0.0027173582930117846,
+      "R2_R_5M_pre": 0.044794682413339615,
+      "R2_center_accuracy_10M": 1.0,
+      "R2_establishment_exposure": 5000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.5954960759263486,
+      "R2_minus_R0_R_5M_pre": -0.7458921037614346,
+      "R2_minus_R0_onset_ordinal": -5,
+      "R2_onset_exposure": 4000000,
+      "R2_onset_ordinal": 3,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_1m_rule_0_init_0",
+      "model_seed_index": 0,
+      "paired_direction": "advance",
+      "rule_id": "rule_0",
+      "scale_id": "1m"
+    },
+    {
+      "R0_R_10M": 0.7062674164772034,
+      "R0_R_5M_pre": 0.9439343214035034,
+      "R0_center_accuracy_10M": 0.025723326621144908,
+      "R0_establishment_exposure": null,
+      "R0_layer_6_linear_accuracy_10M": 0.08949416130781174,
+      "R0_onset_exposure": null,
+      "R0_onset_ordinal": 8,
+      "R2_R_10M": 0.0038375207222998142,
+      "R2_R_5M_pre": 0.033877525478601456,
+      "R2_center_accuracy_10M": 0.9999697194507108,
+      "R2_establishment_exposure": 5000000,
+      "R2_layer_6_linear_accuracy_10M": 0.9999697208404541,
+      "R2_minus_R0_R_10M": -0.7024298957549036,
+      "R2_minus_R0_R_5M_pre": -0.910056795924902,
+      "R2_minus_R0_onset_ordinal": -6,
+      "R2_onset_exposure": 3000000,
+      "R2_onset_ordinal": 2,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_1m_rule_0_init_1",
+      "model_seed_index": 1,
+      "paired_direction": "advance",
+      "rule_id": "rule_0",
+      "scale_id": "1m"
+    },
+    {
+      "R0_R_10M": 0.5785253643989563,
+      "R0_R_5M_pre": 0.7650987505912781,
+      "R0_center_accuracy_10M": 0.07656436887765145,
+      "R0_establishment_exposure": null,
+      "R0_layer_6_linear_accuracy_10M": 0.13461218774318695,
+      "R0_onset_exposure": null,
+      "R0_onset_ordinal": 8,
+      "R2_R_10M": 0.0044744242914021015,
+      "R2_R_5M_pre": 0.10064850747585297,
+      "R2_center_accuracy_10M": 0.9999848597253554,
+      "R2_establishment_exposure": 6000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.5740509401075542,
+      "R2_minus_R0_R_5M_pre": -0.6644502431154251,
+      "R2_minus_R0_onset_ordinal": -5,
+      "R2_onset_exposure": 4000000,
+      "R2_onset_ordinal": 3,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_1m_rule_1_init_0",
+      "model_seed_index": 0,
+      "paired_direction": "advance",
+      "rule_id": "rule_1",
+      "scale_id": "1m"
+    },
+    {
+      "R0_R_10M": 0.578065037727356,
+      "R0_R_5M_pre": 0.9100738167762756,
+      "R0_center_accuracy_10M": 0.047525322109343064,
+      "R0_establishment_exposure": null,
+      "R0_layer_6_linear_accuracy_10M": 0.174855038523674,
+      "R0_onset_exposure": null,
+      "R0_onset_ordinal": 8,
+      "R2_R_10M": 0.022095786407589912,
+      "R2_R_5M_pre": 0.25440463423728943,
+      "R2_center_accuracy_10M": 0.9832094354191585,
+      "R2_establishment_exposure": 7500000,
+      "R2_layer_6_linear_accuracy_10M": 0.988675057888031,
+      "R2_minus_R0_R_10M": -0.555969251319766,
+      "R2_minus_R0_R_5M_pre": -0.6556691825389862,
+      "R2_minus_R0_onset_ordinal": -5,
+      "R2_onset_exposure": 4000000,
+      "R2_onset_ordinal": 3,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_1m_rule_1_init_1",
+      "model_seed_index": 1,
+      "paired_direction": "advance",
+      "rule_id": "rule_1",
+      "scale_id": "1m"
+    },
+    {
+      "R0_R_10M": 0.4991971552371979,
+      "R0_R_5M_pre": 0.9985543489456177,
+      "R0_center_accuracy_10M": 0.11542945389029358,
+      "R0_establishment_exposure": null,
+      "R0_layer_6_linear_accuracy_10M": 0.17179669439792633,
+      "R0_onset_exposure": null,
+      "R0_onset_ordinal": 8,
+      "R2_R_10M": 0.0006644746172241867,
+      "R2_R_5M_pre": 0.023875482380390167,
+      "R2_center_accuracy_10M": 1.0,
+      "R2_establishment_exposure": 4000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.4985326806199737,
+      "R2_minus_R0_R_5M_pre": -0.9746788665652275,
+      "R2_minus_R0_onset_ordinal": -6,
+      "R2_onset_exposure": 3000000,
+      "R2_onset_ordinal": 2,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_5m_rule_0_init_0",
+      "model_seed_index": 0,
+      "paired_direction": "advance",
+      "rule_id": "rule_0",
+      "scale_id": "5m"
+    },
+    {
+      "R0_R_10M": 0.002783445408567786,
+      "R0_R_5M_pre": 0.12864519655704498,
+      "R0_center_accuracy_10M": 0.9986979363805659,
+      "R0_establishment_exposure": 6000000,
+      "R0_layer_6_linear_accuracy_10M": 0.9995306730270386,
+      "R0_onset_exposure": 5000000,
+      "R0_onset_ordinal": 4,
+      "R2_R_10M": 6.368206231854856e-05,
+      "R2_R_5M_pre": 0.0011914168717339635,
+      "R2_center_accuracy_10M": 1.0,
+      "R2_establishment_exposure": 3000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.0027197633462492377,
+      "R2_minus_R0_R_5M_pre": -0.12745377968531102,
+      "R2_minus_R0_onset_ordinal": -2,
+      "R2_onset_exposure": 3000000,
+      "R2_onset_ordinal": 2,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_5m_rule_0_init_1",
+      "model_seed_index": 1,
+      "paired_direction": "advance",
+      "rule_id": "rule_0",
+      "scale_id": "5m"
+    },
+    {
+      "R0_R_10M": 0.030345384031534195,
+      "R0_R_5M_pre": 1.0004044771194458,
+      "R0_center_accuracy_10M": 0.9794849278565914,
+      "R0_establishment_exposure": 10000000,
+      "R0_layer_6_linear_accuracy_10M": 0.9968054294586182,
+      "R0_onset_exposure": 7500000,
+      "R0_onset_ordinal": 6,
+      "R2_R_10M": 0.00018904397438745946,
+      "R2_R_5M_pre": 0.008529466576874256,
+      "R2_center_accuracy_10M": 1.0,
+      "R2_establishment_exposure": 4000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.030156340057146735,
+      "R2_minus_R0_R_5M_pre": -0.9918750105425715,
+      "R2_minus_R0_onset_ordinal": -4,
+      "R2_onset_exposure": 3000000,
+      "R2_onset_ordinal": 2,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_5m_rule_1_init_0",
+      "model_seed_index": 0,
+      "paired_direction": "advance",
+      "rule_id": "rule_1",
+      "scale_id": "5m"
+    },
+    {
+      "R0_R_10M": 0.0412539504468441,
+      "R0_R_5M_pre": 0.7682029604911804,
+      "R0_center_accuracy_10M": 0.9632091326136656,
+      "R0_establishment_exposure": 10000000,
+      "R0_layer_6_linear_accuracy_10M": 0.9675846695899963,
+      "R0_onset_exposure": 6000000,
+      "R0_onset_ordinal": 5,
+      "R2_R_10M": 0.0002751423744484782,
+      "R2_R_5M_pre": 0.0024438791442662477,
+      "R2_center_accuracy_10M": 1.0,
+      "R2_establishment_exposure": 4000000,
+      "R2_layer_6_linear_accuracy_10M": 1.0,
+      "R2_minus_R0_R_10M": -0.04097880807239562,
+      "R2_minus_R0_R_5M_pre": -0.7657590813469142,
+      "R2_minus_R0_onset_ordinal": -3,
+      "R2_onset_exposure": 3000000,
+      "R2_onset_ordinal": 2,
+      "R2_threshold_retained_at_10M": true,
+      "R2_threshold_retained_at_6M": true,
+      "block_id": "scale_5m_rule_1_init_1",
+      "model_seed_index": 1,
+      "paired_direction": "advance",
+      "rule_id": "rule_1",
+      "scale_id": "5m"
+    }
+  ],
+  "cross_scale_paired_blocks_source": {
+    "source_field": "paired_blocks",
+    "source_json": "artifacts/iclr2027_scale_robustness_results.json"
+  },
+  "exploratory_appendix_hessian_rows": [
+    {
+      "checkpoint_sha256": "49e89a6b15dfcb51a6082be7aba39e35b9377d53bdfa82ddd102e64191197e4a",
+      "condition": "R0",
+      "effective_spectral_dimension_10": 6.414429560678851,
+      "exposure": 6000000,
+      "lambda_max": 143.05761922498021,
+      "role": "pre_transition",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 1418.7712707519531
+    },
+    {
+      "checkpoint_sha256": "c280cb0545848708334315af7a09a78da5de8dd8f3494a4e16a0e462b80ae397",
+      "condition": "R0",
+      "effective_spectral_dimension_10": 5.828417510526947,
+      "exposure": 7500000,
+      "lambda_max": 6337.520159854173,
+      "role": "transition",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 64422.74365234375
+    },
+    {
+      "checkpoint_sha256": "c20adeced0cb6e4d7d88661f5b7a23e5874d1da107a70163239ef224a52eac01",
+      "condition": "R0",
+      "effective_spectral_dimension_10": 6.353905730941136,
+      "exposure": 10000000,
+      "lambda_max": 2596.6889172739475,
+      "role": "late",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 22164.06591796875
+    },
+    {
+      "checkpoint_sha256": "9569d564d41a3727ab453ec2f7c1dd68ebdd9b7ded102852c5a41c40bd9a3a73",
+      "condition": "R2",
+      "effective_spectral_dimension_10": 8.485785429197499,
+      "exposure": 3000000,
+      "lambda_max": 3155.6783912007318,
+      "role": "pre_transition",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 75057.08056640625
+    },
+    {
+      "checkpoint_sha256": "89fd14f7e5d9ef8b6f7c9cb4e9892a4c6234bc323d1519d62fa27836018fd60d",
+      "condition": "R2",
+      "effective_spectral_dimension_10": 8.187349170915665,
+      "exposure": 4000000,
+      "lambda_max": 9993.67415033754,
+      "role": "transition",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 194198.9375
+    },
+    {
+      "checkpoint_sha256": "660b63dbdd596a8e5f0beb783a3591b89456510caeee0bda9f89f3cdbaab8ae6",
+      "condition": "R2",
+      "effective_spectral_dimension_10": 8.145737500948911,
+      "exposure": 5000000,
+      "lambda_max": 10634.203334266786,
+      "role": "post_transition",
+      "source_json": "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json",
+      "trace_estimate_mean": 194972.51171875
+    }
+  ],
+  "kind": "iclr2027_final_numerical_claim_registry",
+  "original_v3_6_confirmatory_p_value": {
+    "source_field": "primary_confirmatory_test.ordered_onset_test.exact_one_sided_p",
+    "source_json": "artifacts/cue_dose_confirmatory_results.json",
+    "unchanged_from_frozen_registry": true,
+    "value": 9.525986892242037e-06
+  },
+  "scope_labels": {
+    "approximately_1m_and_5m": "post_confirmatory_robustness",
+    "approximately_2m": "confirmatory_v3_6",
+    "combined_scale_p_value": null,
+    "scaling_law_fit": false
+  },
+  "source_files": {
+    "artifacts/cue_dose_confirmatory_manifest.json": {
+      "bytes": 63923,
+      "sha256": "04ca572e9367ab4216ec4ff1f0528e63f6a3f7b690ae960dc214fd0e4bfadb39"
+    },
+    "artifacts/cue_dose_confirmatory_results.json": {
+      "bytes": 1105968,
+      "sha256": "5fd26ca916bcf73fd583d95b03fbb724f09536f88b22c848e8049c08e0c9b7a0"
+    },
+    "artifacts/iclr2027_scale_robustness_manifest.json": {
+      "bytes": 47599,
+      "sha256": "f6b873e342a8efa7f0a1b1ae09f0b455cc591ae06a31b0c9bb156726e5d23183"
+    },
+    "artifacts/iclr2027_scale_robustness_results.json": {
+      "bytes": 268942,
+      "sha256": "155a3f6eb4fd9b5890ee6968d9075e0fc90b427afa95c8472757ddfad38325fe"
+    },
+    "paper/iclr2027/frozen_sources/v1_3_spectral_transition_dynamics.json": {
+      "bytes": 39088,
+      "sha256": "a38246e51e1b851b7672072a50f03befee514b05c23b3387bfb31d4f663e6af3"
+    },
+    "paper/numerical_claim_registry.json": {
+      "bytes": 16399,
+      "sha256": "3f64d07bb157bbc37db2799b82f82164fa99a0a6a36088a41b352f29afb7f186"
+    }
+  },
+  "source_policy": "frozen_json_only",
+  "verification": {
+    "builder_reads_frozen_json": true,
+    "combined_scale_p_value_computed": false,
+    "manual_numeric_entry_in_registry": false,
+    "new_statistical_tests": 0,
+    "optimizer_steps": 0,
+    "original_v3_6_p_value_modified": false
+  }
+}

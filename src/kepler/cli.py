@@ -474,6 +474,14 @@ def _confirmatory_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
+def _scale_robustness_manifest(args: argparse.Namespace) -> int:
+    from .scale_robustness import write_scale_robustness_manifest
+
+    output, checksum = write_scale_robustness_manifest(args.output, args.audit)
+    _json({"runs": 16, "output": str(output.resolve()), "sha256": checksum})
+    return 0
+
+
 def _fit_scaling(args: argparse.Namespace) -> int:
     from .scaling import compare_models_leave_one_trajectory_out, prepare_scaling_data
 
@@ -969,6 +977,18 @@ def build_parser() -> argparse.ArgumentParser:
         "--output", default="artifacts/cue_dose_confirmatory_results.json"
     )
     confirmatory_analysis.set_defaults(func=_confirmatory_analyze)
+
+    scale_robustness_manifest = sub.add_parser(
+        "scale-robustness-manifest",
+        help="write the 16-trajectory ICLR 2027 scale-robustness manifest",
+    )
+    scale_robustness_manifest.add_argument(
+        "--output", default="artifacts/iclr2027_scale_robustness_manifest.json"
+    )
+    scale_robustness_manifest.add_argument(
+        "--audit", default="artifacts/confirmatory_distribution_audit.json"
+    )
+    scale_robustness_manifest.set_defaults(func=_scale_robustness_manifest)
 
     probe = sub.add_parser("probe", help="run the disjoint predictive-state probe array")
     probe.add_argument("checkpoint")

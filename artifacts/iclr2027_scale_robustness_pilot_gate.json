@@ -1,0 +1,926 @@
+{
+  "all_scales_passed": true,
+  "cells": {
+    "scale_1m_rule_0_init_0_R0": {
+      "R_by_checkpoint": [
+        {
+          "R": 1.0050890445709229,
+          "exposed_pairs": 0,
+          "phase": "initialization"
+        },
+        {
+          "R": 1.0005829334259033,
+          "exposed_pairs": 500000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0002304315567017,
+          "exposed_pairs": 1000000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0002552270889282,
+          "exposed_pairs": 2000000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0002152919769287,
+          "exposed_pairs": 3000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.9909238815307617,
+          "exposed_pairs": 4000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.7906867861747742,
+          "exposed_pairs": 5000000,
+          "phase": "pre_switch"
+        },
+        {
+          "R": 0.7906867861747742,
+          "exposed_pairs": 5000000,
+          "phase": "post_switch"
+        },
+        {
+          "R": 0.7577309608459473,
+          "exposed_pairs": 5500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.7325105667114258,
+          "exposed_pairs": 6000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.6350255608558655,
+          "exposed_pairs": 7500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.5982134342193604,
+          "exposed_pairs": 10000000,
+          "phase": "standard"
+        }
+      ],
+      "checkpoint_verification": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 11,
+        "checks": [
+          {
+            "actual_sha256": "f0de0bf9c480dfc88d88989c805fd1f203009133abf02ef9662ba6cc9935cf95",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_1000000.pt",
+            "passed": true,
+            "sidecar_sha256": "f0de0bf9c480dfc88d88989c805fd1f203009133abf02ef9662ba6cc9935cf95"
+          },
+          {
+            "actual_sha256": "5973c189f9a6e23e66cb09cf6befcc3f22ecd6c2be624c18067cb3046ceb802f",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_10000000.pt",
+            "passed": true,
+            "sidecar_sha256": "5973c189f9a6e23e66cb09cf6befcc3f22ecd6c2be624c18067cb3046ceb802f"
+          },
+          {
+            "actual_sha256": "f1d5b5ff685f344e221a49b2c1fbc9e04102b3a771a6e09c2c01d2158109ee3c",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_2000000.pt",
+            "passed": true,
+            "sidecar_sha256": "f1d5b5ff685f344e221a49b2c1fbc9e04102b3a771a6e09c2c01d2158109ee3c"
+          },
+          {
+            "actual_sha256": "253ba5dbcdfc577f0f1cb5808abcbd17be6b19efa43527072326030f74eb9e64",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_3000000.pt",
+            "passed": true,
+            "sidecar_sha256": "253ba5dbcdfc577f0f1cb5808abcbd17be6b19efa43527072326030f74eb9e64"
+          },
+          {
+            "actual_sha256": "80e8c099a6616bd1d72bd10aa4559deda4fb9b6916d95b2381dfdeb893a0cde5",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_4000000.pt",
+            "passed": true,
+            "sidecar_sha256": "80e8c099a6616bd1d72bd10aa4559deda4fb9b6916d95b2381dfdeb893a0cde5"
+          },
+          {
+            "actual_sha256": "5e5db9380444f7519b777cae7d3077469527e79709f8ecddf7a6a3a55b2217a8",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_500000.pt",
+            "passed": true,
+            "sidecar_sha256": "5e5db9380444f7519b777cae7d3077469527e79709f8ecddf7a6a3a55b2217a8"
+          },
+          {
+            "actual_sha256": "e9fcf5be214307ec40b6c76ed1135d1ff31770a4eb60b55dec5fd7c9190dd24d",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_5000000_post_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "e9fcf5be214307ec40b6c76ed1135d1ff31770a4eb60b55dec5fd7c9190dd24d"
+          },
+          {
+            "actual_sha256": "e9fcf5be214307ec40b6c76ed1135d1ff31770a4eb60b55dec5fd7c9190dd24d",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_5000000_pre_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "e9fcf5be214307ec40b6c76ed1135d1ff31770a4eb60b55dec5fd7c9190dd24d"
+          },
+          {
+            "actual_sha256": "dc3080d427e2502c3d930d4f0fdea3fc06d608b69dd44a55c4e11e373d7342ba",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_5500000.pt",
+            "passed": true,
+            "sidecar_sha256": "dc3080d427e2502c3d930d4f0fdea3fc06d608b69dd44a55c4e11e373d7342ba"
+          },
+          {
+            "actual_sha256": "d04882e18ef315decd05103ff047684b21c1065bc0b85e27918a36ff64a0785c",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_6000000.pt",
+            "passed": true,
+            "sidecar_sha256": "d04882e18ef315decd05103ff047684b21c1065bc0b85e27918a36ff64a0785c"
+          },
+          {
+            "actual_sha256": "15794c6f8f24130a747fccad1968d2c3dac482b9a29f0d6bf18ab7d76b9d898b",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_7500000.pt",
+            "passed": true,
+            "sidecar_sha256": "15794c6f8f24130a747fccad1968d2c3dac482b9a29f0d6bf18ab7d76b9d898b"
+          }
+        ]
+      },
+      "checks": {
+        "checkpoint_sidecars_valid": true,
+        "endpoint_checkpoint_exists": true,
+        "finite_exact_evaluations": true,
+        "finite_training_log": true,
+        "forced_2M_resume_verified": true,
+        "memory_telemetry_recorded": true,
+        "positive_median_throughput": true,
+        "sampled_nll_not_training_objective": true,
+        "twelve_registered_evaluations": true,
+        "zero_step_switch_verified": true
+      },
+      "condition_id": "R0",
+      "engineering_passed": true,
+      "maximum_mps_driver_allocated_bytes": 1289781248,
+      "median_pairs_per_second": 29267.177214129726,
+      "minimum_pairs_per_second": 877.4948836851124,
+      "resume_verification": {
+        "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R0/checkpoint_2000000.pt",
+        "checkpoint_sha256": "f1d5b5ff685f344e221a49b2c1fbc9e04102b3a771a6e09c2c01d2158109ee3c",
+        "checks": {
+          "config_hash_equal": true,
+          "model_state_equal_after_load": true,
+          "numpy_stream_state_present": true,
+          "optimizer_not_reset": true,
+          "optimizer_state_equal_after_load": true,
+          "pair_frequency_counts_present": true,
+          "run_id_equal": true,
+          "scheduler_not_reset": true,
+          "torch_rng_state_present": true
+        },
+        "passed": true,
+        "resumed_exposure": 2000000,
+        "run_id": "scale_1m_rule_0_init_0_R0"
+      },
+      "scale_id": "1m",
+      "switch_invariance": {
+        "absolute_exposure_after": 5000000,
+        "absolute_exposure_before": 5000000,
+        "full_support_output_sha256_equal": true,
+        "model_state_sha256_after": "f3a139993a82f59d0e8196d1e8d75f5cbcbf85af7600de2f160bd16da4a663b7",
+        "model_state_sha256_before": "f3a139993a82f59d0e8196d1e8d75f5cbcbf85af7600de2f160bd16da4a663b7",
+        "model_state_unchanged": true,
+        "numpy_rng_state_unchanged": true,
+        "optimizer_state_sha256_after": "360cd57e6b8bc6a482da27edeb363abbfb5861fa6b18ac8bcb920f24d9ee2360",
+        "optimizer_state_sha256_before": "360cd57e6b8bc6a482da27edeb363abbfb5861fa6b18ac8bcb920f24d9ee2360",
+        "optimizer_state_unchanged": true,
+        "optimizer_steps_between_evaluations": 0,
+        "pair_frequency_counts_unchanged": true,
+        "passed": true,
+        "python_rng_state_restored": true,
+        "sampler_after": "uniform_full",
+        "sampler_before": "uniform_full",
+        "scheduler_state_unchanged": true,
+        "torch_cpu_rng_state_restored": true,
+        "torch_mps_rng_state_restored": true
+      },
+      "transition": {
+        "establishment_by_5M": false,
+        "establishment_exposure": null,
+        "onset_by_5M": false,
+        "onset_exposure": null,
+        "onset_ordinal": 8,
+        "onset_terminal_coded": true,
+        "probe_checkpoint_sequence": [
+          2000000,
+          3000000,
+          4000000,
+          5000000,
+          6000000,
+          7500000,
+          10000000
+        ],
+        "ten_M_cannot_initiate_onset": true,
+        "threshold_state_at_10M": false,
+        "threshold_state_at_5M": false,
+        "threshold_state_at_6M": false
+      }
+    },
+    "scale_1m_rule_0_init_0_R2": {
+      "R_by_checkpoint": [
+        {
+          "R": 1.0050890445709229,
+          "exposed_pairs": 0,
+          "phase": "initialization"
+        },
+        {
+          "R": 1.0006738901138306,
+          "exposed_pairs": 500000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.001727819442749,
+          "exposed_pairs": 1000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.9999661445617676,
+          "exposed_pairs": 2000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.7797157764434814,
+          "exposed_pairs": 3000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.31785380840301514,
+          "exposed_pairs": 4000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.044794682413339615,
+          "exposed_pairs": 5000000,
+          "phase": "pre_switch"
+        },
+        {
+          "R": 0.044794682413339615,
+          "exposed_pairs": 5000000,
+          "phase": "post_switch"
+        },
+        {
+          "R": 0.015406407415866852,
+          "exposed_pairs": 5500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.008593113161623478,
+          "exposed_pairs": 6000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.024857917800545692,
+          "exposed_pairs": 7500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.0027173582930117846,
+          "exposed_pairs": 10000000,
+          "phase": "standard"
+        }
+      ],
+      "checkpoint_verification": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 11,
+        "checks": [
+          {
+            "actual_sha256": "45e64af0435e5fbd8f4df7c410e1f64deff8009b577a278bed77e3a542c92eb3",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_1000000.pt",
+            "passed": true,
+            "sidecar_sha256": "45e64af0435e5fbd8f4df7c410e1f64deff8009b577a278bed77e3a542c92eb3"
+          },
+          {
+            "actual_sha256": "a66e74f77168cb0ec46a640ea9ba3dc3eaafd39ace2948085393be2cac37c0c2",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_10000000.pt",
+            "passed": true,
+            "sidecar_sha256": "a66e74f77168cb0ec46a640ea9ba3dc3eaafd39ace2948085393be2cac37c0c2"
+          },
+          {
+            "actual_sha256": "b682f7a1459f5a4e8ac0434f223fc51b414734b5d411f347001ad173c2d4ec00",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_2000000.pt",
+            "passed": true,
+            "sidecar_sha256": "b682f7a1459f5a4e8ac0434f223fc51b414734b5d411f347001ad173c2d4ec00"
+          },
+          {
+            "actual_sha256": "9a1bdf8d6de33dd58a314c5063cc9f5bf838314705a2bc9d8a576b14d7c9ca24",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_3000000.pt",
+            "passed": true,
+            "sidecar_sha256": "9a1bdf8d6de33dd58a314c5063cc9f5bf838314705a2bc9d8a576b14d7c9ca24"
+          },
+          {
+            "actual_sha256": "d50213aae474ad0db466669ce726c4e25261765d3a35dd5cc8850845a9eb22a1",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_4000000.pt",
+            "passed": true,
+            "sidecar_sha256": "d50213aae474ad0db466669ce726c4e25261765d3a35dd5cc8850845a9eb22a1"
+          },
+          {
+            "actual_sha256": "a4feba3045586d81cae6389705208223dbca7d0e886b78705528a6062df2077a",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_500000.pt",
+            "passed": true,
+            "sidecar_sha256": "a4feba3045586d81cae6389705208223dbca7d0e886b78705528a6062df2077a"
+          },
+          {
+            "actual_sha256": "e9eab99385284619b8f3bcb0feb83f90d3e19fe46067fa06f87710bd99664a23",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_5000000_post_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "e9eab99385284619b8f3bcb0feb83f90d3e19fe46067fa06f87710bd99664a23"
+          },
+          {
+            "actual_sha256": "e9eab99385284619b8f3bcb0feb83f90d3e19fe46067fa06f87710bd99664a23",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_5000000_pre_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "e9eab99385284619b8f3bcb0feb83f90d3e19fe46067fa06f87710bd99664a23"
+          },
+          {
+            "actual_sha256": "74f74610f3c66687831cdecd604e1ae23eeff0968ea3ef734f89cab0db8f0276",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_5500000.pt",
+            "passed": true,
+            "sidecar_sha256": "74f74610f3c66687831cdecd604e1ae23eeff0968ea3ef734f89cab0db8f0276"
+          },
+          {
+            "actual_sha256": "276b69c0fecd971b337c1cbba8d71d63ec577e07e4c192e355dda7363f1d5948",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_6000000.pt",
+            "passed": true,
+            "sidecar_sha256": "276b69c0fecd971b337c1cbba8d71d63ec577e07e4c192e355dda7363f1d5948"
+          },
+          {
+            "actual_sha256": "471196d1bb0f6bb815043f3306b8fbc8913554f81ccbb9c3010f67dd4a353692",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_7500000.pt",
+            "passed": true,
+            "sidecar_sha256": "471196d1bb0f6bb815043f3306b8fbc8913554f81ccbb9c3010f67dd4a353692"
+          }
+        ]
+      },
+      "checks": {
+        "checkpoint_sidecars_valid": true,
+        "endpoint_checkpoint_exists": true,
+        "finite_exact_evaluations": true,
+        "finite_training_log": true,
+        "forced_2M_resume_verified": true,
+        "memory_telemetry_recorded": true,
+        "positive_median_throughput": true,
+        "sampled_nll_not_training_objective": true,
+        "twelve_registered_evaluations": true,
+        "zero_step_switch_verified": true
+      },
+      "condition_id": "R2",
+      "engineering_passed": true,
+      "maximum_mps_driver_allocated_bytes": 1286029312,
+      "median_pairs_per_second": 27041.84435799275,
+      "minimum_pairs_per_second": 482.7703649445311,
+      "resume_verification": {
+        "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_1m_rule_0_init_0_R2/checkpoint_2000000.pt",
+        "checkpoint_sha256": "b682f7a1459f5a4e8ac0434f223fc51b414734b5d411f347001ad173c2d4ec00",
+        "checks": {
+          "config_hash_equal": true,
+          "model_state_equal_after_load": true,
+          "numpy_stream_state_present": true,
+          "optimizer_not_reset": true,
+          "optimizer_state_equal_after_load": true,
+          "pair_frequency_counts_present": true,
+          "run_id_equal": true,
+          "scheduler_not_reset": true,
+          "torch_rng_state_present": true
+        },
+        "passed": true,
+        "resumed_exposure": 2000000,
+        "run_id": "scale_1m_rule_0_init_0_R2"
+      },
+      "scale_id": "1m",
+      "switch_invariance": {
+        "absolute_exposure_after": 5000000,
+        "absolute_exposure_before": 5000000,
+        "full_support_output_sha256_equal": true,
+        "model_state_sha256_after": "8e1d3d7bd5ceba962bcd26805a1a2950cba80c60a178beabee795da5bffe6b6d",
+        "model_state_sha256_before": "8e1d3d7bd5ceba962bcd26805a1a2950cba80c60a178beabee795da5bffe6b6d",
+        "model_state_unchanged": true,
+        "numpy_rng_state_unchanged": true,
+        "optimizer_state_sha256_after": "c290b8c95072ae500f9c256d80e453c47b6aadcbe9b2c4e5be65087cdb327502",
+        "optimizer_state_sha256_before": "c290b8c95072ae500f9c256d80e453c47b6aadcbe9b2c4e5be65087cdb327502",
+        "optimizer_state_unchanged": true,
+        "optimizer_steps_between_evaluations": 0,
+        "pair_frequency_counts_unchanged": true,
+        "passed": true,
+        "python_rng_state_restored": true,
+        "sampler_after": "uniform_full",
+        "sampler_before": "confirmatory_cue_full_support",
+        "scheduler_state_unchanged": true,
+        "torch_cpu_rng_state_restored": true,
+        "torch_mps_rng_state_restored": true
+      },
+      "transition": {
+        "establishment_by_5M": true,
+        "establishment_exposure": 5000000,
+        "onset_by_5M": true,
+        "onset_exposure": 4000000,
+        "onset_ordinal": 3,
+        "onset_terminal_coded": false,
+        "probe_checkpoint_sequence": [
+          2000000,
+          3000000,
+          4000000,
+          5000000,
+          6000000,
+          7500000,
+          10000000
+        ],
+        "ten_M_cannot_initiate_onset": true,
+        "threshold_state_at_10M": true,
+        "threshold_state_at_5M": true,
+        "threshold_state_at_6M": true
+      }
+    },
+    "scale_5m_rule_0_init_0_R0": {
+      "R_by_checkpoint": [
+        {
+          "R": 1.010708212852478,
+          "exposed_pairs": 0,
+          "phase": "initialization"
+        },
+        {
+          "R": 1.0005202293395996,
+          "exposed_pairs": 500000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.000478982925415,
+          "exposed_pairs": 1000000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0005608797073364,
+          "exposed_pairs": 2000000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0006322860717773,
+          "exposed_pairs": 3000000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0005831718444824,
+          "exposed_pairs": 4000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.9985543489456177,
+          "exposed_pairs": 5000000,
+          "phase": "pre_switch"
+        },
+        {
+          "R": 0.9985543489456177,
+          "exposed_pairs": 5000000,
+          "phase": "post_switch"
+        },
+        {
+          "R": 0.8541410565376282,
+          "exposed_pairs": 5500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.7438974380493164,
+          "exposed_pairs": 6000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.5907220244407654,
+          "exposed_pairs": 7500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.4991971552371979,
+          "exposed_pairs": 10000000,
+          "phase": "standard"
+        }
+      ],
+      "checkpoint_verification": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 11,
+        "checks": [
+          {
+            "actual_sha256": "8a5f8c9067d202dcd3568ccee3c23064d38bdf307964cfbe4327950d3dc5ca9c",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_1000000.pt",
+            "passed": true,
+            "sidecar_sha256": "8a5f8c9067d202dcd3568ccee3c23064d38bdf307964cfbe4327950d3dc5ca9c"
+          },
+          {
+            "actual_sha256": "b7b029b2182cf78dbd20c30792204db8f3c9a6daeb2b46e6eb7dcfbc6c9f75d0",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_10000000.pt",
+            "passed": true,
+            "sidecar_sha256": "b7b029b2182cf78dbd20c30792204db8f3c9a6daeb2b46e6eb7dcfbc6c9f75d0"
+          },
+          {
+            "actual_sha256": "1fc3944367e3a33de7b37130fa1e0854e1cc8ba0d94b259d4c3006bd28e8f643",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_2000000.pt",
+            "passed": true,
+            "sidecar_sha256": "1fc3944367e3a33de7b37130fa1e0854e1cc8ba0d94b259d4c3006bd28e8f643"
+          },
+          {
+            "actual_sha256": "200f8a3952f03f52382c25d1655bf356b1d6bae57604b6f0565f53755405dbb1",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_3000000.pt",
+            "passed": true,
+            "sidecar_sha256": "200f8a3952f03f52382c25d1655bf356b1d6bae57604b6f0565f53755405dbb1"
+          },
+          {
+            "actual_sha256": "ceac34fae9bc5a240b401a187fc2592a0f9a4f3f23fa57194f54797e8a47d9f5",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_4000000.pt",
+            "passed": true,
+            "sidecar_sha256": "ceac34fae9bc5a240b401a187fc2592a0f9a4f3f23fa57194f54797e8a47d9f5"
+          },
+          {
+            "actual_sha256": "68af5fe03747c54d3bd9e3bc52dc2b5942b72d37bd8428a28fea334f2523643c",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_500000.pt",
+            "passed": true,
+            "sidecar_sha256": "68af5fe03747c54d3bd9e3bc52dc2b5942b72d37bd8428a28fea334f2523643c"
+          },
+          {
+            "actual_sha256": "0167e865a7740b7b348fbf7203b7d24ff0b565a4235a12d170231e62e6ecdbb3",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_5000000_post_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "0167e865a7740b7b348fbf7203b7d24ff0b565a4235a12d170231e62e6ecdbb3"
+          },
+          {
+            "actual_sha256": "0167e865a7740b7b348fbf7203b7d24ff0b565a4235a12d170231e62e6ecdbb3",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_5000000_pre_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "0167e865a7740b7b348fbf7203b7d24ff0b565a4235a12d170231e62e6ecdbb3"
+          },
+          {
+            "actual_sha256": "761a2d8c96910c62305f1ba20e9d95f9951e879e073e0a3f9d85f79af82da006",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_5500000.pt",
+            "passed": true,
+            "sidecar_sha256": "761a2d8c96910c62305f1ba20e9d95f9951e879e073e0a3f9d85f79af82da006"
+          },
+          {
+            "actual_sha256": "f026d1200a2d35b745d32e02cfd3f8efee6db6f0482d0d398f1e00c1b3779d47",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_6000000.pt",
+            "passed": true,
+            "sidecar_sha256": "f026d1200a2d35b745d32e02cfd3f8efee6db6f0482d0d398f1e00c1b3779d47"
+          },
+          {
+            "actual_sha256": "0ac83dacc534a7acd6b523a30742637e3b32f7153eccadfa28ba3b3d2bf20afa",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_7500000.pt",
+            "passed": true,
+            "sidecar_sha256": "0ac83dacc534a7acd6b523a30742637e3b32f7153eccadfa28ba3b3d2bf20afa"
+          }
+        ]
+      },
+      "checks": {
+        "checkpoint_sidecars_valid": true,
+        "endpoint_checkpoint_exists": true,
+        "finite_exact_evaluations": true,
+        "finite_training_log": true,
+        "forced_2M_resume_verified": true,
+        "memory_telemetry_recorded": true,
+        "positive_median_throughput": true,
+        "sampled_nll_not_training_objective": true,
+        "twelve_registered_evaluations": true,
+        "zero_step_switch_verified": true
+      },
+      "condition_id": "R0",
+      "engineering_passed": true,
+      "maximum_mps_driver_allocated_bytes": 2361868288,
+      "median_pairs_per_second": 11428.716262438747,
+      "minimum_pairs_per_second": 621.9322340894712,
+      "resume_verification": {
+        "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R0/checkpoint_2000000.pt",
+        "checkpoint_sha256": "1fc3944367e3a33de7b37130fa1e0854e1cc8ba0d94b259d4c3006bd28e8f643",
+        "checks": {
+          "config_hash_equal": true,
+          "model_state_equal_after_load": true,
+          "numpy_stream_state_present": true,
+          "optimizer_not_reset": true,
+          "optimizer_state_equal_after_load": true,
+          "pair_frequency_counts_present": true,
+          "run_id_equal": true,
+          "scheduler_not_reset": true,
+          "torch_rng_state_present": true
+        },
+        "passed": true,
+        "resumed_exposure": 2000000,
+        "run_id": "scale_5m_rule_0_init_0_R0"
+      },
+      "scale_id": "5m",
+      "switch_invariance": {
+        "absolute_exposure_after": 5000000,
+        "absolute_exposure_before": 5000000,
+        "full_support_output_sha256_equal": true,
+        "model_state_sha256_after": "042babd587f2695b2e2f30b35354d2bc30d5434030161378dc7635fe3a35ef7c",
+        "model_state_sha256_before": "042babd587f2695b2e2f30b35354d2bc30d5434030161378dc7635fe3a35ef7c",
+        "model_state_unchanged": true,
+        "numpy_rng_state_unchanged": true,
+        "optimizer_state_sha256_after": "2577eb28615943969cdd65067a8955d2556ae63b0ee6cfbf569da5e2079ba2e7",
+        "optimizer_state_sha256_before": "2577eb28615943969cdd65067a8955d2556ae63b0ee6cfbf569da5e2079ba2e7",
+        "optimizer_state_unchanged": true,
+        "optimizer_steps_between_evaluations": 0,
+        "pair_frequency_counts_unchanged": true,
+        "passed": true,
+        "python_rng_state_restored": true,
+        "sampler_after": "uniform_full",
+        "sampler_before": "uniform_full",
+        "scheduler_state_unchanged": true,
+        "torch_cpu_rng_state_restored": true,
+        "torch_mps_rng_state_restored": true
+      },
+      "transition": {
+        "establishment_by_5M": false,
+        "establishment_exposure": null,
+        "onset_by_5M": false,
+        "onset_exposure": null,
+        "onset_ordinal": 8,
+        "onset_terminal_coded": true,
+        "probe_checkpoint_sequence": [
+          2000000,
+          3000000,
+          4000000,
+          5000000,
+          6000000,
+          7500000,
+          10000000
+        ],
+        "ten_M_cannot_initiate_onset": true,
+        "threshold_state_at_10M": false,
+        "threshold_state_at_5M": false,
+        "threshold_state_at_6M": false
+      }
+    },
+    "scale_5m_rule_0_init_0_R2": {
+      "R_by_checkpoint": [
+        {
+          "R": 1.010708212852478,
+          "exposed_pairs": 0,
+          "phase": "initialization"
+        },
+        {
+          "R": 1.000823736190796,
+          "exposed_pairs": 500000,
+          "phase": "standard"
+        },
+        {
+          "R": 1.0041612386703491,
+          "exposed_pairs": 1000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.7854005694389343,
+          "exposed_pairs": 2000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.1398312896490097,
+          "exposed_pairs": 3000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.013869504444301128,
+          "exposed_pairs": 4000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.023875482380390167,
+          "exposed_pairs": 5000000,
+          "phase": "pre_switch"
+        },
+        {
+          "R": 0.023875482380390167,
+          "exposed_pairs": 5000000,
+          "phase": "post_switch"
+        },
+        {
+          "R": 0.009711945429444313,
+          "exposed_pairs": 5500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.021486690267920494,
+          "exposed_pairs": 6000000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.012585059739649296,
+          "exposed_pairs": 7500000,
+          "phase": "standard"
+        },
+        {
+          "R": 0.0006644746172241867,
+          "exposed_pairs": 10000000,
+          "phase": "standard"
+        }
+      ],
+      "checkpoint_verification": {
+        "all_sidecars_valid": true,
+        "checkpoint_count": 11,
+        "checks": [
+          {
+            "actual_sha256": "4733991bdb59c1653699af4f02f39a30bddd0c63160f2e126d3be9e0d13cab30",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_1000000.pt",
+            "passed": true,
+            "sidecar_sha256": "4733991bdb59c1653699af4f02f39a30bddd0c63160f2e126d3be9e0d13cab30"
+          },
+          {
+            "actual_sha256": "6630b27c03baaca4104717dcf9cd9299ac9446e5e0d3f07740775a1c33f6931d",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_10000000.pt",
+            "passed": true,
+            "sidecar_sha256": "6630b27c03baaca4104717dcf9cd9299ac9446e5e0d3f07740775a1c33f6931d"
+          },
+          {
+            "actual_sha256": "793f7fd05849fbee4fcd7772eb652bb5d74776116baa01f50947041cbcb4c1c8",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_2000000.pt",
+            "passed": true,
+            "sidecar_sha256": "793f7fd05849fbee4fcd7772eb652bb5d74776116baa01f50947041cbcb4c1c8"
+          },
+          {
+            "actual_sha256": "a628192ecfd09a0c77f4ec507821cdfae4147f40248f45a6609c33b4c4c52496",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_3000000.pt",
+            "passed": true,
+            "sidecar_sha256": "a628192ecfd09a0c77f4ec507821cdfae4147f40248f45a6609c33b4c4c52496"
+          },
+          {
+            "actual_sha256": "39fb75157332cb302fd1da536d26bd318b79ecd22fc6d00d0473ae2beae3933f",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_4000000.pt",
+            "passed": true,
+            "sidecar_sha256": "39fb75157332cb302fd1da536d26bd318b79ecd22fc6d00d0473ae2beae3933f"
+          },
+          {
+            "actual_sha256": "3396b0ea7a436b021d47b7de575b0ebad877516971c724cef538c4ae98bc4c11",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_500000.pt",
+            "passed": true,
+            "sidecar_sha256": "3396b0ea7a436b021d47b7de575b0ebad877516971c724cef538c4ae98bc4c11"
+          },
+          {
+            "actual_sha256": "efe6a8ad905439d6e4154ee73331b95aa02d55217f31881510d124c35e67c0d8",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_5000000_post_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "efe6a8ad905439d6e4154ee73331b95aa02d55217f31881510d124c35e67c0d8"
+          },
+          {
+            "actual_sha256": "efe6a8ad905439d6e4154ee73331b95aa02d55217f31881510d124c35e67c0d8",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_5000000_pre_switch.pt",
+            "passed": true,
+            "sidecar_sha256": "efe6a8ad905439d6e4154ee73331b95aa02d55217f31881510d124c35e67c0d8"
+          },
+          {
+            "actual_sha256": "4afa7d710cf68fb3ccc6783c90485fa9982239e4ef1d37fb6261eca2d180e6b4",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_5500000.pt",
+            "passed": true,
+            "sidecar_sha256": "4afa7d710cf68fb3ccc6783c90485fa9982239e4ef1d37fb6261eca2d180e6b4"
+          },
+          {
+            "actual_sha256": "48aaff8d5d118c592487e6c7cab119167f4956d5c5ef4ced62c39c0b2aaaff07",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_6000000.pt",
+            "passed": true,
+            "sidecar_sha256": "48aaff8d5d118c592487e6c7cab119167f4956d5c5ef4ced62c39c0b2aaaff07"
+          },
+          {
+            "actual_sha256": "5785db6f033fd6b9845fcc88b4ecc05d0c66b018cac0c3a9b854059ddb09f2f6",
+            "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_7500000.pt",
+            "passed": true,
+            "sidecar_sha256": "5785db6f033fd6b9845fcc88b4ecc05d0c66b018cac0c3a9b854059ddb09f2f6"
+          }
+        ]
+      },
+      "checks": {
+        "checkpoint_sidecars_valid": true,
+        "endpoint_checkpoint_exists": true,
+        "finite_exact_evaluations": true,
+        "finite_training_log": true,
+        "forced_2M_resume_verified": true,
+        "memory_telemetry_recorded": true,
+        "positive_median_throughput": true,
+        "sampled_nll_not_training_objective": true,
+        "twelve_registered_evaluations": true,
+        "zero_step_switch_verified": true
+      },
+      "condition_id": "R2",
+      "engineering_passed": true,
+      "maximum_mps_driver_allocated_bytes": 2361868288,
+      "median_pairs_per_second": 11421.263847702034,
+      "minimum_pairs_per_second": 2967.7374526791014,
+      "resume_verification": {
+        "checkpoint": "artifacts/iclr2027_scale_robustness_runs/scale_5m_rule_0_init_0_R2/checkpoint_2000000.pt",
+        "checkpoint_sha256": "793f7fd05849fbee4fcd7772eb652bb5d74776116baa01f50947041cbcb4c1c8",
+        "checks": {
+          "config_hash_equal": true,
+          "model_state_equal_after_load": true,
+          "numpy_stream_state_present": true,
+          "optimizer_not_reset": true,
+          "optimizer_state_equal_after_load": true,
+          "pair_frequency_counts_present": true,
+          "run_id_equal": true,
+          "scheduler_not_reset": true,
+          "torch_rng_state_present": true
+        },
+        "passed": true,
+        "resumed_exposure": 2000000,
+        "run_id": "scale_5m_rule_0_init_0_R2"
+      },
+      "scale_id": "5m",
+      "switch_invariance": {
+        "absolute_exposure_after": 5000000,
+        "absolute_exposure_before": 5000000,
+        "full_support_output_sha256_equal": true,
+        "model_state_sha256_after": "56a8c7b18da2baaf082d4943c7abf44be1f2e3eb292c301b9470f2784fdd4cd6",
+        "model_state_sha256_before": "56a8c7b18da2baaf082d4943c7abf44be1f2e3eb292c301b9470f2784fdd4cd6",
+        "model_state_unchanged": true,
+        "numpy_rng_state_unchanged": true,
+        "optimizer_state_sha256_after": "30e5cee06d473d2b7cf8b5a8ce8e630ff66ae079ef50eb13e966ec4d64112945",
+        "optimizer_state_sha256_before": "30e5cee06d473d2b7cf8b5a8ce8e630ff66ae079ef50eb13e966ec4d64112945",
+        "optimizer_state_unchanged": true,
+        "optimizer_steps_between_evaluations": 0,
+        "pair_frequency_counts_unchanged": true,
+        "passed": true,
+        "python_rng_state_restored": true,
+        "sampler_after": "uniform_full",
+        "sampler_before": "confirmatory_cue_full_support",
+        "scheduler_state_unchanged": true,
+        "torch_cpu_rng_state_restored": true,
+        "torch_mps_rng_state_restored": true
+      },
+      "transition": {
+        "establishment_by_5M": true,
+        "establishment_exposure": 4000000,
+        "onset_by_5M": true,
+        "onset_exposure": 3000000,
+        "onset_ordinal": 2,
+        "onset_terminal_coded": false,
+        "probe_checkpoint_sequence": [
+          2000000,
+          3000000,
+          4000000,
+          5000000,
+          6000000,
+          7500000,
+          10000000
+        ],
+        "ten_M_cannot_initiate_onset": true,
+        "threshold_state_at_10M": true,
+        "threshold_state_at_5M": true,
+        "threshold_state_at_6M": true
+      }
+    }
+  },
+  "cue_effect_direction_used_for_decision": false,
+  "decision": "GO",
+  "failure_action": null,
+  "kind": "iclr2027_scale_robustness_engineering_learnability_gate",
+  "manifest": "artifacts/iclr2027_scale_robustness_manifest.json",
+  "manifest_sha256": "f6b873e342a8efa7f0a1b1ae09f0b455cc591ae06a31b0c9bb156726e5d23183",
+  "registered_gate": {
+    "direction_or_size_of_R2_minus_R0_ignored_for_gate": true,
+    "engineering_criteria": [
+      "all four pilot cells complete to 10M without OOM, device, or checkpoint errors",
+      "all logged losses, gradients, throughputs, and exact evaluation metrics are finite",
+      "every pilot checkpoint has a SHA-256 sidecar and the 2M checkpoint is successfully resumed without optimizer or scheduler reset",
+      "median throughput is positive and memory telemetry is recorded for both scales",
+      "the zero-step 5M sampler switch passes all frozen invariance checks"
+    ],
+    "failure_action": "stop before the remaining twelve trajectories and report; do not change architecture, optimizer, objective, checkpoints, or gate",
+    "favorable_cue_effect_required": false,
+    "forced_resume_checkpoint": 2000000,
+    "identifiability_criteria_per_scale": [
+      "at least one of R0 or R2 has verified onset by 10M",
+      "R0 and R2 are not both left-censored at the first 2M probe",
+      "at least one registered evaluation across the pair has 0.1 < exact full-support R < 0.9"
+    ],
+    "pilot_run_ids": [
+      "scale_1m_rule_0_init_0_R0",
+      "scale_1m_rule_0_init_0_R2",
+      "scale_5m_rule_0_init_0_R0",
+      "scale_5m_rule_0_init_0_R2"
+    ],
+    "pilot_runs_are_registered_cells": true,
+    "remaining_12_runs_withheld_until_go": true
+  },
+  "remaining_12_trajectories_started_during_gate": false,
+  "scales": {
+    "1m": {
+      "engineering_passed": true,
+      "favorable_cue_effect_used_for_gate": false,
+      "identifiability_checks": {
+        "at_least_one_informative_R_between_0_1_and_0_9": true,
+        "at_least_one_verified_onset_by_10M": true,
+        "not_both_left_censored_at_2M": true
+      },
+      "identifiability_passed": true,
+      "passed": true,
+      "run_ids": [
+        "scale_1m_rule_0_init_0_R0",
+        "scale_1m_rule_0_init_0_R2"
+      ]
+    },
+    "5m": {
+      "engineering_passed": true,
+      "favorable_cue_effect_used_for_gate": false,
+      "identifiability_checks": {
+        "at_least_one_informative_R_between_0_1_and_0_9": true,
+        "at_least_one_verified_onset_by_10M": true,
+        "not_both_left_censored_at_2M": true
+      },
+      "identifiability_passed": true,
+      "passed": true,
+      "run_ids": [
+        "scale_5m_rule_0_init_0_R0",
+        "scale_5m_rule_0_init_0_R2"
+      ]
+    }
+  }
+}

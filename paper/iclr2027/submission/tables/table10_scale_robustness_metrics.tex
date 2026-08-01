@@ -1,0 +1,22 @@
+\begin{table}[t]
+\caption{Registered 10M outcomes in every post-confirmatory paired block.
+Columns give exact full-support $R$, exact center accuracy, and the registered
+layer-6 linear-probe accuracy for R0/R2.}
+\label{tab:scale-robustness-metrics}
+\centering
+\small
+\begin{tabular}{llrrrrrr}
+\toprule
+Scale & Rule/seed & $R_0$ & $R_2$ & Center$_0$ & Center$_2$ & Probe$_0$ & Probe$_2$ \\
+\midrule
+1M & 0/0 & .5982 & .0027 & .0492 & 1.0000 & .1333 & 1.0000 \\
+1M & 0/1 & .7063 & .0038 & .0257 & 1.0000 & .0895 & 1.0000 \\
+1M & 1/0 & .5785 & .0045 & .0766 & 1.0000 & .1346 & 1.0000 \\
+1M & 1/1 & .5781 & .0221 & .0475 & .9832 & .1749 & .9887 \\
+5M & 0/0 & .4992 & .0007 & .1154 & 1.0000 & .1718 & 1.0000 \\
+5M & 0/1 & .0028 & .0001 & .9987 & 1.0000 & .9995 & 1.0000 \\
+5M & 1/0 & .0303 & .0002 & .9795 & 1.0000 & .9968 & 1.0000 \\
+5M & 1/1 & .0413 & .0003 & .9632 & 1.0000 & .9676 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,8 @@
+# Preserve the official ICLR 2027 files byte-for-byte, including upstream
+# whitespace, while keeping repository whitespace checks useful for our files.
+submission/fancyhdr.sty -whitespace
+submission/iclr2027_conference.bst -whitespace
+submission/natbib.sty -whitespace
+template/fancyhdr.sty -whitespace
+template/iclr2027_conference.bst -whitespace
+template/natbib.sty -whitespace

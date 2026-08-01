@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{Exploratory v1.3 Hessian audit on six frozen checkpoints from one
+representative paired block. Values are CPU Lanczos/Hutchinson estimates on one
+fixed 512-pair evaluation sample and are descriptive signatures, not causal
+mediators.}
+\label{tab:v13-hessian}
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Condition & Role (exposure) & $\lambda_{\max}$ & Trace & $d_{\mathrm{eff},10}$ \\
+\midrule
+R0 & pre (6M) & 143.06 & 1,418.77 & 6.414 \\
+R0 & transition (7.5M) & 6,337.52 & 64,422.7 & 5.828 \\
+R0 & late (10M) & 2,596.69 & 22,164.1 & 6.354 \\
+R2 & pre (3M) & 3,155.68 & 75,057.1 & 8.486 \\
+R2 & transition (4M) & 9,993.67 & 194,199 & 8.187 \\
+R2 & post (5M) & 10,634.2 & 194,973 & 8.146 \\
+\bottomrule
+\end{tabular}
+\end{table}

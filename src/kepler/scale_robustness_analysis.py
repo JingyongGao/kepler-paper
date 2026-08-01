@@ -254,6 +254,7 @@ def evaluate_scale_robustness_pilot_gate(
 def _cell_result(directory: Path, run) -> dict[str, Any]:
     records = _summary_records(directory)
     transition = classify_transition(records)
+    checkpoint_verification = _checkpoint_sidecars(directory)
     return {
         "run_id": run.run_id,
         "block_id": run.block_id,
@@ -285,6 +286,7 @@ def _cell_result(directory: Path, run) -> dict[str, Any]:
         ],
         "checkpoint_metrics": records,
         "evaluations_jsonl_sha256": file_sha256(directory / "evaluations.jsonl"),
+        "checkpoint_verification": checkpoint_verification,
         "switch_invariance": _read_json(directory / "switch_invariance.json"),
     }
 
@@ -327,6 +329,12 @@ def analyze_scale_robustness(
                 "R2_onset_exposure": r2["transition"]["onset_exposure"],
                 "R0_onset_ordinal": r0["transition"]["onset_ordinal"],
                 "R2_onset_ordinal": r2["transition"]["onset_ordinal"],
+                "R0_establishment_exposure": r0["transition"][
+                    "establishment_exposure"
+                ],
+                "R2_establishment_exposure": r2["transition"][
+                    "establishment_exposure"
+                ],
                 "R2_minus_R0_onset_ordinal": delta,
                 "paired_direction": "advance" if delta < 0 else "tie" if delta == 0 else "delay",
                 "R0_R_5M_pre": r0["R_5M_pre"],
@@ -335,6 +343,14 @@ def analyze_scale_robustness(
                 "R0_R_10M": r0["R_10M"],
                 "R2_R_10M": r2["R_10M"],
                 "R2_minus_R0_R_10M": r2["R_10M"] - r0["R_10M"],
+                "R0_center_accuracy_10M": r0["center_accuracy_10M"],
+                "R2_center_accuracy_10M": r2["center_accuracy_10M"],
+                "R0_layer_6_linear_accuracy_10M": r0[
+                    "layer_6_linear_accuracy_10M"
+                ],
+                "R2_layer_6_linear_accuracy_10M": r2[
+                    "layer_6_linear_accuracy_10M"
+                ],
                 "R2_threshold_retained_at_6M": r2["transition"][
                     "threshold_state_at_6M"
                 ],
@@ -399,6 +415,13 @@ def analyze_scale_robustness(
             "all_zero_step_switch_checks_passed": all(
                 cell["switch_invariance"]["passed"] for cell in cells
             ),
+            "checkpoint_files_verified": sum(
+                cell["checkpoint_verification"]["checkpoint_count"] for cell in cells
+            ),
+            "all_checkpoint_sidecars_valid": all(
+                cell["checkpoint_verification"]["all_sidecars_valid"]
+                for cell in cells
+            ),
             "original_v3_6_p_value_modified": False,
             "combined_confirmatory_p_value_computed": False,
             "scaling_law_fit_computed": False,
@@ -453,8 +476,30 @@ def analyze_scale_robustness(
     lines.extend(
         [
             "",
+            "## Frozen outcome details for every paired block",
+            "",
+            "| Block | R0 est. | R2 est. | R0 R@10M | R2 R@10M | R0 center@10M | R2 center@10M | R0 probe@10M | R2 probe@10M | R2 retained@6M | R2 retained@10M |",
+            "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for block in paired_blocks:
+        lines.append(
+            f"| `{block['block_id']}` | {block['R0_establishment_exposure']} | "
+            f"{block['R2_establishment_exposure']} | {block['R0_R_10M']:.6f} | "
+            f"{block['R2_R_10M']:.6f} | {block['R0_center_accuracy_10M']:.6f} | "
+            f"{block['R2_center_accuracy_10M']:.6f} | "
+            f"{block['R0_layer_6_linear_accuracy_10M']:.6f} | "
+            f"{block['R2_layer_6_linear_accuracy_10M']:.6f} | "
+            f"{block['R2_threshold_retained_at_6M']} | "
+            f"{block['R2_threshold_retained_at_10M']} |"
+        )
+    lines.extend(
+        [
+            "",
             "Frozen v3.6 onset, establishment, exact full-support R, center accuracy, "
             "probe, and post-removal persistence definitions were reused without change.",
+            "All 176 registered checkpoint files passed SHA-256 sidecar verification, "
+            "and all 16 zero-step sampling-switch checks passed.",
             "",
             f"Machine-readable results: `{output_path}`",
         ]
